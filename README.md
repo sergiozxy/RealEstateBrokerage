@@ -6,7 +6,7 @@ The basic structure is as the follows:
 
 - [x] stylized facts (finished)
 - [ ] GMM estimations
-- [ ] dynamically estimations of the effect
+- [x] dynamically estimations of the effect
 - [ ] exogeneous or shocking
 - [ ] heterogeneous checkings and robustness checkings
 
@@ -20,9 +20,9 @@ Use dynamic panel data estimation method to deal with small $T$ large $N$ proble
 
 ## dynamically estimations of the effect
 
-We dynamically estimate the effect of real estate brokerage's entry and leaving for the local submarket. We conditionally generate the following groups:
+We dynamically estimate the effect of real estate brokerage's entry and leaving for the local submarket. We first generate a dummy variable entry indicating the first entry period where the number of brokerage decides to open new offline stores in this given area. Then we generate the post and pre of this period.
 
-TBD.
+After this, we conduct two way fixed effect with multple clustering model to estimate it and drop the pre1 period to avoid collinearity problem. The result indicates entry and post1 period significant for income and number while the pricing the entry is not significant and the post1 is significant.
 
 ## exogeneous or shocking
 
