@@ -23,12 +23,27 @@ global brokerage_control other non_online_effect ln_negotiation_period ln_watch_
 generate have_lj = 1 if lianjia > 0
 replace have_lj = 0 if have_lj == .
 
-reghdfe ln_income density lianjia_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
+reghdfe ln_income density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 
-reghdfe ln_num density lianjia_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
+reghdfe ln_num density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 
-reghdfe ln_end_price density lianjia_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
+reghdfe ln_end_price density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 
 // now moving to the part of running whole codes
 
+xtabond2 L(0/1)ln_end_price density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+gmmstyle(L.ln_end_price density, equation(diff) lag(1 2) collapse) ///
+ivstyle(ln_lead lianjia_5 other_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) twostep nolevel robust
 
+
+
+
+
+xtivreg ln_end_price (density ln_lead = ln_profit_1k ln_num_1k L.ln_end_price) lianjia_5 other_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, fe vce(cluster id)
+
+
+// xtivreg2 ln_end_price (density ln_lead = ln_profit_1k ln_num_1k ln_end_1k) lianjia_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, fe cluster(id)
+
+generate ln_profit_1k = log(prft)
+generate ln_num_1k = log(num)
+generate ln_end_1k = log(price)
