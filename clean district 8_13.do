@@ -2,7 +2,7 @@
 // "working on district level.do"
 // which gives the directory of the file
 
-import delimited "cleaned_district.csv", clear 
+import delimited "cleaned_district_Jan.csv", clear 
 
 
 label variable building_type "The classification of a particular building."
@@ -61,11 +61,9 @@ label variable pm25 "Air quality measure."
 label variable region "City name."
 label variable id "Unique id."
 label variable business_area "Business area."
-label variable index_right "Unique index id"
-label variable num "Transaction number within 1km"
-label variable prft "Lianjia's income within 1km"
-label variable price "Housing price within 1km"
-
+label variable region_num "Transaction number within 1km"
+label variable region_income "Lianjia's income within 1km"
+label variable region_price "Housing price within 1km"
 
 // bysort id (year): drop if _N==1
 
@@ -128,10 +126,10 @@ generate ln_lead = log(lead_times)
 
 replace nego_times = nego_times + 1
 generate ln_nego_changes = log(nego_times)
-
-generate ln_profit_1k = log(prft)
-generate ln_num_1k = log(num)
-generate ln_end_1k = log(price)
+ 
+generate ln_profit_1k = log(region_income)
+generate ln_num_1k = log(region_num)
+generate ln_end_1k = log(region_price)
 
 // this captures the effect of platformization globally.
 
