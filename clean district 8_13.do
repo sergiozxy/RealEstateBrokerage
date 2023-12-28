@@ -2,7 +2,7 @@
 // "working on district level.do"
 // which gives the directory of the file
 
-import delimited "cleaned_district_Jan.csv", clear 
+import delimited "cleaned_district_Jan_2.csv", clear 
 
 
 label variable building_type "The classification of a particular building."
