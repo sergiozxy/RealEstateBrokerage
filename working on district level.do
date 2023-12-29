@@ -4,6 +4,8 @@ do "clean district 8_13.do"
 generate non_online_effect = 1 if ln_lead == 0
 replace non_online_effect = 0 if non_online_effect == .
 
+drop if ln_lead == 0
+
 // instead of using GMM methods to globally control for this one,
 // we have to use the different level of control to estimate the results
 // so we divide the control variables into the following parts
@@ -18,7 +20,7 @@ global L_hedonic_control L.jiadian L.kind L.hotel L.shop_mall L.museum L.old L.k
 
 global region_control pm25 pop light
 
-global brokerage_control other non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes
+global brokerage_control ln_negotiation_period ln_watch_time ln_nego_changes
 
 generate have_lj = 1 if lianjia > 0
 replace have_lj = 0 if have_lj == .
@@ -27,10 +29,9 @@ replace have_lj = 0 if have_lj == .
 
 reghdfe ln_income density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 
-reghdfe ln_num density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
-
 reghdfe ln_end_price density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 
+reghdfe ln_negotiation_period ln_watch_time ln_nego_changes density lianjia_5 other_5 ln_lead ln_watch_people $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 // dynamically estimations
 
 /*
@@ -43,26 +44,49 @@ replace leave = 0 if leave == .
 
 sum entry post1 post2 post3 pre1 pre2 pre3
 
-// pretty good results ^_^
+// pretty good results
 
 reghdfe ln_income pre3 pre2 entry post1 post2 post3 lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 
-reghdfe ln_num pre3 pre2 entry post1 post2 post3 lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
-
 reghdfe ln_end_price pre3 pre2 entry post1 post2 post3 lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 
+reghdfe ln_negotiation_period ln_watch_time ln_nego_changes pre3 pre2 entry post1 post2 post3 lianjia_5 other_5 ln_lead ln_watch_people $L_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 // exogeneous or shocking
 
+
+bysort id (year): drop if _N==1
 // GMM estimations
 
+// it should be consistent with our model (theoreical model)
+// which involving self selection
+
+xtabond2 L(0/1)ln_income pre3 pre2 entry post1 post2 post3 lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+gmmstyle(L.ln_income lianjia_5, equation(diff) lag(1 2) collapse) ///
+ivstyle(pre3 pre2 entry post1 post2 post3 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+
+xtabond2 L(0/1)ln_income density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+gmmstyle(L.ln_income L.lianjia_5 ln_lead, equation(diff) lag(1 2) collapse) ///
+ivstyle(density other_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+
+xtabond2 L(0/1)ln_num density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+gmmstyle(L.ln_num L.lianjia_5 ln_lead, equation(diff) lag(1 2) collapse) ///
+ivstyle(density other_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+
+// 13.47
 xtabond2 L(0/1)ln_end_price density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
-gmmstyle(L.ln_end_price density, equation(diff) lag(1 2) collapse) ///
-ivstyle(ln_lead lianjia_5 other_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) twostep nolevel robust
+gmmstyle(L.ln_end_price  L.lianjia_5 , equation(diff) lag(1 2) collapse) ///
+ivstyle(density ln_lead other_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+
+xtabond2 L(0/1)ln_end_price density lianjia_5 other_5 ln_lead ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+gmmstyle(L.ln_end_price L.lianjia_5, equation(diff) lag(1 2) collapse) ///
+ivstyle(density ln_lead other_5 ln_watch_people  ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+
 
 // heterogeneous checkings and robustness checkings
 
 
 
+// mechanism design
 
 
 // xtivreg ln_end_price (density ln_lead = ln_profit_1k ln_num_1k L.ln_end_price) lianjia_5 other_5 ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, fe vce(cluster id)
