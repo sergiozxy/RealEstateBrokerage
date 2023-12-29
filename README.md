@@ -26,9 +26,11 @@ Furthermore, we conduct proxy variables to indicate the effect of density on the
 
 Use dynamic panel data estimation method to deal with small $T$ large $N$ problem serial correlation problem. This method serves as a further check for the stylized result and pave way for our further analysis.
 
+I find that the dynamic effect, after taking the effect of the lagged dependent effect and serial correlation, is quite different than the OLS result.
+
 ## exogeneous or shocking
 
-Finally, we consider the exogeneous shock to prove our estimation is asymptotically efficient. Thinking about this problem right now.
+I now use the shocking to prove our GMM estimations are correct. Finally, we consider the exogeneous shock to prove our estimation is asymptotically efficient. Thinking about this problem right now.
 
 ## heterogeneous checkings and robustness checkings
 
