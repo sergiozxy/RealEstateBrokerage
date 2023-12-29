@@ -1,5 +1,11 @@
 # RealEstateBrokerage
 
+## update Dec 28 --
+
+Working on whether to drop the unnecessary samples and working on refining the results. okay in current progress.
+
+--
+
 **current progress**:
 
 The basic structure is as the follows:
