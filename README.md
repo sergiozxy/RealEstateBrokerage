@@ -8,7 +8,7 @@ The basic structure is as the follows:
 
 - [x] stylized facts (finished)
 - [x] dynamically estimations of the effect
-- [ ] GMM estimations
+- [x] GMM estimations
 - [ ] exogeneous or shocking
 - [ ] heterogeneous checkings and robustness checkings
 
@@ -28,7 +28,7 @@ Furthermore, we conduct proxy variables to indicate the effect of density on the
 
 Use dynamic panel data estimation method to deal with small $T$ large $N$ problem serial correlation problem. This method serves as a further check for the stylized result and pave way for our further analysis.
 
-I find that the dynamic effect, after taking the effect of the lagged dependent effect and serial correlation, is quite different than the OLS result.
+I find that the dynamic effect, after taking the effect of the lagged dependent effect and serial correlation, is quite different than the OLS result. The results also indicates that the previous OLS result is biased and not asymptotically efficient. Therefore, we shuold further prove that our GMM is robust given the exogeneous or shocking.
 
 ## exogeneous or shocking
 
