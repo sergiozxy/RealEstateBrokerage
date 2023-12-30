@@ -1,25 +1,4 @@
 cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
-do "clean district 8_13.do"
-
-generate non_online_effect = 1 if ln_lead == 0
-replace non_online_effect = 0 if non_online_effect == .
-
-
-// instead of using GMM methods to globally control for this one,
-// we have to use the different level of control to estimate the results
-// so we divide the control variables into the following parts
-
-egen city_id = group(region)
-
-// now using proxy variable to conduct the analysis
-
-generate proxy_entry = entry * density
-generate proxy_pos1 = post1 * density
-generate proxy_pos2 = post2 * density
-generate proxy_pos3 = post3 * density
-
-// save template.dta, replace
-
 use template.dta, clear
 
 global hedonic_control jiadian kind hotel shop_mall museum old ktv mid prim west_food super sub park
