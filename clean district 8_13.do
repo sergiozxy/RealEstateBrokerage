@@ -1,7 +1,7 @@
 // you should not directly run the codes, you shall run with the
 // "working on district level.do"
 // which gives the directory of the file
-
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
 import delimited "cleaned_district_Jan_2.csv", clear 
 
 
@@ -138,3 +138,21 @@ tabstat ln_num_1k, stat(p75 p90)
 generate density2 = density * density
 
 drop if region == "xian"
+generate non_online_effect = 1 if ln_lead == 0
+replace non_online_effect = 0 if non_online_effect == .
+
+
+// instead of using GMM methods to globally control for this one,
+// we have to use the different level of control to estimate the results
+// so we divide the control variables into the following parts
+
+egen city_id = group(region)
+
+// now using proxy variable to conduct the analysis
+
+generate proxy_entry = entry * density
+generate proxy_pos1 = post1 * density
+generate proxy_pos2 = post2 * density
+generate proxy_pos3 = post3 * density
+
+// save template.dta, replace
