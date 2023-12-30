@@ -83,14 +83,19 @@ ivstyle(proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 ln_lead ln_watch_
 
 // working on ln_negotiation_period for conducting the results
 
-xtabond2 L(0/1)ln_negotiation_period density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
-gmmstyle(ln_negotiation_period ln_num, equation(diff) lag(1 2) collapse) ///
-ivstyle(density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes  $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+// this is potential okay
+xtabond2 L(0/2)ln_negotiation_period density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
+gmmstyle(L.L.ln_negotiation_period light ln_num_1k, equation(diff) lag(1 2) collapse) ///
+ivstyle(density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
-xtabond2 L(0/1)ln_negotiation_period proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
-gmmstyle(ln_negotiation_period ln_nego_changes, equation(diff) lag(1 2) collapse) ///
-ivstyle( proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time  $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+// still need to refine
+xtabond2 L(0/2)ln_negotiation_period density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
+gmmstyle(L.L.ln_negotiation_period light ln_num_1k, equation(diff) lag(1 2) collapse) ///
+ivstyle(density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
+xtabond2 L(0/2)ln_negotiation_period proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
+gmmstyle(L.L.ln_negotiation_period light ln_num_1k, equation(diff) lag(1 2) collapse) ///
+ivstyle(proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
 
 // we can also carry out Granger tests
