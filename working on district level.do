@@ -1,4 +1,25 @@
-cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
+cd "E:\umich\24_January_reclean" // change to your working directory
+do "clean district 8_13.do"
+
+generate non_online_effect = 1 if ln_lead == 0
+replace non_online_effect = 0 if non_online_effect == .
+
+
+// instead of using GMM methods to globally control for this one,
+// we have to use the different level of control to estimate the results
+// so we divide the control variables into the following parts
+
+egen city_id = group(region)
+
+// now using proxy variable to conduct the analysis
+
+generate proxy_entry = entry * density
+generate proxy_pos1 = post1 * density
+generate proxy_pos2 = post2 * density
+generate proxy_pos3 = post3 * density
+
+// save template.dta, replace
+
 use template.dta, clear
 
 global hedonic_control jiadian kind hotel shop_mall museum old ktv mid prim west_food super sub park
@@ -60,25 +81,22 @@ xtabond2 L(0/1)ln_end_price proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia
 gmmstyle(L.ln_end_price L.other_5 L.pop, equation(diff) lag(1 2) collapse) ///
 ivstyle(proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25  light  ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
-// working on ln_negotiation_period for conducting the results
-
-// this is potential okay
+// done for ln_negotiation_period
 xtabond2 L(0/2)ln_negotiation_period density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
-gmmstyle(L.L.ln_negotiation_period light ln_num_1k, equation(diff) lag(1 2) collapse) ///
-ivstyle(density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+gmmstyle(L.L.ln_negotiation_period L.other_5 L.ln_num_1k, equation(diff) lag(1 2) collapse) ///
+ivstyle(density lianjia_5  ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
-// still need to refine
-xtabond2 L(0/2)ln_negotiation_period density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
-gmmstyle(L.L.ln_negotiation_period light ln_num_1k, equation(diff) lag(1 2) collapse) ///
-ivstyle(density lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+xtabond2 L(0/2)ln_negotiation_period proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
+gmmstyle(L.ln_negotiation_period other_5  L.ln_num_1k, equation(diff) lag(1 2) collapse) ///
+ivstyle(proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
-xtabond2 L(0/2)ln_negotiation_period proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
-gmmstyle(L.L.ln_negotiation_period light ln_num_1k, equation(diff) lag(1 2) collapse) ///
-ivstyle(proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
-
+xtabond2 L(0/2)ln_negotiation_period proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
+gmmstyle(L.ln_negotiation_period other_5  L.ln_num_1k, equation(diff) lag(1 2) collapse) ///
+ivstyle(proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5  ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k  ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
 // we can also carry out Granger tests
 // and please refer to the jupyter notebook.
+// the result shows that it is okay
 
 // heterogeneous checkings and robustness checkings
 
