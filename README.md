@@ -1,5 +1,7 @@
 # RealEstateBrokerage
 
+The dependent variable is `ln_income`, `ln_end_price` and `ln_negotiation_period` and there are three set of explanatory variables, including density based index (DBI), the entry and continuous effect, and the proxy variable to capture the effect of the continuous DBI effect.
+
 **current progress**:
 
 The basic structure is as the follows:
