@@ -1,4 +1,4 @@
-cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
+cd "E:\umich\24_January_reclean" // change to your working directory
 
 use template.dta, clear
 
@@ -25,7 +25,7 @@ reghdfe ln_negotiation_period ln_watch_time ln_nego_changes density lianjia_5 ot
 est store baseline_3
 
 esttab baseline_1 baseline_2 baseline_3 using result_tables/baseline.tex, ///
-style(tex) booktabs label ///
+style(tex) booktabs keep(density lianjia_5 other_5 ln_lead ln_negotiation_period ln_watch_time ln_nego_changes ln_watch_people) ///
 mtitle("log(income)" "log(price)" "log(period)") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
@@ -58,7 +58,7 @@ est store dynamic_proxy_3
 
 esttab dynamic_1 dynamic_proxy_1 dynamic_2 dynamic_proxy_2 ///
 dynamic_3 dynamic_proxy_3 using result_tables/dynamic.tex, ///
-style(tex) booktabs label ///
+style(tex) booktabs keep(pre3 pre2 entry post1 post2 post3 proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 ln_negotiation_period ln_watch_time ln_nego_changes lianjia_5 other_5 ln_lead non_online_effect ln_watch_people) ///
 mtitle("log(income)" "log(income)" "log(price)" "log(price)" ///
 "log(period)" "log(period)") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
@@ -107,11 +107,11 @@ ivstyle(proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 lianjia_5 ln_lead ln_watch_
 est store gmm_6
 
 esttab gmm_* using result_tables/gmm.tex, ///
-style(tex) booktabs label ///
+style(tex) booktabs keep(density proxy_entry proxy_pos1 proxy_pos2 proxy_pos3 L.ln_income L.ln_end_price L.ln_negotiation_period L2.ln_negotiation_period lianjia_5 other_5 ln_lead ln_watch_people ln_watch_time ln_nego_changes ln_negotiation_period) ///
 mtitle("log(income)" "log(income)" "log(price)" "log(price)" ///
 "log(period)" "log(period)") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
-se stats(N ar1p ar2p hansenp, labels("observations" "AR(2) p-value" "Hansen J Test p-value" "Sargan Test p-value")) ///
+se stats(N ar1p ar2p hansenp, labels("observations" "AR(1) p-value" "AR(2) p-value" "Hansen J Test p-value" "Sargan Test p-value")) ///
  replace
 
 // we can also carry out Granger tests
