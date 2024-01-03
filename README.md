@@ -1,6 +1,6 @@
 # RealEstateBrokerage
 
-The dependent variable is `ln_income`, `ln_end_price` and `ln_negotiation_period` and there are three set of explanatory variables, including density based index (DBI), the entry and continuous effect, and the proxy variable to capture the effect of the continuous DBI effect.
+The dependent variable is `ln_income`, `ln_end_price`, `ln_negotiation_period` and `ln_negotiation` and there are three set of explanatory variables, including density based index (DBI), the entry and continuous effect, and the proxy variable to capture the effect of the continuous DBI effect.
 
 **current progress**:
 
@@ -26,13 +26,13 @@ Furthermore, we conduct proxy variables to indicate the effect of density on the
 
 ## GMM estimations
 
-Use dynamic panel data estimation method to deal with small $T$ large $N$ problem serial correlation problem. This method serves as a further check for the stylized result and pave way for our further analysis.
+Use dynamic panel data estimation method to deal with small $T$ large $N$ serial correlation problem. This method serves as a further check for the stylized result and pave way for our further analysis.
 
 I find that the dynamic effect, after taking the effect of the lagged dependent effect and serial correlation, is quite different than the OLS result. The results also indicates that the previous OLS result is biased and not asymptotically efficient. Therefore, we shuold further prove that our GMM is robust given the exogeneous or shocking.
 
 ## exogeneous or shocking
 
-I now use the shocking to prove our GMM estimations are correct. Finally, we consider the exogeneous shock to prove our estimation is asymptotically efficient. Thinking about this problem right now.
+I now use the shocking to prove our GMM estimations are correct. Finally, we consider the exogeneous shock to prove our estimation is asymptotically efficient. The way we choose is to use RD design, which by assuming lianjia's effect will dramatically decrease for the first and second's housing. Working on it.
 
 ## heterogeneous checkings and robustness checkings
 
