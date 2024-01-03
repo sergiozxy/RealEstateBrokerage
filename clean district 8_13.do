@@ -2,7 +2,7 @@
 // "working on district level.do"
 // which gives the directory of the file
 cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
-import delimited "cleaned_district_Jan_2.csv", clear 
+import delimited "cleaned_district_Jan_3.csv", clear 
 
 
 label variable building_type "The classification of a particular building."
