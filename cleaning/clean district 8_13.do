@@ -1,8 +1,8 @@
 // you should not directly run the codes, you shall run with the
 // "working on district level.do"
 // which gives the directory of the file
-cd "E:\umich\24_January_reclean"
-import delimited "cleaned_district_Jan_3.csv", clear 
+cd "E:\umich\RealEstateBrokerage-main"
+import delimited "cleaned_district_Jan_4.csv", clear 
 
 
 label variable building_type "The classification of a particular building."
@@ -66,6 +66,8 @@ label variable region_income "Lianjia's income within 1km"
 label variable region_price "Housing price within 1km"
 label variable nearest_index_1 "dummy if it is the nearest communities to stores"
 label variable nearest_index_2 "dummy if it is the nearest two communities to stores"
+label variable nearest_store_indices "the nearest lianjia's store's index"
+label variable nearest_store_distances "the distance to nearest lianjia's store"
 // bysort id (year): drop if _N==1
 
 drop if pm25 == .
