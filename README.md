@@ -1,5 +1,15 @@
 # RealEstateBrokerage
 
+## Description
+
+* `analysis` contains the codes that are associated with the anslysis
+* `cleaning` contains the codes that generate the data
+* `manuscript` contains the `latex` files that generate the manuscript
+* `result_table` contains the `tex` source files that replicate the tables
+* `archive` is the unused files that should be deleted.
+
+## Progress
+
 The dependent variable is `ln_income`, `ln_end_price`, `ln_negotiation_period` and `ln_negotiation` and there are three set of explanatory variables, including density based index (DBI), the entry and continuous effect, and the proxy variable to capture the effect of the continuous DBI effect.
 
 **current progress**:
