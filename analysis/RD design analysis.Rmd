@@ -1,0 +1,108 @@
+---
+title: "RD design analysis"
+author: "Xuyuan Zhang"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+geometry: "left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(tidy=TRUE)
+knitr::opts_chunk$set(fig.height=4)
+knitr::opts_chunk$set(fig.width=7)
+knitr::opts_chunk$set(warning=FALSE)
+options(encoding = "UTF-8")
+set.seed(123)
+```
+
+## structure
+
+1. we first report the figure and export the figure to the folder named figures in directory
+2. we then report the main result of the regressions
+3. lastly, we report the placebo test and the robustness check
+
+```{r}
+# these are the packages that we need to import
+library(haven)
+library(ggplot2)
+library(dplyr)
+library(rdrobust)
+library(plm)
+library(pander) # this is for table showing
+library(latex2exp) # this is to export it
+```
+
+```{r}
+# need to place data on the base directory
+data <- read_dta("../template.dta")
+panel_data <- pdata.frame(data, index = c("id", "year"))
+panel_data$L_jiadian <- lag(panel_data$jiadian, 1)
+panel_data$L_kind <- lag(panel_data$kind, 1)
+panel_data$L_hotel <- lag(panel_data$hotel, 1)
+panel_data$L_shop_mall <- lag(panel_data$shop_mall, 1)
+panel_data$L_museum <- lag(panel_data$museum, 1)
+panel_data$L_old <- lag(panel_data$old, 1)
+panel_data$L_ktv <- lag(panel_data$ktv, 1)
+panel_data$L_mid <- lag(panel_data$mid, 1)
+panel_data$L_prim <- lag(panel_data$prim, 1)
+panel_data$L_west_food <- lag(panel_data$west_food, 1)
+panel_data$L_super <- lag(panel_data$super, 1)
+panel_data$L_sub <- lag(panel_data$sub, 1)
+panel_data$L_park <- lag(panel_data$park, 1)
+```
+
+we use these control variables
+
+```{r}
+control_variables <- c(
+  "jiadian", "kind", "hotel", "shop_mall", "museum", "old", "ktv", "mid", "prim", "west_food", "super", "sub", "park", 
+  "area", "bedroom", "toilet", "house_age", "floor_level", "green_ratio", "total_building", "total_floor_number", "living_room", "elevator_ratio", "kitchen", "floor_ratio", "total_resident",
+  "L_jiadian", "L_kind", "L_hotel", "L_shop_mall", "L_museum", "L_old", "L_ktv", "L_mid", "L_prim", "L_west_food", "L_super", "L_sub", "L_park",
+  "pm25", "pop", "light",
+  "non_online_effect", "ln_negotiation_period", "ln_watch_time", "ln_nego_changes",
+  "density", "lianjia_5", "other_5", "ln_lead", "ln_watch_people"
+)
+```
+
+```{r}
+rdplot(y = filtered_data$ln_income, 
+       x = filtered_data$density, 
+       c = 0.2, p =1,  nbins = 20, 
+       title = "RD-plot",
+       x.label = "nearest distance to lianjia's stores",
+       y.label = "lianjia's income in the community")
+```
+
+
+note that the figure only shows points that are within the bandwidth, the whole points are shown in Appendix of the paper.
+```{r}
+h = 0.151
+cutoff = 0.5
+running_var = panel_data$nearest_store_distances
+
+filtered_data <- panel_data[abs(running_var - cutoff) <= h, ]
+
+rdplot(y = filtered_data$ln_income, 
+       x = filtered_data$nearest_store_distances, 
+       c = cutoff, p = 1, nbins = 20, 
+       title = "RD-plot",
+       x.label = "nearest distance to lianjia's stores",
+       y.label = "lianjia's income in the community")
+```
+
+```{r}
+result <- rdrobust(y = panel_data$ln_income, x = panel_data$density, 
+                   c = 0.2, covs = panel_data[, control_variables],
+                   p = 1) # first using default clustering
+```
+
+```{r}
+pander(cbind(result$coef, result$pv))
+```
+
+```{r}
+result
+```
+
