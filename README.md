@@ -28,6 +28,19 @@ The basic structure is as the follows:
 - [ ] exogeneous or shocking (RD design)
 - [ ] heterogeneous checkings and robustness checkings
 
+## RDD to find cutoff for distance based measure
+
+We derive the result using *rdrobust* command in R. The result should be the same regarding the whole values.
+
+## reconstruct the dataset
+
+the dataset now contains 222843 observations, and this is correct. The only thing that we need to reclean is to:
+
+1. first, we drop the lianjia's number, beke's number and the density.
+2. We merge all of the regions' real estate brokerage's types and using the techniques of most overlapping properties to cluster the types of the brokerages. For example, *da tang*, *lian jia*, and so on.
+3. explain why using 500 meters for other pois: (A 500-meter radius often provides a good estimate of accessibility, A 500-meter radius is equivalent to a 10-minute walking distance. This distance is often used because it represents a practical and manageable reach for residents, particularly in urban or densely populated areas, A particular distance might be chosen based on the sensitivity of housing prices to changes at that scale. (cite papers))
+4. we reconstruct using lianjia's numbers, beke's numbers and the density and other results using the radius of the cutoff value.
+
 ## stylized fact:
 
 using two way fixed effect with multple clustering model and the codes have been done and should be revised further.
