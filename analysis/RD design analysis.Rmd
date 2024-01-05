@@ -62,6 +62,7 @@ control_variables <- c(
   "pm25", "pop", "light",
   "non_online_effect", "ln_negotiation_period", "ln_watch_time", "ln_nego_changes", "ln_lead", "ln_watch_people"
 )
+testing_variables <- c("ln_negotiation_period", "ln_watch_time", "ln_nego_changes", "ln_lead", "ln_watch_people", "ln_end_price")
 ```
 
 ```{r}
@@ -184,14 +185,17 @@ library(rdd)
 DCdensity(panel_data$nearest_store_distances, cutpoint = 0.41, bw = 0.095, verbose = TRUE, plot = FALSE)
 ```
 
-Conducting placebo test
+Conducting placebo test. We shall using the same validation bandwidth and bias correction bandwidth. The results are good overall
 
 ```{r}
-# using the same bandwidth
-unrelated_result <- rdrobust(y = panel_data$ln_negotiation_period, 
-                             x = panel_data$nearest_store_distances, c = 0.41, h = 0.066, b = 0.135)
-print("Placebo test with unrelated outcome:")
-print(unrelated_result)
-pander(cbind(unrelated_result$coef, unrelated_result$pv))
+for (validation in testing_variables) {
+  rd_result <- rdrobust(y = panel_data[[validation]], x = panel_data$nearest_store_distances
+                        , c = 0.41, h = 0.066, b = 0.135)
+  cat("Covariate:", validation, "\n")
+  print(summary(rd_result))
+  cat("\n\n")
+   
+}
 ```
+
 
