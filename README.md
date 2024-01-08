@@ -4,6 +4,7 @@
 
 * `analysis` contains the codes that are associated with the anslysis
 * `cleaning` contains the codes that generate the data
+* `classifying brokerages` contains the codes to regenerate the result and using techiniques to calculate the HHI index in each of the region
 * `manuscript` contains the `latex` files that generate the manuscript
 * `result_table` contains the `tex` source files that replicate the tables
 * `archive` is the unused files that should be deleted.
