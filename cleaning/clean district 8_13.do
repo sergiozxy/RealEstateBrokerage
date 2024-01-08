@@ -2,7 +2,7 @@
 // "working on district level.do"
 // which gives the directory of the file
 cd "E:\umich\RealEstateBrokerage-main"
-import delimited "cleaned_district_Jan_4.csv", clear 
+import delimited "cleaned_district_Jan_5.csv", clear 
 
 
 label variable building_type "The classification of a particular building."
@@ -68,6 +68,8 @@ label variable nearest_index_1 "dummy if it is the nearest communities to stores
 label variable nearest_index_2 "dummy if it is the nearest two communities to stores"
 label variable nearest_store_indices "the nearest lianjia's store's index"
 label variable nearest_store_distances "the distance to nearest lianjia's store"
+label variable lianjia_420 "number of lianjia within 420 meters, which is the cutoff of RD"
+label variable broker_420 "number of brokerages within 420 meters, which is the cutoff of RD"
 // bysort id (year): drop if _N==1
 
 drop if pm25 == .
@@ -96,7 +98,10 @@ replace treated = 0 if treated == .
 
 global Control_Variables floor_level floor_ratio green_ratio total_building total_resident area bedroom living_room kitchen toilet total_floor_number elevator_ratio super sub hotel kind prim mid shop_mall west_food park museum ktv jiadian house_age old light pop pm25
 
-generate density = lianjia_5 / other_5
+generate density = lianjia_420 / broker_420
+replace density = 0 if density == .
+
+generate density_5 = lianjia_5 / other_5
 generate lj_ratio = lianjia_5 / (lianjia_5 + beke_5)
 
 generate density_1k = lianjia / other
@@ -105,7 +110,7 @@ replace density_1k = 0 if density_1k == .
 replace watched_times = watched_times + 1
 generate ln_watch_time = log(watched_times)
 
-replace density = 0 if density == .
+replace density_5 = 0 if density_5 == .
 replace lj_ratio = 0 if lj_ratio == .
 generate ln_end_price = log(end_price_pers)
 generate ln_num = log(number)
