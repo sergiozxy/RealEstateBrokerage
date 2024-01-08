@@ -2,6 +2,14 @@ cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
 
 use template.dta, clear
 
+// we first test if there is strict exogeneity:
+
+xtreg ln_income density lianjia_5 other_5 ln_lead ln_watch_people $brokerage_control $L_hedonic_control $transaction_control $region_control, fe vce(cluster id)
+xtserial, fe
+/*
+The test will output a p-value. If the p-value is less than your chosen significance level (commonly 0.05), you reject the null hypothesis of no serial correlation, suggesting that your explanatory variables might be correlated with the error term.
+/
+
 global hedonic_control jiadian kind hotel shop_mall museum old ktv mid prim west_food super sub park
 
 global transaction_control area bedroom toilet house_age floor_level green_ratio total_building total_floor_number living_room elevator_ratio kitchen floor_ratio total_resident
