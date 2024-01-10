@@ -1,4 +1,4 @@
-cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads" // change to your working directory
 
 // revise based on L_hedonic_control
 
@@ -39,6 +39,7 @@ xtserial ln_income density lianjia_420 broker_420 ln_lead ln_watch_people $broke
 // stylized facts
 
 // ssc install reghdfe
+// ssc install ftool
 // lianjia_420 broker_420
 
 reghdfe ln_income density lianjia_420 broker_420 ln_lead ln_watch_people $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
@@ -63,13 +64,13 @@ scalars("r2 R-squared") ///
 
 // sum entry post1 post2 post3 pre1 pre2 pre3
 
-reghdfe ln_income pre3 pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
+reghdfe ln_income pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 est store dynamic_1
 
-reghdfe ln_end_price pre3 pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
+reghdfe ln_end_price pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 est store dynamic_2
 
-reghdfe ln_negotiation_period ln_watch_time ln_nego_changes pre3 pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead non_online_effect ln_watch_people $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
+reghdfe ln_negotiation_period ln_watch_time ln_nego_changes pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead non_online_effect ln_watch_people $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster id)
 est store dynamic_3
 
 
@@ -95,9 +96,9 @@ ivstyle(density broker_420 ln_watch_people $brokerage_control $hedonic_control $
 est store gmm_1
 */
 
-xtabond2 L(0/1)ln_income pre3 pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+xtabond2 L(0/1)ln_income pre1 entry post1 post2 post3 broker_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
 gmmstyle(L.ln_income ln_watch_time ln_nego_changes, equation(diff) lag(1 2) collapse) ///
-ivstyle(pre3 pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period  $Lag_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+ivstyle(pre1 entry post1 post2 post3 broker_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period  $Lag_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 est store gmm_1
 
 // done for ln_end_price
@@ -110,28 +111,23 @@ est store gmm_3
 */
 
 // market anticipation because the sellers increases, the lianjia decided to enter the market where there are bundles of listings
-xtabond2 L(0/1)ln_end_price prer3 prer1 entry1 postr1 postr2 postr3 lianjia_5 other_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+xtabond2 L(0/1)ln_end_price prer1 entry1 postr1 postr2 postr3 other_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
 gmmstyle(L.ln_end_price L.other_5 L.pop, equation(diff) lag(1 2) collapse) ///
-ivstyle(prer3 prer1 entry1 postr1 postr2 postr3 lianjia_5 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25  light  ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+ivstyle(prer1 entry1 postr1 postr2 postr3 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25  light  ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 
 est store gmm_robust_2
 
-xtabond2 L(0/1)ln_end_price pre2 pre1 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
+xtabond2 L(0/1)ln_end_price pre1 entry post1 post2 post3 broker_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
 gmmstyle(L.ln_end_price L.broker_420 L.pop, equation(diff) lag(1 2) collapse) ///
-ivstyle(pre2 pre1 entry post1 post2 post3 lianjia_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control pm25 light ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+ivstyle( pre1 entry post1 post2 post3 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control pm25 light ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 est store gmm_2
 
 // done for ln_negotiation_period
 
-xtabond2 L(0/2)ln_negotiation_period pre3 pre2 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control $region_control ln_profit_1k ln_num_1k ln_end_1k i.year, ///
-gmmstyle(L.L.ln_negotiation_period L.broker_420 L.ln_num_1k, equation(diff) lag(1 2) collapse) ///
-ivstyle(pre3 pre2 entry post1 post2 post3 lianjia_420 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $Lag_hedonic_control $transaction_control $region_control ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
+xtabond2 L(0/2)ln_negotiation_period pre1 entry post1 post2 post3 broker_420 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
+gmmstyle(L.ln_negotiation_period ln_lead L.ln_num_1k, equation(diff) lag(1 2) collapse) ///
+ivstyle(pre1 entry post1 post2 post3 broker_420  ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 est store gmm_3
-
-xtabond2 L(0/1)ln_end_price pre3 pre2 entry post1 post2 post3 lianjia_420 broker_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year,  ///
-gmmstyle(L.ln_end_price L.broker_420 L.pop, equation(diff) lag(1 2) collapse) ///
-ivstyle(pre3 pre2 entry post1 post2 post3 lianjia_420 ln_lead ln_watch_people non_online_effect ln_negotiation_period ln_watch_time ln_nego_changes $hedonic_control $transaction_control pm25 light ln_profit_1k ln_num_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
-est store gmm_4
 
 
 
