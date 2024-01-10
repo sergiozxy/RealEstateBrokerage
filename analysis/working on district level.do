@@ -125,7 +125,7 @@ est store gmm_2
 // done for ln_negotiation_period
 
 xtabond2 L(0/2)ln_negotiation_period pre1 entry post1 post2 post3 broker_420 ln_lead ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_num_1k ln_end_1k i.year, ///
-gmmstyle(L.ln_negotiation_period ln_lead L.ln_num_1k, equation(diff) lag(1 2) collapse) ///
+gmmstyle(L.L.ln_negotiation_period L.ln_lead L.ln_num_1k, equation(diff) lag(1 2) collapse) ///
 ivstyle(pre1 entry post1 post2 post3 broker_420  ln_watch_people non_online_effect ln_watch_time ln_nego_changes $L_hedonic_control $transaction_control pm25 pop light ln_profit_1k ln_end_1k i.year, equation(diff)) noconstant twostep nolevel robust
 est store gmm_3
 
