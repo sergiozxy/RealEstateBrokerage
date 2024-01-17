@@ -1,5 +1,12 @@
 # RealEstateBrokerage
 
+Jan 16 update:
+
+1. First, we need to apply Regression discontinuity to define the best influential space;
+2. Second, we apply stlized fact using two way fixed effect and using generalized methods of moments to deal with self selection problem. (this is problematic here, because the data shows that there is pre-treatment effect, which should be wrong). I will study the paper "Pre-Event Trends in the Panel Event-Study Design" to decide if it gonna work.
+3. Finally we study the boundary discontinuity desing (BDD) of high technology region (which are high priced) and communities that are just outside the region. This is also served as the mechanism design.
+4. Other Heterogenous tests and checks.
+
 ## Description
 
 * `analysis` contains the codes that are associated with the anslysis
