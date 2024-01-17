@@ -2,8 +2,8 @@
 
 ## Jan 16 update:
 
-1. First, we need to apply Regression discontinuity to define the best influential space;
-2. Stylized fact, we apply stlized fact using two way fixed effect and using generalized methods of moments to deal with self selection problem.
+1. First, we need to apply Regression discontinuity to define the best influential space; This thing should be carried out by examing the general patterns of all data;
+2. Stylized fact, we apply stlized fact using two way fixed effect. We shuold know that the different regions have different patterns, so why not using each cities to generate a unique `density` estimator and make a table to show it; Besides, we also show that the GMM estimator of them.
 4. Actually, I should use the areas where lianjia do not have a store to study the effect, i.e., drop the communities that already have lianjia? Examine the impact of Lianjia's entry into new markets. You can compare markets where Lianjia opened new branches with similar markets where it did not. This analysis would focus on the effect of Lianjia's physical presence in new locations.
 5. Finally we study Market Maturity Variations: Compare mature markets where brokerages have been established for a long time with emerging markets where brokerages are relatively new.
 6. Dynamic treatment effect, like generating a dummy of have_metro and generate pre periods, after periods and multplying it with lianjia's density to test the result. (thinking about this)
