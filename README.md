@@ -1,11 +1,13 @@
 # RealEstateBrokerage
 
-Jan 16 update:
+## Jan 16 update:
 
 1. First, we need to apply Regression discontinuity to define the best influential space;
-2. Second, we apply stlized fact using two way fixed effect and using generalized methods of moments to deal with self selection problem. (this is problematic here, because the data shows that there is pre-treatment effect, which should be wrong). I will study the paper "Pre-Event Trends in the Panel Event-Study Design" to decide if it gonna work.
-3. Finally we study the boundary discontinuity desing (BDD) of high technology region (which are high priced) and communities that are just outside the region. This is also served as the mechanism design.
-4. Other Heterogenous tests and checks.
+2. Stylized fact, we apply stlized fact using two way fixed effect and using generalized methods of moments to deal with self selection problem.
+4. Actually, I should use the areas where lianjia do not have a store to study the effect, i.e., drop the communities that already have lianjia? Examine the impact of Lianjia's entry into new markets. You can compare markets where Lianjia opened new branches with similar markets where it did not. This analysis would focus on the effect of Lianjia's physical presence in new locations.
+5. Finally we study Market Maturity Variations: Compare mature markets where brokerages have been established for a long time with emerging markets where brokerages are relatively new.
+6. Dynamic treatment effect, like generating a dummy of have_metro and generate pre periods, after periods and multplying it with lianjia's density to test the result. (thinking about this)
+7. Other Heterogenous tests and checks. Like: Competitor Analysis: Compare areas where Lianjia faces different levels of competition. The impact of Lianjia in highly competitive markets versus those with limited competition could reveal its market influence.
 
 ## Description
 
