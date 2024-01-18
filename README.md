@@ -2,6 +2,8 @@
 
 ## Jan 16 update:
 
+now add the `ln_negotiation` as the variable.
+
 1. First, we need to apply Regression discontinuity to define the best influential space; This thing should be carried out by examing the general patterns of all data;
 2. Stylized fact, we apply stlized fact using two way fixed effect. We shuold know that the different regions have different patterns, so why not using each cities to generate a unique `density` estimator and make a table to show it; Besides, we also show that the GMM estimator of them.
 4. Actually, I should use the areas where lianjia do not have a store to study the effect, i.e., drop the communities that already have lianjia? Examine the impact of Lianjia's entry into new markets. You can compare markets where Lianjia opened new branches with similar markets where it did not. This analysis would focus on the effect of Lianjia's physical presence in new locations.
