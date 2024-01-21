@@ -1,0 +1,32 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{c}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+            &\multicolumn{1}{c}{log(income)}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{log(lead times)}\\
+\midrule
+density     &      0.0698\sym{***}&    0.000223         &      0.0392\sym{**} \\
+            &    (0.0208)         &  (0.000632)         &    (0.0157)         \\
+\addlinespace
+broker\_420  &     0.00218\sym{**} &  -0.0000342         &    0.000228         \\
+            &   (0.00102)         & (0.0000282)         &  (0.000701)         \\
+\addlinespace
+ln\_watch\_people&      0.0560\sym{***}&    -0.00126\sym{***}&       0.330\sym{***}\\
+            &   (0.00381)         &  (0.000132)         &   (0.00435)         \\
+\addlinespace
+ln\_watch\_time&      0.0295\sym{***}&   0.0000788         &      0.0319\sym{***}\\
+            &   (0.00245)         & (0.0000908)         &   (0.00208)         \\
+\addlinespace
+ln\_nego\_changes&      0.0159\sym{**} &    -0.00127\sym{***}&       0.133\sym{***}\\
+            &   (0.00669)         &  (0.000212)         &   (0.00693)         \\
+\addlinespace
+ln\_negotiation\_period&      0.0544\sym{***}&     0.00207\sym{***}&       0.130\sym{***}\\
+            &   (0.00359)         &  (0.000140)         &   (0.00395)         \\
+\midrule
+\(N\)       &      134648         &      133591         &      134648         \\
+R-squared   &       0.884         &       0.598         &       0.918         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+}
