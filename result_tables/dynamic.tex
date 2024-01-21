@@ -1,0 +1,59 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{c}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+            &\multicolumn{1}{c}{log(income)}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{log(lead times)}\\
+\midrule
+L.ln\_income &     -0.0671\sym{***}&                     &                     \\
+            &   (0.00433)         &                     &                     \\
+\addlinespace
+yearx2\_density&       0.202\sym{***}&    -0.00180\sym{*}  &      0.0275         \\
+            &    (0.0351)         &   (0.00102)         &    (0.0256)         \\
+\addlinespace
+yearx3\_density&       0.153\sym{***}&   -0.000120         &      0.0912\sym{***}\\
+            &    (0.0309)         &  (0.000979)         &    (0.0229)         \\
+\addlinespace
+yearx4\_density&      0.0655\sym{**} &   -0.000940         &      0.0522\sym{**} \\
+            &    (0.0308)         &  (0.000910)         &    (0.0228)         \\
+\addlinespace
+yearx5\_density&      0.0761\sym{**} &   -0.000442         &      0.0391\sym{*}  \\
+            &    (0.0314)         &  (0.000876)         &    (0.0219)         \\
+\addlinespace
+yearx6\_density&      -0.193\sym{***}&     0.00382\sym{**} &     -0.0146         \\
+            &    (0.0544)         &   (0.00151)         &    (0.0360)         \\
+\addlinespace
+yearx7\_density&      -0.134\sym{**} &     0.00565\sym{***}&      0.0377         \\
+            &    (0.0591)         &   (0.00186)         &    (0.0485)         \\
+\addlinespace
+broker\_420  &     0.00171         &  -0.0000132         &    0.000371         \\
+            &   (0.00106)         & (0.0000296)         &  (0.000732)         \\
+\addlinespace
+ln\_end\_price&       0.949\sym{***}&     -0.0398\sym{***}&       0.169\sym{***}\\
+            &    (0.0237)         &   (0.00200)         &    (0.0261)         \\
+\addlinespace
+ln\_watch\_people&      0.0692\sym{***}&    -0.00172\sym{***}&       0.327\sym{***}\\
+            &   (0.00376)         &  (0.000130)         &   (0.00431)         \\
+\addlinespace
+ln\_watch\_time&      0.0286\sym{***}&   0.0000412         &      0.0327\sym{***}\\
+            &   (0.00242)         & (0.0000866)         &   (0.00204)         \\
+\addlinespace
+ln\_nego\_changes&      0.0235\sym{***}&    -0.00166\sym{***}&       0.132\sym{***}\\
+            &   (0.00637)         &  (0.000211)         &   (0.00689)         \\
+\addlinespace
+ln\_negotiation\_period&      0.0579\sym{***}&     0.00184\sym{***}&       0.126\sym{***}\\
+            &   (0.00348)         &  (0.000136)         &   (0.00388)         \\
+\addlinespace
+L.price\_concession&                     &      -0.184\sym{***}&                     \\
+            &                     &   (0.00466)         &                     \\
+\addlinespace
+L.ln\_lead   &                     &                     &     -0.0974\sym{***}\\
+            &                     &                     &   (0.00350)         \\
+\midrule
+\(N\)       &      134648         &      132509         &      134648         \\
+R-squared   &       0.888         &       0.623         &       0.919         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+}
