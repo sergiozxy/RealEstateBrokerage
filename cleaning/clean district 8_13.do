@@ -2,7 +2,7 @@
 // "working on district level.do"
 // which gives the directory of the file
 cd "E:\umich\RealEstateBrokerage-main"
-import delimited "cleaned_district_Jan_7.csv", clear 
+import delimited "cleaned_district_Jan_8.csv", clear 
 
 
 label variable building_type "The classification of a particular building."
@@ -70,6 +70,8 @@ label variable nearest_store_indices "the nearest lianjia's store's index"
 label variable nearest_store_distances "the distance to nearest lianjia's store"
 label variable lianjia_420 "number of lianjia within 420 meters, which is the cutoff of RD"
 label variable broker_420 "number of brokerages within 420 meters, which is the cutoff of RD"
+rename all_beke_420 beke_420
+label variable beke_420 "number of beke within 420 meters, which is the cutoff of RD"
 // bysort id (year): drop if _N==1
 
 drop if pm25 == .
@@ -158,9 +160,6 @@ egen city_id = group(region)
 
 // now using proxy variable to conduct the analysis
 
-generate proxy_entry = entry * density
-generate proxy_pos1 = post1 * density
-generate proxy_pos2 = post2 * density
-generate proxy_pos3 = post3 * density
+winsor2 price_concession, replace cuts(1 99) trim
 
 save template.dta, replace
