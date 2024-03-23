@@ -159,7 +159,22 @@ replace non_online_effect = 0 if non_online_effect == .
 egen city_id = group(region)
 
 // now using proxy variable to conduct the analysis
-
+drop price_concession
+generate price_concession =  end_price_pers - striker_price_pers
+replace price_concession = price_concession / striker_price_pers
 winsor2 price_concession, replace cuts(1 99) trim
 
+
+
+label variable non_online_effect "without online platformization influence"
+label variable density "percentage of lianjia to all brokerages"
+
+
 save template.dta, replace
+
+
+preserve
+    describe, replace clear
+    list
+    export excel using variable__label_correspondence.xlsx, replace first(var)
+restore
