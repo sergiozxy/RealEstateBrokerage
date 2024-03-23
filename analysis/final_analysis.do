@@ -265,12 +265,15 @@ scalars("r2 R-squared") ///
  replace
  
 
-/*
+
 // statistical result
 
-logout, save("ttest_with_result.rtf") word replace: ttable3 kou yiji erji sanji end_price_pers pop light pm25 $Control_Variables, by(have_kou) tvalue
-logout, save("ttest_with_result_mean_std.rtf") word replace: tabstat kou yiji erji sanji end_price_pers pop light pm25 $Control_Variables, by(have_kou) stat(mean sd) nototal long col(stat)
+
+generate by_lj = (lianjia_410 > 0)
+
+logout, save(ttest_with_result) dta replace: ttable3 income lead_times price_concession density broker_410 watching_people end_price non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) tvalue
+
+logout, save(ttest_with_result_mean_std) dta replace: tabstat income lead_times price_concession density broker_410 watching_people end_price non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) stat(mean sd) nototal long col(stat)
 
 
 
-*/
