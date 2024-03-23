@@ -84,15 +84,10 @@ replace end_price_pers = end_price * 10000 / area
 
 replace income = income * 10000 * 0.03
 
-/*
-winsor2 watched_times, replace cuts(0.5 99.5)
-winsor2 end_price_pers, replace cuts(0.5 99.5)
-winsor2 nego_period, replace cuts(0.5 99.5)
-winsor2 number, replace cuts(0.5 99.5)
 winsor2 end_price, replace cuts(1 99)
 winsor2 income, replace cuts(0.5 99.5)
-winsor2 striker_price_pers, replace cuts(0.5 99.5)
-*/
+winsor2 end_price_pers, replace cuts(0.5 99.5)
+winsor2 watched_times, replace cuts(0.5 99.5)
 
 generate treated = 1 if region == "shanghai" & year == 2022
 replace treated = 1 if region == "wuhan" & year >= 2020
