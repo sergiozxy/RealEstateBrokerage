@@ -51,22 +51,19 @@ global dependent_variable yearx2_density yearx3_density yearx4_density yearx5_de
 
 /* Stylized Fact */
 
-reghdfe ln_income density broker_410 ln_watch_people ln_end_price, absorb(id) vce(cluster bs_code)
+reghdfe ln_income density broker_410 ln_watch_people ln_end_price $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store stylized_fact_1
 
-reghdfe ln_income density broker_410 ln_watch_people ln_end_price, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession density broker_410 ln_watch_people ln_end_price $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store stylized_fact_2
 
-reghdfe ln_income density broker_410 ln_watch_people ln_end_price $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(id) vce(cluster bs_code)
+reghdfe ln_lead density broker_410 ln_watch_people ln_end_price $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store stylized_fact_3
 
-reghdfe ln_income density broker_410 ln_watch_people ln_end_price $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
-est store stylized_fact_4
-
-esttab stylized_fact_1 stylized_fact_2 stylized_fact_3 stylized_fact_4 ///
+esttab stylized_fact_1 stylized_fact_2 stylized_fact_3 ///
  using result_tables/stylized_fact.tex, ///
 style(tex) booktabs keep(density broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(income)" "log(income)" "log(income)") ///
+mtitle("log(income)" "price concession" "log(lead times)") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
