@@ -1,0 +1,144 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Agarwal et al.]{Agarwal, He, Sing and Song}{2019}{AGARWAL2019715}
+{\bf Agarwal, Sumit, Jia He, Tien~Foo Sing, and Changcheng Song}, ``Do real
+  estate agents have information advantages in housing markets?,'' {\it Journal
+  of Financial Economics}, 2019, {\it 134} (3), 715--735.
+
+\harvarditem[Akerlof]{Akerlof}{1970}{Akerlof_1970}
+{\bf Akerlof, George~A.}, ``The Market for "Lemons": Quality Uncertainty and
+  the Market Mechanism,'' {\it The Quarterly Journal of Economics}, 1970, {\it
+  84} (3), 488--500.
+
+\harvarditem[Bailey et al.]{Bailey, Cao, Kuchler and
+  Stroebel}{2018}{bailey_economic_2018}
+{\bf Bailey, Michael, Ruiqing Cao, Theresa Kuchler, and Johannes Stroebel},
+  ``The {Economic} {Effects} of {Social} {Networks}: {Evidence} from the
+  {Housing} {Market},'' {\it Journal of Political Economy}, 2018, {\it 126}
+  (6), 2224--2276.
+
+\harvarditem[Barwick et al.]{Barwick, Pathak and
+  Wong}{2017}{10.1257/app.20160214}
+{\bf Barwick, Panle~Jia, Parag~A. Pathak, and Maisy Wong}, ``Conflicts of
+  Interest and Steering in Residential Brokerage,'' {\it American Economic
+  Journal: Applied Economics}, July 2017, {\it 9} (3), 191--222.
+
+\harvarditem[d'Aspremont et al.]{d'Aspremont, Gabszewicz and
+  Thisse}{1979}{daspremont_hotellings_1979}
+{\bf d'Aspremont, Claude, Jean~J. Gabszewicz, and Jacques-François Thisse},
+  ``On {Hotelling}’s "{Stability} in {Competition}",'' {\it Econometrica},
+  1979, {\it 47} (5), 1145--1150.
+
+\harvarditem[Elvidge et al.]{Elvidge, Zhizhin, Ghosh, Hsu and
+  Taneja}{2021}{elvidge_annual_2021}
+{\bf Elvidge, Christopher~D., Mikhail Zhizhin, Tilottama Ghosh, Feng-Chi Hsu,
+  and Jay Taneja}, ``Annual {Time} {Series} of {Global} {VIIRS} {Nighttime}
+  {Lights} {Derived} from {Monthly} {Averages}: 2012 to 2019,'' {\it Remote
+  Sensing}, March 2021, {\it 13} (5), 922.
+
+\harvarditem[Glaeser et al.]{Glaeser, Huang, Ma and
+  Shleifer}{2017}{glaeser_real_2017}
+{\bf Glaeser, Edward, Wei Huang, Yueran Ma, and Andrei Shleifer}, ``A {Real}
+  {Estate} {Boom} with {Chinese} {Characteristics},'' {\it Journal of Economic
+  Perspectives}, 2017, {\it 31} (1), 93--116.
+
+\harvarditem[Grossman and Stiglitz]{Grossman and
+  Stiglitz}{1980}{grossman_impossibility_1980}
+{\bf Grossman, Sanford~J. and Joseph~E. Stiglitz}, ``On the {Impossibility} of
+  {Informationally} {Efficient} {Markets},'' {\it American Economic Review},
+  1980, {\it 70} (3), 393--408.
+
+\harvarditem[Han and Hong]{Han and
+  Hong}{2011}{550a6ccf-cde2-3dd1-979f-1a8db2b8ceb9}
+{\bf Han, Lu and Seung-Hyun Hong}, ``Testing Cost Inefficiency Under Free Entry
+  in the Real Estate Brokerage Industry,'' {\it Journal of Business \& Economic
+  Statistics}, 2011, {\it 29} (4), 564--578.
+
+\harvarditem[Han and Strange]{Han and Strange}{2015}{HAN2015813}
+{\bf \bysame{} and William~C. Strange}, ``Chapter 13 - The Microstructure of
+  Housing Markets: Search, Bargaining, and Brokerage,'' in ``Handbook of
+  Regional and Urban Economics,'' Vol.~5 of {\em Handbook of Regional and Urban
+  Economics}, Elsevier, 2015, pp.~813--886.
+
+\harvarditem[Hendel et al.]{Hendel, Nevo and
+  Ortalo-Magné}{2009}{hendel_relative_2009}
+{\bf Hendel, Igal, Aviv Nevo, and François Ortalo-Magné}, ``The {Relative}
+  {Performance} of {Real} {Estate} {Marketing} {Platforms}: {MLS} versus
+  {FSBOMadison}.com,'' {\it American Economic Review}, 2009, {\it 99} (5),
+  1878--1898.
+
+\harvarditem[Hong]{Hong}{2022}{https://doi.org/10.1002/jae.2891}
+{\bf Hong, Seung-Hyun}, ``Real estate agents' influence on housing search,''
+  {\it Journal of Applied Econometrics}, 2022, {\it 37} (3), 563--582.
+
+\harvarditem[Hotelling]{Hotelling}{1929}{hotelling_stability_1929}
+{\bf Hotelling, Harold}, ``The stability in competition,'' {\it Economic
+  Journal}, 1929, {\it 39}, 41--57.
+
+\harvarditem[McCrary]{McCrary}{2008}{MCCRARY2008698}
+{\bf McCrary, Justin}, ``Manipulation of the running variable in the regression
+  discontinuity design: A density test,'' {\it Journal of Econometrics}, 2008,
+  {\it 142} (2), 698--714.
+\newblock The regression discontinuity design: Theory and applications.
+
+\harvarditem[Nieuwerburgh and Veldkamp]{Nieuwerburgh and
+  Veldkamp}{2010}{NIEUWERBURGH_information}
+{\bf Nieuwerburgh, Stijn~Van and Laura Veldkamp}, ``Information Acquisition and
+  Under-Diversification,'' {\it The Review of Economic Studies}, 2010, {\it 77}
+  (2), 779--805.
+
+\harvarditem[Qu et al.]{Qu, Huang and Deng}{2021}{qu_identifying_2021-1}
+{\bf Qu, Wenjie, Yiping Huang, and Guisheng Deng}, ``Identifying the critical
+  factors behind the second-hand housing price concession: {Empirical} evidence
+  from {China},'' {\it Habitat International}, November 2021, {\it 117},
+  102442.
+
+\harvarditem[Rosen]{Rosen}{1974}{Rosen_hedonic}
+{\bf Rosen, Sherwin}, ``Hedonic Prices and Implicit Markets: Product
+  Differentiation in Pure Competition,'' {\it Journal of Political Economy},
+  1974, {\it 82} (1), 34--55.
+
+\harvarditem[Salz]{Salz}{2022}{salz_intermediation_2022}
+{\bf Salz, Tobias}, ``Intermediation and {Competition} in {Search} {Markets}:
+  {An} {Empirical} {Case} {Study},'' {\it Journal of Political Economy}, 2022,
+  {\it 130} (2), 310--345.
+
+\harvarditem[van Donkelaar et al.]{van Donkelaar, Hammer, Bindle, Brauer,
+  Brook, Garay, Hsu, Kalashnikova, Kahn, Lee, Levy, Lyapustin, Sayer and
+  Martin}{2021}{doi:10.1021/acs.est.1c05309}
+{\bf van Donkelaar, Aaron, Melanie~S. Hammer, Liam Bindle, Michael Brauer,
+  Jeffery~R. Brook, Michael~J. Garay, N.~Christina Hsu, Olga~V. Kalashnikova,
+  Ralph~A. Kahn, Colin Lee, Robert~C. Levy, Alexei Lyapustin, Andrew~M. Sayer,
+  and Randall~V. Martin}, ``Monthly Global Estimates of Fine Particulate Matter
+  and Their Uncertainty,'' {\it Environmental Science \& Technology}, 2021,
+  {\it 55} (22), 15287--15300.
+
+\harvarditem[Williams]{Williams}{1998}{williams_agency_1998}
+{\bf Williams, John~T.}, ``Agency and {Brokerage} of {Real} {Assets} in
+  {Competitive} {Equilibrium},'' {\it Review of Financial Studies}, 1998, {\it
+  11} (2), 239--280.
+
+\harvarditem[Zhang et al.]{Zhang, Lin, Zhang, Zheng and
+  Zhang}{2021}{ZHANG2021101104}
+{\bf Zhang, Xiuzhi, Zhijie Lin, Ying Zhang, Yiqing Zheng, and Jian Zhang},
+  ``Online property brokerage platform and prices of second-hand houses:
+  Evidence from Lianjia’s entry,'' {\it Electronic Commerce Research and
+  Applications}, 2021, {\it 50}, 101104.
+
+\harvarditem[Zhao et al.]{Zhao, Liu, Cao, Samson and
+  Zhang}{2017}{zhao_forecasting_2017}
+{\bf Zhao, Nan, Ying Liu, Guoqing Cao, Eric~L. Samson, and Jie Zhang},
+  ``Forecasting {China}’s {GDP} at the pixel level using nighttime lights
+  time series and population images,'' {\it GIScience \& Remote Sensing},
+  January 2017, {\it 54} (3), 407--425.
+
+\harvarditem[Zumpano et al.]{Zumpano, Johnson and
+  Anderson}{2003}{ZUMPANO2003134}
+{\bf Zumpano, Leonard~V., Ken~H. Johnson, and Randy~I. Anderson}, ``Internet
+  use and real estate brokerage market intermediation,'' {\it Journal of
+  Housing Economics}, 2003, {\it 12} (2), 134--150.
+
+\end{thebibliography}
