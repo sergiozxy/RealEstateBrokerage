@@ -116,9 +116,9 @@ Finally, the impact of real estate intermediaries on the market can be decompose
 
 \section{Theoretical Model}
 
-To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market.
+To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j$ and they can not manipulate the percentage charge in each submarket.
 
-We can assume that there are $N$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, N\}$ number of houses listed. The houses listed follows a AR(1) model specified by:
+We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed which depends on the previous listing number and we can formulate it as a AR(1) model specified by:
 
 \begin{equation}
   \kappa_{i, t} = \rho_{i} \kappa_{i-1, t} + \epsilon_{i, t}, \label{eq:ar1}
@@ -131,20 +131,33 @@ The number of two types of brokerages are characterized by $B_{1, i}$ and $B_{2,
 There are $L$ number of customers that arrive in the market at random poission rate $\lambda$ and for current issue, we can first assume that the customers are indifferent when selecting the brokerages and we can release this assumption later to make the customers have private preference towards each type of brokerages. The probability of selecting the brokerage $i$ is given by:
 
 \begin{equation}
-  p_i = \frac{B_{i, t}}{B_{1, t} + B_{2, t}}. \label{eq:prob}
+  p_i = \frac{B_{i, t} \times N^e(B_{1, i})}{B_{1, t} \times N^e(B_{1, i}) + B_{2, t}}. \label{eq:prob}
 \end{equation}
 
+where $N^e(B_{1, i})$ is a function representing the network effects, and is modeled as $N^e(B_{1, i}) = 1 + \alpha \log(1 + B_{1, i})$ where $\alpha$ is a parameter that quantifies the strength of network effects and the logarithmic form captures diminishing returns to scale as the number of brokerages increases. The revenue for each brokerage type $j$ in community $i$ is proportional to the number of houses they sell, which depends on the number of customers they attract:
 
-The profit of the brokerage in the community is given by $\pi_1(p_1, p_2) = $
+\begin{equation}
+  R_{i, j, t} = r_j \cdot P_i \cdot N_{i, j, t}
+\end{equation}
 
+where $N_{i, j, t}$ is the number of customers selecting type $j$ brokerage in community $i$ at time period $t$, estimated by:
+
+\begin{equation}
+  N_{i, j, t} = \lambda_i p_{i, j, t}
+\end{equation}
+
+and $\lambda_i$ is the appropriate part of $\lambda$ that arrives in community $i$.
 
 
 give me a mathematical economics model characterizing the partial equilibrium of real estate broekrage and the competitive market where there are two types of brokerages denoted 1 if the brokerage is the large brokerage that it can communicate with other stores in different regions of the same type 1 brokerage, and denote 2 if it is small brokerage that it can not communicate with the other brokerages in the market
 
+The first proposition is that the charging fee should be higher comparing with type $2$ brokerage.
 
+The second proposition is that the number of stores in high popular regions should be higher in the number of stores and they are more likely to form a network effect.
 
+The third proposition is the introduction of the platform should increase the number of transactions and the number of stores in the market.
 
-
+The fourth proposition is that the entry of the large brokerage can increase the transaction number and the number of stores in the market.
 
 
 
@@ -237,9 +250,7 @@ The second hand housing transaction data was collected form \href{https://bj.lia
 To gather other characteristics information, we first extracted the POI data from the AutoNavi map using the web-scrawling Python program.\footnote{AutoNavi, a leading mapping application in China with a huge user base of more than 700 million, stands out for its detailed and accurate POI data and precise public transportation information. These features underscore AutoNavi's formidable lead in the digital mapping sector, highlighting its ability to provide unparalleled navigation accuracy and comprehensive urban mobility solutions. Our extracted AutoNavi map contains more than 1 million POIs for each city in each year.} We then classified the extracted POIs into different categories, the specifics of which are discussed in detail in Table \ref{tab:statistical}. This categorization was crucial for understanding the urban infrastructure and amenities available in the vicinity of the analyzed properties. We prioritized POIs within a 500-meter radius-a distance typically covered within a ten-minute walk, consistent with urban planning standards for accessible urban design. This radius was specifically chosen to reflect the immediate urban environment that influences residential desirability and value, as the majority of these POIs provide recreational services. Furthermore, some geo-informational data was also integrated into our research data, which consists of the annual gdp obtained from \citep{zhao_forecasting_2017}, nighttime lights data, obtained from \citep{elvidge_annual_2021} and air pollution data from \citep{doi:10.1021/acs.est.1c05309}. By merging these data with our research panel, we finally get the data.
 
 
-To check the robustness of the data, we divide our data to those with lianjia and those without lianjia and to check whether lianjia's offline stores have influential effect on the transaction effect in the community. We can see that for income, house tour number and the are all significantly different in those communities with or without lianjia. Furthermore, we find that the other brokerages are also have the same tendency that they typically 
-
-This figure is shown in Figure \ref{fig:same_distribution}.
+To check the robustness of the data, we divide our data to those with lianjia and those without lianjia and to check whether lianjia's offline stores have influential effect on the transaction effect in the community. We can see that for income, house tour number and the are all significantly different in those communities with or without lianjia. Furthermore, we find that the other brokerages are also have the same tendency that they typically open stores with the same strategy as lianjia, which is consistent with our Theoretical Model's Proposition [xxxxx]. This figure is shown in Figure \ref{fig:same_distribution}.
 
 \begin{table}[htb!]
     \centering
@@ -252,7 +263,7 @@ This figure is shown in Figure \ref{fig:same_distribution}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{../figures/scatter_plot_with_two_brokerages.pdf}
+    \includegraphics[width=0.7\textwidth]{../figures/scatter_plot_with_two_brokerages.pdf}
     \caption{Tendency between two types of brokerages}
     \label{fig:same_distribution}
 \end{figure}
