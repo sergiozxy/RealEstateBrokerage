@@ -1082,6 +1082,11 @@ INPUT ../result_tables/summary_statistics.tex
 INPUT ../result_tables/summary_statistics.tex
 INPUT ../result_tables/summary_statistics.tex
 INPUT ../result_tables/summary_statistics.tex
+INPUT ../figures/scatter_plot_with_two_brokerages.pdf
+INPUT ../figures/scatter_plot_with_two_brokerages.pdf
+INPUT ../figures/scatter_plot_with_two_brokerages.pdf
+INPUT ../figures/scatter_plot_with_two_brokerages.pdf
+INPUT ../figures/scatter_plot_with_two_brokerages.pdf
 INPUT ../figures/RD_Plot_1st_Order.pdf
 INPUT ../figures/RD_Plot_1st_Order.pdf
 INPUT ../figures/RD_Plot_1st_Order.pdf
