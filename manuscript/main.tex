@@ -228,10 +228,15 @@ The result highlights the dynamic impact of density, encapsulated by Lianjia's D
 
 \section{Theoretical Model} \label{sec:theoretical_model}
 
+\emph{This should be based on the brokerages' network}
+
 \textbf{Should revise the model to make the model can incoporate the network effect and the platform's entry effect so that we can study that the entry of the platform can be helpful to make xxx.}
 
+This follows from \citep{Armstrong2006}.
 
-To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j$ and they can not manipulate the percentage charge in each submarket.
+Our model is in line with the real world setting that the sellers are hard to know about which platform can bring how many buyers to the market but the buyers can search all the information available online to decide which house they can assess.
+
+To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j, j \in \{1, 2\}$ and they can not manipulate the percentage charge in each submarket.
 
 We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed which depends on the previous listing number and we can formulate it as a AR(1) model specified by:
 
@@ -243,7 +248,7 @@ where $\rho_i$ is the parameter and $\varepsilon_{i, t} \sim \mathcal{N}(0, \sig
 
 The number of two types of brokerages are characterized by $B_{1, i}$ and $B_{2, i}$, respectively. The brokerages have the same positive cost function denoted as $C(\cdot)$ where $\frac{\partial C(\cdot)}{\partial B_{1, t}} > 0$ and $\frac{\partial C^2(\cdot)}{\partial B_{1, t}^2} > 0$. The intuition is that because of the marginal cost of the platform is $0$, when considering the cost of opening additional stores in the market, the brokerage does not incur that cost into consideration and therefore, the cost function is equal for both types of stores. Moreover, the marginal cost of opening additional stores is increasing, which is consistent with the real estate brokerage market.
 
-There are $L$ number of customers that arrive in the market at random poission rate $\lambda$ and for current issue, we can first assume that the customers are indifferent when selecting the brokerages and we can release this assumption later to make the customers have private preference towards each type of brokerages. The probability of selecting the brokerage $i$ is given by:
+There are $L$ number of customers and we can first assume that the customers are indifferent when selecting the brokerages and we can release this assumption later to make the customers have private preference towards each type of brokerages. The probability of selecting the brokerage $i$ is given by:
 
 \begin{equation}
   p_i = \frac{B_{i, t} \times N^e(B_{1, i})}{B_{1, t} \times N^e(B_{1, i}) + B_{2, t}}. \label{eq:prob}
@@ -278,61 +283,6 @@ The fifth proposition should be the fact that when there is negative shock to th
 
 
 The sixth proposition should be the fact that before the increase of the 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -381,7 +331,7 @@ $pre_2, entry, post_i$ are correspondingly periods dummy variables and other set
   \end{center}
 \end{table}
 
-The result presented in the table \ref{tab:entry_effect} examines the effect of a Lianjia's entry into an area on various outcomes. Prior to the Lianjia's entry ($pre_2$), there is no statistically significant effect on any of the three outcomes, suggesting that anticipation of the Lianjia's entry does not affect these metrics. In addition, there is a significant 4\% increase in revenue after the Lianjia's entry ($entry$), suggesting a substantial increase in Lianjia sales. However, the effect on price concessions and number of showings remains statistically insignificant, suggesting that Lianjia's entry does not lead to significant changes in pricing strategies or the number of showings brought to the area.
+The result presented in the table \ref{tab:entry_effect} examines the effect of Lianjia's offline stores' entry into an area on various outcomes. Prior to the Lianjia's entry ($pre_2$), there is no statistically significant effect on any of the three outcomes, suggesting that anticipation of the Lianjia's entry does not affect these metrics. In addition, there is a significant 4\% increase in revenue after the Lianjia's entry ($entry$), suggesting a substantial increase in Lianjia sales. However, the effect on price concessions and number of showings remains statistically insignificant, suggesting that Lianjia's entry does not lead to significant changes in pricing strategies or the number of showings brought to the area.
 
 In the post-entry periods ($post_1$, $post_2$, and $post_3$), the results vary. The first period after entry ($post_1$) shows no significant changes in any of the results. However, after two post-entry periods ($post_2$ and $post_3$), there are significant negative effects on both revenue and number of home visits. These declines suggest a decline in the performance and engagement of the Lianjia, possibly due to the impact of an epidemic that led to a decrease in revenue and showing
 
@@ -395,7 +345,7 @@ In addition to the entry effect of Lianjia, there is another exogenous shock dur
     Y_{it}  = \beta_0 + \sum_{i=-2}^3 Treatment_{it} * year + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}. \label{eq:acn_assessment}
 \end{equation}
 
-We treat the 2016's sample as the base year, and other settings are consistent with previous table \ref{tab:Dynamic}. The result is reported in Figure \ref{fig:dynamic_effect}
+We treat the year 2016 as the base year, and other settings are consistent with previous table \ref{tab:Dynamic}. The result is reported in Figure \ref{fig:dynamic_effect}
 
 \begin{figure}[ht]
     \centering
