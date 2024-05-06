@@ -114,6 +114,60 @@ Finally, the impact of real estate intermediaries on the market can be decompose
 
 % 由于房地产中介行业线上推广线下成交的机制，中介机构在线下门店中的服务性质对于其在客源方的影响具有很高的价值。链家通常选择在每个目标小区的周边开店便是该原理。链家通过在小区周边大范围开店，从而吸引卖方选择该机构进行挂牌，而又通过其广泛的平台客源来吸引市场中的买方从而获得更多的成交数量与成交收入。由于房地产中介行业线上推广线下成交的机制，中介机构在线下门店中的服务性质对于其在客源方的影响具有很高的价值。链家通常选择在每个目标小区的周边开店便是该原理。链家通过在小区周边大范围开店，从而吸引卖方选择该机构进行挂牌，而又通过其广泛的平台客源来吸引市场中的买方从而获得更多的成交数量与成交收入。
 
+
+\section{Data and Descriptive Evidence \label{sec:data}}
+
+\subsection{Data Collection and Processing}
+
+This study focuses on the housing markets in ten major cities in China, namely Beijing, Shanghai, Chongqing, Tianjin, Shenzhen, Guangzhou, Chengdu, Hangzhou, Wuhan and Nanjing. These cities are not only central to China's economic development, but also reflect the broader trends and characteristics of the country's real estate dynamics. Spanning from 2016 to 2022, the research period encapsulates a pivotal era in China's real estate sector. During the first phase of the study, from 2016 to 2019, the housing markets in these cities experienced a remarkable boom. This period was characterized by significant growth in property prices, supported by robust economic expansion and increased demand in these urban centers. However, the final phase of our study, from 2020 to 2022, paints a contrasting picture. During this period, China's overall economic growth rate has been slower significantly, which has also reflected in a slowdown in the real estate markets of these major cities. In addition, the Chinese government has implemented strict rules in Covid-19 protection, so the real estate agents in these major cities are significantly affected.
+
+The second hand housing transaction data was collected form \href{https://bj.lianjia.com/}{lianjia.com} for ten cities ranging from 2016 to 2022. Initially, we filtered out transaction records exhibiting unusually high prices, identifying them as outliers that could skew the analysis. We then removed records with missing values to maintain the integrity of our dataset. We also removed any records that were listed duplicated. We finally have a data with length 1,716,579 second-hand house.\footnote{Due to government restrictions, four of these cities did not list the transaction price for each transaction during the study period.} Since most of the offline stores in lianjia are community-based, and most of the information is accurate at the community level, we decided to aggregate the information at the community level to make our panel compatible. By taking the average of all transaction information, we constructed the panel data with seven years.
+
+To gather other characteristics information, we first extracted the POI data from the AutoNavi map using the web-scrawling Python program.\footnote{AutoNavi, a leading mapping application in China with a huge user base of more than 700 million, stands out for its detailed and accurate POI data and precise public transportation information. These features underscore AutoNavi's formidable lead in the digital mapping sector, highlighting its ability to provide unparalleled navigation accuracy and comprehensive urban mobility solutions. Our extracted AutoNavi map contains more than 1 million POIs for each city in each year.} We then classified the extracted POIs into different categories, the specifics of which are discussed in detail in Table \ref{tab:statistical}. This categorization was crucial for understanding the urban infrastructure and amenities available in the vicinity of the analyzed properties. We prioritized POIs within a 500-meter radius-a distance typically covered within a ten-minute walk, consistent with urban planning standards for accessible urban design. This radius was specifically chosen to reflect the immediate urban environment that influences residential desirability and value, as the majority of these POIs provide recreational services. Furthermore, some geo-informational data was also integrated into our research data, which consists of the annual gdp obtained from \citep{zhao_forecasting_2017}, nighttime lights data, obtained from \citep{elvidge_annual_2021} and air pollution data from \citep{doi:10.1021/acs.est.1c05309}. By merging these data with our research panel, we finally get the data.
+
+
+\subsection{Influential Radius} \label{subsec:Influential_Radius}
+
+The effectiveness of an offline intermediary's influence on its immediate communities is inherently constrained by geographic limitations, with its influence decreasing in proportion to the increase in spatial distance. Moreover, since the offline stores of lianjia are directly operated by the company, strategic considerations regarding the optimal distance between stores are an integral part of their location planning to mitigate the risks associated with over-concentration of stores that could lead to competitive overlap and service homogenization. Consequently, it is imperative to determine an optimal radius threshold and subsequently assess the diversity of agencies operating within this demarcated zone.
+
+To determine the optimal radius of influence, this research employs a regression discontinuity design (RDD) method to examine the influential radius of offline real estate brokerages. The dependent variable in this analysis is the transaction revenue generated by Lianjia within a given community, while the independent variable is the community's proximity to the nearest Lianjia's store. Given that stores are predominantly located within commercial districts-typically encompassing several streets no more than two kilometers in diameter-it is assumed that a requisite number of stores within each district is essential to sustain revenue generation in that community. In addition, since the Lianjia's company adopts a 5-minute walking distance (approximately 400 meters) radius policy, which means that no matter how far away customers live, they should be accessible within a 5-minute walk to the nearest Lianjia's store. Building on this premise, the study further investigates the existence of an optimal influence radius within shopping districts, defined as the distance radius within which the presence of a Lianjia optimally increases transaction revenues. At the same time, the study also examines the hypothesis that beyond this optimal radius, the impact on transaction revenues diminishes as a result of the strategic store layout decisions implemented by Lianjia.
+
+\begin{figure}[ht]
+    \centering
+    \subfloat[RD plot with first order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_1st_Order.pdf}\label{fig:RD_Plot_1st_Order}}
+    \hfill % Adds horizontal space between figures
+    \subfloat[RD plot with second order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_2nd_Order.pdf}\label{fig:RD_Plot_2nd_Order}}
+    \hfill % Adds horizontal space between figures
+    \subfloat[RD plot with third order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_3rd_Order.pdf}\label{fig:RD_Plot_3rd_Order}}
+    \caption{RD design}
+    \label{fig:RD_design}
+\end{figure}
+
+From Figure \ref{fig:RD_design} we can see that there is indeed discontinuity in 410 meters of communities to the nearest Lianjia's store, which is pretty close to the lianjia's 5-minute walk distance policy. The observed decline in the Lianjia's influence is marked and suggests a pronounced reduction in its impact on the system overall within our study sample. This phenomenon can be attributed to the implementation of the Lianjia's proximity to customers policy, which is evidenced at the data level. 
+
+To make the robust check we conducted Donut Hole test by excluding observations close to the cutoff and estimating the effect with the remaining data. The results are shown in Appendix and the result shows that the discontinuity still exists and this provides evidence against a model misspecification. Furthermore, we carry out the density test by \citep{MCCRARY2008698}. The result shows that the p-value is greater than 0.1, which suggests the result is not due to manipulation of polygons. Finally, we carry out placebo tests which are reported in Appendix, which strengthens the case for a true treatment effect.
+
+\subsection{Statistical Summary}
+
+After constructing our optimal radius, we recalcualte the number of lianjia and other brokerages' stores within this radius. To check the robustness of the data, we divide our data to those with lianjia and those without lianjia and to check whether lianjia's offline stores have influential effect on the transaction effect in the community. We can see that for income, house tour number and the are all significantly different in those communities with or without lianjia. Furthermore, we find that the other brokerages are also have the same tendency that they typically open stores with the same strategy as lianjia, which is consistent with our Theoretical Model's Proposition [xxxxx]. This figure is shown in Figure \ref{fig:same_distribu`tion}.
+`'
+\begin{table}[htb!]
+    \centering
+    \begin{tiny}
+    \caption{Statistical Summary}
+    \input{../result_tables/summary_statistics.tex}
+    \label{tab:statistical}
+    \end{tiny}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{../figures/scatter_plot_with_two_brokerages.pdf}
+    \caption{Tendency between two types of brokerages}
+    \label{fig:same_distribution}
+\end{figure}
+
+
 \section{Theoretical Model}
 
 To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j$ and they can not manipulate the percentage charge in each submarket.
@@ -239,55 +293,6 @@ We can examine the following two effects:
 
 % There should be a model like: Police brutality, law enforcement, and crime: Evidence from Chicago
 
-\section{Data and Descriptive Evidence \label{sec:data}}
-
-\subsection{Data Collection and Processing}
-
-This study focuses on the housing markets in ten major cities in China, namely Beijing, Shanghai, Chongqing, Tianjin, Shenzhen, Guangzhou, Chengdu, Hangzhou, Wuhan and Nanjing. These cities are not only central to China's economic development, but also reflect the broader trends and characteristics of the country's real estate dynamics. Spanning from 2016 to 2022, the research period encapsulates a pivotal era in China's real estate sector. During the first phase of the study, from 2016 to 2019, the housing markets in these cities experienced a remarkable boom. This period was characterized by significant growth in property prices, supported by robust economic expansion and increased demand in these urban centers. However, the final phase of our study, from 2020 to 2022, paints a contrasting picture. During this period, China's overall economic growth rate has been slower significantly, which has also reflected in a slowdown in the real estate markets of these major cities. In addition, the Chinese government has implemented strict rules in Covid-19 protection, so the real estate agents in these major cities are significantly affected.
-
-The second hand housing transaction data was collected form \href{https://bj.lianjia.com/}{lianjia.com} for ten cities ranging from 2016 to 2022. Initially, we filtered out transaction records exhibiting unusually high prices, identifying them as outliers that could skew the analysis. We then removed records with missing values to maintain the integrity of our dataset. We also removed any records that were listed duplicated. We finally have a data with length 1,716,579 second-hand house.\footnote{Due to government restrictions, four of these cities did not list the transaction price for each transaction during the study period.} Since most of the offline stores in lianjia are community-based, and most of the information is accurate at the community level, we decided to aggregate the information at the community level to make our panel compatible. By taking the average of all transaction information, we constructed the panel data with seven years.
-
-To gather other characteristics information, we first extracted the POI data from the AutoNavi map using the web-scrawling Python program.\footnote{AutoNavi, a leading mapping application in China with a huge user base of more than 700 million, stands out for its detailed and accurate POI data and precise public transportation information. These features underscore AutoNavi's formidable lead in the digital mapping sector, highlighting its ability to provide unparalleled navigation accuracy and comprehensive urban mobility solutions. Our extracted AutoNavi map contains more than 1 million POIs for each city in each year.} We then classified the extracted POIs into different categories, the specifics of which are discussed in detail in Table \ref{tab:statistical}. This categorization was crucial for understanding the urban infrastructure and amenities available in the vicinity of the analyzed properties. We prioritized POIs within a 500-meter radius-a distance typically covered within a ten-minute walk, consistent with urban planning standards for accessible urban design. This radius was specifically chosen to reflect the immediate urban environment that influences residential desirability and value, as the majority of these POIs provide recreational services. Furthermore, some geo-informational data was also integrated into our research data, which consists of the annual gdp obtained from \citep{zhao_forecasting_2017}, nighttime lights data, obtained from \citep{elvidge_annual_2021} and air pollution data from \citep{doi:10.1021/acs.est.1c05309}. By merging these data with our research panel, we finally get the data.
-
-
-To check the robustness of the data, we divide our data to those with lianjia and those without lianjia and to check whether lianjia's offline stores have influential effect on the transaction effect in the community. We can see that for income, house tour number and the are all significantly different in those communities with or without lianjia. Furthermore, we find that the other brokerages are also have the same tendency that they typically open stores with the same strategy as lianjia, which is consistent with our Theoretical Model's Proposition [xxxxx]. This figure is shown in Figure \ref{fig:same_distribution}.
-
-\begin{table}[htb!]
-    \centering
-    \begin{tiny}
-    \caption{Statistical Summary}
-    \input{../result_tables/summary_statistics.tex}
-    \label{tab:statistical}
-    \end{tiny}
-\end{table}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{../figures/scatter_plot_with_two_brokerages.pdf}
-    \caption{Tendency between two types of brokerages}
-    \label{fig:same_distribution}
-\end{figure}
-
-\subsection{Influential Radius} \label{subsec:Influential_Radius}
-
-The effectiveness of an offline intermediary's influence on its immediate communities is inherently constrained by geographic limitations, with its influence decreasing in proportion to the increase in spatial distance. Moreover, since the offline stores of lianjia are directly operated by the lianjia, strategic considerations regarding the optimal distance between stores are an integral part of their location planning to mitigate the risks associated with over-concentration of stores that could lead to competitive overlap and service homogenization. Consequently, it is imperative to determine an optimal radius threshold and subsequently assess the diversity of agencies operating within this demarcated zone.
-
-To determine the optimal radius of influence, this research employs a regression discontinuity design (RDD) method to examine the influential radius of offline real estate brokerages. The dependent variable in this analysis is the transaction revenue generated by Lianjia within a given community, while the independent variable is the community's proximity to the nearest Lianjia's store. Given that stores are predominantly located within commercial districts-typically encompassing several streets no more than two kilometers in diameter-it is assumed that a requisite number of stores within each district is essential to sustain revenue generation in that community. Building on this premise, the study further investigates the existence of an optimal influence radius within shopping districts, defined as the distance radius within which the presence of a Lianjia optimally increases transaction revenues. At the same time, the study also examines the hypothesis that beyond this optimal radius, the impact on transaction revenues diminishes as a result of the strategic store layout decisions implemented by Lianjia.
-
-\begin{figure}[ht]
-    \centering
-    \subfloat[RD plot with first order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_1st_Order.pdf}\label{fig:RD_Plot_1st_Order}}
-    \hfill % Adds horizontal space between figures
-    \subfloat[RD plot with second order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_2nd_Order.pdf}\label{fig:RD_Plot_2nd_Order}}
-    \hfill % Adds horizontal space between figures
-    \subfloat[RD plot with third order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_3rd_Order.pdf}\label{fig:RD_Plot_3rd_Order}}
-    \caption{RD design}
-    \label{fig:RD_design}
-\end{figure}
-
-From Figure \ref{fig:RD_design} we can see that there is indeed discontinuity in 410 meters of communities to the nearest Lianjia's store. The observed decline in the Lianjia's influence is marked and suggests a pronounced reduction in its impact on the system overall within our study sample. This phenomenon can be attributed to the implementation of the Lianjia's proximity to customers policy, which is evidenced at the data level. 
-
-To make the robust check we conducted Donut Hole test by excluding observations close to the cutoff and estimating the effect with the remaining data. The result shows that the discontinuity still exists and this provides evidence against a model misspecification. Furthermore, we carry out the density test by \citep{MCCRARY2008698}. The result shows that the p-value is greater than 0.1, which suggests the result is not due to manipulation of polygons. Finally, we carry out placebo tests which are reported in Appendix, which strengthens the case for a true treatment effect.
 
 \subsection{Stylized Fact}
 
