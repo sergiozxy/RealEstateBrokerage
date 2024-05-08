@@ -49,8 +49,8 @@ The preliminary version was entitled "Property brokerage, Partial monopoly and H
 
 \author[1]{Guoying Deng}
 \author[2]{Xuyuan Zhang \thanks{Email Address: \href{mailto:zxuyuan@umich.edu}{zxuyuan@umich.edu}}}
-\affil[1]{Sichuan University}
-\affil[2]{University of Michigan, Ann Arbor}
+\affil[1]{School of Economics, Sichuan University, China}
+\affil[2]{Department of Economics, University of Michigan, United States}
 
 \bgroup
 \let\footnoterule\relax
@@ -232,19 +232,17 @@ The result highlights the dynamic impact of density, encapsulated by Lianjia's D
 
 This follows from \citep{Armstrong2006}.
 
-Our model is in line with the real world setting that the sellers are hard to know about which platform can bring how many buyers to the market but the buyers can search all the information available online to decide which house they can assess.
+Our model is in line with the real world setting that the sellers are hard to predict which platform can bring how many buyers to their house but the buyers can search all the information available online to decide which house they are interersted in.
 
 To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j, j \in \{1, 2\}$ and they can not manipulate the percentage charge in each submarket.
 
-We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed which depends on the previous listing number and we can formulate it as a AR(1) model specified by:
+We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed. Assume that the sellers are indifferent among the brokerages and therefore, their chossing is only dependent on the proportion of stores in the market. We can denote the number of two types of brokerages by $B_{1, i}$ and $B_{2, i}$, respectively and therefore, the number of houses listed in the brokerage $j$ is $\kappa_{i} \times \frac{B_{i, i}}{B_{i, 1} + B_{i, 2}}$.
 
-\begin{equation}
-  \kappa_{i, t} = \rho_{i} \kappa_{i-1, t} + \epsilon_{i, t}, \label{eq:ar1}
-\end{equation}
+We can assume that the price of the house is determined by the hedonic pricing model from various confounding factors that are determined by the community and unique characteristics of the housing, and without loss of generality, the price follows a standard uniform distribution, $P_i \sim Uniform[0, 1]$.
 
-where $\rho_i$ is the parameter and $\varepsilon_{i, t} \sim \mathcal{N}(0, \sigma_{i, t}^2)$. We can assume that the price of the house is determined by the hedonic pricing model, and without loss of generality, the price follows a standard uniform distribution, $P_i \sim Uniform[0, 1]$.
+The brokerages have the same positive cost function denoted as $C(\cdot)$ where $\frac{\partial C(\cdot)}{\partial B_{j}} > 0$ and $\frac{\partial C^2(\cdot)}{\partial B_{j}^2} > 0$ where $j \in \{1, 2\}$. The intuition is that because of the marginal cost of the platform is $0$, when considering the cost of opening additional stores in the market, the brokerage does not incur that cost into consideration and therefore, the cost function is equal for both types of stores. Moreover, the marginal cost of opening additional stores is increasing, which is consistent with the real estate brokerage market.
 
-The number of two types of brokerages are characterized by $B_{1, i}$ and $B_{2, i}$, respectively. The brokerages have the same positive cost function denoted as $C(\cdot)$ where $\frac{\partial C(\cdot)}{\partial B_{1, t}} > 0$ and $\frac{\partial C^2(\cdot)}{\partial B_{1, t}^2} > 0$. The intuition is that because of the marginal cost of the platform is $0$, when considering the cost of opening additional stores in the market, the brokerage does not incur that cost into consideration and therefore, the cost function is equal for both types of stores. Moreover, the marginal cost of opening additional stores is increasing, which is consistent with the real estate brokerage market.
+We can inherent from the previous literature that there are broad searchers and narrow searchers in the market, \citep{10.1257/aer.20141772}. 
 
 There are $L$ number of customers and we can first assume that the customers are indifferent when selecting the brokerages and we can release this assumption later to make the customers have private preference towards each type of brokerages. The probability of selecting the brokerage $i$ is given by:
 
