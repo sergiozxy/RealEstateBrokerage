@@ -228,23 +228,28 @@ The result highlights the dynamic impact of density, encapsulated by Lianjia's D
 
 \section{Theoretical Model} \label{sec:theoretical_model}
 
-\textbf{Should revise the model to make the model can incoporate the network effect and the platform's entry effect so that we can study that the entry of the platform can be helpful to make xxx.}
-
-This follows from \citep{Armstrong2006}.
-
-Our model is in line with the real world setting that the sellers are hard to predict which platform can bring how many buyers to their house but the buyers can search all the information available online to decide which house they are interersted in.
+Our model accurately reflects the real-world scenario in which sellers face uncertainty regarding the number of buyers each platform might attract, whereas buyers have the advantage of accessing comprehensive online information to make informed decisions about potential house purchases. This model also encapsulates the dynamics of a two-sided market, characterized by the mutual attraction between buyers and sellers. However, due to asymmetric information, sellers are unable to determine which brokerage will attract the most buyers, creating a gap in their market strategy effectiveness.
 
 To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j, j \in \{1, 2\}$ and they can not manipulate the percentage charge in each submarket.
 
-We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed. Assume that the sellers are indifferent among the brokerages and therefore, their chossing is only dependent on the proportion of stores in the market. We can denote the number of two types of brokerages by $B_{1, i}$ and $B_{2, i}$, respectively and therefore, the number of houses listed in the brokerage $j$ is $\kappa_{i} \times \frac{B_{i, i}}{B_{i, 1} + B_{i, 2}}$.
-
-We can assume that the price of the house is determined by the hedonic pricing model from various confounding factors that are determined by the community and unique characteristics of the housing, and without loss of generality, the price follows a standard uniform distribution, $P_i \sim Uniform[0, 1]$.
+We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed. Assume that the sellers are indifferent among the brokerages and therefore, their chossing is only dependent on the proportion of stores in the market. We can denote the number of two types of brokerages by $B_{1, i}$ and $B_{2, i}$, respectively and therefore, the number of houses listed in the brokerage $j$ is $\kappa_{i} \times \frac{B_{i, i}}{B_{i, 1} + B_{i, 2}}$. We can assume that the price of the house is determined by the hedonic pricing model from various confounding factors that are determined by the community and unique characteristics of the housing, and we can denote it as $P_i$.
 
 The brokerages have the same positive cost function denoted as $C(\cdot)$ where $\frac{\partial C(\cdot)}{\partial B_{j}} > 0$ and $\frac{\partial C^2(\cdot)}{\partial B_{j}^2} > 0$ where $j \in \{1, 2\}$. The intuition is that because of the marginal cost of the platform is $0$, when considering the cost of opening additional stores in the market, the brokerage does not incur that cost into consideration and therefore, the cost function is equal for both types of stores. Moreover, the marginal cost of opening additional stores is increasing, which is consistent with the real estate brokerage market.
 
 We can inherent from the previous literature that there are broad searchers and narrow searchers in the market, \citep{10.1257/aer.20141772}. Specifically, we can assume that there are $L^N_i$ narrow searches that are only searching for the community $i$ and $L^B_i$ broad searchers that are searching for all the communities in the market. 
 
-There are $L$ number of customers and we can first assume that the customers are indifferent when selecting the brokerages and we can release this assumption later to make the customers have private preference towards each type of brokerages. The probability of selecting the brokerage $i$ is given by:
+We can first consider the naive searchers in the market, where the naive searchers in the market are attracted to the platform by the number of houses listed in the brokerage, and the probability of selecting the brokerage $j$ is given by
+
+\begin{equation}
+  N_i = L^N_i \times \frac{B_{i, j}}{B_{i, 1} + B_{i, 2}}. \label{eq:naive_prob}
+\end{equation}
+
+However, the broad searchers in the market are attracted to the platform by the
+
+and we can release this assumption later to make the customers have private preference towards each type of brokerages. The probability of selecting the brokerage $i$ is given by:
+
+This follows from \citep{Armstrong2006}.
+
 
 \begin{equation}
   p_i = \frac{B_{i, t} \times N^e(B_{1, i})}{B_{1, t} \times N^e(B_{1, i}) + B_{2, t}}. \label{eq:prob}
