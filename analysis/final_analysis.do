@@ -1,6 +1,6 @@
-cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
 
-use template.dta, clear
+use "template.dta", clear
 
 /*
 *** basic idea: 
