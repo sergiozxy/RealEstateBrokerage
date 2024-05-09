@@ -91,7 +91,7 @@ for (i in 1 : 10){
     ) +
     guides(fill = guide_legend(override.aes= list(alpha = 1)))
   # g.base
-  name_figure <- glue('../figures/distribution_of_hp_and_broker/{file_name}.pdf')
+  name_figure <- glue('../figures/distribution_of_hp_and_broker/{english_name}.pdf')
   name_list_0 <- unique(points_with_admin$name.y)
   g.ellipse.spr <- g.base
   # now we plot for the standard ellipse
