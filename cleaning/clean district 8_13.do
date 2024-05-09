@@ -1,7 +1,7 @@
 // you should not directly run the codes, you shall run with the
 // "working on district level.do"
 // which gives the directory of the file
-cd "E:\umich\RealEstateBrokerage-main"
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage"
 import delimited "cleaned_district_Jan_8.csv", clear 
 
 
@@ -69,7 +69,7 @@ label variable nearest_index_2 "dummy if it is the nearest two communities to st
 label variable nearest_store_indices "the nearest lianjia's store's index"
 label variable nearest_store_distances "the distance to nearest lianjia's store"
 label variable lianjia_410 "number of lianjia within 410 meters, which is the cutoff of RD"
-label variable broker_410 "number of brokerages within 410 meters, which is the cutoff of RD"
+label variable broker_410 "number of other brokerages within 410 meters, which is the cutoff of RD"
 rename all_beke_410 beke_410
 label variable beke_410 "number of beke within 410 meters, which is the cutoff of RD"
 // bysort id (year): drop if _N==1
@@ -97,6 +97,8 @@ global Control_Variables floor_level floor_ratio green_ratio total_building tota
 
 generate density = lianjia_410 / broker_410
 replace density = 0 if density == .
+
+replace broker_410 = broker_410 - beke_410
 
 generate density_5 = lianjia_5 / other_5
 generate lj_ratio = lianjia_5 / (lianjia_5 + beke_5)
