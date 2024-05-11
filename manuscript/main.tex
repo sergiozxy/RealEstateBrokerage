@@ -23,6 +23,16 @@
 
 \usepackage{xr}
 
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem{theorem}{Theorem}
+
 \usepackage{setspace}
 \doublespacing
 
@@ -226,22 +236,26 @@ In the construction of our regression model, we deliberately omit the first peri
   \end{center}
 \end{table}
 
-The result highlights the dynamic impact of density, encapsulated by Lianjia's DBI, on transaction revenue, home visits, and price concessions over time, especially in response to external factors such as digital transformation and the COVID-19 pandemic. Initially, Lianjia's impact on transaction revenue showed a significant positive trend, peaking in 2018, due to its digital transformation efforts, including the integration of other platform stores into its shared network.  However, the momentum slowed in 2020 and 2021, with the impact becoming significantly negative. This period coincided with the outbreak of the COVID-19 pandemic, which severely disrupted Lianjia's revenue streams and business activities due to widespread restrictions, underscoring the vulnerability of real estate transactions to macroeconomic shocks. In terms of home tours, Lianjia's impact remained robustly positive through 2019. This suggests that a strong market presence correlates with increased buyer attention, which translates into more home tours. However, pandemic-related restrictions dampened this effect in later years, highlighting the challenges posed by external constraints on physical real estate activity. For price concessions, we find that the Lianjia's DBI is significantly negatively correlated with the price concessions during pandemic periods. This is due to the fact that most transactions slow down during these periods and people are more likely to wait longer to find a buyer, which would result in fewer price concessions.
+The result highlights the dynamic impact of density, encapsulated by Lianjia's DBI, on transaction revenue, house tours, and price concessions over time, especially in response to external factors such as digital transformation and the COVID-19 pandemic. Initially, Lianjia's impact on transaction revenue showed a significant positive trend, peaking in 2018, due to its digital transformation efforts, including the integration of other platform stores into its shared network.  However, the momentum slowed in 2020 and 2021, with the impact becoming significantly negative. This period coincided with the outbreak of the COVID-19 pandemic, which severely disrupted Lianjia's revenue streams and business activities due to widespread restrictions, underscoring the vulnerability of real estate transactions to macroeconomic shocks. In terms of home tours, Lianjia's impact remained robustly positive through 2019. This suggests that a strong market presence correlates with increased buyer attention, which translates into more home tours. However, pandemic-related restrictions dampened this effect in later years, highlighting the challenges posed by external constraints on physical real estate activity. For price concessions, we find that the Lianjia's DBI is significantly negatively correlated with the price concessions during pandemic periods. This is due to the fact that most transactions slow down during these periods and people are more likely to wait longer to find a buyer, which would result in fewer price concessions.
 
 % we can not say that it is a martingale process because the housing market is assymetric information and martingale process is a fair game.
 \section{Theoretical Model} \label{sec:theoretical_model}
 
+% we can make the number of stores to $n$ instead of $2$ to make the model more general.
+
+ % we may assume the number of houses in each community follows a normal distribution to make the model can have some probability distribution.
+
 Our model accurately reflects the real-world scenario in which sellers face uncertainty regarding the number of buyers each platform might attract, whereas buyers have the advantage of accessing comprehensive online information to make informed decisions about potential house purchases. This model also encapsulates the dynamics of a two-sided market, characterized by the mutual attraction between buyers and sellers. However, due to asymmetric information, sellers are unable to determine which brokerage will attract the most buyers, creating a gap in their market strategy effectiveness.
 
-To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j, j \in \{1, 2\}$ and they can not manipulate the percentage charge in each submarket.
+To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j$ where $j \in \{1, 2\}$ and they can not manipulate the percentage charge in each submarket.
 
-We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed. Assume that the sellers are indifferent among the brokerages and therefore, their chossing is only dependent on the proportion of stores in the market. We can denote the number of two types of brokerages by $\mathcal{B}_{1, i}$ and $B_{2, i}$, respectively and therefore, the number of houses listed in the brokerage $j$ is $\kappa_{i} \times \frac{\mathcal{B}_{i, i}}{\mathcal{B}_{i, 1} + \mathcal{B}_{i, 2}}$. We can assume that the price of the house is determined by the hedonic pricing model from various confounding factors that are determined by the community and unique characteristics of the housing, and we can denote it as $P_i$. % we may assume the number of houses in each community follows a normal distribution to make the model can have some probability distribution.
+We can assume that there are $M$ number of communities in the market, and each market has $\kappa_i, i \in \{1, \ldots, M\}$ number of houses listed. Assume that the sellers are indifferent among the brokerages and therefore, their chossing is only dependent on the proportion of stores in the market. We can denote the number of two types of brokerages by $\mathcal{B}_{1, i}$ and $B_{2, i}$, respectively and therefore, the number of houses listed in the brokerage $j$ is $\kappa_{i} \times \frac{\mathcal{B}_{i, i}}{\mathcal{B}_{i, 1} + \mathcal{B}_{i, 2}}$. We can assume that the price of the house is determined by the hedonic pricing model from various confounding factors that are determined by the community and unique characteristics of the housing, and we can denote it as $P_i$.
 
 The brokerages have the same positive cost function denoted as $C(\cdot)$ where $\frac{\partial C(\cdot)}{\partial \mathcal{B}_{j}} > 0$ and $\frac{\partial C^2(\cdot)}{\partial \mathcal{B}_{j}^2} > 0$ where $j \in \{1, 2\}$. The intuition is that because of the marginal cost of the platform is $0$, when considering the cost of opening additional stores in the market, the brokerage does not incur that cost into consideration and therefore, the cost function is equal for both types of stores. Moreover, the marginal cost of opening additional stores is increasing, which is consistent with the real estate brokerage market because the more stores the brokerage opens, the administrative cost will increase.
 
-We can inherent from the previous literature that there are broad searchers and narrow searchers in the market, \citep{10.1257/aer.20141772}. Specifically, we can assume that there are $L^N_i$ narrow searches that are only searching for the community $i$ and let $L^B$ denote the set of broad searchers, defined as those individuals who consider a $\beta$ proportion of all available houses within their expansive search criteria. When $\beta = 1$ it means that they are searching for all the available houses in the whole city and $\beta < 1$ indicates a limited scope, possibly due to preferences or capacity constraints. Correspondingly, $L^B_i$ represents the subset of broad searchers within community $i$.
+We can inherent from the previous literature that there are broad searchers and narrow searchers in the market, \citep{10.1257/aer.20141772}. Specifically, we can assume that there are $L^N_i$ narrow searches that are only searching for the community $i$ and let $L^B$ denote the set of broad searchers, defined as those individuals who consider a $\beta$ proportion of all available houses within their expansive search criteria. When $\beta = 1$ it means that they are searching for all the available houses in the whole city and $\beta < 1$ indicates a limited scope, possibly due to preferences or capacity constraints. Correspondingly, $L^B_i$ represents the subset of broad searchers within community $i$, and the expected number is given by $L^B_i = L^B \times \beta$.
 
-We can first consider the naive searchers in the market, where the naive searchers in the market are attracted to the platform by the number of houses listed in the brokerage, and the probability of selecting the brokerage $j$ is given by the proportion of number of houses listed in the brokerage $j$ and the total number of houses listed in the community $i$:
+We can first focus on the naive searchers in the real estate market. These individuals are typically drawn to platforms based on the breadth of listings available. Specifically, the probability that a naive searcher will choose brokerage $j$ can be characterized by the principle of the two-sided market. This decision is influenced by the ratio of the number of houses listed by brokerage $j$ to the total number of houses listed within community $i$. This model aligns with the framework proposed by \citep{Armstrong2006}, where market attractiveness is proportional to the available inventory a brokerage offers relative to the community aggregate:
 
 \begin{equation}
   N_{i, j} = L^N_i \times \frac{\mathcal{B}_{i, j}}{\mathcal{B}_{i, 1} + \mathcal{B}_{i, 2}}. \label{eq:naive_prob}
@@ -250,48 +264,56 @@ We can first consider the naive searchers in the market, where the naive searche
 However, the broad searchers in the market are attracted to the platform by the networking because they are searching for all the communities in the market,
 
 \begin{equation}
-  B_i = L^B_i \times \alpha_j \frac{\mathcal{B}_{i, j}}{\sum_{i^\prime \neq i} (\mathcal{B}_{i^\prime, 1} + \mathcal{B}_{i^\prime, 2})} \label{eq:broad_prob}
+  B_i = L^B_i \times \alpha_j \times \frac{\mathcal{B}_{i, j}}{\mathcal{B}_{i, 1} + \mathcal{B}_{i, 2}} \label{eq:broad_prob}
 \end{equation}
 
-and we can release this assumption later to make the customers have private preference towards each type of brokerages. The probability of selecting the brokerage $i$ is given by:
-
-This follows from \citep{Armstrong2006}. 
-
+and we can release this assumption later to make the customers have private preference towards each type of brokerage and the brokerages can not observe this pattern. Combinning \eqref{eq:naive_prob} and \eqref{eq:broad_prob}, we can get the total number of customers in the community $i$ and the brokerage $j$ is:
 
 \begin{equation}
-  p_i = \frac{B_{i, t} \times N^e(B_{1, i})}{B_{1, t} \times N^e(B_{1, i}) + B_{2, t}}. \label{eq:prob}
+  L_{i, j} = N_{i, j} + B_{i, j} = (L^N_i + L_B \times \beta \times \alpha_j) \times \frac{\mathcal{B}_{i, j}}{\mathcal{B}_{i, 1} + \mathcal{B}_{i, 2}}
+   \label{eq:total_prob}
 \end{equation}
 
-where $N^e(B_{1, i})$ is a function representing the network effects, and is modeled as $N^e(B_{1, i}) = 1 + \alpha \log(1 + B_{1, i})$ where $\alpha$ is a parameter that quantifies the strength of network effects and the logarithmic form captures diminishing returns to scale as the number of brokerages increases. The revenue for each brokerage type $j$ in community $i$ is proportional to the number of houses they sell, which depends on the number of customers they attract: 
+We can assume there is an exogenous probability of getting the transaction complete by $\tau_{i, j}$ and the revenue for each brokerage $j$ in community $i$ can be calculated by considering the total number of transactions completed, which is the product of the number of customers handled by the brokerage and the probability of transaction completion. 
 
 \begin{equation}
-  R_{i, j, t} = r_j \cdot P_i \cdot N_{i, j, t}
+  R_{i, j} = \tau_{i, j} \times L_{i, j} \times P_i \times r_j \label{eq:revenue}
 \end{equation}
 
-where $N_{i, j, t}$ is the number of customers selecting type $j$ brokerage in community $i$ at time period $t$, estimated by:
+and the correspondingly, the total profit for the brokerage $j$ in the community $i$ is:
 
 \begin{equation}
-  N_{i, j, t} = \lambda_i p_{i, j, t}
+  \Pi_{i, j} = R_{i, j} - C(\mathcal{B}_{i, j}) \label{eq:profit}
 \end{equation}
 
-and $\lambda_i$ is the appropriate part of $\lambda$ that arrives in community $i$.
+\begin{assumption}
+  
+\end{assumption}
+
+% where $N^e(B_{1, i})$ is a function representing the network effects, and is modeled as $N^e(B_{1, i}) = 1 + \alpha \log(1 + B_{1, i})$ where $\alpha$ is a parameter that quantifies the strength of network effects and the logarithmic form captures diminishing returns to scale as the number of brokerages increases. The revenue for each brokerage type $j$ in community $i$ is proportional to the number of houses they sell, which depends on the number of customers they attract: 
+
+% where $N_{i, j, t}$ is the number of customers selecting type $j$ brokerage in community $i$ at time period $t$, estimated by:
+
+% \begin{equation}
+%  N_{i, j, t} = \lambda_i p_{i, j, t}
+%\end{equation}
+
+%and $\lambda_i$ is the appropriate part of $\lambda$ that arrives in community $i$.
 
 
-give me a mathematical economics model characterizing the partial equilibrium of real estate broekrage and the competitive market where there are two types of brokerages denoted 1 if the brokerage is the large brokerage that it can communicate with other stores in different regions of the same type 1 brokerage, and denote 2 if it is small brokerage that it can not communicate with the other brokerages in the market
+%give me a mathematical economics model characterizing the partial equilibrium of real estate broekrage and the competitive market where there are two types of brokerages denoted 1 if the brokerage is the large brokerage that it can communicate with other stores in different regions of the same type 1 brokerage, and denote 2 if it is small brokerage that it can not communicate with the other brokerages in the market
 
-The first proposition is that the charging fee should be higher comparing with type $2$ brokerage.
+% The first proposition is that the charging fee should be higher comparing with type $2$ brokerage.
 
-The second proposition is that the number of stores in high popular regions should be higher in the number of stores and they are more likely to form a network effect.
+% The second proposition is that the number of stores in high popular regions should be higher in the number of stores and they are more likely to form a network effect.
 
-The third proposition is the introduction of the platform should increase the number of transactions and the number of stores in the market.
+% The third proposition is the introduction of the platform should increase the number of transactions and the number of stores in the market.
 
-The fourth proposition is that the entry of the large brokerage can increase the transaction number and the number of stores in the market.
+% The fourth proposition is that the entry of the large brokerage can increase the transaction number and the number of stores in the market.
 
-The fifth proposition should be the fact that when there is negative shock to the customers, the number of transactions and the number of stores should decrease and the number of brokerage fee should decrease in the long run (which can be modeled using graph or simulation).
+% The fifth proposition should be the fact that when there is negative shock to the customers, the number of transactions and the number of stores should decrease and the number of brokerage fee should decrease in the long run (which can be modeled using graph or simulation).
 
-
-The sixth proposition should be the fact that before the increase of the 
-
+% The sixth proposition should be the fact that before the increase of the 
 
 
 
@@ -302,7 +324,6 @@ The sixth proposition should be the fact that before the increase of the
 
 
 
-In the later, we can also assume that people have private information or preference towards different brokerages so that there will be another proposition demonstrated about the model.
 
 We can examine the following two effects:
 
@@ -341,7 +362,7 @@ $pre_2, entry, post_i$ are correspondingly periods dummy variables and other set
 
 The result presented in the table \ref{tab:entry_effect} examines the effect of Lianjia's offline stores' entry into an area on various outcomes. Prior to the Lianjia's entry ($pre_2$), there is no statistically significant effect on any of the three outcomes, suggesting that anticipation of the Lianjia's entry does not affect these metrics. In addition, there is a significant 4\% increase in revenue after the Lianjia's entry ($entry$), suggesting a substantial increase in Lianjia sales. However, the effect on price concessions and number of showings remains statistically insignificant, suggesting that Lianjia's entry does not lead to significant changes in pricing strategies or the number of showings brought to the area.
 
-In the post-entry periods ($post_1$, $post_2$, and $post_3$), the results vary. The first period after entry ($post_1$) shows no significant changes in any of the results. However, after two post-entry periods ($post_2$ and $post_3$), there are significant negative effects on both revenue and number of home visits. These declines suggest a decline in the performance and engagement of the Lianjia, possibly due to the impact of an epidemic that led to a decrease in revenue and showing
+In the post-entry periods ($post_1$, $post_2$, and $post_3$), the results vary. The first period after entry ($post_1$) shows no significant changes in any of the results. However, after two post-entry periods ($post_2$ and $post_3$), there are significant negative effects on both revenue and number of house tours. These declines suggest a decline in the performance and engagement of the Lianjia, possibly due to the impact of an epidemic that led to a decrease in revenue and showing
 
 In summary, the entry of a Lianjia into an area significantly boosts its sales initially, without altering its pricing strategies or viewer engagement significantly. However, the positive impact is short-lived, turning negative in subsequent periods, likely exacerbated by external factors like an epidemic.
 
