@@ -187,15 +187,15 @@ After constructing our optimal radius, we recalcualte the number of lianjia and 
 
 \subsection{Stylized Fact} \label{subsec:stylized_fact}
 
-The dependent variable is \emph{the natural logarithm of lianjia's income}, \emph{the price concession} and \emph{the natural logarithm of home tours} and in order to quantify the effect of lianjia, we first starts with a stylized fact, and try to catch the num. Firstly, we construct a density based index (DBI) to capture the effect of Lianjia's effect and continuous expansion effect. Based on the influential radius test result, it is defined as:
+In our analysis, we focus on several dependent variables: \emph{the natural logarithm of lianjia's income}, \emph{the price concession} and \emph{the natural logarithm of home tours}. To quantify Lianjia's impact, we begin by establishing a key stylized fact, which we develop a Density-Based Index (DBI) index to capture the Lianjia's offline stores' influential ratio. The index is to measure the effects of Lianjia's operations and its continuous expansion. The definition of this index is informed by the results of an influential radius test, which helps us capture the spatial extent of Lianjia's influence on local real estate markets. This approach allows for a more nuanced understanding of how Lianjia's presence affects key market variables. The DBI is calculated as follows:
 
 \begin{equation*}
   density_{it} = \frac{lianjia_{it}}{total_{it}},
 \end{equation*}
 
-where $lianjia_{it}$ is the number of Lianjia within 410 meters and $total_{it}$ is the total number of brokerages within 410 meters radius. The adoption of this index is based on the understanding that directly using the number of Lianjia's offline stores within a certain radius may suffer from the reverse causality problem. This is primarily because Lianjia, similar to other real estate brokerages, strategically locates its offline stores in locations that have high desirability and consequently high transaction volumes. To mitigate this confounding variable, we propose the use of a comparative metric: the ratio of Lianjia offline stores to the total number of real estate brokerages in the same area. This methodological refinement aims to neutralize the bias introduced by Lianjia's preferred location strategy. Given the lack of barriers to entry in the market, this ratio provides a more nuanced indicator of Lianjia's influence than an absolute number, and this is also in line with the spatial competition model \citep{hotelling_stability_1929, daspremont_hotellings_1979}.
+where $lianjia_{it}$ represents the number of Lianjia's stores within a 410-meter radius and $total_{it}$ denotes the total number of real estate brokerages' stores within the same radius. The choice of this index is grounded in an effort to address potential reverse causality issues. Specifically, Lianjia and other brokerages often strategically place their stores in highly desirable locations, which typically also results high transaction volumes. This could potentially will caused our estimation biased if we were to simply count the number of Lianjia's stores. To control for this issue, we employ a comparative metric: the ratio of Lianjia brokerages to the total number of real estate brokerages within the radius. This ratio helps mitigate the bias that may arise from the strategic location choices of Lianjia, offering a clearer measure of its market influence relative to competitors. This approach aligns with the principles of spatial competition theory, as articulated in \citep{hotelling_stability_1929, daspremont_hotellings_1979} in competition model. Such a comparative metric not only provides a more accurate reflection of Lianjia's market penetration but also adheres to economic modeling standards by accounting for competitive dynamics in the sector.
 
-To capture the individual fixed effect and other time-invariant unobservable influential factors, a multi-way fixed effect model is proposed. The model is specified as follows:
+To capture the individual fixed effect and other time-invariant unobservable influential factors, a multi-way fixed effect model is proposed. The model is specified as follows: 
 
 \begin{equation}
   Y_{it} = \beta_0 + \beta_1 density_{it} + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}, \label{eq:multi-way-fe}
@@ -245,7 +245,7 @@ The result highlights the dynamic impact of density, encapsulated by Lianjia's D
 
  % we may assume the number of houses in each community follows a normal distribution to make the model can have some probability distribution.
 
-Our model accurately reflects the real-world scenario in which sellers face uncertainty regarding the number of buyers each platform might attract, whereas buyers have the advantage of accessing comprehensive online information to make informed decisions about potential house purchases. This model also encapsulates the dynamics of a two-sided market, characterized by the mutual attraction between buyers and sellers. However, due to asymmetric information, sellers are unable to determine which brokerage will attract the most buyers, creating a gap in their market strategy effectiveness.
+In spired by the finding of the stylized fact, we propose a theoretical model to explain the mechanism behind the empirical results. Our model accurately reflects the real-world scenario in which sellers face uncertainty regarding the number of buyers each platform might attract, whereas buyers have the advantage of accessing comprehensive online information to make informed decisions about potential house purchases. This model also encapsulates the dynamics of a two-sided market, characterized by the mutual attraction between buyers and sellers. However, due to asymmetric information, sellers are unable to determine which brokerage will attract the most buyers, creating a gap in their market strategy effectiveness.
 
 To characterize the real estate brokerage market, we can assume that there are two types of brokerages in the market, where the type $1$ denote the large real estate brokerage that is incorporating the online platform and the offline stores strategies, and the type $2$ denote the small real estate brokerage that only have the offline stores and they should compete with the type $1$ stores and type $2$ stores in the market. Each type of brokerage follows a standard percentage charge by $r_j$ where $j \in \{1, 2\}$ and they can not manipulate the percentage charge in each submarket.
 
@@ -286,9 +286,6 @@ and the correspondingly, the total profit for the brokerage $j$ in the community
   \Pi_{i, j} = R_{i, j} - C(\mathcal{B}_{i, j}) \label{eq:profit}
 \end{equation}
 
-\begin{assumption}
-  
-\end{assumption}
 
 % where $N^e(B_{1, i})$ is a function representing the network effects, and is modeled as $N^e(B_{1, i}) = 1 + \alpha \log(1 + B_{1, i})$ where $\alpha$ is a parameter that quantifies the strength of network effects and the logarithmic form captures diminishing returns to scale as the number of brokerages increases. The revenue for each brokerage type $j$ in community $i$ is proportional to the number of houses they sell, which depends on the number of customers they attract: 
 
