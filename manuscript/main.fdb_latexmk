@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1715731140 "main.aux" "main.bbl" "main" 1715731144
+["bibtex main"] 1715778288 "main.aux" "main.bbl" "main" 1715778292
   "d:/latex/texlive/2020/texmf-dist/bibtex/bst/economic/aer.bst" 1615475644 26812 2ae6e48450a8c17a93d98067b7084a7a ""
-  "main.aux" 1715731143 11186 1fe0990ccd081cf54175cf5f4cba2e9a "pdflatex"
+  "main.aux" 1715778291 11186 677536b36812e9aa7157e9bca8ead9b0 "pdflatex"
   "our-cites.bib" 1715728239 19666 35157e220db648e10124c7d7b77780b5 ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1715731141 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1715731144
+  "main.blg"
+["pdflatex"] 1715778289 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1715778292
   "../figures/RD_Plot_1st_Order.pdf" 1715728239 15497 5ddd9e456bd31ea343d83e388b20d34c ""
   "../figures/RD_Plot_2nd_Order.pdf" 1715728239 15504 9654ca6ffee640ce374e6f001302a7ea ""
   "../figures/RD_Plot_3rd_Order.pdf" 1715728239 15472 56e1d2c7a873d079810d6348a5245491 ""
@@ -81,6 +81,7 @@
   "d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1615475058 32716 08e384dc442464e7285e891af9f45947 ""
   "d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1615475058 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1615475058 36118 fad905eba93cff5bce1e185fe980a177 ""
+  "d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1615475058 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb" 1615475386 154599 111aa29c1b43dc5b4a8516224bf12bac ""
   "d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1615475386 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1615475386 136101 b18d10b3436f8cb0cd04046deb340fe7 ""
@@ -262,16 +263,16 @@
   "d:/latex/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1615477809 4851265 939dcb770da954054d38c25e9268a491 ""
   "d:/latex/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1615477916 2432499 72bea4866472cf94a0856e40df3228f8 ""
   "d:/latex/texlive/2020/texmf.cnf" 1615477778 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1715731143 11186 1fe0990ccd081cf54175cf5f4cba2e9a ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1715731130 65950 a9b94649969971f8919719b788d2e55f ""
-  "main.aux" 1715731143 11186 1fe0990ccd081cf54175cf5f4cba2e9a "pdflatex"
-  "main.bbl" 1715731141 8453 5be0e59013f69af13092904ee8c85d81 "bibtex main"
-  "main.out" 1715731143 858 563e52f15c744b413272c7bd4a85f743 "pdflatex"
-  "main.tex" 1715731130 65950 a9b94649969971f8919719b788d2e55f ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1715778291 11186 677536b36812e9aa7157e9bca8ead9b0 ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1715778271 66646 9f2f8205de8322f7420ee046531c9327 ""
+  "main.aux" 1715778291 11186 677536b36812e9aa7157e9bca8ead9b0 "pdflatex"
+  "main.bbl" 1715778289 8453 5be0e59013f69af13092904ee8c85d81 "bibtex main"
+  "main.out" 1715778291 858 563e52f15c744b413272c7bd4a85f743 "pdflatex"
+  "main.tex" 1715778271 66646 9f2f8205de8322f7420ee046531c9327 ""
   (generated)
+  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
+  "e:/umich/RealEstateBrokerage/manuscript/main.log"
   "main.log"
+  "main.aux"
   "main.pdf"
   "main.out"
-  "main.aux"
-  "e:/umich/RealEstateBrokerage/manuscript/main.log"
-  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
