@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1715778288 "main.aux" "main.bbl" "main" 1715787100
+["bibtex main"] 0 "main.aux" "main.bbl" "main" 1715994219
   "d:/latex/texlive/2020/texmf-dist/bibtex/bst/economic/aer.bst" 1615475644 26812 2ae6e48450a8c17a93d98067b7084a7a ""
-  "main.aux" 1715778291 11186 677536b36812e9aa7157e9bca8ead9b0 "pdflatex"
+  "main.aux" 0 -1 0 "pdflatex"
   "our-cites.bib" 1715728239 19666 35157e220db648e10124c7d7b77780b5 ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1715787096 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1715787100
+  "main.blg"
+["pdflatex"] 1715994213 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1715994219
   "../figures/RD_Plot_1st_Order.pdf" 1715728239 15497 5ddd9e456bd31ea343d83e388b20d34c ""
   "../figures/RD_Plot_2nd_Order.pdf" 1715728239 15504 9654ca6ffee640ce374e6f001302a7ea ""
   "../figures/RD_Plot_3rd_Order.pdf" 1715728239 15472 56e1d2c7a873d079810d6348a5245491 ""
@@ -263,16 +263,16 @@
   "d:/latex/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1615477809 4851265 939dcb770da954054d38c25e9268a491 ""
   "d:/latex/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1615477916 2432499 72bea4866472cf94a0856e40df3228f8 ""
   "d:/latex/texlive/2020/texmf.cnf" 1615477778 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1715778291 11186 677536b36812e9aa7157e9bca8ead9b0 ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1715787085 69371 7d228156e1daea0ebc167cce068e8055 ""
-  "main.aux" 1715778291 11186 677536b36812e9aa7157e9bca8ead9b0 "pdflatex"
+  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1715994213 9 a94a2480d3289e625eea47cd1b285758 ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1715994209 69563 ee4285120c067623588cccaf681d3adc ""
+  "main.aux" 0 -1 0 "pdflatex"
   "main.bbl" 1715778289 8453 5be0e59013f69af13092904ee8c85d81 "bibtex main"
-  "main.out" 1715778291 858 563e52f15c744b413272c7bd4a85f743 "pdflatex"
-  "main.tex" 1715787085 69371 7d228156e1daea0ebc167cce068e8055 ""
+  "main.out" 0 -1 0 "pdflatex"
+  "main.tex" 1715994209 69563 ee4285120c067623588cccaf681d3adc ""
   (generated)
-  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
-  "main.out"
   "main.aux"
+  "main.log"
+  "main.out"
+  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
   "e:/umich/RealEstateBrokerage/manuscript/main.log"
   "main.pdf"
-  "main.log"
