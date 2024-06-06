@@ -1,6 +1,6 @@
-cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads" // change to your working directory
 
-use "template.dta", clear
+use "for-analysis.dta", clear
 
 /*
 *** basic idea: 
@@ -24,6 +24,9 @@ tab year, gen(yearx)
 
 generate treatment = 1 if beke_410 - lianjia_410 > 0
 replace treatment = 0 if treatment == .
+
+bysort id: egen max_treatment = max(treatment)
+replace treatment = max_treatment
 
 foreach var of varlist yearx* {
     gen treatment_`var' = `var' * treatment
@@ -150,13 +153,13 @@ restore
 
 // now replace the result with the outcome.
 
-reghdfe ln_income treatment_yearx2 treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_1
 
-reghdfe price_concession treatment_yearx2 treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_2
 
-reghdfe ln_lead treatment_yearx2 treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_3
 
 local names "did_1 did_2 did_3"
@@ -195,6 +198,26 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
  replace
+
+/*** Heterogenous Check of The Mechanism ***/
+
+reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_did_1
+
+reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_did_2
+
+reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_did_3
+
+reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_did_4
+
+reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_did_5
+
+reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_did_6
 
 /* Heterogenous Check */
 
