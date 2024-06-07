@@ -1,7 +1,9 @@
-cd "C:\Users\zxuyuan\Downloads" // change to your working directory
+cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
 
-use "for-analysis.dta", clear
+use "template.dta", clear
 
+replace price_concession = - price_concession if price_concession < 0
+ 
 /*
 *** basic idea: 
 ** we first conduct using stylized facts: ln_income ~ density and by conducting four sets of researches;
@@ -76,8 +78,7 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
  replace
- 
- 
+
 /* Dynamic Effect and Estimtion */
 
 reghdfe ln_income L.ln_income $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
@@ -97,14 +98,15 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
  replace
- 
 
 /* Exogenous Shock with lianjia's entry */
 preserve
 
 drop entry* pre* pos*
 by id: gen firstobs = (_n == 1)
-by id: gen dropflag = (firstobs == 1 & lianjia_410 > 0)
+// we should not drop the observation that have entry in the first period
+// but we should drop the observation that have lianjia before our sample begin
+by id: gen dropflag = (year == 2016 & lianjia_410 > 0)
 by id: egen todrop = max(dropflag)
 
 order firstobs dropflag todrop lianjia_410
@@ -128,16 +130,19 @@ gen post1 = (entry_lianjia_lead1 == 1)
 gen post2 = (entry_lianjia_lead2 == 1)
 gen post3 = (entry_lianjia_lead3 == 1)
 
+gen effect = 0
+replace effect = 1 if (entry == 1 | post1 == 1 | post2 == 1 | post3 == 1)
+
 drop entry_lianjia_lag1 entry_lianjia_lag2 entry_lianjia_lag3 ///
  entry_lianjia_lead1 entry_lianjia_lead2 entry_lianjia_lead3
 
-reghdfe ln_income L.ln_income pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income L.ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_1
 
-reghdfe price_concession L.price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession L.price_concession pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_2
 
-reghdfe ln_lead L.ln_lead pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_lead L.ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_3
 
 esttab entry_1 entry_2 entry_3 ///
@@ -148,12 +153,40 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
  replace
+ 
+
+reghdfe ln_income L.ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_1
+
+reghdfe ln_income L.ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_2
+
+reghdfe price_concession L.price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_3
+
+reghdfe price_concession L.price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_4
+
+reghdfe ln_lead L.ln_lead pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_5
+
+reghdfe ln_lead L.ln_lead pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_6
+
+esttab hetero_entry_1 hetero_entry_2 hetero_entry_3 hetero_entry_4 hetero_entry_5 hetero_entry_6 ///
+ using result_tables/entry_effect_hetero.tex, ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income) [lower]"  "log(income) [higher]" "price concession [lower]" "price concession [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
+star(* 0.1 ** 0.05 *** 0.01) ///
+se ///
+scalars("r2 R-squared") ///
+ replace
 
 restore
 
 // now replace the result with the outcome.
 
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_1
 
 reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
@@ -162,23 +195,27 @@ est store did_2
 reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_3
 
-local names "did_1 did_2 did_3"
-local titles `"natural logarithm of income" "price concession" "natural logarithm of leading times"'
+* Define the names and titles using global macros
+global names "did_1 did_2 did_3"
+global titles "natural logarithm of income" "price concession" "natural logarithm of leading times"
 
 * Loop through each variable and its corresponding title
 forvalues i = 1/3 {
     * Extract the ith name and title from the lists
-    local name: word `i' of `names'
-    local title: word `i' of `titles'
+    local name : word `i' of $names
+    local title : word `i' of $titles
     
+    * Display the name and title being processed
+    di "Processing `name' with title `title'"
+
     * Use coefplot to generate the graph for the current variable
     coefplot `name', baselevels ///
-    keep(treatment_yearx2 treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7) ///
+    keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7) ///
     vertical ci(90) ///
     yline(0, lcolor(edkblue*0.8)) ///
-    xline(3, lwidth(vthin) lpattern(dash) lcolor(teal)) ///
-    ylabel(,labsize(*0.75)) ///
-    xlabel(1 "2017" 2 "2018" 3 "2019" 4 "2020" 5 "2021" 6 "2022", labsize(*0.75)) ///
+    xline(1, lwidth(vthin) lpattern(dash) lcolor(teal)) ///
+    ylabel(, labsize(*0.75)) ///
+    xlabel(1 "2018" 2 "2019" 3 "2020" 4 "2021" 5 "2022", labsize(*0.75)) ///
     ytitle("`title'", size(small)) ///
     xtitle("time", size(small)) ///
     addplot(line @b @at) ///
@@ -190,9 +227,10 @@ forvalues i = 1/3 {
     graph export "`name'.pdf", as(pdf) replace
 }
 
+
 esttab did_1 did_2 did_3 ///
  using result_tables/difference_in_difference.tex, ///
-style(tex) booktabs keep(treatment_yearx2 treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
 mtitle("log(income)" "price concession" "log(lead times)") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
@@ -201,16 +239,16 @@ scalars("r2 R-squared") ///
 
 /*** Heterogenous Check of The Mechanism ***/
 
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_1
 
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_2
 
-reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_3
 
-reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6  treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_4
 
 reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time < 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
@@ -218,6 +256,15 @@ est store hetero_did_5
 
 reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if avg_watch_time >= 207.4643, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_6
+
+esttab hetero_did_1 hetero_did_2 hetero_did_3 hetero_did_4 hetero_did_5 hetero_did_6 ///
+ using result_tables/heter_platform_did.tex, ///
+style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income) [lower]" "log(income) [higher]" "price concession [lower]" "price concession [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
+star(* 0.1 ** 0.05 *** 0.01) ///
+se ///
+scalars("r2 R-squared") ///
+ replace
 
 /* Heterogenous Check */
 
