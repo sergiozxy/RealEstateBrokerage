@@ -353,6 +353,8 @@ INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_2nd_Order.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order.pdf
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_result_summary.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_result_summary.tex
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/summary_statistics.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/summary_statistics.tex
@@ -418,6 +420,12 @@ INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Wuhan.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Wuhan.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Wuhan.pdf
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/donut_robust.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/donut_robust.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_hhi.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_hhi.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_mature.tex

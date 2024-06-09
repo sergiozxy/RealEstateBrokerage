@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.11)  8 JUN 2024 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.11)  9 JUN 2024 18:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -733,121 +733,127 @@ File: ../figures/RD_Plot_3rd_Order.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_3rd_Order.pdf>
 Package pdftex.def Info: ../figures/RD_Plot_3rd_Order.pdf  used on input line 166.
 (pdftex.def)             Requested size: 256.55872pt x 128.27628pt.
- [8] [9 <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_1st_Order.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_2nd_Order.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/summary_statistics.tex
+ (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_result_summary.tex) [8] [9 <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_1st_Order.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_2nd_Order.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order.pdf>] [10] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/summary_statistics.tex
 Underfull \hbox (badness 3735) in paragraph at lines 25--25
 []\OT1/cmr/m/n/6 Referring to prox-im-ity to su-per-mar-kets
  []
 
 )
-Overfull \hbox (2.60904pt too wide) in paragraph at lines 1--188
+Overfull \hbox (2.60904pt too wide) in paragraph at lines 1--190
  [][] 
  []
 
-<../figures/scatter_plot_with_two_brokerages.pdf, id=227, 722.7pt x 433.62pt>
+<../figures/scatter_plot_with_two_brokerages.pdf, id=239, 722.7pt x 433.62pt>
 File: ../figures/scatter_plot_with_two_brokerages.pdf Graphic file (type pdf)
 <use ../figures/scatter_plot_with_two_brokerages.pdf>
-Package pdftex.def Info: ../figures/scatter_plot_with_two_brokerages.pdf  used on input line 192.
+Package pdftex.def Info: ../figures/scatter_plot_with_two_brokerages.pdf  used on input line 194.
 (pdftex.def)             Requested size: 359.18063pt x 215.50601pt.
-[10] [11] [12 <e:/umich/RealEstateBrokerage/manuscript/../figures/scatter_plot_with_two_brokerages.pdf>] (../result_tables/stylized_fact.tex) [13] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/dynamic.tex) [14] [15]
+[11] [12 <e:/umich/RealEstateBrokerage/manuscript/../figures/scatter_plot_with_two_brokerages.pdf>] (../result_tables/stylized_fact.tex) [13] [14] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/dynamic.tex) [15]
 
-LaTeX Warning: Reference `tab:' on page 16 undefined on input line 252.
+LaTeX Warning: Reference `tab:' on page 16 undefined on input line 254.
 
-[16] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_effect.tex) [17] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_effect_hetero.tex) [18]
+[16] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_effect.tex) [17] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_effect_hetero.tex) [18] [19]
 
 pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../figures/did_1.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<../figures/did_1.pdf, id=339, 397.485pt x 289.08pt>
+<../figures/did_1.pdf, id=349, 397.485pt x 289.08pt>
 File: ../figures/did_1.pdf Graphic file (type pdf)
 <use ../figures/did_1.pdf>
-Package pdftex.def Info: ../figures/did_1.pdf  used on input line 314.
+Package pdftex.def Info: ../figures/did_1.pdf  used on input line 316.
 (pdftex.def)             Requested size: 256.55872pt x 186.5941pt.
 
 
 pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../figures/did_2.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<../figures/did_2.pdf, id=340, 397.485pt x 289.08pt>
+<../figures/did_2.pdf, id=350, 397.485pt x 289.08pt>
 File: ../figures/did_2.pdf Graphic file (type pdf)
 <use ../figures/did_2.pdf>
-Package pdftex.def Info: ../figures/did_2.pdf  used on input line 316.
+Package pdftex.def Info: ../figures/did_2.pdf  used on input line 318.
 (pdftex.def)             Requested size: 256.55872pt x 186.5941pt.
 
 
 pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../figures/did_3.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<../figures/did_3.pdf, id=341, 397.485pt x 289.08pt>
+<../figures/did_3.pdf, id=351, 397.485pt x 289.08pt>
 File: ../figures/did_3.pdf Graphic file (type pdf)
 <use ../figures/did_3.pdf>
-Package pdftex.def Info: ../figures/did_3.pdf  used on input line 318.
+Package pdftex.def Info: ../figures/did_3.pdf  used on input line 320.
 (pdftex.def)             Requested size: 256.55872pt x 186.5941pt.
-[19] [20 <e:/umich/RealEstateBrokerage/manuscript/../figures/did_1.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_2.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_3.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/heter_platform_did.tex) [21] [22] (e:/umich/RealEstateBrokerage/manuscript/main.bbl [23
+(e:/umich/RealEstateBrokerage/manuscript/../result_tables/heter_platform_did.tex) [20] [21] [22 <e:/umich/RealEstateBrokerage/manuscript/../figures/did_1.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_2.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_3.pdf>] [23] (e:/umich/RealEstateBrokerage/manuscript/main.bbl [24
 
-]) [24] (e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker.tex
-<../figures/distribution_of_hp_and_broker/Beijing.pdf, id=408, 505.89pt x 361.35pt>
+]) [25] (e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker.tex
+<../figures/distribution_of_hp_and_broker/Beijing.pdf, id=418, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Beijing.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Beijing.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Beijing.pdf  used on input line 4.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Chengdu.pdf, id=409, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Chengdu.pdf, id=419, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Chengdu.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Chengdu.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Chengdu.pdf  used on input line 8.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Chongqing.pdf, id=410, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Chongqing.pdf, id=420, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Chongqing.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Chongqing.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Chongqing.pdf  used on input line 11.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Guangzhou.pdf, id=411, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Guangzhou.pdf, id=421, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Guangzhou.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Guangzhou.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Guangzhou.pdf  used on input line 15.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Hangzhou.pdf, id=412, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Hangzhou.pdf, id=422, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Hangzhou.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Hangzhou.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Hangzhou.pdf  used on input line 19.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Nanjing.pdf, id=413, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Nanjing.pdf, id=423, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Nanjing.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Nanjing.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Nanjing.pdf  used on input line 22.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Shanghai.pdf, id=414, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Shanghai.pdf, id=424, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Shanghai.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Shanghai.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Shanghai.pdf  used on input line 26.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Shenzhen.pdf, id=415, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Shenzhen.pdf, id=425, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Shenzhen.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Shenzhen.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Shenzhen.pdf  used on input line 30.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Tianjin.pdf, id=416, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Tianjin.pdf, id=426, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Tianjin.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Tianjin.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Tianjin.pdf  used on input line 33.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-<../figures/distribution_of_hp_and_broker/Wuhan.pdf, id=417, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Wuhan.pdf, id=427, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Wuhan.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Wuhan.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Wuhan.pdf  used on input line 37.
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
-) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_hhi.tex) [25 <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Beijing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chengdu.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chongqing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Guangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Hangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Nanjing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shanghai.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shenzhen.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Tianjin.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Wuhan.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_mature.tex) [26] [27]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 397.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 397.
+) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/donut_robust.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_hhi.tex) [26 <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Beijing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chengdu.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chongqing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Guangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Hangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Nanjing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shanghai.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shenzhen.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Tianjin.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Wuhan.pdf>]
+Overfull \vbox (24.54523pt too high) has occurred while \output is active []
+
+ [27] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_mature.tex)
+Overfull \vbox (143.37846pt too high) has occurred while \output is active []
+
+ [28] [29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
  (e:/umich/RealEstateBrokerage/manuscript/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 397.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 397.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D0DF0B85436A1D3C7CE7F676AC261B2A;805.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 397.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 405.
  ) 
 Here is how much of TeX's memory you used:
- 29454 strings out of 480608
- 700140 string characters out of 5904590
- 1110793 words of memory out of 5000000
- 44668 multiletter control sequences out of 15000+600000
+ 29480 strings out of 480608
+ 701137 string characters out of 5904590
+ 1112793 words of memory out of 5000000
+ 44676 multiletter control sequences out of 15000+600000
  546848 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,11n,111p,1724b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -858,10 +864,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {d:/latex/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on e:/umich/RealEstateBrokerage/manuscript/main.pdf (28 pages, 18581279 bytes).
+Output written on e:/umich/RealEstateBrokerage/manuscript/main.pdf (30 pages, 18585191 bytes).
 PDF statistics:
- 627 PDF objects out of 1000 (max. 8388607)
- 494 compressed objects within 5 object streams
- 94 named destinations out of 1000 (max. 500000)
+ 644 PDF objects out of 1000 (max. 8388607)
+ 508 compressed objects within 6 object streams
+ 100 named destinations out of 1000 (max. 500000)
  194 words of extra memory for PDF output out of 10000 (max. 10000000)
 

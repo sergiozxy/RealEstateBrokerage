@@ -26,17 +26,21 @@ set.seed(123)
 ```{r}
 # these are the packages that we need to import
 library(haven)
+library(rdd)
 library(ggplot2)
 library(dplyr)
 library(rdrobust)
 library(plm)
+library(xtable)
 library(pander) # this is for table showing
 library(latex2exp) # this is to export it
+setwd("E:/umich/RealEstateBrokerage-main")
+# need to place data on the base directory
+data <- read_dta("template.dta")
+working_directory <-"E:/umich/RealEstateBrokerage"
 ```
 
 ```{r}
-# need to place data on the base directory
-data <- read_dta("../template.dta")
 panel_data <- pdata.frame(data, index = c("id", "year"))
 panel_data$L_jiadian <- lag(panel_data$jiadian, 1)
 panel_data$L_kind <- lag(panel_data$kind, 1)
@@ -63,12 +67,6 @@ control_variables <- c(
   "non_online_effect", "ln_negotiation_period", "ln_watch_time", "ln_nego_changes", "ln_lead", "ln_watch_people"
 )
 testing_variables <- c("ln_negotiation_period", "ln_watch_time", "ln_nego_changes", "ln_lead", "ln_watch_people", "ln_end_price")
-```
-
-```{r}
-result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances, 
-                   c = 0.41, covs = panel_data[, control_variables],
-                   p = 1) # first using default clustering
 ```
 
 ```{r}
@@ -107,131 +105,54 @@ rdplot(y = filtered_data$ln_income,
        x.label = "Nearest distance to Lianjia's stores",
        y.label = "Log of income in the community")
 dev.off() # Close the PDF device
-
-```
-
-
-```{r}
-result
-```
-
-
-```{r}
-pander(cbind(result$coef, result$pv))
 ```
 
 ```{r}
-panel_data$price_concession
+bw_methods <- c("mserd", "cerrd")
+kernel_list <- c("uniform", "triangular")
+results_list <- list()
+counter <- 1
+for (bw_method in bw_methods) {
+    for (kernel_in in kernel_list){
+        result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances, 
+                     c = 0.41,
+                     p = 1, 
+                     bwselect = bw_method, kernel = kernel_in)
+        
+        effective_obs <- sum(result$N_h)
+
+        results_list[[counter]] <- data.frame(
+        Method = bw_method,
+        Kernel = kernel_in,
+        Estimate = format(result$coef[1], digits = 3, scientific = FALSE),
+        SE = format(result$se[1], digits = 3, scientific = FALSE),
+        Z = format(result$z[1], digits = 3, scientific = FALSE),
+        PValue = format(result$pv[1], digits = 3, scientific = FALSE),
+        Bandwidth = format(result$bws[1], digits = 3, scientific = FALSE),
+        EffectiveObs = effective_obs
+    )
+        counter <- counter + 1
+    }
+}
+results <- do.call(rbind, results_list)
+latex_code <- print(xtable(results, 
+                           caption = "RD Estimates with Different Bandwidth Selection Methods and Kernels", 
+                           label = "tab:rd_bandwidth_kernel_results"), 
+                    include.rownames = FALSE, 
+                    type = "latex",
+                    print.results = FALSE)
+write(latex_code, file = paste(working_directory , "result_tables/rdd_result_summary.tex", sep='/'))
+print(results)
 ```
 
 
-```{r}
-result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances, 
-                   c = 0.41,
-                   p = 1) # first using default clustering
-result2 <- rdrobust(y = panel_data$ln_lead, x = panel_data$nearest_store_distances, 
-                   c = 0.41,
-                   p = 1)
-result3 <- rdrobust(y = panel_data$price_concession, x = panel_data$nearest_store_distances, 
-                   c = 0.41,
-                   p = 1)
-```
-
-```{r}
-result2
-```
-
-
-```{r}
-pander(cbind(result$coef, result$pv))
-```
-
-```{r}
-pander(cbind(result2$coef, result2$pv))
-```
-
-```{r}
-pander(cbind(result3$coef, result3$pv))
-```
-
-
-```{r}
-result
-```
-
-note that the figure only shows points that are within the bandwidth, the whole points are shown in Appendix of the paper.
-
-
-```{r}
-result2
-```
-
-
-```{r}
-h = 0.124
-cutoff = 0.41
-running_var = panel_data$nearest_store_distances
-
-filtered_data <- panel_data[abs(running_var - cutoff) <= h, ]
-
-par(mfrow=c(3,1))
-rdplot(y = filtered_data$ln_lead, 
-       x = filtered_data$nearest_store_distances, 
-       c = cutoff, nbins = 40, p = 1,
-       title = "RD-plot",
-       x.label = "nearest distance to lianjia's stores",
-       y.label = "lianjia's income in the community")
-
-rdplot(y = filtered_data$ln_lead, 
-       x = filtered_data$nearest_store_distances, 
-       c = cutoff, nbins = 40, p = 2,
-       title = "RD-plot",
-       x.label = "nearest distance to lianjia's stores",
-       y.label = "lianjia's income in the community")
-
-rdplot(y = filtered_data$ln_lead, 
-       x = filtered_data$nearest_store_distances, 
-       c = cutoff, nbins = 40, p = 3,
-       title = "RD-plot",
-       x.label = "nearest distance to lianjia's stores",
-       y.label = "lianjia's income in the community")
-```
-
-```{r}
-h = 0.158
-cutoff = 0.41
-running_var = panel_data$nearest_store_distances
-
-filtered_data <- panel_data[abs(running_var - cutoff) <= h, ]
-
-par(mfrow=c(3,1))
-rdplot(y = filtered_data$price_concession, 
-       x = filtered_data$nearest_store_distances, 
-       c = cutoff, nbins = 40, p = 1,
-       title = "RD-plot",
-       x.label = "nearest distance to lianjia's stores",
-       y.label = "lianjia's income in the community")
-
-rdplot(y = filtered_data$price_concession, 
-       x = filtered_data$nearest_store_distances, 
-       c = cutoff, nbins = 40, p = 2,
-       title = "RD-plot",
-       x.label = "nearest distance to lianjia's stores",
-       y.label = "lianjia's income in the community")
-
-rdplot(y = filtered_data$price_concession, 
-       x = filtered_data$nearest_store_distances, 
-       c = cutoff, nbins = 40, p = 3,
-       title = "RD-plot",
-       x.label = "nearest distance to lianjia's stores",
-       y.label = "lianjia's income in the community")
-```
-
-checkings:
+# checkings:
 
 1. Donut Hole: Exclude observations close to the cutoff and estimate the effect with the remaining data. If the discontinuity persists despite the absence of data around the cutoff, this provides evidence against a model misspecification.
 2. Mccrary (2008) test: Conduct a McCrary density test to check if there is a discontinuity in the density of the running variable at the cutoff. A significant discontinuity may suggest manipulation or sorting around the cutoff.
 3. Placebo test: If you have pre-treatment covariates, you can test whether these covariates also jump at the cutoff. If they do, this might suggest manipulation or a violation of the RD design assumptions. If they don’t, it strengthens the case for a true treatment effect.
+
+## Donut Hole Test
 
 ```{r}
 cutoff
@@ -246,50 +167,207 @@ pander(cbind(result_donut$coef, result_donut$pv))
 print(result_donut)
 ```
 
-
 ```{r}
-donut_width <- 0.015
-panel_data_donut <- panel_data[!(panel_data$nearest_store_distances >= (cutoff - donut_width) & 
-                                 panel_data$nearest_store_distances <= (cutoff + donut_width)),]
-result_donut <- rdrobust(y = panel_data_donut$ln_income, 
-                         x = panel_data_donut$nearest_store_distances, 
-                         c = cutoff,  covs = panel_data_donut[, control_variables],
-                        p = 1, h = 0.095, b = 0.185)
-pander(cbind(result_donut$coef, result_donut$pv))
-print(result_donut)
+perform_rd_analysis <- function(cutoff, donut_width, h, b) {
+  # select the data that we need
+  panel_data_donut <- panel_data[!(panel_data$nearest_store_distances >= (cutoff - donut_width) & 
+                                   panel_data$nearest_store_distances <= (cutoff + donut_width)),]
+  # run the rdrobust result
+  result_donut <- rdrobust(y = panel_data_donut$ln_income, 
+                           x = panel_data_donut$nearest_store_distances, 
+                           c = cutoff,
+                           p = 1, h = h, b = b)
+  # return the coefficient and the p value
+  conventional <- c("Conventional", result_donut$coef[1, 1], result_donut$se[1, 1], result_donut$pv[1, 1])
+  bias_corrected <- c("Bias-Corrected", result_donut$coef[2, 1], result_donut$se[2, 1], result_donut$pv[2, 1])
+  robust <- c("Robust", 
+              format(result_donut$coef[3, 1], digits = 3, scientific = FALSE), 
+              format(result_donut$se[3, 1], digits = 3, scientific = FALSE), 
+              format(result_donut$pv[3, 1], digits = 3, scientific = FALSE))
+  
+  # combine the results
+  result_table <- rbind(conventional, bias_corrected, robust)
+  colnames(result_table) <- c("Method", "Coef", "SE", "p-value")
+  return(result_table)
+}
+
+cutoff = 0.41
+donut_widths <- c(0.01, 0.0125, 0.015, 0.0175, 0.02, 0.0225, 0.025)
+results <- list()
+
+for (donut in donut_widths) {
+  result <- perform_rd_analysis(cutoff, donut, 0.066, 0.135)
+  results[[paste0("donut_", donut)]] <- result
+}
+
 ```
 
 ```{r}
+perform_rd_analysis <- function(cutoff, donut_width, h, b) {
+  # select the data that we need
+  panel_data_donut <- panel_data[!(panel_data$nearest_store_distances >= (cutoff - donut_width) & 
+                                   panel_data$nearest_store_distances <= (cutoff + donut_width)),]
+  # run the rdrobust result
+  result_donut <- rdrobust(y = panel_data_donut$ln_income, 
+                           x = panel_data_donut$nearest_store_distances, 
+                           c = cutoff, covs = panel_data_donut[, control_variables],
+                           p = 1, h = h, b = b)
+  # return the coefficient and the p value
+  conventional <- c("Conventional", result_donut$coef[1, 1], result_donut$se[1, 1], result_donut$pv[1, 1])
+  bias_corrected <- c("Bias-Corrected", result_donut$coef[2, 1], result_donut$se[2, 1], result_donut$pv[2, 1])
+  robust <- c("Robust", 
+              format(result_donut$coef[3, 1], digits = 3, scientific = FALSE), 
+              format(result_donut$se[3, 1], digits = 3, scientific = FALSE), 
+              format(result_donut$pv[3, 1], digits = 3, scientific = FALSE))
+  
+  # combine the results
+  result_table <- rbind(conventional, bias_corrected, robust)
+  colnames(result_table) <- c("Method", "Coef", "SE", "p-value")
+  return(result_table)
+}
 
-library(rdd)
+cutoff = 0.41
+donut_widths <- c(0.01, 0.0125, 0.015, 0.0175, 0.02, 0.0225, 0.025)
+results_with_control <- list()
 
+for (donut in donut_widths) {
+  result <- perform_rd_analysis(cutoff, donut, 0.066, 0.135)
+  results_with_control[[paste0("donut_", donut)]] <- result
+}
+```
+
+```{r}
+# with controls
+combined_results_with_control <- do.call(rbind, lapply(names(results_with_control), function(donut) {
+  result <- results_with_control[[donut]]
+  robust_result <- result[result[, "Method"] == "Robust", ]
+  data.frame(Donut_Width = donut, Method = robust_result[1], Coef = robust_result[2], SE = robust_result[3], p_value = robust_result[4])
+}))
+colnames(combined_results_with_control) <- c("Donut Width", "Method", "Coef", "SE", "p-value")
+
+# without controls
+combined_results <- do.call(rbind, lapply(names(results), function(donut) {
+  result <- results[[donut]]
+  robust_result <- result[result[, "Method"] == "Robust", ]
+  data.frame(Donut_Width = donut, Method = robust_result[1], Coef = robust_result[2], SE = robust_result[3], p_value = robust_result[4])
+}))
+colnames(combined_results) <- c("Donut Width", "Method", "Coef", "SE", "p-value")
+
+merged_results <- merge(combined_results_with_control, combined_results, by = c("Donut Width", "Method"))
+merged_results_df <- as.data.frame(merged_results)
+
+colnames(merged_results_df) <- c("Donut Width", "Method", "Coef", "SE", "p-value", "Coef", "SE", "p-value")
+
+# print as a latex table
+latex_code <- print(xtable(merged_results_df, 
+                           caption = "RD Analysis Donut RD Results with and without Controls", 
+                           label = "tab:rd_robust_results"), 
+                    include.rownames = FALSE, 
+                    type = "latex",
+                    print.results = FALSE)
+
+latex_code <- gsub("\\\\begin\\{tabular\\}\\{llllllll\\}\n  \\\\hline\n", 
+                   "\\\\begin{tabular}{llllllll}\n  \\\\hline\n &  & \\\\multicolumn{3}{c}{Without Control} & \\\\multicolumn{3}{c}{With Control} \\\\\\\\\n", 
+                   latex_code)
+
+latex_code <- gsub("\\\\end\\{tabular\\}", "\\\\end{tabular}\nNote that the cutoff is 0.41, the main bandwidth is 0.066 and the bias bandwidth is 0.135.", latex_code)
+
+write(latex_code, file = paste(working_directory , "result_tables/donut_robust.tex", sep='/'))
+```
+
+
+## McCrary Sorting Test
+
+```{r}
 # Give it the running variable and the cutpoint
 # it will automatically produce a plot and select the number of bins and the bandwidth
 # The output will be the p-value for the presence of a discontinuity
+DCdensity(filtered_data$nearest_store_distances, cutpoint = 0.41, bw = 0.066, verbose = TRUE, plot = FALSE)
 DCdensity(panel_data$nearest_store_distances, cutpoint = 0.41, bw = 0.066, verbose = TRUE, plot = FALSE)
 ```
 
-
-```{r}
-library(rdd)
-
-# Give it the running variable and the cutpoint
-# it will automatically produce a plot and select the number of bins and the bandwidth
-# The output will be the p-value for the presence of a discontinuity
-DCdensity(panel_data$nearest_store_distances, cutpoint = 0.41, bw = 0.095, verbose = TRUE, plot = FALSE)
-```
+## PlaceBo Test
 
 Conducting placebo test. We shall using the same validation bandwidth and bias correction bandwidth. The results are good overall
 
 ```{r}
+testing_variables <- c("pop", "light", "price_concession", "ln_end_price", "ln_nego_changes", "ln_watch_time", "green_ratio", "bedroom", "ln_watch_people", "living_room", "ln_negotiation_period", "museum", "kind", "mid", "sub", "house_age", "total_building")
+
+results_list <- list()
+
+counter <- 1
+
 for (validation in testing_variables) {
-  rd_result <- rdrobust(y = panel_data[[validation]], x = panel_data$nearest_store_distances
-                        , c = 0.41, h = 0.066, b = 0.135)
-  cat("Covariate:", validation, "\n")
-  print(summary(rd_result))
-  cat("\n\n")
-   
+  rd_result <- rdrobust(y = panel_data[[validation]], x = panel_data$nearest_store_distances,
+                        c = 0.41, h = 0.066, b = 0.135,
+                        bwselect = "mserd", kernel = "triangular")
+  
+  # 提取有效观测值数量并相加
+  effective_obs <- sum(rd_result$N_h)
+  
+  # 提取结果并存储到列表中
+  results_list[[counter]] <- data.frame(
+    Covariate = validation,
+    Estimate = format(rd_result$coef[1], digits = 3, scientific = FALSE),
+    SE = format(rd_result$se[1], digits = 3, scientific = FALSE),
+    Z = format(rd_result$z[1], digits = 3, scientific = FALSE),
+    PValue = format(rd_result$pv[1], digits = 3, scientific = FALSE),
+    Bandwidth = format(rd_result$bws[1], digits = 3, scientific = FALSE),
+    EffectiveObs = effective_obs
+  )
+  counter <- counter + 1
 }
+
+results <- do.call(rbind, results_list)
+
+latex_code <- print(xtable(results, 
+                           caption = "Placebo Test Results for Different Covariates", 
+                           label = "tab:placebo_test_results"), 
+                    include.rownames = FALSE, 
+                    type = "latex",
+                    print.results = FALSE)
+write(latex_code, file = paste(working_directory , "result_tables/rdd_placebo_test.tex", sep='/'))
+print(results)
+
 ```
 
+## Cutoff Point movement
+
+The movement of the cutoff point should make the estimation non-significant
+
+```{r}
+cutoffs_width <- c(0.15, 0.2, 0.25, 0.30, 0.35, 0.50, 0.65, 0.7)
+
+results_list <- list()
+counter <- 1
+for (cutoff in cutoffs_width) {
+  # rd_result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances, c = cutoff, h = 0.066, b = 0.135, bwselect = "mserd", kernel = "triangular")
+  rd_result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances,
+                        c = cutoff)
+  
+  # 提取有效观测值数量并相加
+  effective_obs <- sum(rd_result$N_h)
+  # 提取结果并存储到列表中
+  results_list[[counter]] <- data.frame(
+    Cutoff = cutoff,
+    Estimate = format(rd_result$coef[1], digits = 3, scientific = FALSE),
+    SE = format(rd_result$se[1], digits = 3, scientific = FALSE),
+    Z = format(rd_result$z[1], digits = 3, scientific = FALSE),
+    PValue = format(rd_result$pv[1], digits = 3, scientific = FALSE),
+    Bandwidth = format(rd_result$bws[1], digits = 3, scientific = FALSE),
+    EffectiveObs = effective_obs
+  )
+  counter <- counter + 1
+}
+results <- do.call(rbind, results_list)
+
+latex_code <- print(xtable(results, 
+                           caption = "Placebo Test Results for Different Cutoff Point", 
+                           label = "tab:movement_cutoff"), 
+                    include.rownames = FALSE, 
+                    type = "latex",
+                    print.results = FALSE)
+write(latex_code, file = paste(working_directory , "result_tables/movement_cutoff.tex", sep='/'))
+print(results)
+```
 

@@ -1,0 +1,790 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={RD design analysis},
+  pdfauthor={Xuyuan Zhang},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{RD design analysis}
+\author{Xuyuan Zhang}
+\date{09 六月, 2024}
+
+\begin{document}
+\maketitle
+
+\hypertarget{structure}{%
+\subsection{structure}\label{structure}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  we first report the figure and export the figure to the folder named
+  figures in directory
+\item
+  we then report the main result of the regressions
+\item
+  lastly, we report the placebo test and the robustness check
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# these are the packages that we need to import}
+\FunctionTok{library}\NormalTok{(haven)}
+\FunctionTok{library}\NormalTok{(rdd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 载入需要的程辑包：sandwich
+\end{verbatim}
+
+\begin{verbatim}
+## 载入需要的程辑包：lmtest
+\end{verbatim}
+
+\begin{verbatim}
+## 载入需要的程辑包：zoo
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## 载入程辑包：'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{verbatim}
+## 载入需要的程辑包：AER
+\end{verbatim}
+
+\begin{verbatim}
+## 载入需要的程辑包：car
+\end{verbatim}
+
+\begin{verbatim}
+## 载入需要的程辑包：carData
+\end{verbatim}
+
+\begin{verbatim}
+## 载入需要的程辑包：survival
+\end{verbatim}
+
+\begin{verbatim}
+## 载入需要的程辑包：Formula
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 载入程辑包：'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:car':
+## 
+##     recode
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rdrobust)}
+\FunctionTok{library}\NormalTok{(plm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 载入程辑包：'plm'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     between, lag, lead
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(xtable)}
+\FunctionTok{library}\NormalTok{(pander)  }\CommentTok{\# this is for table showing}
+\FunctionTok{library}\NormalTok{(latex2exp)  }\CommentTok{\# this is to export it}
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"E:/umich/RealEstateBrokerage{-}main"}\NormalTok{)}
+\CommentTok{\# need to place data on the base directory}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"template.dta"}\NormalTok{)}
+\NormalTok{working\_directory }\OtherTok{\textless{}{-}} \StringTok{"E:/umich/RealEstateBrokerage"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{panel\_data }\OtherTok{\textless{}{-}} \FunctionTok{pdata.frame}\NormalTok{(data, }\AttributeTok{index =} \FunctionTok{c}\NormalTok{(}\StringTok{"id"}\NormalTok{, }\StringTok{"year"}\NormalTok{))}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_jiadian }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{jiadian, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_kind }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{kind, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_hotel }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{hotel, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_shop\_mall }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{shop\_mall, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_museum }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{museum, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_old }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{old, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_ktv }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{ktv, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_mid }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{mid, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_prim }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{prim, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_west\_food }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{west\_food, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_super }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{super, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_sub }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{sub, }\DecValTok{1}\NormalTok{)}
+\NormalTok{panel\_data}\SpecialCharTok{$}\NormalTok{L\_park }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{park, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+we use these control variables
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{control\_variables }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"jiadian"}\NormalTok{, }\StringTok{"kind"}\NormalTok{, }\StringTok{"hotel"}\NormalTok{, }\StringTok{"shop\_mall"}\NormalTok{, }\StringTok{"museum"}\NormalTok{, }\StringTok{"old"}\NormalTok{,}
+    \StringTok{"ktv"}\NormalTok{, }\StringTok{"mid"}\NormalTok{, }\StringTok{"prim"}\NormalTok{, }\StringTok{"west\_food"}\NormalTok{, }\StringTok{"super"}\NormalTok{, }\StringTok{"sub"}\NormalTok{, }\StringTok{"park"}\NormalTok{, }\StringTok{"area"}\NormalTok{, }\StringTok{"bedroom"}\NormalTok{,}
+    \StringTok{"toilet"}\NormalTok{, }\StringTok{"house\_age"}\NormalTok{, }\StringTok{"floor\_level"}\NormalTok{, }\StringTok{"green\_ratio"}\NormalTok{, }\StringTok{"total\_building"}\NormalTok{, }\StringTok{"total\_floor\_number"}\NormalTok{,}
+    \StringTok{"living\_room"}\NormalTok{, }\StringTok{"elevator\_ratio"}\NormalTok{, }\StringTok{"kitchen"}\NormalTok{, }\StringTok{"floor\_ratio"}\NormalTok{, }\StringTok{"total\_resident"}\NormalTok{,}
+    \StringTok{"pm25"}\NormalTok{, }\StringTok{"pop"}\NormalTok{, }\StringTok{"light"}\NormalTok{, }\StringTok{"non\_online\_effect"}\NormalTok{, }\StringTok{"ln\_negotiation\_period"}\NormalTok{, }\StringTok{"ln\_watch\_time"}\NormalTok{,}
+    \StringTok{"ln\_nego\_changes"}\NormalTok{, }\StringTok{"ln\_lead"}\NormalTok{, }\StringTok{"ln\_watch\_people"}\NormalTok{)}
+\NormalTok{testing\_variables }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"ln\_negotiation\_period"}\NormalTok{, }\StringTok{"ln\_watch\_time"}\NormalTok{, }\StringTok{"ln\_nego\_changes"}\NormalTok{,}
+    \StringTok{"ln\_lead"}\NormalTok{, }\StringTok{"ln\_watch\_people"}\NormalTok{, }\StringTok{"ln\_end\_price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{h }\OtherTok{=} \FloatTok{0.066}
+\NormalTok{cutoff }\OtherTok{=} \FloatTok{0.41}
+\NormalTok{running\_var }\OtherTok{=}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances}
+
+\NormalTok{filtered\_data }\OtherTok{\textless{}{-}}\NormalTok{ panel\_data[}\FunctionTok{abs}\NormalTok{(running\_var }\SpecialCharTok{{-}}\NormalTok{ cutoff) }\SpecialCharTok{\textless{}=}\NormalTok{ h, ]}
+
+\CommentTok{\# Export the first RD plot to its own PDF file}
+\FunctionTok{pdf}\NormalTok{(}\StringTok{"RD\_Plot\_1st\_Order.pdf"}\NormalTok{, }\AttributeTok{width =} \DecValTok{8}\NormalTok{, }\AttributeTok{height =} \DecValTok{4}\NormalTok{)  }\CommentTok{\# Adjust the width and height as needed}
+\FunctionTok{rdplot}\NormalTok{(}\AttributeTok{y =}\NormalTok{ filtered\_data}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ filtered\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances, }\AttributeTok{c =}\NormalTok{ cutoff,}
+    \AttributeTok{nbins =} \DecValTok{40}\NormalTok{, }\AttributeTok{p =} \DecValTok{1}\NormalTok{, }\AttributeTok{title =} \StringTok{"RD{-}plot 1st order polynomial"}\NormalTok{, }\AttributeTok{x.label =} \StringTok{"Nearest distance to Lianjia\textquotesingle{}s stores"}\NormalTok{,}
+    \AttributeTok{y.label =} \StringTok{"Log of income in the community"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mass points detected in the running variable."
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dev.off}\NormalTok{()  }\CommentTok{\# Close the PDF device}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Export the second RD plot to its own PDF file}
+\FunctionTok{pdf}\NormalTok{(}\StringTok{"RD\_Plot\_2nd\_Order.pdf"}\NormalTok{, }\AttributeTok{width =} \DecValTok{8}\NormalTok{, }\AttributeTok{height =} \DecValTok{4}\NormalTok{)  }\CommentTok{\# Adjust the width and height as needed}
+\FunctionTok{rdplot}\NormalTok{(}\AttributeTok{y =}\NormalTok{ filtered\_data}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ filtered\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances, }\AttributeTok{c =}\NormalTok{ cutoff,}
+    \AttributeTok{nbins =} \DecValTok{40}\NormalTok{, }\AttributeTok{p =} \DecValTok{2}\NormalTok{, }\AttributeTok{title =} \StringTok{"RD{-}plot 2nd order polynomial"}\NormalTok{, }\AttributeTok{x.label =} \StringTok{"Nearest distance to Lianjia\textquotesingle{}s stores"}\NormalTok{,}
+    \AttributeTok{y.label =} \StringTok{"Log of income in the community"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mass points detected in the running variable."
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dev.off}\NormalTok{()  }\CommentTok{\# Close the PDF device}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Export the third RD plot to its own PDF file}
+\FunctionTok{pdf}\NormalTok{(}\StringTok{"RD\_Plot\_3rd\_Order.pdf"}\NormalTok{, }\AttributeTok{width =} \DecValTok{8}\NormalTok{, }\AttributeTok{height =} \DecValTok{4}\NormalTok{)  }\CommentTok{\# Adjust the width and height as needed}
+\FunctionTok{rdplot}\NormalTok{(}\AttributeTok{y =}\NormalTok{ filtered\_data}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ filtered\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances, }\AttributeTok{c =}\NormalTok{ cutoff,}
+    \AttributeTok{nbins =} \DecValTok{40}\NormalTok{, }\AttributeTok{p =} \DecValTok{3}\NormalTok{, }\AttributeTok{title =} \StringTok{"RD{-}plot 3rd order polynomial"}\NormalTok{, }\AttributeTok{x.label =} \StringTok{"Nearest distance to Lianjia\textquotesingle{}s stores"}\NormalTok{,}
+    \AttributeTok{y.label =} \StringTok{"Log of income in the community"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mass points detected in the running variable."
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dev.off}\NormalTok{()  }\CommentTok{\# Close the PDF device}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## pdf 
+##   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bw\_methods }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"mserd"}\NormalTok{, }\StringTok{"cerrd"}\NormalTok{)}
+\NormalTok{kernel\_list }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"uniform"}\NormalTok{, }\StringTok{"triangular"}\NormalTok{)}
+\NormalTok{results\_list }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+\NormalTok{counter }\OtherTok{\textless{}{-}} \DecValTok{1}
+\ControlFlowTok{for}\NormalTok{ (bw\_method }\ControlFlowTok{in}\NormalTok{ bw\_methods) \{}
+    \ControlFlowTok{for}\NormalTok{ (kernel\_in }\ControlFlowTok{in}\NormalTok{ kernel\_list) \{}
+\NormalTok{        result }\OtherTok{\textless{}{-}} \FunctionTok{rdrobust}\NormalTok{(}\AttributeTok{y =}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances,}
+            \AttributeTok{c =} \FloatTok{0.41}\NormalTok{, }\AttributeTok{p =} \DecValTok{1}\NormalTok{, }\AttributeTok{bwselect =}\NormalTok{ bw\_method, }\AttributeTok{kernel =}\NormalTok{ kernel\_in)}
+
+\NormalTok{        effective\_obs }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{N\_h)}
+
+\NormalTok{        results\_list[[counter]] }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Method =}\NormalTok{ bw\_method, }\AttributeTok{Kernel =}\NormalTok{ kernel\_in,}
+            \AttributeTok{Estimate =} \FunctionTok{format}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{SE =} \FunctionTok{format}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{1}\NormalTok{],}
+                \AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{Z =} \FunctionTok{format}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{z[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{,}
+                \AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{PValue =} \FunctionTok{format}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{),}
+            \AttributeTok{Bandwidth =} \FunctionTok{format}\NormalTok{(result}\SpecialCharTok{$}\NormalTok{bws[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{EffectiveObs =}\NormalTok{ effective\_obs)}
+\NormalTok{        counter }\OtherTok{\textless{}{-}}\NormalTok{ counter }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{    \}}
+\NormalTok{\}}
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, results\_list)}
+\NormalTok{latex\_code }\OtherTok{\textless{}{-}} \FunctionTok{print}\NormalTok{(}\FunctionTok{xtable}\NormalTok{(results, }\AttributeTok{caption =} \StringTok{"RD Estimates with Different Bandwidth Selection Methods and Kernels"}\NormalTok{,}
+    \AttributeTok{label =} \StringTok{"tab:rd\_bandwidth\_kernel\_results"}\NormalTok{), }\AttributeTok{include.rownames =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{type =} \StringTok{"latex"}\NormalTok{,}
+    \AttributeTok{print.results =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{write}\NormalTok{(latex\_code, }\AttributeTok{file =} \FunctionTok{paste}\NormalTok{(working\_directory, }\StringTok{"result\_tables/rdd\_result\_summary.tex"}\NormalTok{,}
+    \AttributeTok{sep =} \StringTok{"/"}\NormalTok{))}
+\FunctionTok{print}\NormalTok{(results)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Method     Kernel Estimate     SE     Z PValue Bandwidth EffectiveObs
+## 1  mserd    uniform  -0.0584 0.0263 -2.22 0.0263    0.0773        37645
+## 2  mserd triangular  -0.0697 0.0314 -2.22 0.0267     0.066        32020
+## 3  cerrd    uniform  -0.0874 0.0361 -2.42 0.0156    0.0418        19988
+## 4  cerrd triangular  -0.0663 0.0434 -1.53  0.126    0.0357        17191
+\end{verbatim}
+
+\hypertarget{checkings}{%
+\section{checkings:}\label{checkings}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Donut Hole: Exclude observations close to the cutoff and estimate the
+  effect with the remaining data. If the discontinuity persists despite
+  the absence of data around the cutoff, this provides evidence against
+  a model misspecification.
+\item
+  Mccrary (2008) test: Conduct a McCrary density test to check if there
+  is a discontinuity in the density of the running variable at the
+  cutoff. A significant discontinuity may suggest manipulation or
+  sorting around the cutoff.
+\item
+  Placebo test: If you have pre-treatment covariates, you can test
+  whether these covariates also jump at the cutoff. If they do, this
+  might suggest manipulation or a violation of the RD design
+  assumptions. If they don't, it strengthens the case for a true
+  treatment effect.
+\end{enumerate}
+
+\hypertarget{donut-hole-test}{%
+\subsection{Donut Hole Test}\label{donut-hole-test}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cutoff}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.41
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{donut\_width }\OtherTok{\textless{}{-}} \FloatTok{0.011}
+\NormalTok{panel\_data\_donut }\OtherTok{\textless{}{-}}\NormalTok{ panel\_data[}\SpecialCharTok{!}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances }\SpecialCharTok{\textgreater{}=}\NormalTok{ (cutoff }\SpecialCharTok{{-}}
+\NormalTok{    donut\_width) }\SpecialCharTok{\&}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances }\SpecialCharTok{\textless{}=}\NormalTok{ (cutoff }\SpecialCharTok{+}\NormalTok{ donut\_width)),}
+\NormalTok{    ]}
+\NormalTok{result\_donut }\OtherTok{\textless{}{-}} \FunctionTok{rdrobust}\NormalTok{(}\AttributeTok{y =}\NormalTok{ panel\_data\_donut}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ panel\_data\_donut}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances,}
+    \AttributeTok{c =}\NormalTok{ cutoff, }\AttributeTok{p =} \DecValTok{1}\NormalTok{, }\AttributeTok{h =} \FloatTok{0.066}\NormalTok{, }\AttributeTok{b =} \FloatTok{0.135}\NormalTok{)}
+\FunctionTok{pander}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(result\_donut}\SpecialCharTok{$}\NormalTok{coef, result\_donut}\SpecialCharTok{$}\NormalTok{pv))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2917}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1528}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Coeff
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+P\textgreater\textbar z\textbar{}
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Conventional} & -0.03879 & 0.3898 \\
+\textbf{Bias-Corrected} & -0.06374 & 0.1577 \\
+\textbf{Robust} & -0.06374 & 0.2383 \\
+\bottomrule()
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(result\_donut)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Call: rdrobust
+## 
+## Number of Obs.               212028
+## BW type                      Manual
+## Kernel                   Triangular
+## VCE method                       NN
+## 
+## Number of Obs.               118399        93629
+## Eff. Number of Obs.           14893        11945
+## Order est. (p)                    1            1
+## Order bias  (q)                   2            2
+## BW est. (h)                   0.066        0.066
+## BW bias (b)                   0.135        0.135
+## rho (h/b)                     0.489        0.489
+## Unique Obs.                  118399        93629
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{perform\_rd\_analysis }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(cutoff, donut\_width, h, b) \{}
+    \CommentTok{\# select the data that we need}
+\NormalTok{    panel\_data\_donut }\OtherTok{\textless{}{-}}\NormalTok{ panel\_data[}\SpecialCharTok{!}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances }\SpecialCharTok{\textgreater{}=}\NormalTok{ (cutoff }\SpecialCharTok{{-}}
+\NormalTok{        donut\_width) }\SpecialCharTok{\&}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances }\SpecialCharTok{\textless{}=}\NormalTok{ (cutoff }\SpecialCharTok{+}\NormalTok{ donut\_width)),}
+\NormalTok{        ]}
+    \CommentTok{\# run the rdrobust result}
+\NormalTok{    result\_donut }\OtherTok{\textless{}{-}} \FunctionTok{rdrobust}\NormalTok{(}\AttributeTok{y =}\NormalTok{ panel\_data\_donut}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ panel\_data\_donut}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances,}
+        \AttributeTok{c =}\NormalTok{ cutoff, }\AttributeTok{p =} \DecValTok{1}\NormalTok{, }\AttributeTok{h =}\NormalTok{ h, }\AttributeTok{b =}\NormalTok{ b)}
+    \CommentTok{\# return the coefficient and the p value}
+\NormalTok{    conventional }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Conventional"}\NormalTok{, result\_donut}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{1}\NormalTok{,}
+        \DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{])}
+\NormalTok{    bias\_corrected }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Bias{-}Corrected"}\NormalTok{, result\_donut}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{2}\NormalTok{,}
+        \DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{])}
+\NormalTok{    robust }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Robust"}\NormalTok{, result\_donut}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{3}\NormalTok{,}
+        \DecValTok{1}\NormalTok{])}
+
+    \CommentTok{\# combine the results}
+\NormalTok{    result\_table }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(conventional, bias\_corrected, robust)}
+    \FunctionTok{colnames}\NormalTok{(result\_table) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Method"}\NormalTok{, }\StringTok{"Coef"}\NormalTok{, }\StringTok{"SE"}\NormalTok{, }\StringTok{"p{-}value"}\NormalTok{)}
+    \FunctionTok{return}\NormalTok{(result\_table)}
+\NormalTok{\}}
+
+\NormalTok{cutoff }\OtherTok{=} \FloatTok{0.41}
+\NormalTok{donut\_widths }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.01}\NormalTok{, }\FloatTok{0.0125}\NormalTok{, }\FloatTok{0.015}\NormalTok{, }\FloatTok{0.0175}\NormalTok{, }\FloatTok{0.02}\NormalTok{, }\FloatTok{0.0225}\NormalTok{, }\FloatTok{0.025}\NormalTok{)}
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+
+\ControlFlowTok{for}\NormalTok{ (donut }\ControlFlowTok{in}\NormalTok{ donut\_widths) \{}
+\NormalTok{    result }\OtherTok{\textless{}{-}} \FunctionTok{perform\_rd\_analysis}\NormalTok{(cutoff, donut, }\FloatTok{0.066}\NormalTok{, }\FloatTok{0.135}\NormalTok{)}
+\NormalTok{    results[[}\FunctionTok{paste0}\NormalTok{(}\StringTok{"donut\_"}\NormalTok{, donut)]] }\OtherTok{\textless{}{-}}\NormalTok{ result}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{perform\_rd\_analysis }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(cutoff, donut\_width, h, b) \{}
+    \CommentTok{\# select the data that we need}
+\NormalTok{    panel\_data\_donut }\OtherTok{\textless{}{-}}\NormalTok{ panel\_data[}\SpecialCharTok{!}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances }\SpecialCharTok{\textgreater{}=}\NormalTok{ (cutoff }\SpecialCharTok{{-}}
+\NormalTok{        donut\_width) }\SpecialCharTok{\&}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances }\SpecialCharTok{\textless{}=}\NormalTok{ (cutoff }\SpecialCharTok{+}\NormalTok{ donut\_width)),}
+\NormalTok{        ]}
+    \CommentTok{\# run the rdrobust result}
+\NormalTok{    result\_donut }\OtherTok{\textless{}{-}} \FunctionTok{rdrobust}\NormalTok{(}\AttributeTok{y =}\NormalTok{ panel\_data\_donut}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ panel\_data\_donut}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances,}
+        \AttributeTok{c =}\NormalTok{ cutoff, }\AttributeTok{covs =}\NormalTok{ panel\_data\_donut[, control\_variables], }\AttributeTok{p =} \DecValTok{1}\NormalTok{, }\AttributeTok{h =}\NormalTok{ h, }\AttributeTok{b =}\NormalTok{ b)}
+    \CommentTok{\# return the coefficient and the p value}
+\NormalTok{    conventional }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Conventional"}\NormalTok{, result\_donut}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{1}\NormalTok{,}
+        \DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{])}
+\NormalTok{    bias\_corrected }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Bias{-}Corrected"}\NormalTok{, result\_donut}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{2}\NormalTok{,}
+        \DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{])}
+\NormalTok{    robust }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Robust"}\NormalTok{, result\_donut}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{], result\_donut}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{3}\NormalTok{,}
+        \DecValTok{1}\NormalTok{])}
+
+    \CommentTok{\# combine the results}
+\NormalTok{    result\_table }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(conventional, bias\_corrected, robust)}
+    \FunctionTok{colnames}\NormalTok{(result\_table) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Method"}\NormalTok{, }\StringTok{"Coef"}\NormalTok{, }\StringTok{"SE"}\NormalTok{, }\StringTok{"p{-}value"}\NormalTok{)}
+    \FunctionTok{return}\NormalTok{(result\_table)}
+\NormalTok{\}}
+
+\NormalTok{cutoff }\OtherTok{=} \FloatTok{0.41}
+\NormalTok{donut\_widths }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.01}\NormalTok{, }\FloatTok{0.0125}\NormalTok{, }\FloatTok{0.015}\NormalTok{, }\FloatTok{0.0175}\NormalTok{, }\FloatTok{0.02}\NormalTok{, }\FloatTok{0.0225}\NormalTok{, }\FloatTok{0.025}\NormalTok{)}
+\NormalTok{results\_with\_control }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+
+\ControlFlowTok{for}\NormalTok{ (donut }\ControlFlowTok{in}\NormalTok{ donut\_widths) \{}
+\NormalTok{    result }\OtherTok{\textless{}{-}} \FunctionTok{perform\_rd\_analysis}\NormalTok{(cutoff, donut, }\FloatTok{0.066}\NormalTok{, }\FloatTok{0.135}\NormalTok{)}
+\NormalTok{    results\_with\_control[[}\FunctionTok{paste0}\NormalTok{(}\StringTok{"donut\_"}\NormalTok{, donut)]] }\OtherTok{\textless{}{-}}\NormalTok{ result}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# with controls}
+\NormalTok{combined\_results\_with\_control }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, }\FunctionTok{lapply}\NormalTok{(}\FunctionTok{names}\NormalTok{(results\_with\_control),}
+    \ControlFlowTok{function}\NormalTok{(donut) \{}
+\NormalTok{        result }\OtherTok{\textless{}{-}}\NormalTok{ results\_with\_control[[donut]]}
+\NormalTok{        robust\_result }\OtherTok{\textless{}{-}}\NormalTok{ result[result[, }\StringTok{"Method"}\NormalTok{] }\SpecialCharTok{==} \StringTok{"Robust"}\NormalTok{, ]}
+        \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Donut\_Width =}\NormalTok{ donut, }\AttributeTok{Method =}\NormalTok{ robust\_result[}\DecValTok{1}\NormalTok{], }\AttributeTok{Coef =}\NormalTok{ robust\_result[}\DecValTok{2}\NormalTok{],}
+            \AttributeTok{SE =}\NormalTok{ robust\_result[}\DecValTok{3}\NormalTok{], }\AttributeTok{p\_value =}\NormalTok{ robust\_result[}\DecValTok{4}\NormalTok{])}
+\NormalTok{    \}))}
+\FunctionTok{colnames}\NormalTok{(combined\_results\_with\_control) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Donut Width"}\NormalTok{, }\StringTok{"Method"}\NormalTok{, }\StringTok{"Coef"}\NormalTok{, }\StringTok{"SE"}\NormalTok{,}
+    \StringTok{"p{-}value"}\NormalTok{)}
+
+\CommentTok{\# without controls}
+\NormalTok{combined\_results }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, }\FunctionTok{lapply}\NormalTok{(}\FunctionTok{names}\NormalTok{(results), }\ControlFlowTok{function}\NormalTok{(donut) \{}
+\NormalTok{    result }\OtherTok{\textless{}{-}}\NormalTok{ results[[donut]]}
+\NormalTok{    robust\_result }\OtherTok{\textless{}{-}}\NormalTok{ result[result[, }\StringTok{"Method"}\NormalTok{] }\SpecialCharTok{==} \StringTok{"Robust"}\NormalTok{, ]}
+    \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Donut\_Width =}\NormalTok{ donut, }\AttributeTok{Method =}\NormalTok{ robust\_result[}\DecValTok{1}\NormalTok{], }\AttributeTok{Coef =}\NormalTok{ robust\_result[}\DecValTok{2}\NormalTok{],}
+        \AttributeTok{SE =}\NormalTok{ robust\_result[}\DecValTok{3}\NormalTok{], }\AttributeTok{p\_value =}\NormalTok{ robust\_result[}\DecValTok{4}\NormalTok{])}
+\NormalTok{\}))}
+\FunctionTok{colnames}\NormalTok{(combined\_results) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Donut Width"}\NormalTok{, }\StringTok{"Method"}\NormalTok{, }\StringTok{"Coef"}\NormalTok{, }\StringTok{"SE"}\NormalTok{, }\StringTok{"p{-}value"}\NormalTok{)}
+
+\NormalTok{merged\_results }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(combined\_results\_with\_control, combined\_results, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"Donut Width"}\NormalTok{,}
+    \StringTok{"Method"}\NormalTok{))}
+\NormalTok{merged\_results\_df }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(merged\_results)}
+
+\FunctionTok{colnames}\NormalTok{(merged\_results\_df) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Donut Width"}\NormalTok{, }\StringTok{"Method"}\NormalTok{, }\StringTok{"Coef"}\NormalTok{, }\StringTok{"SE"}\NormalTok{, }\StringTok{"p{-}value"}\NormalTok{,}
+    \StringTok{"Coef"}\NormalTok{, }\StringTok{"SE"}\NormalTok{, }\StringTok{"p{-}value"}\NormalTok{)}
+
+\CommentTok{\# print as a latex table}
+\NormalTok{latex\_code }\OtherTok{\textless{}{-}} \FunctionTok{print}\NormalTok{(}\FunctionTok{xtable}\NormalTok{(merged\_results\_df, }\AttributeTok{caption =} \StringTok{"RD Analysis Donut RD Results with and without Controls"}\NormalTok{,}
+    \AttributeTok{label =} \StringTok{"tab:rd\_robust\_results"}\NormalTok{), }\AttributeTok{include.rownames =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{type =} \StringTok{"latex"}\NormalTok{, }\AttributeTok{print.results =} \ConstantTok{FALSE}\NormalTok{)}
+
+\NormalTok{latex\_code }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{begin}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{\{tabular}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{\}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{\{llllllll}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{\}}\SpecialCharTok{\textbackslash{}n}\StringTok{  }\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{hline}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{begin\{tabular\}\{llllllll\}}\SpecialCharTok{\textbackslash{}n}\StringTok{  }\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{hline}\SpecialCharTok{\textbackslash{}n}\StringTok{ \&  \& }\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{multicolumn\{3\}\{c\}\{Without Control\} \& }\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{multicolumn\{3\}\{c\}\{With Control\} }\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}n}\StringTok{"}\NormalTok{,}
+\NormalTok{    latex\_code)}
+
+\NormalTok{latex\_code }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{end}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{\{tabular}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{\}"}\NormalTok{, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}}\StringTok{end\{tabular\}}\SpecialCharTok{\textbackslash{}n}\StringTok{Note that the cutoff is 0.41, the main bandwidth is 0.066 and the bias bandwidth is 0.135."}\NormalTok{,}
+\NormalTok{    latex\_code)}
+
+\FunctionTok{write}\NormalTok{(latex\_code, }\AttributeTok{file =} \FunctionTok{paste}\NormalTok{(working\_directory, }\StringTok{"result\_tables/donut\_robust.tex"}\NormalTok{,}
+    \AttributeTok{sep =} \StringTok{"/"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{mccrary-sorting-test}{%
+\subsection{McCrary Sorting Test}\label{mccrary-sorting-test}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Give it the running variable and the cutpoint it will automatically produce a}
+\CommentTok{\# plot and select the number of bins and the bandwidth The output will be the}
+\CommentTok{\# p{-}value for the presence of a discontinuity}
+\FunctionTok{DCdensity}\NormalTok{(filtered\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances, }\AttributeTok{cutpoint =} \FloatTok{0.41}\NormalTok{, }\AttributeTok{bw =} \FloatTok{0.066}\NormalTok{, }\AttributeTok{verbose =} \ConstantTok{TRUE}\NormalTok{,}
+    \AttributeTok{plot =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Using calculated bin size:  0.000 
+## Log difference in heights is  -0.026  with SE  0.025 
+##   this gives a z-stat of  -1.070 
+##   and a p value of  0.284
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.2844948
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{DCdensity}\NormalTok{(panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances, }\AttributeTok{cutpoint =} \FloatTok{0.41}\NormalTok{, }\AttributeTok{bw =} \FloatTok{0.066}\NormalTok{, }\AttributeTok{verbose =} \ConstantTok{TRUE}\NormalTok{,}
+    \AttributeTok{plot =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Using calculated bin size:  0.016 
+## Log difference in heights is  -0.041  with SE  0.025 
+##   this gives a z-stat of  -1.641 
+##   and a p value of  0.101
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.1007234
+\end{verbatim}
+
+\hypertarget{placebo-test}{%
+\subsection{PlaceBo Test}\label{placebo-test}}
+
+Conducting placebo test. We shall using the same validation bandwidth
+and bias correction bandwidth. The results are good overall
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{testing\_variables }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"pop"}\NormalTok{, }\StringTok{"light"}\NormalTok{, }\StringTok{"price\_concession"}\NormalTok{, }\StringTok{"ln\_end\_price"}\NormalTok{, }\StringTok{"ln\_nego\_changes"}\NormalTok{,}
+    \StringTok{"ln\_watch\_time"}\NormalTok{, }\StringTok{"green\_ratio"}\NormalTok{, }\StringTok{"bedroom"}\NormalTok{, }\StringTok{"ln\_watch\_people"}\NormalTok{, }\StringTok{"living\_room"}\NormalTok{,}
+    \StringTok{"ln\_negotiation\_period"}\NormalTok{, }\StringTok{"hhi"}\NormalTok{, }\StringTok{"super"}\NormalTok{, }\StringTok{"museum"}\NormalTok{, }\StringTok{"kind"}\NormalTok{, }\StringTok{"mid"}\NormalTok{, }\StringTok{"sub"}\NormalTok{, }\StringTok{"house\_age"}\NormalTok{,}
+    \StringTok{"total\_building"}\NormalTok{)}
+
+\NormalTok{results\_list }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+
+\NormalTok{counter }\OtherTok{\textless{}{-}} \DecValTok{1}
+
+\ControlFlowTok{for}\NormalTok{ (validation }\ControlFlowTok{in}\NormalTok{ testing\_variables) \{}
+\NormalTok{    rd\_result }\OtherTok{\textless{}{-}} \FunctionTok{rdrobust}\NormalTok{(}\AttributeTok{y =}\NormalTok{ panel\_data[[validation]], }\AttributeTok{x =}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances,}
+        \AttributeTok{c =} \FloatTok{0.41}\NormalTok{, }\AttributeTok{h =} \FloatTok{0.066}\NormalTok{, }\AttributeTok{b =} \FloatTok{0.135}\NormalTok{, }\AttributeTok{bwselect =} \StringTok{"mserd"}\NormalTok{, }\AttributeTok{kernel =} \StringTok{"triangular"}\NormalTok{)}
+
+    \CommentTok{\# 提取有效观测值数量并相加}
+\NormalTok{    effective\_obs }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{N\_h)}
+
+    \CommentTok{\# 提取结果并存储到列表中}
+\NormalTok{    results\_list[[counter]] }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Covariate =}\NormalTok{ validation, }\AttributeTok{Estimate =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{1}\NormalTok{],}
+        \AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{SE =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{,}
+        \AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{Z =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{z[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{),}
+        \AttributeTok{PValue =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{Bandwidth =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{bws[}\DecValTok{1}\NormalTok{],}
+            \AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{EffectiveObs =}\NormalTok{ effective\_obs)}
+\NormalTok{    counter }\OtherTok{\textless{}{-}}\NormalTok{ counter }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{\}}
+
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, results\_list)}
+
+\NormalTok{latex\_code }\OtherTok{\textless{}{-}} \FunctionTok{print}\NormalTok{(}\FunctionTok{xtable}\NormalTok{(results, }\AttributeTok{caption =} \StringTok{"Placebo Test Results for Different Covariates"}\NormalTok{,}
+    \AttributeTok{label =} \StringTok{"tab:placebo\_test\_results"}\NormalTok{), }\AttributeTok{include.rownames =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{type =} \StringTok{"latex"}\NormalTok{,}
+    \AttributeTok{print.results =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{write}\NormalTok{(latex\_code, }\AttributeTok{file =} \FunctionTok{paste}\NormalTok{(working\_directory, }\StringTok{"result\_tables/rdd\_placebo\_test.tex"}\NormalTok{,}
+    \AttributeTok{sep =} \StringTok{"/"}\NormalTok{))}
+\FunctionTok{print}\NormalTok{(results)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                Covariate  Estimate       SE       Z             PValue
+## 1                    pop     -73.6      396  -0.186              0.852
+## 2                  light    -0.203     0.26  -0.779              0.436
+## 3       price_concession -0.000379 0.000739  -0.513              0.608
+## 4           ln_end_price   -0.0234   0.0167   -1.41               0.16
+## 5        ln_nego_changes -0.000518   0.0222 -0.0233              0.981
+## 6          ln_watch_time    0.0726   0.0682    1.06              0.288
+## 7            green_ratio  -0.00161  0.00231  -0.696              0.487
+## 8                bedroom  -0.00858   0.0176  -0.487              0.626
+## 9        ln_watch_people    0.0542   0.0357    1.52              0.129
+## 10           living_room  0.000998   0.0113  0.0881               0.93
+## 11 ln_negotiation_period  -0.00648   0.0266  -0.243              0.808
+## 12                   hhi    0.0444  0.00578    7.68 0.0000000000000156
+## 13                 super    -0.298   0.0823   -3.62           0.000292
+## 14                museum   -0.0544   0.0416   -1.31              0.191
+## 15                  kind   0.00667    0.136  0.0491              0.961
+## 16                   mid    0.0124   0.0608   0.204              0.838
+## 17                   sub     0.046   0.0244    1.89              0.059
+## 18             house_age     0.209    0.275    0.76              0.447
+## 19        total_building    -0.275    0.829  -0.332               0.74
+##    Bandwidth EffectiveObs
+## 1      0.066        32010
+## 2      0.066        32010
+## 3      0.066        31437
+## 4      0.066        32010
+## 5      0.066        32010
+## 6      0.066        32010
+## 7      0.066        32010
+## 8      0.066        32010
+## 9      0.066        32010
+## 10     0.066        32010
+## 11     0.066        32010
+## 12     0.066        32010
+## 13     0.066        32010
+## 14     0.066        32010
+## 15     0.066        32010
+## 16     0.066        32010
+## 17     0.066        32010
+## 18     0.066        32010
+## 19     0.066        32010
+\end{verbatim}
+
+\hypertarget{cutoff-point-movement}{%
+\subsection{Cutoff Point movement}\label{cutoff-point-movement}}
+
+The movement of the cutoff point should make the estimation
+non-significant
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cutoffs\_width }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.15}\NormalTok{, }\FloatTok{0.2}\NormalTok{, }\FloatTok{0.25}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.35}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\FloatTok{0.65}\NormalTok{, }\FloatTok{0.7}\NormalTok{)}
+
+\NormalTok{results\_list }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+\NormalTok{counter }\OtherTok{\textless{}{-}} \DecValTok{1}
+\ControlFlowTok{for}\NormalTok{ (cutoff }\ControlFlowTok{in}\NormalTok{ cutoffs\_width) \{}
+    \CommentTok{\# rd\_result \textless{}{-} rdrobust(y = panel\_data$ln\_income, x =}
+    \CommentTok{\# panel\_data$nearest\_store\_distances, c = cutoff, h = 0.066, b = 0.135,}
+    \CommentTok{\# bwselect = \textquotesingle{}mserd\textquotesingle{}, kernel = \textquotesingle{}triangular\textquotesingle{})}
+\NormalTok{    rd\_result }\OtherTok{\textless{}{-}} \FunctionTok{rdrobust}\NormalTok{(}\AttributeTok{y =}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{ln\_income, }\AttributeTok{x =}\NormalTok{ panel\_data}\SpecialCharTok{$}\NormalTok{nearest\_store\_distances,}
+        \AttributeTok{c =}\NormalTok{ cutoff)}
+
+    \CommentTok{\# 提取有效观测值数量并相加}
+\NormalTok{    effective\_obs }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{N\_h)}
+    \CommentTok{\# 提取结果并存储到列表中}
+\NormalTok{    results\_list[[counter]] }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Cutoff =}\NormalTok{ cutoff, }\AttributeTok{Estimate =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{coef[}\DecValTok{1}\NormalTok{],}
+        \AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{SE =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{se[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{,}
+        \AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{Z =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{z[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{),}
+        \AttributeTok{PValue =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{pv[}\DecValTok{1}\NormalTok{], }\AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{Bandwidth =} \FunctionTok{format}\NormalTok{(rd\_result}\SpecialCharTok{$}\NormalTok{bws[}\DecValTok{1}\NormalTok{],}
+            \AttributeTok{digits =} \DecValTok{3}\NormalTok{, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\AttributeTok{EffectiveObs =}\NormalTok{ effective\_obs)}
+\NormalTok{    counter }\OtherTok{\textless{}{-}}\NormalTok{ counter }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{\}}
+\NormalTok{results }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, results\_list)}
+
+\NormalTok{latex\_code }\OtherTok{\textless{}{-}} \FunctionTok{print}\NormalTok{(}\FunctionTok{xtable}\NormalTok{(results, }\AttributeTok{caption =} \StringTok{"Placebo Test Results for Different Cutoff Point"}\NormalTok{,}
+    \AttributeTok{label =} \StringTok{"tab:movement\_cutoff"}\NormalTok{), }\AttributeTok{include.rownames =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{type =} \StringTok{"latex"}\NormalTok{, }\AttributeTok{print.results =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{write}\NormalTok{(latex\_code, }\AttributeTok{file =} \FunctionTok{paste}\NormalTok{(working\_directory, }\StringTok{"result\_tables/movement\_cutoff.tex"}\NormalTok{,}
+    \AttributeTok{sep =} \StringTok{"/"}\NormalTok{))}
+\FunctionTok{print}\NormalTok{(results)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Cutoff Estimate     SE      Z PValue Bandwidth EffectiveObs
+## 1   0.15   0.0331  0.032   1.03  0.301    0.0427        31371
+## 2   0.20   0.0424 0.0318   1.33  0.183    0.0418        31560
+## 3   0.25   0.0153 0.0229  0.668  0.504    0.0809        56751
+## 4   0.30  -0.0233 0.0219  -1.06  0.289    0.0996        64315
+## 5   0.35   -0.025 0.0199  -1.26  0.209     0.134        76718
+## 6   0.50  -0.0102 0.0267 -0.383  0.702     0.113        41909
+## 7   0.65   0.0588 0.0372   1.58  0.113       0.1        21900
+## 8   0.70  -0.0311 0.0316 -0.984  0.325     0.154        29610
+\end{verbatim}
+
+\end{document}
