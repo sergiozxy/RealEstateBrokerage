@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: aer.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: our-cites.bib
-You've used 26 entries,
+You've used 28 entries,
             2984 wiz_defined-function locations,
-            835 strings with 9510 characters,
-and the built_in function-call counts, 25693 in all, are:
-= -- 3924
-> -- 1598
-< -- 446
-+ -- 560
-- -- 312
-* -- 1884
-:= -- 5615
-add.period$ -- 27
-call.type$ -- 26
-change.case$ -- 182
-chr.to.int$ -- 26
-cite$ -- 26
-duplicate$ -- 297
-empty$ -- 763
-format.name$ -- 779
-if$ -- 6330
+            847 strings with 9857 characters,
+and the built_in function-call counts, 27518 in all, are:
+= -- 4230
+> -- 1692
+< -- 475
++ -- 588
+- -- 328
+* -- 2004
+:= -- 6017
+add.period$ -- 29
+call.type$ -- 28
+change.case$ -- 196
+chr.to.int$ -- 28
+cite$ -- 28
+duplicate$ -- 319
+empty$ -- 820
+format.name$ -- 831
+if$ -- 6796
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 26
-newline$ -- 85
-num.names$ -- 312
-pop$ -- 384
+missing$ -- 28
+newline$ -- 91
+num.names$ -- 336
+pop$ -- 413
 preamble$ -- 1
-purify$ -- 208
+purify$ -- 224
 quote$ -- 0
 skip$ -- 0
 stack$ -- 0
-substring$ -- 910
-swap$ -- 113
+substring$ -- 971
+swap$ -- 121
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 104
+type$ -- 112
 warning$ -- 0
-while$ -- 302
+while$ -- 324
 width$ -- 0
-write$ -- 451
+write$ -- 486

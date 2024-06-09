@@ -293,7 +293,7 @@ est store hhi_geq_06
 esttab hhi_le_01 hhi_geq_02 hhi_le_03 hhi_geq_04 hhi_le_05 hhi_geq_06 ///
  using result_tables/robust_hhi.tex, ///
 style(tex) booktabs keep($dependent_variable L.ln_income L.price_concession L.ln_lead  ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(income)" "price concession" "price concession" "log(lead times)" "log(lead times)") ///
+mtitle("log(income) [lower]" "log(income) [higher]" "price concession [lower]" "price concession [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
@@ -328,7 +328,7 @@ est store robust_mature_5
 esttab robust_mature_0 robust_mature_1 robust_mature_2 robust_mature_3 robust_mature_4 robust_mature_5 ///
  using result_tables/robust_mature.tex, ///
 style(tex) booktabs keep($dependent_variable L.ln_income L.price_concession L.ln_lead  ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(income)" "price concession" "price concession" "log(lead times)" "log(lead times)") ///
+mtitle("log(income) [lower]" "log(income) [higher]" "price concession [lower]" "price concession [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
