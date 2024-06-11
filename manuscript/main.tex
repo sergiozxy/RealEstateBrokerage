@@ -254,9 +254,7 @@ In the construction of our regression model, we deliberately omit the first peri
 
 The result highlights the dynamic impact of density, encapsulated by Lianjia's DBI, on transaction revenue, house tours, and price concessions over time, especially in response to external factors such as digital transformation and the COVID-19 pandemic. Initially, Lianjia's impact on transaction revenue showed a significant positive trend, peaking in 2018, due to its digital transformation efforts, including the integration of other platform stores into its shared network. However, the momentum slowed in 2020 and 2021, with the impact becoming significantly negative. This period coincided with the outbreak of the COVID-19 pandemic, which severely disrupted Lianjia's revenue streams and business activities due to widespread restrictions, underscoring the vulnerability of real estate transactions to macroeconomic shocks. In terms of home tours, Lianjia's impact remained robustly positive through 2019. This suggests that a strong market presence correlates with increased buyer attention, which translates into more home tours. However, pandemic-related restrictions dampened this effect in later years, highlighting the challenges posed by external constraints on physical real estate activity. For price concessions, we find that the Lianjia's DBI is significantly negatively correlated with the price concessions during pandemic periods. This is due to the fact that most transactions slow down during these periods and people are more likely to wait longer to find a buyer, which would result in fewer price concessions.
 
-To check the robustness of the result, we calculate the HHI index for each segmented market which is defined as $HHI = \sum_{i=1}^N (s_i)^2$ where $s_i$ is the market share of firm $i$ expressed as a percentage. Then we estimate the model by separating the samples to those with high HHI and low HHI where HHI is greater than 2000 and less than 2000. The results are shown in Table \ref{tab:sylized_fact_hetero_hhi}. The result indicates that 
-
-Moreover, to check the heterogeneity issue, we also classifies the we also report the results of the robustness check of the dynamic model. The results show that the dynamic model Table \ref{tab:sylized_fact_hetero_mature}
+To verify the robustness of our results, we calculated the Herfindahl-Hirschman Index (HHI) for each segmented market, defined as $HHI = \sum_{i=1}^N (s_i)^2$ where $s_i$ is the market share of firm $i$ expressed as a percentage. We then estimated the model by dividing the sample into high HHI (greater than 2000) and low HHI (less than 2000) groups. The results, shown in Table \ref{tab:sylized_fact_hetero_hhi}, indicate that Lianjia's offline stores have a more substantial impact on transaction properties in more competitive markets compared to more monopolized ones. This effect arises from two main factors: first, Lianjia's market power is insufficient to exclude other competitors from entering the market, and second, the area may not be attractive to other competitors, resulting in a larger market share for Lianjia. Furthermore, to address the heterogeneity issue, we introduced a dummy variable equal to one if the market already had Lianjia presence before 2016 and estimated the model by separating the sample based on this criterion. The results, presented in Table \ref{tab:sylized_fact_hetero_mature}, demonstrate that the years 2017, 2018, and 2019 have a significant positive impact on Lianjia's revenue in this segmented market. Another interesting phenomenon observed is that the number of house tours is significant for the years 2018 and 2019 in the lower maturity group, whereas in the higher maturity group, the number of house tours becomes significant in 2020. These findings indicate that in less mature markets, the entry of Lianjia drives increased profitability and enhances the attractiveness of its offline store strategy. Moreover, this suggests that Lianjia's market entry and subsequent strategies are more immediately impactful in less mature markets.
 
 
 % There should be a model like: Police brutality, law enforcement, and crime: Evidence from Chicago
@@ -265,7 +263,7 @@ Moreover, to check the heterogeneity issue, we also classifies the we also repor
 
 \subsection{Does Lianjia's Entry influence the segmented market?} \label{subsec:entry_effect}
 
-In the preceding section, our research has been directed toward evaluating the dynamic effect of Lianjia's offline stores operation. However, there is an imperative to conduct a more detailed analysis of the impact of Lianjia's entry on regional transaction properties. The core of this necessary analysis derives from the premise that the entry of a Lianjia represents an exogenous shock within the respective local segmented market, thus providing a unique opportunity to study the effect of offline expansion on local real estate market. To facilitate such an analysis, we have constructed a series of dummy variables associated with the presence of the Lianjia within the marketplace, delineated as $pre_2$, $pre_1$ (before entry), $entry$, $post_1$, $post_2$, and $post_3$ (successive post-entry intervals), which encapsulate the respective temporal epochs relative to the Lianjia's entry. These binary indicators serve as central regressors within a structured econometric model with $pre_1$ as the control group, described in Equation \eqref{eq:entry_effect}:
+In the preceding section, our research has been directed toward evaluating the dynamic effect of Lianjia's offline stores operation. However, there is an imperative to conduct a more detailed analysis of the impact of Lianjia's entry on regional transaction properties. The core of this necessary analysis derives from the premise that the entry of a Lianjia represents an exogenous shock within the respective local segmented market, thus providing a unique opportunity to study the effect of offline expansion on local real estate market. To facilitate such an analysis, we have constructed a series of dummy variables associated with the presence of the Lianjia within the marketplace, delineated as $pre_2$, $pre_1$ (before entry), $entry$, $post_1$, $post_2$, and $post_3$ (successive post-entry intervals), which encapsulate the respective temporal epochs relative to the Lianjia's entry. To eliminate the effect of the well constructed effect, we drop all the variables that have Lianjia's offline stores before the year 2016 to better estimate the effect of Lianjia's entry on the market. These binary indicators serve as central regressors within a structured econometric model with $pre_1$ as the control group, described in Equation \eqref{eq:entry_effect}:
 
 \begin{equation}
     Y_{it} = \rho Y_{it-1} + \beta_0 +  pre_2 + entry + \sum_{i=1}^3 post_i + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}.   \label{eq:entry_effect}
@@ -287,12 +285,11 @@ $pre_2, entry, post_i$ are correspondingly periods dummy variables and other set
 
 The result presented in the table \ref{tab:entry_effect} examines the effect of Lianjia's offline stores' entry into an area on various outcomes. Prior to the Lianjia's entry ($pre_2$), there is no statistically significant effect on any of the three outcomes, suggesting that anticipation of the Lianjia's entry does not affect these metrics. In addition, there is a significant 4\% increase in revenue after the Lianjia's entry ($entry$), suggesting a substantial increase in Lianjia sales. However, the effect on price concessions and number of showings remains statistically insignificant, suggesting that Lianjia's entry does not lead to significant changes in pricing strategies or the number of showings brought to the area.
 
-In the post-entry periods ($post_1$, $post_2$, and $post_3$), the results vary. The first period after entry ($post_1$) shows no significant changes in any of the results. However, after two post-entry periods ($post_2$ and $post_3$), there are significant negative effects on both revenue and number of house tours. These declines suggest a decline in the performance and engagement of the Lianjia, possibly due to the impact of an epidemic that led to a decrease in revenue and showing
+In the post-entry periods ($post_1$, $post_2$, and $post_3$), the results exhibit notable variations. The first period after entry ($post_1$) shows no significant changes in any of the metrics analyzed. However, in the subsequent post-entry periods ($post_2$ and $post_3$), there are significant negative effects on both revenue and the number of house tours. These declines suggest a deterioration in Lianjia's performance and customer engagement, likely attributable to the impact of the epidemic, which led to a decrease in overall revenue. Interestingly, Lianjia's entry does not have a significant effect on price concessions but does show a negative impact on the number of house tours during the epidemic periods. This negative effect is also attributed to the epidemic, which reduced the frequency of house tours due to heightened health concerns and mobility restrictions.
 
 In summary, the entry of a Lianjia into an area significantly boosts its sales initially, without altering its pricing strategies or viewer engagement significantly. However, the positive impact is short-lived, turning negative in subsequent periods, likely exacerbated by external factors like an epidemic.
 
-To check the robustness of the entry effect, we also conduct the
-
+To verify the robustness of the entry effect, we classified the sample into low and high Herfindahl-Hirschman Index (HHI) groups. The results, presented in Table \ref{tab:entry_effect_robustness}, indicate that the entry effect is more pronounced in the high HHI group, with an impact of 6.8\%, and this effect persists into the subsequent period, increasing to 7.8\%. However, following the epidemic, the effect becomes significantly negative in the low HHI group, suggesting that the entry effect is more adversely affected by epidemic policies in less concentrated markets. Conversely, the effect remains non-significant in the high HHI group. Additionally, Lianjia's entry does not significantly influence price concessions in either group, nor does it significantly affect the number of house tours. However, post-epidemic, the number of house tours shows a significantly negative effect in the low HHI group, indicating a more substantial decline in customer engagement in less concentrated markets.
 
 \begin{table}
   \begin{center}
@@ -314,7 +311,7 @@ In addition to the entry effect of Lianjia, there is another exogenous shock dur
     Y_{it}  = \beta_0 + \sum_{i=-2}^3 Treatment_{it} * year + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}. \label{eq:acn_assessment}
 \end{equation}
 
-We treat the year 2016 as the base year, and other settings are consistent with previous table \ref{tab:Dynamic}. The result is reported in Figure \ref{fig:dynamic_effect}
+We treat the year 2016 as the base year, and other settings are consistent with previous table \ref{tab:Dynamic}. The result is reported in Figure \ref{fig:dynamic_effect}.
 
 \begin{figure}[ht]
     \centering
@@ -330,6 +327,8 @@ We treat the year 2016 as the base year, and other settings are consistent with 
 The empirical findings elucidate that prior to the establishment of the ACN, there is an absence of discernible effects attributable to anticipation. Subsequent results for the fiscal year 2018 reveal that the ACN exerts a considerable influence on revenue generation, yet it manifests no significant impact on the metrics of price concessions and the number of house tours. This phenomenon indicates that the efficacy of the ACN model does not derive from an augmentation in client base through absorption but rather through the synthesis and integration of comprehensive data on the supply side. Post-2018 observations indicate the maturation of the platformization process, evidencing its expanding influence from the supply to the demand sector. Notably, a marked negative effect on price concessions is observed, underscoring the ACN's significant role in influencing consumer decision-making processes.
 
 However, the years 2021 and 2022 witnessed a mitigated advantage of these factors due to the global epidemic, underscoring an imperative insight; despite the foundational establishment of online platformization, the inherent benefits of physical storefronts remain irreplaceable. This realization requires a re-evaluation of economic models, advocating a harmonious co-evolution of online and offline market paradigms. This strategic integration aims to leverage the unique strengths of each model to foster a more resilient and adaptive economic ecosystem.
+
+To check the robustness of the result, we also calculated the average number of watching times in the beke's website during the sample periods and estimated the model separately (need to further refine and reformulate).
 
 \begin{table}
   \begin{center}
@@ -384,6 +383,8 @@ The study of Lianjia's strategic expansion into China's real estate brokerage in
 
 \input{../result_tables/movement_cutoff.tex}
 
+\clearpage
+
 \begin{table}[H]
   \begin{center}
     \begin{scriptsize}
@@ -394,6 +395,8 @@ The study of Lianjia's strategic expansion into China's real estate brokerage in
     \end{scriptsize}
   \end{center}
 \end{table}
+
+\clearpage
 
 \begin{table}[H]
   \begin{center}

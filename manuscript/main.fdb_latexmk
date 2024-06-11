@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1718059054 "main.aux" "main.bbl" "main" 1718059055
+["bibtex main"] 1718115860 "main.aux" "main.bbl" "main" 1718117345
   "/usr/share/texlive/texmf-dist/bibtex/bst/economic/aer.bst" 1389482635 26812 2ae6e48450a8c17a93d98067b7084a7a ""
-  "main.aux" 1718059055 13048 452447c0feb9a0863d0530e77fca88ce "pdflatex"
+  "main.aux" 1718117345 13048 dd9601e4e0c40e02aced463f188a589a "pdflatex"
   "our-cites.bib" 1718034970 21851 963ee5cfd080f8811fdae3bafdc390fb ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1718059054 "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" "main.pdf" "main" 1718059055
+["pdflatex"] 1718117344 "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" "main.pdf" "main" 1718117345
   "../figures/RD_Plot_1st_Order.pdf" 1715192244 15497 5ddd9e456bd31ea343d83e388b20d34c ""
   "../figures/RD_Plot_2nd_Order.pdf" 1715192244 15504 9654ca6ffee640ce374e6f001302a7ea ""
   "../figures/RD_Plot_3rd_Order.pdf" 1715192244 15472 56e1d2c7a873d079810d6348a5245491 ""
@@ -38,7 +38,7 @@
   "../result_tables/stylized_fact.tex" 1717849314 1907 73ef4703b09d38c8869cdec5930da375 ""
   "../result_tables/summary_statistics.tex" 1715270602 3944 fdcd965d01d5ebc7305e0c2cf9320c36 ""
   "/etc/texmf/web2c/texmf.cnf" 1709863417 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" 1718059053 75328 70f982633061a73b46e7d1bf403be0fe ""
+  "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" 1718117344 78234 df5791eea420476fa783519906295d54 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1136768653 1536 73da8e8f1d2a4c957d51ca133585586b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -276,10 +276,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1709863684 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1711562297 2799763 669912f8fca1df62fe1f3b65d7f17269 ""
-  "main.aux" 1718059055 13048 452447c0feb9a0863d0530e77fca88ce "pdflatex"
-  "main.bbl" 1718059054 8554 0549088f790b49ce2d6132a96fbfc6eb "bibtex main"
-  "main.out" 1718059055 2173 d8aa0f62103e69e6de54e141c6592849 "pdflatex"
-  "main.tex" 1718059053 75328 70f982633061a73b46e7d1bf403be0fe ""
+  "main.aux" 1718117345 13048 dd9601e4e0c40e02aced463f188a589a "pdflatex"
+  "main.bbl" 1718115860 8554 0549088f790b49ce2d6132a96fbfc6eb "bibtex main"
+  "main.out" 1718117345 2173 d8aa0f62103e69e6de54e141c6592849 "pdflatex"
+  "main.tex" 1718117344 78234 df5791eea420476fa783519906295d54 ""
   (generated)
   "main.aux"
   "main.log"
