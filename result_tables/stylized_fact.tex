@@ -1,35 +1,67 @@
 {
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\begin{tabular}{l*{3}{c}}
+\begin{tabular}{l*{2}{c}}
 \toprule
-            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
-            &\multicolumn{1}{c}{log(income)}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{log(lead times)}\\
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+            &\multicolumn{1}{c}{log(income)}&\multicolumn{1}{c}{log(lead times)}\\
 \midrule
-density     &      0.0708\sym{***}&    0.000363         &      0.0418\sym{***}\\
-            &    (0.0199)         &  (0.000728)         &    (0.0154)         \\
+density     &      0.0708\sym{***}&      0.0418\sym{***}\\
+            &    (0.0199)         &    (0.0154)         \\
 \addlinespace
-other brokerage num  &     0.00157         & -0.00000507         &    0.000280         \\
-            &   (0.00103)         & (0.0000359)         &  (0.000704)         \\
+broker\_410  &     0.00157         &    0.000280         \\
+            &   (0.00103)         &  (0.000704)         \\
 \addlinespace
-log(watch people)&      0.0661\sym{***}&    -0.00180\sym{***}&       0.333\sym{***}\\
-            &   (0.00378)         &  (0.000149)         &   (0.00432)         \\
+ln\_watch\_people&      0.0661\sym{***}&       0.333\sym{***}\\
+            &   (0.00378)         &   (0.00432)         \\
 \addlinespace
-ln(Price)&       0.919\sym{***}&     -0.0664\sym{***}&       0.239\sym{***}\\
-            &    (0.0298)         &   (0.00220)         &    (0.0232)         \\
+ln\_end\_price&       0.919\sym{***}&       0.239\sym{***}\\
+            &    (0.0298)         &    (0.0232)         \\
 \addlinespace
-log(watch time)&      0.0309\sym{***}&    0.000189\sym{**} &      0.0318\sym{***}\\
-            &   (0.00244)         & (0.0000921)         &   (0.00206)         \\
+ln\_watch\_time&      0.0309\sym{***}&      0.0318\sym{***}\\
+            &   (0.00244)         &   (0.00206)         \\
 \addlinespace
-log(nego changes)&      0.0239\sym{***}&    -0.00203\sym{***}&       0.135\sym{***}\\
-            &   (0.00635)         &  (0.000239)         &   (0.00703)         \\
+ln\_nego\_changes&      0.0239\sym{***}&       0.135\sym{***}\\
+            &   (0.00635)         &   (0.00703)         \\
 \addlinespace
-log(negotiation period)&      0.0598\sym{***}&     0.00198\sym{***}&       0.131\sym{***}\\
-            &   (0.00350)         &  (0.000160)         &   (0.00395)         \\
+ln\_negotiation\_period&      0.0598\sym{***}&       0.131\sym{***}\\
+            &   (0.00350)         &   (0.00395)         \\
 \midrule
-\(N\)       &      134648         &      132301         &      134648         \\
-R-squared   &       0.886         &       0.608         &       0.918         \\
+\(N\)       &      134648         &      134648         \\
+R-squared   &       0.886         &       0.918         \\
 \bottomrule
-\multicolumn{4}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\multicolumn{3}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+}
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{2}{c}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+            &\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{price concession}\\
+\midrule
+density     &      0.0114         &    0.000280         \\
+            &    (0.0149)         &  (0.000326)         \\
+\addlinespace
+broker\_410  &   -0.000899         &  0.00000354         \\
+            &  (0.000825)         & (0.0000139)         \\
+\addlinespace
+ln\_watch\_people&       0.358\sym{***}&    0.000582\sym{***}\\
+            &   (0.00266)         & (0.0000376)         \\
+\addlinespace
+ln\_end\_price&      -0.220\sym{***}&      0.0130\sym{***}\\
+            &    (0.0210)         &  (0.000550)         \\
+\addlinespace
+ln\_watch\_time&      0.0386\sym{***}&   -0.000587\sym{***}\\
+            &   (0.00188)         & (0.0000296)         \\
+\addlinespace
+ln\_nego\_changes&       0.652\sym{***}&     0.00188\sym{***}\\
+            &   (0.00577)         & (0.0000577)         \\
+\midrule
+\(N\)       &     1771638         &     1736077         \\
+R-squared   &       0.520         &       0.233         \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
 \end{tabular}
 }

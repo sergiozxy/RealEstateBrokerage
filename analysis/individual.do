@@ -1,6 +1,11 @@
-cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads\RealEstateResult" // change to your working directory
 
+/*
+clear matrix
+clear mata
 set maxvar 100000
+*/
+
 use "individual.dta", clear
 
 // replace price_concession = - price_concession if price_concession < 0
@@ -78,7 +83,7 @@ scalars("r2 R-squared") ///
 /* Exogenous Shock with lianjia's entry */
 preserve
 
-drop if to_keep == 0
+// drop if to_keep == 0
 
 gen effect = 0
 replace effect = 1 if (entry == 1 | post1 == 1 | post2 == 1 | post3 == 1)

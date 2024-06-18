@@ -1,6 +1,11 @@
-cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads\RealEstateResult" // change to your working directory
 
 use "template.dta", clear
+
+// ssc install reghdfe
+// ssc install ftools
+// ssc install estout
+// ssc install coefplot
 
 // replace price_concession = - price_concession if price_concession < 0
  
@@ -183,7 +188,7 @@ est store did_2
 
 * Define the names and titles using global macros
 global names "did_1 did_2"
-global titles "natural logarithm of income" "natural logarithm of leading times"
+global titles ""log(income)" "log(leading_times)""
 
 * Loop through each variable and its corresponding title
 forvalues i = 1/2 {
@@ -212,7 +217,6 @@ forvalues i = 1/2 {
     * Export each graph to a PDF file with DPI 300, naming the file based on the variable name
     graph export "`name'.pdf", as(pdf) replace
 }
-
 
 esttab did_1 did_2 ///
  using result_tables/difference_in_difference.tex, ///
@@ -247,48 +251,6 @@ scalars("r2 R-squared") ///
 
  
  
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-/* Heterogenous Check */
-
-** mechanism: 
-* Compare mature markets where brokerages have been established for a long time with emerging markets where brokerages are relatively new.
-* Competitor Analysis: Compare areas where Lianjia faces different levels of competition. The impact of Lianjia in highly competitive markets versus those with limited competition could reveal its market influence.
-
-reghdfe ln_income L.ln_income $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
-est store hhi_le_01
-
-reghdfe ln_income L.ln_income $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
-est store hhi_geq_02
-
-reghdfe ln_lead L.ln_lead $dependent_variable ln_end_price broker_410 ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
-est store hhi_le_03
-
-reghdfe ln_lead L.ln_lead $dependent_variable ln_end_price broker_410 ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
-est store hhi_geq_04
-
-esttab hhi_le_01 hhi_geq_02 hhi_le_03 hhi_geq_04 ///
- using result_tables/robust_hhi.tex, ///
-style(tex) booktabs keep($dependent_variable L.ln_income L.ln_lead  ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income) [lower]" "log(income) [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
-
 // now we compare the mature market with non-mature markets
 
 by id: gen first_year = _n == 1
