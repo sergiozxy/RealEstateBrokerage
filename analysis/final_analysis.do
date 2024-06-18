@@ -1,4 +1,4 @@
-cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
+cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
 
 use "template.dta", clear
 
@@ -61,6 +61,12 @@ global dependent_variable yearx2_density yearx3_density yearx4_density yearx5_de
 
 by id year: egen avg_watch_time = mean(watched_times)
 tabstat avg_watch_time, stat(p50, mean, p25, p75)
+
+by id: gen first_year = _n == 1
+gen mature_market = (lianjia_410 > 0) if first_year == 1
+replace mature_market = 0 if mature_market == .
+by id: egen max_mature = max(mature_market)
+drop first_year
 
 // save "for-analysis.dta", replace
 
@@ -198,11 +204,7 @@ est store hetero_did_4
  
 // now we compare the mature market with non-mature markets
 
-by id: gen first_year = _n == 1
-gen mature_market = (lianjia_410 > 0) if first_year == 1
-replace mature_market = 0 if mature_market == .
-by id: egen max_mature = max(mature_market)
-drop first_year
+
 
 reghdfe ln_income L.ln_income $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if max_mature == 0, absorb(year#bs_code id) vce(cluster bs_code)
 est store robust_mature_1

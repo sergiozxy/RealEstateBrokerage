@@ -5,46 +5,46 @@
             &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
             &\multicolumn{1}{c}{log(income) [lower]}&\multicolumn{1}{c}{log(income) [higher]}&\multicolumn{1}{c}{log(lead times) [lower]}&\multicolumn{1}{c}{log(lead times) [higher]}\\
 \midrule
-L.ln\_income &     -0.0529\sym{***}&     -0.0929\sym{***}&                     &                     \\
+L.log(income) &     -0.0529\sym{***}&     -0.0929\sym{***}&                     &                     \\
             &   (0.00594)         &   (0.00539)         &                     &                     \\
 \addlinespace
-yearx2\_density&       0.197\sym{***}&      0.0979\sym{*}  &      0.0260         &      0.0582         \\
+year2 $\times$ density&       0.197\sym{***}&      0.0979\sym{*}  &      0.0260         &      0.0582         \\
             &    (0.0586)         &    (0.0502)         &    (0.0406)         &    (0.0373)         \\
 \addlinespace
-yearx3\_density&       0.207\sym{***}&      0.0242         &       0.129\sym{***}&      0.0224         \\
+year3 $\times$ density&       0.207\sym{***}&      0.0242         &       0.129\sym{***}&      0.0224         \\
             &    (0.0483)         &    (0.0463)         &    (0.0345)         &    (0.0373)         \\
 \addlinespace
-yearx4\_density&       0.114\sym{**} &     -0.0313         &      0.0540\sym{*}  &      0.0282         \\
+year4 $\times$ density&       0.114\sym{**} &     -0.0313         &      0.0540\sym{*}  &      0.0282         \\
             &    (0.0453)         &    (0.0440)         &    (0.0318)         &    (0.0326)         \\
 \addlinespace
-yearx5\_density&       0.128\sym{***}&      0.0437         &      0.0250         &      0.0647\sym{*}  \\
+year5 $\times$ density&       0.128\sym{***}&      0.0437         &      0.0250         &      0.0647\sym{*}  \\
             &    (0.0423)         &    (0.0492)         &    (0.0315)         &    (0.0330)         \\
 \addlinespace
-yearx6\_density&     -0.0765         &      -0.237\sym{***}&      0.0139         &     -0.0107         \\
+year6 $\times$ density&     -0.0765         &      -0.237\sym{***}&      0.0139         &     -0.0107         \\
             &    (0.0814)         &    (0.0805)         &    (0.0493)         &    (0.0565)         \\
 \addlinespace
-yearx7\_density&      -0.116         &      -0.103         &     -0.0161         &      0.0817         \\
+year7 $\times$ density&      -0.116         &      -0.103         &     -0.0161         &      0.0817         \\
             &    (0.0883)         &    (0.0872)         &    (0.0724)         &    (0.0774)         \\
 \addlinespace
-broker\_410  &     0.00416\sym{***}&   -0.000302         &    0.000511         &    0.000930         \\
+other brokerage num  &     0.00416\sym{***}&   -0.000302         &    0.000511         &    0.000930         \\
             &   (0.00155)         &   (0.00142)         &   (0.00114)         &   (0.00110)         \\
 \addlinespace
-ln\_end\_price&       0.945\sym{***}&       0.928\sym{***}&       0.233\sym{***}&       0.255\sym{***}\\
+ln(Price)&       0.945\sym{***}&       0.928\sym{***}&       0.233\sym{***}&       0.255\sym{***}\\
             &    (0.0429)         &    (0.0409)         &    (0.0326)         &    (0.0322)         \\
 \addlinespace
-ln\_watch\_people&      0.0863\sym{***}&      0.0501\sym{***}&       0.327\sym{***}&       0.331\sym{***}\\
+log(watch people)&      0.0863\sym{***}&      0.0501\sym{***}&       0.327\sym{***}&       0.331\sym{***}\\
             &   (0.00529)         &   (0.00505)         &   (0.00550)         &   (0.00564)         \\
 \addlinespace
-ln\_watch\_time&      0.0282\sym{***}&      0.0327\sym{***}&      0.0309\sym{***}&      0.0334\sym{***}\\
+log(watch time)&      0.0282\sym{***}&      0.0327\sym{***}&      0.0309\sym{***}&      0.0334\sym{***}\\
             &   (0.00392)         &   (0.00310)         &   (0.00295)         &   (0.00276)         \\
 \addlinespace
-ln\_nego\_changes&      0.0259\sym{***}&      0.0200\sym{**} &       0.160\sym{***}&       0.110\sym{***}\\
+log(nego changes)&      0.0259\sym{***}&      0.0200\sym{**} &       0.160\sym{***}&       0.110\sym{***}\\
             &   (0.00911)         &   (0.00886)         &   (0.00812)         &   (0.00901)         \\
 \addlinespace
-ln\_negotiation\_period&      0.0488\sym{***}&      0.0657\sym{***}&       0.123\sym{***}&       0.129\sym{***}\\
+log(negotiation period)&      0.0488\sym{***}&      0.0657\sym{***}&       0.123\sym{***}&       0.129\sym{***}\\
             &   (0.00517)         &   (0.00487)         &   (0.00487)         &   (0.00534)         \\
 \addlinespace
-L.ln\_lead   &                     &                     &     -0.0922\sym{***}&      -0.107\sym{***}\\
+L.log(lead times)   &                     &                     &     -0.0922\sym{***}&      -0.107\sym{***}\\
             &                     &                     &   (0.00461)         &   (0.00496)         \\
 \midrule
 \(N\)       &       66143         &       67756         &       66143         &       67756         \\
