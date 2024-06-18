@@ -8,26 +8,6 @@ set maxvar 100000
 
 use "individual.dta", clear
 
-// replace price_concession = - price_concession if price_concession < 0
- 
-/*
-*** basic idea: 
-** we first conduct using stylized facts: ln_income ~ density and by conducting four sets of researches;
-* without controls, with controls, with control FE and with controls multi-way FE
-
-** we then estimate the dynamic effect of density to the incomes, 
-* and we test the mechanism by adding other dependent varialbes, including price_concession, ln_lead
-* then we add the robustness check.
-
-** we then estimate the lianjia's entry effect to these regions, we also test them with mechanism variables
-
-** we then use estimate the platformization effect of brokerages by conducting the number of
-
-** mechanism: 
-* Compare mature markets where brokerages have been established for a long time with emerging markets where brokerages are relatively new.
-*  Competitor Analysis: Compare areas where Lianjia faces different levels of competition. The impact of Lianjia in highly competitive markets versus those with limited competition could reveal its market influence.
-*/
-
 tab year, gen(yearx)
 
 foreach var of varlist yearx* {
@@ -54,14 +34,14 @@ est store stylized_fact_3
 reghdfe price_concession density broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store stylized_fact_4
 
-esttab stylized_fact_3 stylized_fact_4 ///
+esttab stylized_fact_1 stylized_fact_2 stylized_fact_3 stylized_fact_4 ///
  using result_tables/stylized_fact.tex, ///
-style(tex) booktabs keep(density broker_410 ln_end_price ln_watch_people ln_watch_time ln_nego_changes) ///
-mtitle("log(negotiation period)" "price concession") ///
+style(tex) booktabs keep(density broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
- append
+ replace
 
 /* Dynamic Effect and Estimtion */
 
@@ -71,14 +51,14 @@ est store dynamic_3
 reghdfe price_concession $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store dynamic_4
 
-esttab dynamic_3 dynamic_4 ///
+esttab dynamic_1 dynamic_2 dynamic_3 dynamic_4 ///
  using result_tables/dynamic.tex, ///
-style(tex) booktabs keep($dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time ln_nego_changes) ///
-mtitle("log(negotiation period)" "price concession") ///
+style(tex) booktabs keep($dependent_variable broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
- append
+ replace
 
 /* Exogenous Shock with lianjia's entry */
 preserve
@@ -94,14 +74,14 @@ est store entry_3
 reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_4
 
-esttab entry_3 entry_4 ///
+esttab entry_1 entry_2 entry_3 entry_4 ///
  using result_tables/entry_effect.tex, ///
-style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_watch_time ln_nego_changes) ///
-mtitle("log(negotiation period)" "price concession") ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
- append
+ replace
 
 reghdfe ln_negotiation_period pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_5
@@ -115,14 +95,17 @@ est store hetero_entry_7
 reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_8
 
-esttab hetero_entry_5 hetero_entry_6 hetero_entry_7 hetero_entry_8 ///
+esttab hetero_entry_1 hetero_entry_2 hetero_entry_3 hetero_entry_4 hetero_entry_5 hetero_entry_6 hetero_entry_7 hetero_entry_8 ///
  using result_tables/entry_effect_hetero.tex, ///
-style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_watch_time ln_nego_changes) ///
-mtitle("log(negotiation period) [lower]"  "log(negotiation period) [higher]" "price concession [lower]" "price concession [higher]") ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(income)" "log(lead times)" "log(lead times)" "log(negotiation period)"  "log(negotiation period)" "price concession" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
- append
+ replace
+
+// note that we need to add the results:
+// & [higher] & [lower] & [higher] & [lower] & [higher] & [lower] & [higher] & [lower] \\ \hline
 
 restore
 
@@ -168,14 +151,14 @@ forvalues i = 1/2 {
 
 
 
-esttab did_3 did_4 ///
+esttab did_1 did_2 did_3 did_4 ///
  using result_tables/difference_in_difference.tex, ///
-style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_watch_time ln_nego_changes) ///
-mtitle("log(negotiation period)" "price concession") ///
+style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
- append
+ replace
 
 /*** Heterogenous Check of The Mechanism ***/
 
@@ -191,16 +174,16 @@ est store hetero_did_7
 reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_8
 
-esttab hetero_did_5 hetero_did_6 hetero_did_7 hetero_did_8 ///
+esttab hetero_did_1 hetero_did_2 hetero_did_3 hetero_did_4 hetero_did_5 hetero_did_6 hetero_did_7 hetero_did_8 ///
  using result_tables/heter_platform_did.tex, ///
-style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_watch_time ln_nego_changes) ///
-mtitle("log(negotiation period) [lower]"  "log(negotiation period) [higher]" "price concession [lower]" "price concession [higher]") ///
+style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(income)" "log(lead times)" "log(lead times)" "log(negotiation period)"  "log(negotiation period)" "price concession" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
- append
+ replace
 
-
+ 
 
 // statistical result
 

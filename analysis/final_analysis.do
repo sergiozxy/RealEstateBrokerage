@@ -1,4 +1,4 @@
-cd "C:\Users\zxuyuan\Downloads\RealEstateResult" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
 
 use "template.dta", clear
 
@@ -72,15 +72,6 @@ est store stylized_fact_1
 reghdfe ln_lead density broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store stylized_fact_2
 
-esttab stylized_fact_1 stylized_fact_2 ///
- using result_tables/stylized_fact.tex, ///
-style(tex) booktabs keep(density broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
-
 /* Dynamic Effect and Estimtion */
 
 reghdfe ln_income L.ln_income $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
@@ -88,15 +79,6 @@ est store dynamic_1
 
 reghdfe ln_lead L.ln_lead $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store dynamic_2
-
-esttab dynamic_1 dynamic_2 ///
- using result_tables/dynamic.tex, ///
-style(tex) booktabs keep($dependent_variable L.ln_income L.ln_lead broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
 
 /* Exogenous Shock with lianjia's entry */
 preserve
@@ -145,16 +127,6 @@ est store entry_1
 reghdfe ln_lead L.ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_2
 
-esttab entry_1 entry_2 ///
- using result_tables/entry_effect.tex, ///
-style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
- 
-
 reghdfe ln_income L.ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_1
 
@@ -166,15 +138,6 @@ est store hetero_entry_3
 
 reghdfe ln_lead L.ln_lead pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_4
-
-esttab hetero_entry_1 hetero_entry_2 hetero_entry_3 hetero_entry_4 ///
- using result_tables/entry_effect_hetero.tex, ///
-style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income) [lower]"  "log(income) [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
 
 restore
 
@@ -218,15 +181,6 @@ forvalues i = 1/2 {
     graph export "`name'.pdf", as(pdf) replace
 }
 
-esttab did_1 did_2 ///
- using result_tables/difference_in_difference.tex, ///
-style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
-
 /*** Heterogenous Check of The Mechanism ***/
 reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_1
@@ -240,16 +194,7 @@ est store hetero_did_3
 reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_4
 
-esttab hetero_did_1 hetero_did_2 hetero_did_3 hetero_did_4 ///
- using result_tables/heter_platform_did.tex, ///
-style(tex) booktabs keep(treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income) [lower]" "log(income) [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
 
- 
  
 // now we compare the mature market with non-mature markets
 
@@ -271,15 +216,6 @@ est store robust_mature_3
 reghdfe ln_lead L.ln_lead $dependent_variable broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $Lag_hedonic_control $transaction_control $region_control if max_mature == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store robust_mature_4
 
-esttab robust_mature_1 robust_mature_2 robust_mature_3 robust_mature_4 ///
- using result_tables/robust_mature.tex, ///
-style(tex) booktabs keep($dependent_variable L.ln_income L.ln_lead  ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income) [lower]" "log(income) [higher]" "log(lead times) [lower]" "log(lead times) [higher]") ///
-star(* 0.1 ** 0.05 *** 0.01) ///
-se ///
-scalars("r2 R-squared") ///
- replace
- 
 
 
 // statistical result
