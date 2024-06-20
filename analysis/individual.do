@@ -24,6 +24,7 @@ global brokerage_control non_online_effect ln_nego_changes
 
 global dependent_variable yearx2_density yearx3_density yearx4_density yearx5_density yearx6_density yearx7_density
 
+replace price_concession = 100 * price_concession
 // save "for-analysis.dta", replace
 
 /* Stylized Fact */

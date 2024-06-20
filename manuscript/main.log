@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.11)  19 JUN 2024 10:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.11)  19 JUN 2024 22:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -156,12 +156,55 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen147
 \Gin@req@width=\dimen148
-) (d:/latex/texlive/2020/texmf-dist/tex/latex/natbib/natbib.sty
+) (d:/latex/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+ (d:/latex/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (d:/latex/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count188
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (d:/latex/texlive/2020/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (d:/latex/texlive/2020/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+ (d:/latex/texlive/2020/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box45
+)
+\tc@llx=\dimen149
+\tc@lly=\dimen150
+\tc@urx=\dimen151
+\tc@ury=\dimen152
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (d:/latex/texlive/2020/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen153
+\adjbox@Height=\dimen154
+\adjbox@Depth=\dimen155
+\adjbox@Totalheight=\dimen156
+\adjbox@pwidth=\dimen157
+\adjbox@pheight=\dimen158
+\adjbox@pdepth=\dimen159
+\adjbox@ptotalheight=\dimen160
+ (d:/latex/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count189
+) (d:/latex/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box46
+\sift@deathcycles=\count190
+\@vwid@loff=\dimen161
+\@vwid@roff=\dimen162
+)) (d:/latex/texlive/2020/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip50
 \bibsep=\skip51
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count188
+\c@NAT@ctr=\count191
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip52
@@ -171,71 +214,71 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
  (d:/latex/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen149
+\@emptytoks=\toks19
+\ex@=\dimen163
 )) (d:/latex/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen150
+\pmbraise@=\dimen164
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count189
+\inf@bad=\count192
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count190
-\leftroot@=\count191
+\uproot@=\count193
+\leftroot@=\count194
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count192
-\DOTSCASE@=\count193
+\classnum@=\count195
+\DOTSCASE@=\count196
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen151
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen165
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count194
-\c@MaxMatrixCols=\count195
+\macc@depth=\count197
+\c@MaxMatrixCols=\count198
 \dotsspace@=\muskip17
-\c@parentequation=\count196
-\dspbrk@lvl=\count197
-\tag@help=\toks18
-\row@=\count198
-\column@=\count199
-\maxfields@=\count266
-\andhelp@=\toks19
-\eqnshift@=\dimen152
-\alignsep@=\dimen153
-\tagshift@=\dimen154
-\tagwidth@=\dimen155
-\totwidth@=\dimen156
-\lineht@=\dimen157
-\@envbody=\toks20
+\c@parentequation=\count199
+\dspbrk@lvl=\count266
+\tag@help=\toks20
+\row@=\count267
+\column@=\count268
+\maxfields@=\count269
+\andhelp@=\toks21
+\eqnshift@=\dimen166
+\alignsep@=\dimen167
+\tagshift@=\dimen168
+\tagwidth@=\dimen169
+\totwidth@=\dimen170
+\lineht@=\dimen171
+\@envbody=\toks22
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks21
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks22
-\thm@bodyfont=\toks23
-\thm@headfont=\toks24
-\thm@notefont=\toks25
-\thm@headpunct=\toks26
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
 \thm@preskip=\skip55
 \thm@postskip=\skip56
 \thm@headsep=\skip57
-\dth@everypar=\toks27
+\dth@everypar=\toks29
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/oberdiek/engord.sty
 Package: engord 2016/05/16 v1.9 Provides English ordinal numbers (HO)
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count267
-\float@exts=\toks28
-\float@box=\box47
-\@float@everytoks=\toks29
-\@floatcapt=\box48
+\c@float@type=\count270
+\float@exts=\toks30
+\float@box=\box49
+\@float@everytoks=\toks31
+\@floatcapt=\box50
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
  (d:/latex/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
@@ -243,31 +286,31 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
  (d:/latex/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen158
-\captionmargin@=\dimen159
-\captionwidth=\dimen160
-\caption@tempdima=\dimen161
-\caption@indent=\dimen162
-\caption@parindent=\dimen163
-\caption@hangindent=\dimen164
+\captionmargin=\dimen172
+\captionmargin@=\dimen173
+\captionwidth=\dimen174
+\caption@tempdima=\dimen175
+\caption@indent=\dimen176
+\caption@parindent=\dimen177
+\caption@hangindent=\dimen178
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count268
-\c@continuedfloat=\count269
+\c@caption@flags=\count271
+\c@continuedfloat=\count272
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
-\c@KVtest=\count270
+\c@KVtest=\count273
 \sf@farskip=\skip58
-\sf@captopadj=\dimen165
+\sf@captopadj=\dimen179
 \sf@capskip=\skip59
 \sf@nearskip=\skip60
-\c@subfigure=\count271
-\c@subfigure@save=\count272
-\c@lofdepth=\count273
-\c@subtable=\count274
-\c@subtable@save=\count275
-\c@lotdepth=\count276
+\c@subfigure=\count274
+\c@subfigure@save=\count275
+\c@lofdepth=\count276
+\c@subtable=\count277
+\c@subtable@save=\count278
+\c@lotdepth=\count279
 \sf@top=\skip61
 \sf@bottom=\skip62
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
@@ -278,31 +321,31 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen166
-\lightrulewidth=\dimen167
-\cmidrulewidth=\dimen168
-\belowrulesep=\dimen169
-\belowbottomsep=\dimen170
-\aboverulesep=\dimen171
-\abovetopsep=\dimen172
-\cmidrulesep=\dimen173
-\cmidrulekern=\dimen174
-\defaultaddspace=\dimen175
-\@cmidla=\count277
-\@cmidlb=\count278
-\@aboverulesep=\dimen176
-\@belowrulesep=\dimen177
-\@thisruleclass=\count279
-\@lastruleclass=\count280
-\@thisrulewidth=\dimen178
+\heavyrulewidth=\dimen180
+\lightrulewidth=\dimen181
+\cmidrulewidth=\dimen182
+\belowrulesep=\dimen183
+\belowbottomsep=\dimen184
+\aboverulesep=\dimen185
+\abovetopsep=\dimen186
+\cmidrulesep=\dimen187
+\cmidrulekern=\dimen188
+\defaultaddspace=\dimen189
+\@cmidla=\count280
+\@cmidlb=\count281
+\@aboverulesep=\dimen190
+\@belowrulesep=\dimen191
+\@thisruleclass=\count282
+\@lastruleclass=\count283
+\@thisrulewidth=\dimen192
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/pgfplots/pgfplots.sty (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
  (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks30
-\pgfutil@tempdima=\dimen179
-\pgfutil@tempdimb=\dimen180
+\pgfutil@everybye=\toks32
+\pgfutil@tempdima=\dimen193
+\pgfutil@tempdimb=\dimen194
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box49
+\pgfutil@abb=\box51
  (d:/latex/texlive/2020/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -312,31 +355,31 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
  (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks31
-\pgfkeys@temptoks=\toks32
+\pgfkeys@pathtoks=\toks33
+\pgfkeys@temptoks=\toks34
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks33
+\pgfkeys@tmptoks=\toks35
 ))
-\pgf@x=\dimen181
-\pgf@y=\dimen182
-\pgf@xa=\dimen183
-\pgf@ya=\dimen184
-\pgf@xb=\dimen185
-\pgf@yb=\dimen186
-\pgf@xc=\dimen187
-\pgf@yc=\dimen188
-\pgf@xd=\dimen189
-\pgf@yd=\dimen190
+\pgf@x=\dimen195
+\pgf@y=\dimen196
+\pgf@xa=\dimen197
+\pgf@ya=\dimen198
+\pgf@xb=\dimen199
+\pgf@yb=\dimen256
+\pgf@xc=\dimen257
+\pgf@yc=\dimen258
+\pgf@xd=\dimen259
+\pgf@yd=\dimen260
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count281
-\c@pgf@countb=\count282
-\c@pgf@countc=\count283
-\c@pgf@countd=\count284
-\t@pgf@toka=\toks34
-\t@pgf@tokb=\toks35
-\t@pgf@tokc=\toks36
-\pgf@sys@id@count=\count285
+\c@pgf@counta=\count284
+\c@pgf@countb=\count285
+\c@pgf@countc=\count286
+\c@pgf@countd=\count287
+\t@pgf@toka=\toks36
+\t@pgf@tokb=\toks37
+\t@pgf@tokc=\toks38
+\pgf@sys@id@count=\count288
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -347,8 +390,8 @@ File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ))) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count286
-\pgfsyssoftpath@bigbuffer@items=\count287
+\pgfsyssoftpath@smallbuffer@items=\count289
+\pgfsyssoftpath@bigbuffer@items=\count290
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) (d:/latex/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -369,52 +412,52 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen191
-\pgfmath@count=\count288
-\pgfmath@box=\box50
-\pgfmath@toks=\toks37
-\pgfmath@stack@operand=\toks38
-\pgfmath@stack@operation=\toks39
+\pgfmath@dimen=\dimen261
+\pgfmath@count=\count291
+\pgfmath@box=\box52
+\pgfmath@toks=\toks39
+\pgfmath@stack@operand=\toks40
+\pgfmath@stack@operation=\toks41
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count289
+\c@pgfmathroundto@lastzeros=\count292
 )) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen192
-\pgf@picmaxx=\dimen193
-\pgf@picminy=\dimen194
-\pgf@picmaxy=\dimen195
-\pgf@pathminx=\dimen196
-\pgf@pathmaxx=\dimen197
-\pgf@pathminy=\dimen198
-\pgf@pathmaxy=\dimen199
-\pgf@xx=\dimen256
-\pgf@xy=\dimen257
-\pgf@yx=\dimen258
-\pgf@yy=\dimen259
-\pgf@zx=\dimen260
-\pgf@zy=\dimen261
+\pgf@picminx=\dimen262
+\pgf@picmaxx=\dimen263
+\pgf@picminy=\dimen264
+\pgf@picmaxy=\dimen265
+\pgf@pathminx=\dimen266
+\pgf@pathmaxx=\dimen267
+\pgf@pathminy=\dimen268
+\pgf@pathmaxy=\dimen269
+\pgf@xx=\dimen270
+\pgf@xy=\dimen271
+\pgf@yx=\dimen272
+\pgf@yy=\dimen273
+\pgf@zx=\dimen274
+\pgf@zy=\dimen275
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen262
-\pgf@path@lasty=\dimen263
+\pgf@path@lastx=\dimen276
+\pgf@path@lasty=\dimen277
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen264
-\pgf@shorten@start@additional=\dimen265
+\pgf@shorten@end@additional=\dimen278
+\pgf@shorten@start@additional=\dimen279
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box51
-\pgf@hbox=\box52
-\pgf@layerbox@main=\box53
-\pgf@picture@serial@count=\count290
+\pgfpic=\box53
+\pgf@hbox=\box54
+\pgf@layerbox@main=\box55
+\pgf@picture@serial@count=\count293
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen266
+\pgflinewidth=\dimen280
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen267
-\pgf@pt@y=\dimen268
-\pgf@pt@temp=\dimen269
+\pgf@pt@x=\dimen281
+\pgf@pt@y=\dimen282
+\pgf@pt@temp=\dimen283
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -423,17 +466,17 @@ File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen270
+\pgfarrowsep=\dimen284
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen271
-\pgf@sys@shading@range@num=\count291
-\pgf@shadingcount=\count292
+\pgf@max=\dimen285
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box54
+\pgfexternal@startupbox=\box56
 )) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -444,87 +487,87 @@ File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box55
+\pgfnodeparttextbox=\box57
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen272
-\pgf@nodesepend=\dimen273
+\pgf@nodesepstart=\dimen286
+\pgf@nodesepend=\dimen287
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 )) (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (d:/latex/texlive/2020/texmf-dist/tex/latex/pgf/math/pgfmath.sty (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen274
-\pgffor@skip=\dimen275
-\pgffor@stack=\toks40
-\pgffor@toks=\toks41
+\pgffor@iter=\dimen288
+\pgffor@skip=\dimen289
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
 )) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count293
-\pgfplotmarksize=\dimen276
+\pgf@plot@mark@count=\count296
+\pgfplotmarksize=\dimen290
 )
-\tikz@lastx=\dimen277
-\tikz@lasty=\dimen278
-\tikz@lastxsaved=\dimen279
-\tikz@lastysaved=\dimen280
-\tikz@lastmovetox=\dimen281
-\tikz@lastmovetoy=\dimen282
-\tikzleveldistance=\dimen283
-\tikzsiblingdistance=\dimen284
-\tikz@figbox=\box56
-\tikz@figbox@bg=\box57
-\tikz@tempbox=\box58
-\tikz@tempbox@bg=\box59
-\tikztreelevel=\count294
-\tikznumberofchildren=\count295
-\tikznumberofcurrentchild=\count296
-\tikz@fig@count=\count297
+\tikz@lastx=\dimen291
+\tikz@lasty=\dimen292
+\tikz@lastxsaved=\dimen293
+\tikz@lastysaved=\dimen294
+\tikz@lastmovetox=\dimen295
+\tikz@lastmovetoy=\dimen296
+\tikzleveldistance=\dimen297
+\tikzsiblingdistance=\dimen298
+\tikz@figbox=\box58
+\tikz@figbox@bg=\box59
+\tikz@tempbox=\box60
+\tikz@tempbox@bg=\box61
+\tikztreelevel=\count297
+\tikznumberofchildren=\count298
+\tikznumberofcurrentchild=\count299
+\tikz@fig@count=\count300
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count298
-\pgfmatrixcurrentcolumn=\count299
-\pgf@matrix@numberofcolumns=\count300
+\pgfmatrixcurrentrow=\count301
+\pgfmatrixcurrentcolumn=\count302
+\pgf@matrix@numberofcolumns=\count303
 )
-\tikz@expandcount=\count301
+\tikz@expandcount=\count304
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks42
-\t@pgfplots@tokb=\toks43
-\t@pgfplots@tokc=\toks44
-\pgfplots@tmpa=\dimen285
-\c@pgfplots@coordindex=\count302
-\c@pgfplots@scanlineindex=\count303
+\t@pgfplots@toka=\toks44
+\t@pgfplots@tokb=\toks45
+\t@pgfplots@tokc=\toks46
+\pgfplots@tmpa=\dimen299
+\c@pgfplots@coordindex=\count305
+\c@pgfplots@scanlineindex=\count306
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count304
+\c@pgfplotsarray@tmp=\count307
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count305
-\t@pgfplotstable@a=\toks45
+\c@pgfplotstable@counta=\count308
+\t@pgfplotstable@a=\toks47
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count306
+\c@pgfplotslibrarysurf@no=\count309
  (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen286
-\pgfdecoratedremainingdistance=\dimen287
-\pgfdecoratedinputsegmentcompleteddistance=\dimen288
-\pgfdecoratedinputsegmentremainingdistance=\dimen289
-\pgf@decorate@distancetomove=\dimen290
-\pgf@decorate@repeatstate=\count307
-\pgfdecorationsegmentamplitude=\dimen291
-\pgfdecorationsegmentlength=\dimen292
+\pgfdecoratedcompleteddistance=\dimen300
+\pgfdecoratedremainingdistance=\dimen301
+\pgfdecoratedinputsegmentcompleteddistance=\dimen302
+\pgfdecoratedinputsegmentremainingdistance=\dimen303
+\pgf@decorate@distancetomove=\dimen304
+\pgf@decorate@repeatstate=\count310
+\pgfdecorationsegmentamplitude=\dimen305
+\pgfdecorationsegmentlength=\dimen306
 )
-\tikz@lib@dec@box=\box60
+\tikz@lib@dec@box=\box62
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count308
-\pgfplots@xmin@reg=\dimen293
-\pgfplots@xmax@reg=\dimen294
-\pgfplots@ymin@reg=\dimen295
-\pgfplots@ymax@reg=\dimen296
-\pgfplots@zmin@reg=\dimen297
-\pgfplots@zmax@reg=\dimen298
+\pgfplots@numplots=\count311
+\pgfplots@xmin@reg=\dimen307
+\pgfplots@xmax@reg=\dimen308
+\pgfplots@ymin@reg=\dimen309
+\pgfplots@ymax@reg=\dimen310
+\pgfplots@zmin@reg=\dimen311
+\pgfplots@zmax@reg=\dimen312
 )
 (d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -536,24 +579,24 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip64
 \LTpre=\skip65
 \LTpost=\skip66
-\LTchunksize=\count309
-\LTcapwidth=\dimen299
-\LT@head=\box61
-\LT@firsthead=\box62
-\LT@foot=\box63
-\LT@lastfoot=\box64
-\LT@cols=\count310
-\LT@rows=\count311
-\c@LT@tables=\count312
-\c@LT@chunks=\count313
-\LT@p@ftn=\toks46
+\LTchunksize=\count312
+\LTcapwidth=\dimen313
+\LT@head=\box63
+\LT@firsthead=\box64
+\LT@foot=\box65
+\LT@lastfoot=\box66
+\LT@cols=\count313
+\LT@rows=\count314
+\c@LT@tables=\count315
+\c@LT@chunks=\count316
+\LT@p@ftn=\toks48
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/preprint/authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip67
 \@affilsep=\skip68
-\c@Maxaffil=\count314
-\c@authors=\count315
-\c@affil=\count316
+\c@Maxaffil=\count317
+\c@authors=\count318
+\c@affil=\count319
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (d:/latex/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -566,20 +609,20 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (d:/latex/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip69
-\multirow@cntb=\count317
+\multirow@cntb=\count320
 \multirow@dima=\skip70
-\bigstrutjot=\dimen300
+\bigstrutjot=\dimen314
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/tools/xr.sty
 Package: xr 2019/07/22 v5.05 eXternal References (DPC)
 )
-\c@assumption=\count318
-\c@definition=\count319
-\c@proposition=\count320
-\c@corollary=\count321
-\c@lemma=\count322
-\c@remark=\count323
-\c@example=\count324
-\c@theorem=\count325
+\c@assumption=\count321
+\c@definition=\count322
+\c@proposition=\count323
+\c@corollary=\count324
+\c@lemma=\count325
+\c@remark=\count326
+\c@example=\count327
+\c@theorem=\count328
  (d:/latex/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/sectsty/sectsty.sty
@@ -595,27 +638,27 @@ LaTeX Warning: Command \underline  has changed.
 
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count326
-\l__pdf_internal_box=\box65
+\l__kernel_color_stack_int=\count329
+\l__pdf_internal_box=\box67
 ) (e:/umich/RealEstateBrokerage/manuscript/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -651,8 +694,8 @@ LaTeX Font Info:    ... okay on input line 57.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring ON on input line 57.
+\AtBeginShipoutBox=\box68
+Package hyperref Info: Link coloring ON on input line 58.
 (d:/latex/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (d:/latex/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -660,28 +703,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (d:/latex/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count327
+\c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 57.
-LaTeX Info: Redefining \pageref on input line 57.
-LaTeX Info: Redefining \nameref on input line 57.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
  (e:/umich/RealEstateBrokerage/manuscript/main.out) (e:/umich/RealEstateBrokerage/manuscript/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
  (d:/latex/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
-\scratchdimen=\dimen301
-\scratchbox=\box67
-\nofMPsegments=\count329
-\nofMParguments=\count330
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count331
-\MPscratchDim=\dimen302
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count331
+\scratchdimen=\dimen315
+\scratchbox=\box69
+\nofMPsegments=\count332
+\nofMParguments=\count333
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen316
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
+\everyMPtoPDFconversion=\toks50
 ) (d:/latex/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -698,40 +741,40 @@ Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.17} (current compat level: 1.14).
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
 (d:/latex/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
  (d:/latex/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {d:/latex/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `tab:precise_proportion_contraction' on page 1 undefined on input line 103.
+LaTeX Warning: Reference `tab:precise_proportion_contraction' on page 1 undefined on input line 104.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.104 
+l.105 
        [1
 
 ] [2] [3] [4] [5] [6] [7] [8]
 <../figures/RD_Plot_1st_Order.pdf, id=195, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_1st_Order.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_1st_Order.pdf>
-Package pdftex.def Info: ../figures/RD_Plot_1st_Order.pdf  used on input line 164.
+Package pdftex.def Info: ../figures/RD_Plot_1st_Order.pdf  used on input line 165.
 (pdftex.def)             Requested size: 256.55872pt x 128.27628pt.
 <../figures/RD_Plot_2nd_Order.pdf, id=196, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_2nd_Order.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_2nd_Order.pdf>
-Package pdftex.def Info: ../figures/RD_Plot_2nd_Order.pdf  used on input line 166.
+Package pdftex.def Info: ../figures/RD_Plot_2nd_Order.pdf  used on input line 167.
 (pdftex.def)             Requested size: 256.55872pt x 128.27628pt.
 <../figures/RD_Plot_3rd_Order.pdf, id=197, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_3rd_Order.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_3rd_Order.pdf>
-Package pdftex.def Info: ../figures/RD_Plot_3rd_Order.pdf  used on input line 168.
+Package pdftex.def Info: ../figures/RD_Plot_3rd_Order.pdf  used on input line 169.
 (pdftex.def)             Requested size: 256.55872pt x 128.27628pt.
  (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_result_summary.tex) [9 <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_1st_Order.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_2nd_Order.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order.pdf>] [10] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/summary_statistics.tex
 Underfull \hbox (badness 3735) in paragraph at lines 25--25
@@ -739,17 +782,17 @@ Underfull \hbox (badness 3735) in paragraph at lines 25--25
  []
 
 )
-Overfull \hbox (2.60904pt too wide) in paragraph at lines 1--192
+Overfull \hbox (2.60904pt too wide) in paragraph at lines 1--193
  [][] 
  []
 
 <../figures/scatter_plot_with_two_brokerages.pdf, id=237, 722.7pt x 433.62pt>
 File: ../figures/scatter_plot_with_two_brokerages.pdf Graphic file (type pdf)
 <use ../figures/scatter_plot_with_two_brokerages.pdf>
-Package pdftex.def Info: ../figures/scatter_plot_with_two_brokerages.pdf  used on input line 196.
+Package pdftex.def Info: ../figures/scatter_plot_with_two_brokerages.pdf  used on input line 197.
 (pdftex.def)             Requested size: 359.18063pt x 215.50601pt.
 [11] [12] (../result_tables/stylized_fact.tex) [13 <e:/umich/RealEstateBrokerage/manuscript/../figures/scatter_plot_with_two_brokerages.pdf>] [14] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/dynamic.tex) [15] [16] [17] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_effect.tex) [18] [19] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_effect_hetero.tex)
-Overfull \hbox (159.96773pt too wide) in paragraph at lines 3--301
+Overfull \hbox (159.96773pt too wide) in paragraph at lines 3--302
  [] 
  []
 
@@ -759,7 +802,7 @@ pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../fi
 <../figures/did_1.pdf, id=362, 397.485pt x 289.08pt>
 File: ../figures/did_1.pdf Graphic file (type pdf)
 <use ../figures/did_1.pdf>
-Package pdftex.def Info: ../figures/did_1.pdf  used on input line 323.
+Package pdftex.def Info: ../figures/did_1.pdf  used on input line 320.
 (pdftex.def)             Requested size: 256.55872pt x 186.5941pt.
 
 
@@ -767,7 +810,7 @@ pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../fi
 <../figures/did_2.pdf, id=363, 397.485pt x 289.08pt>
 File: ../figures/did_2.pdf Graphic file (type pdf)
 <use ../figures/did_2.pdf>
-Package pdftex.def Info: ../figures/did_2.pdf  used on input line 324.
+Package pdftex.def Info: ../figures/did_2.pdf  used on input line 321.
 (pdftex.def)             Requested size: 256.55872pt x 186.5941pt.
 
 
@@ -775,7 +818,7 @@ pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../fi
 <../figures/did_3.pdf, id=364, 397.485pt x 289.08pt>
 File: ../figures/did_3.pdf Graphic file (type pdf)
 <use ../figures/did_3.pdf>
-Package pdftex.def Info: ../figures/did_3.pdf  used on input line 326.
+Package pdftex.def Info: ../figures/did_3.pdf  used on input line 323.
 (pdftex.def)             Requested size: 256.55872pt x 186.5941pt.
 
 
@@ -783,14 +826,9 @@ pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../fi
 <../figures/did_4.pdf, id=365, 397.485pt x 289.08pt>
 File: ../figures/did_4.pdf Graphic file (type pdf)
 <use ../figures/did_4.pdf>
-Package pdftex.def Info: ../figures/did_4.pdf  used on input line 327.
+Package pdftex.def Info: ../figures/did_4.pdf  used on input line 324.
 (pdftex.def)             Requested size: 256.55872pt x 186.5941pt.
-(e:/umich/RealEstateBrokerage/manuscript/../result_tables/heter_platform_did.tex)
-Overfull \hbox (159.96773pt too wide) in paragraph at lines 3--344
- [] 
- []
-
-[22] [23 <e:/umich/RealEstateBrokerage/manuscript/../figures/did_1.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_2.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_3.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_4.pdf>] [24] [25] (e:/umich/RealEstateBrokerage/manuscript/main.bbl [26
+[22] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/heter_platform_did.tex) [23 <e:/umich/RealEstateBrokerage/manuscript/../figures/did_1.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_2.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_3.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/did_4.pdf>] [24] [25] (e:/umich/RealEstateBrokerage/manuscript/main.bbl [26
 
 ]) [27] (e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker.tex
 <../figures/distribution_of_hp_and_broker/Beijing.pdf, id=445, 505.89pt x 361.35pt>
@@ -845,30 +883,35 @@ Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Wuhan.pdf  use
 (pdftex.def)             Requested size: 168.30402pt x 120.21628pt.
 ) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/donut_robust.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex) [28 <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Beijing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chengdu.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chongqing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Guangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Hangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Nanjing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shanghai.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shenzhen.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Tianjin.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Wuhan.pdf>] [29] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_hhi.tex) [30
 
-] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_mature.tex) [31
+] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_mature.tex)
+Overfull \hbox (167.07008pt too wide) in paragraph at lines 3--409
+ [] 
+ []
+
+[31
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 414.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 414.
  (e:/umich/RealEstateBrokerage/manuscript/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 417.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 414.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 414.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 710A0BD760AFA5763741EDBB81083746;816.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 417.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
  ) 
 Here is how much of TeX's memory you used:
- 29490 strings out of 480608
- 701362 string characters out of 5904590
- 1100793 words of memory out of 5000000
- 44682 multiletter control sequences out of 15000+600000
+ 30503 strings out of 480608
+ 718340 string characters out of 5904590
+ 1148630 words of memory out of 5000000
+ 45661 multiletter control sequences out of 15000+600000
  546848 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,111p,1875b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,12n,111p,1875b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
@@ -876,7 +919,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {d:/latex/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on e:/umich/RealEstateBrokerage/manuscript/main.pdf (32 pages, 18633914 bytes).
+Output written on e:/umich/RealEstateBrokerage/manuscript/main.pdf (32 pages, 18634197 bytes).
 PDF statistics:
  670 PDF objects out of 1000 (max. 8388607)
  528 compressed objects within 6 object streams
