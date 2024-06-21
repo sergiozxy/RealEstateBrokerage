@@ -68,6 +68,7 @@ label variable broker_410 "number of brokerages within 410 meters, which is the 
 label variable beke_410 "number of beke within 410 meters, which is the cutoff of RD"
 label variable to_keep "indicator to keep the sample or not, = 1 if should keep"
 label variable max_mature "indicator of whether the market is in mature state"
+label variable first_obs_flag "flag whether to drop the variable for entry effect"
 // bysort id (year): drop if _N==1
 
 drop if pm25 == .

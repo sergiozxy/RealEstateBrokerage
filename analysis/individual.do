@@ -1,4 +1,4 @@
-cd "C:\Users\zxuyuan\Downloads\RealEstateResult" // change to your working directory
+cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
 
 /*
 clear matrix
@@ -42,6 +42,7 @@ mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concessi
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
  replace
 
 /* Dynamic Effect and Estimtion */
@@ -59,6 +60,7 @@ mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concessi
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
  replace
 
 /* Exogenous Shock with lianjia's entry */
@@ -66,6 +68,7 @@ preserve
 
 // drop if to_keep == 0
 
+drop if to_keep == 0
 gen effect = 0
 replace effect = 1 if (entry == 1 | post1 == 1 | post2 == 1 | post3 == 1)
 
@@ -82,6 +85,7 @@ mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concessi
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
  replace
 
 reghdfe ln_negotiation_period pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
@@ -103,6 +107,7 @@ mtitle("log(income)" "log(income)" "log(lead times)" "log(lead times)" "log(nego
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
  replace
 
 // note that we need to add the results:
@@ -159,6 +164,7 @@ mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concessi
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
  replace
 
 /*** Heterogenous Check of The Mechanism ***/
@@ -182,6 +188,7 @@ mtitle("log(income)" "log(income)" "log(lead times)" "log(lead times)" "log(nego
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
  replace
 
  
@@ -204,6 +211,7 @@ mtitle("log(income)" "log(income)" "log(lead times)" "log(lead times)" "log(nego
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
  replace
  
  
