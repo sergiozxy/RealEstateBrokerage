@@ -1,4 +1,4 @@
-cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage" // change to your working directory
+cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
 
 use "template.dta", clear
 
@@ -133,6 +133,8 @@ drop entry_lianjia_lag1 entry_lianjia_lag2 entry_lianjia_lag3 ///
 reghdfe ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_1
 */
+
+drop if to_keep == 0
 
 reghdfe ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_1
