@@ -18,7 +18,7 @@ label variable nego_times "The number of times a negotiation was held."
 label variable lead_times "The time it takes before a deal is made."
 label variable total_building "The total number of buildings in an area."
 label variable total_resident "The total number of residents in an area."
-label variable watching_people "The number of people watching a listing."
+label variable watching_people "The number of people watching this listing."
 label variable watched_times "The number of times a listing is watched."
 label variable striker_price "The initial asking price."
 label variable striker_price_pers "The asking price per square foot."
@@ -33,7 +33,7 @@ label variable toilet "The number of toilets in a property."
 label variable total_floor_number "The number of floors in a building."
 label variable elevator_ratio "The ratio of elevators to the total number of floors."
 label variable house_age "The age of the house."
-label variable income "The income lianjia in this given district."
+label variable income "The income lianjia in this given district/housing."
 label variable number "The number lianjia in this given district."
 label variable super "Referring to proximity to supermarkets (measured by number within given distance)."
 label variable sub "Referring to proximity to subway stations."
@@ -161,6 +161,7 @@ generate price_concession =  end_price_pers - striker_price_pers
 replace price_concession = price_concession / striker_price_pers
 winsor2 price_concession, replace cuts(1 99) trim
 
+label variable price_concession "price changes (ending price - starting price) / starting price"
 
 
 label variable non_online_effect "without online platformization influence"

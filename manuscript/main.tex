@@ -101,7 +101,7 @@ The Chinese real estate brokerage market has long been characterized by intense 
 
 Lianjia, the largest real estate brokerage in China, has revolutionized real estate transactions through the establishment of the Beke platform. This platform enables rapid expansion by integrating offline stores on a large scale while leveraging the advantages of resource sharing. However, prior to 2018, the platform Beke primarily focused on facilitating listings from Lianjia's offline stores and aimed to attract buyers from the market. However, in 2014, Beke established a new strategy named Agent Cooperate Network (ACN), which integrates and shares the content across its multiple subsidiaries to realize multiple revenue models simultaneously.\footnote{The ACN model disaggregates the transaction process into specialized tasks handled by individual agents or stores. These tasks include seller-side activities such as sourcing sellers, maintaining property listings, commission negotiations, and buyer-side activities like client acquisition, property-client matching, transaction facilitation, and financial services assistance.} Moreover, in 2018, Lianjia decided to enhance its Agent Cooperation Network (ACN) strategy by incorporating smaller brokerages into its network and launching franchise stores under the brand name Deyou, along with other smaller formats. This strategic move aimed to increase network effects and further consolidate the platform, thereby enhancing market power and operational efficiency.
 
-Through the success of the platform consolidation, Lianjia transforms internal competition within the system into overall system competitiveness, thereby enhancing the brand's reputation and market influence. More importantly, this strategic allows Lianjia to cooperate with other previously competitors by consolidating resources. For instance, data from AutoNavi Map and CREIS indicate that in 2020, although only about 20\% of real estate agent stores in the main urban area of Chengdu City are Lianjia's offline stores, these stores achieved a market share of 73.98\%. This remarkable market penetration underscores the efficacy of Beke's integrated platform and ACN model in dominating the real estate brokerage landscape. The Table \ref{tab:precise_proportion_contraction} shows the comparision of the market share of Lianjia and the share of the number of stores in the market.
+Through the success of the platform consolidation, Lianjia transforms internal competition within the system into overall system competitiveness, thereby enhancing the brand's reputation and market influence. More importantly, this strategic allows Lianjia to cooperate with other previously competitors by consolidating resources. For instance, data from AutoNavi Map and CREIS indicate that in 2020, although only about 20\% of real estate agent stores in the main urban area of Chengdu City are Lianjia's offline stores, these stores achieved a market share of 73.98\%. This remarkable market penetration underscores the efficacy of Beke's integrated platform and ACN model in dominating the real estate brokerage landscape. The Table \ref{tab:precise_proportion_contraction} shows the comparision of the market share of Lianjia and the share of the number of stores in the market. [NEED TO ADD A FIGURE OR TABLE]
 
 What's more, in the China's real estate market, brokerages still operate on a bilateral agency model, where sellers need to choose the agency that can help them sell their home in the fastest time and for the highest price possible for the transaction. However, due to the asymmetric information inherent in the real estate market, sellers face challenges in effectively informing and matching with potential buyers. n a perfectly competitive market, sellers would be indifferent in their choice of real estate agents. Nonetheless, as the market trends toward increased monopolization, sellers confront a dichotomous decision: engage a larger brokerage firm, which, despite higher fees, offers the potential for expedited transactions, or opt for a smaller brokerage with lower fees but potentially less efficient transaction facilitation.
 
@@ -150,7 +150,7 @@ This study focuses on the housing markets in ten major cities in China, namely B
 
 The second hand housing transaction data was collected form \href{https://www.ke.com/city/}{beke.com} for ten cities ranging from 2016 to 2022. Initially, we filtered out transaction records exhibiting unusually high prices, identifying them as outliers that could skew the analysis. We then removed records with missing values to maintain the integrity of our dataset. We also removed any records that were listed duplicated. We finally have a data with length 1,778,647 second-hand houses.\footnote{Due to government restrictions, four of these cities did not list the transaction price for each transaction during the study period.} After cleaning the data, we constructed two research samples: one at the individual transaction level and the other at the neighborhood level. The individual transaction sample contains detailed information on each transaction, including the transaction price, transaction date, price concessions, and the number of house tours. The neighborhood-level sample aggregates transaction data at the community level, encompassing variables such as the average transaction price and the average number of house tours. Additionally, we calculated the annual number of house transactions to capture Lianjia's transaction activity within each neighborhood. This data structure enables a comprehensive analysis of the impact of offline stores on housing transactions across both individual and neighborhood dimensions.
 
-To gather additional characteristic information, Point of Interest (POI) data was extracted from the AutoNavi map using a web-scraping Python program.\footnote{AutoNavi, a leading mapping application in China with a user base exceeding 700 million, is renowned for its detailed and accurate POI data as well as precise public transportation information. These features underscore AutoNavi's leadership in the digital mapping sector, highlighting its ability to provide unparalleled navigation accuracy and comprehensive urban mobility solutions. Our extracted AutoNavi dataset includes over one million POIs per city annually.} The extracted POIs were then classified into various categories, as detailed in Table \ref{tab:statistical} and it primarily represents living facilities, entertainment venues, restaurants, hospitals, and other public amenities. This classification is crucial for understanding the urban infrastructure and amenities available in the vicinity of the analyzed properties.
+To gather additional characteristic information, Point of Interest (POI) data was extracted from the AutoNavi map using a web-scraping Python program.\footnote{AutoNavi, a leading mapping application in China with a user base exceeding 700 million, is renowned for its detailed and accurate POI data as well as precise public transportation information. These features underscore AutoNavi's leadership in the digital mapping sector, highlighting its ability to provide unparalleled navigation accuracy and comprehensive urban mobility solutions. Our extracted AutoNavi dataset includes over one million POIs per city annually.} The extracted POIs were then classified into various categories, as detailed in Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual} and it primarily represents living facilities, entertainment venues, restaurants, hospitals, and other public amenities. This classification is crucial for understanding the urban infrastructure and amenities available in the vicinity of the analyzed properties.
 
 Each type of POI was matched to our data within a 500-meter radius, a distance typically covered by walking and consistent with urban planning standards for accessible urban design. This radius reflects the immediate urban environment influencing residential desirability and property values, as most of these POIs provide recreational services. Additionally, geo-informational data, including annual GDP data from \citet{zhao_forecasting_2017}, nighttime lights data from \citet{elvidge_annual_2021}, and air pollution data from \citet{doi:10.1021/acs.est.1c05309}, was integrated into our research. The centroid of the neighborhood-level data's polygon was generated, and values from the geo-informational data were extracted. By merging these data sources with our research panel, a comprehensive research sample was constructed.
 
@@ -181,15 +181,28 @@ To make the robust check we conducted Donut Hole test by excluding observations 
 
 After constructing our optimal radius, we recalcualte the number of lianjia and other brokerages' stores within this radius. To check the robustness of the data, we divide our data to those with lianjia and those without lianjia and to check whether lianjia's offline stores have influential effect on the transaction effect in the community. We can see that for income, house tour number and the are all significantly different in those communities with or without lianjia. In addition, we find that the other brokerages also have the same tendency that they typically open stores with the same strategy as Lianjia, which suggests that Lianjia does not have the market power to exclude competent companies from entering the market, and it also suggests that the market is not monopolized by Lianjia. We plot the relationship between the number of other brokerages's stores and the number of lianjia's stores and the figure is shown in Figure \ref{fig:same_distribution}.
 
-From Table \ref{tab:statistical} we can see that the in our metro areas, the neighborhoods with lianjia within the influential radius tends to have higher number of sales, and the final transaction price is also \textyen 910,000 higher than those neighborhoods without lianjia. Moreover, the number of other stores within the influential distance is also signnificantly more than 7.3, which also aligns with our previous intuition that the market is not monopolized by Lianjia. This significance difference suggests that if we treat our sample as a cross sectional data and estimate the result with static model without considering the individual fixed effect, we may get a biased result. Besides, our model may suffer from endogeneity issue, since the number of lianjia's stores may be endogenous to the transaction price and the number of stores. 
+From Table \ref{tab:statistical_district} we can see that the in our metro areas, the neighborhoods with lianjia within the influential radius tends to have higher number of sales, and the final transaction price is also \textyen 910,000 higher than those neighborhoods without lianjia. Moreover, the number of other stores within the influential distance is also signnificantly more than 7.3, which also aligns with our previous intuition that the market is not monopolized by Lianjia. This significance difference suggests that if we treat our sample as a cross sectional data and estimate the result with static model without considering the individual fixed effect, we may get a biased result. Besides, our model may suffer from endogeneity issue, since the number of lianjia's stores may be endogenous to the transaction price and the number of stores. 
 
 \begin{table}[htb!]
     \centering
     \begin{tiny}
-    \caption{Statistical Summary}
-    \input{../result_tables/summary_statistics.tex}
-    \label{tab:statistical}
+    \caption{Statistical Summary for the Neighborhoods-Data with Lianjia and without Lianjia}
+    \input{../result_tables/summary_statistics_district.tex}
+    \label{tab:statistical_district}
+
+    Note that the code book of the variables can be seen in the Appendix \ref{tab:codebook}
     \end{tiny}
+\end{table}
+
+\begin{table}[htb!]
+  \centering
+  \begin{tiny}
+  \caption{Statistical Summary for the Individual-Data with Lianjia and without Lianjia}
+  \input{../result_tables/summary_statistics_indi.tex}
+  \label{tab:statistical_individual}
+
+  Note that the code book of the variables can be seen in the Appendix \ref{tab:codebook}
+  \end{tiny}  
 \end{table}
 
 \begin{figure}
@@ -225,7 +238,7 @@ where $Y_{it}$ is the three main dependent variables, including $\log(\text{inco
     \input{../result_tables/stylized_fact}
     \caption{The DBI influence to the lianjia's transaction}
 
-    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical}
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
     \label{tab:stylized_fact}
     \end{scriptsize}
 \end{table}
@@ -247,7 +260,7 @@ In the construction of our regression model, we deliberately omit the first peri
     \label{tab:Dynamic}
     \input{../result_tables/dynamic.tex}
 
-    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical}
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
     \end{scriptsize}
   \end{center}
 \end{table}
@@ -280,7 +293,7 @@ $pre_2, entry, post_i$ are correspondingly periods dummy variables and other set
     \label{tab:entry_effect}
     \input{../result_tables/entry_effect.tex}  
     
-    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical}
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
     \end{scriptsize}
   \end{center}
 \end{table}
@@ -302,7 +315,7 @@ Furthermore, in columns 5 and 6, the entry of Lianjia's offline stores significa
       \label{tab:entry_effect_robustness}
       \input{../result_tables/entry_effect_hetero.tex}
     
-    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical}.
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
     \end{scriptsize}
   \end{center}
 \end{table}
@@ -343,7 +356,7 @@ To further investigate the impact of market concentration on the effectiveness o
       \label{tab:heter_platform_did}
       \input{../result_tables/heter_platform_did.tex}
     
-    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical}.
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
     \end{scriptsize}
   \end{center}
 \end{table}
@@ -427,7 +440,16 @@ The study of Lianjia's strategic expansion into China's real estate brokerage in
     Note: the x-axis is year and the y-axis is the average income of Lianjia in each year. The graph uses the neighborhood-level data.
 \end{figure}
 
-
+\begin{table}[H]
+  \begin{center}
+    \begin{scriptsize}
+    \caption{Codebook}
+    \label{tab:codebook}
+    \input{../result_tables/code_book_table.tex}  
+  
+    \end{scriptsize}
+  \end{center}
+\end{table}
 
 
 

@@ -218,12 +218,13 @@ b(%9.3f) se(%9.3f) ///
 
 // statistical result
 
-
+replace income = income / 10000
 generate by_lj = (lianjia_410 > 0)
 
-logout, save(ttest_with_result) dta replace: ttable3 income lead_times price_concession density broker_410 watching_people end_price non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) tvalue
+logout, save(ttest_with_result_indi) dta replace: ttable3 income lead_times price_concession density end_price broker_410 watching_people non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) tvalue
 
-logout, save(ttest_with_result_mean_std) dta replace: tabstat income lead_times price_concession density broker_410 watching_people end_price non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) stat(mean sd) nototal long col(stat)
+logout, save(ttest_with_result_mean_std_indi) dta replace: tabstat income lead_times price_concession density broker_410 watching_people end_price non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) stat(mean sd) nototal long col(stat)
+
 
 
 
