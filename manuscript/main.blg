@@ -5,44 +5,44 @@ The style file: aer.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: our-cites.bib
-You've used 29 entries,
+You've used 31 entries,
             2984 wiz_defined-function locations,
-            855 strings with 10157 characters,
-and the built_in function-call counts, 28525 in all, are:
-= -- 4390
-> -- 1754
-< -- 493
-+ -- 609
-- -- 340
-* -- 2077
-:= -- 6236
-add.period$ -- 30
-call.type$ -- 29
-change.case$ -- 203
-chr.to.int$ -- 29
-cite$ -- 29
-duplicate$ -- 330
-empty$ -- 849
-format.name$ -- 860
-if$ -- 7051
+            869 strings with 10383 characters,
+and the built_in function-call counts, 30247 in all, are:
+= -- 4693
+> -- 1831
+< -- 520
++ -- 630
+- -- 352
+* -- 2178
+:= -- 6626
+add.period$ -- 32
+call.type$ -- 31
+change.case$ -- 217
+chr.to.int$ -- 31
+cite$ -- 31
+duplicate$ -- 352
+empty$ -- 904
+format.name$ -- 901
+if$ -- 7497
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 29
-newline$ -- 94
-num.names$ -- 348
-pop$ -- 427
+missing$ -- 31
+newline$ -- 100
+num.names$ -- 372
+pop$ -- 455
 preamble$ -- 1
-purify$ -- 232
+purify$ -- 248
 quote$ -- 0
 skip$ -- 0
 stack$ -- 0
-substring$ -- 1003
-swap$ -- 125
+substring$ -- 1058
+swap$ -- 133
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 124
 warning$ -- 0
-while$ -- 335
+while$ -- 357
 width$ -- 0
-write$ -- 504
+write$ -- 540

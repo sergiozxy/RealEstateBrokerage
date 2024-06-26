@@ -25,7 +25,7 @@ double calculate_distance(const std::vector<double> &point1, const std::vector<d
 }
 
 
-std::pair<std::vector<std::vector<int>>, std::vector<std::tuple<int, int, double>>> network_formation(
+std::pair<std::vector<std::vector<std::pair<int, double>>>, std::vector<std::tuple<int, int, double>>> network_formation(
     // 匹配门店和社区：将每个门店与给定半径内的社区匹配。
     // 计算边的效应值：构建门店和社区的配对，并将效应值分配给边。
     // 连接共享社区的门店：将具有共同社区的门店连接起来，并将边的权重设为共享社区效应值的和。
@@ -38,14 +38,14 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::tuple<int, int, double
     const std::vector<int> &effects,
     double within_distance_meters) {
 
-    std::vector<std::vector<int>> network(stores.size());
+    std::vector<std::vector<std::pair<int, double>>> network(stores.size());
     std::vector<std::tuple<int, int, double>> edges;
 
     // Match stores with communities within the given radius
     for (size_t i = 0; i < communities.size(); ++i) {
         for (size_t j = 0; j < stores.size(); ++j) {
             if (calculate_distance(communities[i], stores[j]) <= within_distance_meters) {
-                network[j].push_back(i);
+                network[j].emplace_back(i, effects[i]);
             }
         }
     }
@@ -56,20 +56,19 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::tuple<int, int, double
         for (size_t j = i + 1; j < stores.size(); ++j) {
             // iterate over all adjacent stores and find the shared communities
             double shared_effect = 0;
-            for (int community : network[i]) {
-                if (std::find(network[j].begin(), network[j].end(), community) != network[j].end()) {
-                    // if the community is shared between the two stores
-                    shared_effect += effects[community];
+            for (const auto &community : network[i]) {
+                if (std::find_if(network[j].begin(), network[j].end(), [&](const std::pair<int, double> &c) { return c.first == community.first; }) != network[j].end()) {
+                    shared_effect += community.second;
                 }
             }
             if (shared_effect > 0) {
                 double total_effect_i = 0;
-                for (int community : network[i]) {
-                    total_effect_i += effects[community];
+                for (const auto &community : network[i]) {
+                    total_effect_i += community.second;
                 }
                 double total_effect_j = 0;
-                for (int community : network[j]) {
-                    total_effect_j += effects[community];
+                for (const auto &community : network[i]) {
+                    total_effect_j += community.second;
                 }
                 double discount_factor = shared_effect / (total_effect_i * total_effect_j);
                 double final_effect = shared_effect * discount_factor;
