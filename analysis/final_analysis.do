@@ -27,6 +27,23 @@ use "template.dta", clear
 *  Competitor Analysis: Compare areas where Lianjia faces different levels of competition. The impact of Lianjia in highly competitive markets versus those with limited competition could reveal its market influence.
 */
 
+
+/*
+// merge the result back to the file
+import delimited "to_merged_with_network.csv", clear
+* Sort the imported CSV file by id and year
+sort id year
+
+save "temp_csv.dta", replace
+
+use "template.dta", clear
+	
+sort id year
+
+merge 1:1 id year using "temp_csv.dta"
+save "template.dta", replace
+*/
+
 tab year, gen(yearx)
 
 generate treatment = 1 if (lianjia_410 / beke_410 < 0.8) & (year >= 2018)
@@ -227,15 +244,8 @@ est store robust_mature_3
 reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if max_mature == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store robust_mature_4
 
+// consider the case of the network spillover effects
 
 
-// statistical result
-
-replace income = income / 10000
-generate by_lj = (lianjia_410 > 0)
-
-logout, save(ttest_with_result) dta replace: ttable3 income lead_times price_concession density end_price broker_410 watching_people non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) tvalue
-
-logout, save(ttest_with_result_mean_std) dta replace: tabstat income lead_times price_concession density broker_410 watching_people end_price non_online_effect watched_times nego_times nego_period $hedonic_control $transaction_control $region_control, by(by_lj) stat(mean sd) nototal long col(stat)
-
+reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if max_mature == 0, absorb(year#bs_code id) vce(cluster bs_code)
 
