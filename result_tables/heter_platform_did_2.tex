@@ -1,0 +1,44 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+            &\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{price concession}\\
+\midrule
+pre1\_treatment&       0.001         &      -0.002         &      -0.044\sym{*}  &       0.012         &      -0.011         &      -0.017         \\
+            &     (0.017)         &     (0.016)         &     (0.025)         &     (0.041)         &     (0.034)         &     (0.049)         \\
+\addlinespace
+treatment   &       0.001         &      -0.004         &       0.014         &       0.017         &      -0.017         &      -0.019         \\
+            &     (0.021)         &     (0.016)         &     (0.030)         &     (0.041)         &     (0.036)         &     (0.060)         \\
+\addlinespace
+post1\_treatment&       0.001         &      -0.015         &       0.005         &       0.084\sym{*}  &       0.026         &       0.020         \\
+            &     (0.025)         &     (0.020)         &     (0.031)         &     (0.050)         &     (0.041)         &     (0.066)         \\
+\addlinespace
+post2\_treatment&      -0.002         &      -0.022         &      -0.013         &       0.160\sym{***}&       0.068         &       0.092         \\
+            &     (0.027)         &     (0.023)         &     (0.029)         &     (0.056)         &     (0.048)         &     (0.077)         \\
+\addlinespace
+post3\_treatment&      -0.004         &      -0.011         &       0.026         &       0.034         &       0.118\sym{*}  &      -0.086         \\
+            &     (0.031)         &     (0.026)         &     (0.040)         &     (0.067)         &     (0.067)         &     (0.130)         \\
+\addlinespace
+broker\_410  &      -0.001         &      -0.000         &      -0.003         &      -0.008\sym{***}&      -0.001         &       0.002         \\
+            &     (0.001)         &     (0.002)         &     (0.004)         &     (0.003)         &     (0.004)         &     (0.010)         \\
+\addlinespace
+ln\_end\_price&      -0.111\sym{***}&      -0.243\sym{***}&      -0.334\sym{***}&       1.246\sym{***}&       1.365\sym{***}&       1.636\sym{***}\\
+            &     (0.032)         &     (0.025)         &     (0.035)         &     (0.080)         &     (0.083)         &     (0.120)         \\
+\addlinespace
+ln\_watch\_people&       0.362\sym{***}&       0.368\sym{***}&       0.367\sym{***}&       0.090\sym{***}&       0.060\sym{***}&       0.037\sym{***}\\
+            &     (0.005)         &     (0.004)         &     (0.005)         &     (0.006)         &     (0.006)         &     (0.007)         \\
+\addlinespace
+ln\_watch\_time&       0.041\sym{***}&       0.038\sym{***}&       0.035\sym{***}&      -0.052\sym{***}&      -0.056\sym{***}&      -0.058\sym{***}\\
+            &     (0.003)         &     (0.002)         &     (0.003)         &     (0.005)         &     (0.004)         &     (0.005)         \\
+\addlinespace
+ln\_nego\_changes&       0.653\sym{***}&       0.663\sym{***}&       0.665\sym{***}&       0.177\sym{***}&       0.159\sym{***}&       0.173\sym{***}\\
+            &     (0.008)         &     (0.007)         &     (0.010)         &     (0.009)         &     (0.008)         &     (0.011)         \\
+\midrule
+\(N\)       &      333284         &      587056         &      345003         &      328031         &      576728         &      338698         \\
+R-squared   &       0.548         &       0.538         &       0.529         &       0.255         &       0.247         &       0.270         \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+}

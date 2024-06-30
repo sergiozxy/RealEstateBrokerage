@@ -1,0 +1,41 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+            &\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{price concession}\\
+\midrule
+pre2        &      -0.028         &      -0.011         &       0.016         &      -0.011         &       0.084         &       0.081         \\
+            &     (0.030)         &     (0.034)         &     (0.025)         &     (0.063)         &     (0.077)         &     (0.052)         \\
+\addlinespace
+entry       &      -0.013         &      -0.045\sym{**} &       0.021         &       0.026         &       0.132\sym{***}&       0.030         \\
+            &     (0.022)         &     (0.021)         &     (0.020)         &     (0.060)         &     (0.047)         &     (0.049)         \\
+\addlinespace
+post1       &      -0.008         &      -0.035\sym{*}  &       0.036         &       0.043         &       0.067         &       0.016         \\
+            &     (0.023)         &     (0.020)         &     (0.022)         &     (0.064)         &     (0.056)         &     (0.055)         \\
+\addlinespace
+post2       &      -0.004         &      -0.029         &       0.057\sym{**} &       0.030         &       0.041         &      -0.017         \\
+            &     (0.025)         &     (0.020)         &     (0.025)         &     (0.072)         &     (0.056)         &     (0.061)         \\
+\addlinespace
+post3       &      -0.021         &      -0.038\sym{*}  &       0.002         &      -0.056         &       0.031         &       0.097         \\
+            &     (0.026)         &     (0.022)         &     (0.027)         &     (0.060)         &     (0.056)         &     (0.071)         \\
+\addlinespace
+broker\_410  &      -0.002         &       0.002         &      -0.006         &       0.003         &      -0.010         &       0.002         \\
+            &     (0.002)         &     (0.003)         &     (0.006)         &     (0.004)         &     (0.007)         &     (0.012)         \\
+\addlinespace
+ln\_watch\_people&       0.342\sym{***}&       0.346\sym{***}&       0.346\sym{***}&       0.075\sym{***}&       0.082\sym{***}&       0.060\sym{***}\\
+            &     (0.004)         &     (0.004)         &     (0.004)         &     (0.007)         &     (0.008)         &     (0.007)         \\
+\addlinespace
+ln\_watch\_time&       0.046\sym{***}&       0.051\sym{***}&       0.044\sym{***}&      -0.067\sym{***}&      -0.055\sym{***}&      -0.065\sym{***}\\
+            &     (0.003)         &     (0.004)         &     (0.003)         &     (0.006)         &     (0.006)         &     (0.006)         \\
+\addlinespace
+ln\_nego\_changes&       0.655\sym{***}&       0.676\sym{***}&       0.655\sym{***}&       0.211\sym{***}&       0.189\sym{***}&       0.218\sym{***}\\
+            &     (0.008)         &     (0.007)         &     (0.007)         &     (0.011)         &     (0.011)         &     (0.011)         \\
+\midrule
+\(N\)       &      292309         &      242332         &      328835         &      284682         &      236819         &      320074         \\
+R-squared   &       0.518         &       0.526         &       0.529         &       0.259         &       0.243         &       0.255         \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+}

@@ -1,4 +1,4 @@
-cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads" // change to your working directory
 
 use "template.dta", clear
 
@@ -43,6 +43,11 @@ sort id year
 merge 1:1 id year using "temp_csv.dta"
 save "template.dta", replace
 */
+
+generate low_hhi = (hhi < 0.1)
+generate mode_hhi = (hhi >= 0.1) & (hhi < 0.25)
+generate high_hhi = (hhi >= 0.25)
+
 drop entry* pre* pos*
 xtset id year
 
@@ -197,17 +202,42 @@ est store entry_1
 reghdfe ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_2
 
-reghdfe ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+/*
+ make a graph here
+*/
+
+
+
+
+
+reghdfe ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_1
 
-reghdfe ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_2
 
-reghdfe ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_3
 
-reghdfe ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_4
+
+reghdfe ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_5
+
+reghdfe ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_entry_6
+
+esttab hetero_entry_1 hetero_entry_2 hetero_entry_3 hetero_entry_4 hetero_entry_5 hetero_entry_6 ///
+ using result_tables/entry_effect_hetero_1.tex, ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(income)"  "log(income)" "log(lead times)" "log(lead times)" "log(lead times)") ///
+star(* 0.1 ** 0.05 *** 0.01) ///
+se ///
+scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
+ replace
+
 
 restore
 
@@ -216,10 +246,10 @@ restore
 
 drop if influence == 0
 
-reghdfe ln_income pre2_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_1
 
-reghdfe ln_lead pre2_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_lead pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_2
 
 * Define the names and titles using global macros
@@ -237,52 +267,53 @@ forvalues i = 1/2 {
 
     * Use coefplot to generate the graph for the current variable
     coefplot `name', baselevels ///
-    keep(treatment_yearx1 treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7) ///
+    keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment) ///
     vertical ci(90) ///
     yline(0, lcolor(edkblue*0.8)) ///
     xline(1, lwidth(vthin) lpattern(dash) lcolor(teal)) ///
     ylabel(, labsize(*0.75)) ///
-    xlabel(1 "2018" 2 "2019" 3 "2020" 4 "2021" 5 "2022", labsize(*0.75)) ///
+    xlabel(1 "pre1" 2 "treatment" 3 "post1" 4 "post2" 5 "post3", labsize(*0.75)) ///
     ytitle("`title'", size(small)) ///
     xtitle("time", size(small)) ///
     addplot(line @b @at) ///
-    ciopts(lpattern(dash) recast(rcap) msize(medium)) ///
-    msymbol(circle_hollow) ///
-    scheme(s1mono)
+    ciopts(lpattern(dash) recast(rcap) msize(medium) lcolor(blue*0.7)) ///
+    msymbol(circle) msize(small) ///
+    scheme(s2color) ///
+    graphregion(color(white)) ///
+    plotregion(color(white) lcolor(none))
 
     * Export each graph to a PDF file with DPI 300, naming the file based on the variable name
-    graph export "`name'.pdf", as(pdf) replace
+    graph export "`name'.tif", as(tif) width(1500) height(900) replace
 }
 
 /*** Heterogenous Check of The Mechanism ***/
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+
+reghdfe ln_income pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_1
 
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_2
 
-reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi < 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_income pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_3
 
-reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if hhi >= 0.2, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_lead pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_4
 
+reghdfe ln_lead pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+est store hetero_did_5
 
- 
-// now we compare the mature market with non-mature markets
+reghdfe ln_lead pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+est store heter_did_6
 
-
-
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if max_mature == 0, absorb(year#bs_code id) vce(cluster bs_code)
-est store robust_mature_1
-
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if max_mature == 1, absorb(year#bs_code id) vce(cluster bs_code)
-est store robust_mature_2
-
-reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if max_mature == 0, absorb(year#bs_code id) vce(cluster bs_code)
-est store robust_mature_3
-
-reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if max_mature == 1, absorb(year#bs_code id) vce(cluster bs_code)
-est store robust_mature_4
+esttab hetero_did_1 hetero_did_2 hetero_did_3 hetero_did_4 hetero_did_5 hetero_did_6 ///
+ using result_tables/heter_platform_did_1.tex, ///
+style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+mtitle("log(income)" "log(income)" "log(income)" "log(lead times)" "log(lead times)" "log(lead times)") ///
+star(* 0.1 ** 0.05 *** 0.01) ///
+se ///
+scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
+ replace
 
 // consider the case of the network spillover effects
