@@ -30,31 +30,64 @@ use "template.dta", clear
 
 /*
 // merge the result back to the file
-import delimited "to_merged_with_network.csv", clear
+import delimited "combined_result-with-network.csv", clear
 * Sort the imported CSV file by id and year
 sort id year
 
 save "temp_csv.dta", replace
 
 use "template.dta", clear
-	
+drop influence _merge
 sort id year
 
 merge 1:1 id year using "temp_csv.dta"
 save "template.dta", replace
 */
+drop entry* pre* pos*
+xtset id year
 
 tab year, gen(yearx)
+* Step 1: 创建treatment_effect变量
+generate treatment_effect = 1 if (lianjia_410 / beke_410 <= 0.8) & (year >= 2018)
+replace treatment_effect = 0 if treatment_effect == .
 
-generate treatment = 1 if (lianjia_410 / beke_410 < 0.8) & (year >= 2018)
+* Step 2: 生成标记第一次treatment_effect == 1的年份
+by id (year), sort: gen first_treatment_year = year if treatment_effect == 1 & (L.treatment_effect != 1 | L.treatment_effect == .)
+by id: replace first_treatment_year = first_treatment_year[_n-1] if first_treatment_year == .
+
+* 创建一个标记变量
+by id (year): gen flag_all_treatment = 1 if treatment == 1 & year >= first_treatment_year
+by id: replace flag_all_treatment = 0 if flag_all_treatment == . & treatment != 1 & year >= first_treatment_year
+
+* 检查是否在首次treatment_effect == 1之后的所有年份中，treatment都为1
+egen check_all_treatment = total(flag_all_treatment == 1), by(id)
+egen total_years_after_first = total(year >= first_treatment_year), by(id)
+
+* 创建最终标记变量
+gen final_flag = 1 if check_all_treatment == total_years_after_first & total_years_after_first > 0
+replace final_flag = 0 if final_flag == .
+
+order first_treatment_year treatment_effect year flag_all_treatment total_years_after_first final_flag
+* 清理临时变量
+drop first_treatment_year flag_all_treatment check_all_treatment total_years_after_first
+
+by id (year), sort: gen treatment = 1 if treatment_effect == 1 & (L.treatment_effect != 1 | L.treatment_effect == .) & (final_flag == 1)
 replace treatment = 0 if treatment == .
+order treatment
 
-bysort id: egen max_treatment = max(treatment)
-replace treatment = max_treatment
-
-foreach var of varlist yearx* {
-    gen treatment_`var' = `var' * treatment
+* Generate lagged and lead entry variables
+forvalues i = 1/3 {
+    by id: gen entry_platform_lag`i' = F`i'.treatment
+    by id: gen entry_platform_lead`i' = L`i'.treatment
 }
+// order entry_platform_lag1 entry_platform_lag2 entry_platform_lag3
+* Generate pre and post treatment indicators
+gen pre1_treatment = (entry_platform_lag1 == 1)
+gen pre2_treatment = (entry_platform_lag2 == 1)
+gen pre3_treatment = (entry_platform_lag3 == 1)
+gen post1_treatment = (entry_platform_lead1 == 1)
+gen post2_treatment = (entry_platform_lead2 == 1)
+gen post3_treatment = (entry_platform_lead3 == 1)
 
 foreach var of varlist yearx* {
     gen `var'_density = `var' * density
@@ -85,6 +118,11 @@ replace mature_market = 0 if mature_market == .
 by id: egen max_mature = max(mature_market)
 drop first_year
 
+foreach var of varlist yearx* {
+    gen `var'_influence = `var' * influence
+}
+
+
 // save "for-analysis.dta", replace
 
 /* Stylized Fact */
@@ -106,7 +144,6 @@ est store dynamic_2
 /* Exogenous Shock with lianjia's entry */
 preserve
 
-drop entry* pre* pos*
 by id: gen firstobs = (_n == 1)
 // we should not drop the observation that have entry in the first period
 // but we should drop the observation that have lianjia before our sample begin
@@ -120,7 +157,8 @@ gen to_keep = todrop == 0
 drop firstobs dropflag todrop
 
 by id: gen flag = sum(lianjia_410 > 0)
-by id: gen entry = (flag == 1) & (lianjia_410 > 0) & (first_obs_flag == 0)
+by id (year), sort: gen entry = 1 if (flag == 1) & (lianjia_410 > 0) & (first_obs_flag == 0) & (L.flag == 0 | L.flag == .)
+replace entry = 0 if entry == .
 // we should drop the samples that have to_keep = 0 in the final state of regression in individual samples
 order flag entry lianjia_410
 
@@ -175,10 +213,13 @@ restore
 
 // now replace the result with the outcome.
 
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+
+drop if influence == 0
+
+reghdfe ln_income pre2_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_1
 
-reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_lead pre2_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_2
 
 * Define the names and titles using global macros
@@ -245,7 +286,3 @@ reghdfe ln_lead treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yea
 est store robust_mature_4
 
 // consider the case of the network spillover effects
-
-
-reghdfe ln_income treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if max_mature == 0, absorb(year#bs_code id) vce(cluster bs_code)
-

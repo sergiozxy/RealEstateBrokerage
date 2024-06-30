@@ -12,3 +12,9 @@ but however, we need to know that the brokerages can not operate the price it se
 3. what else can I do？ I think we can add the price into consideration and is it necessary? 
 4. I think the platform consolidation is very important but the idea is pretty trivial because people always know that the online platform is gonna be the future way out and there is no necessity to study this thoroughly
 5. how to quantify the 
+
+
+1. I think the problem first exists in the DID of the entry effect and I should carefully explain why to drop the samples
+2. The second concern happens when the platform consolidation effect happens to generate the 
+3. Think about instead of using CIC we can use Fuzzy Differences-in-Differences this would be better
+https://www.lianxh.cn/news/38d799143f08f.html

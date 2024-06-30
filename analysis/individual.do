@@ -9,9 +9,12 @@ set maxvar 100000
 use "individual.dta", clear
 
 /*
+drop influence _merge
 merge n:1 id year using "temp_csv.dta"
-
+save "individual", replace
 */
+
+
 
 tab year, gen(yearx)
 
@@ -120,12 +123,13 @@ b(%9.3f) se(%9.3f) ///
 
 restore
 
+drop if influence == 0
 // now replace the result with the outcome.
 
-reghdfe ln_negotiation_period treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_3
 
-reghdfe price_concession treatment_yearx3 treatment_yearx4 treatment_yearx5 treatment_yearx6 treatment_yearx7 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_4
 
 * Define the names and titles using global macros
