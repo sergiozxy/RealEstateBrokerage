@@ -1,4 +1,11 @@
 # library(qte) # this is the implementation of CIC model and we do not need it right now
+
+# if you are using the caen version's R
+# first install R-tools from https://cran.rstudio.com/bin/windows/Rtools/history.html
+# this CAEN version is 4.0.2 and install it to the zxuyuan
+# install.packages("rlang")
+# install.packages("lifecycle")
+# and then install other packages
 library(lfe)
 library(haven)
 library(dplyr)
@@ -7,7 +14,8 @@ library(fixest)
 set.seed(130)
 getwd()
 
-setwd('/home/xuyuan/Desktop/2024 summer/real estate paper/oritignal cleaning/RealEstateBrokerage')
+setwd('C:/Users/zxuyuan/Downloads')
+# setwd('/home/xuyuan/Desktop/2024 summer/real estate paper/oritignal cleaning/RealEstateBrokerage')
 data <- read_dta("template.dta")
 
 # now here we consider the CIC model where the dependent variable is the influence
