@@ -8,6 +8,7 @@ set maxvar 100000
 
 use "individual.dta", clear
 
+cd "E:\umich\RealEstateBrokerage"
 /*
 drop influence _merge
 merge n:1 id year using "temp_csv.dta"
@@ -51,7 +52,7 @@ est store stylized_fact_4
 esttab stylized_fact_1 stylized_fact_2 stylized_fact_3 stylized_fact_4 ///
  using result_tables/stylized_fact.tex, ///
 style(tex) booktabs keep(density broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
+mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
@@ -69,7 +70,7 @@ est store dynamic_4
 esttab dynamic_1 dynamic_2 dynamic_3 dynamic_4 ///
  using result_tables/dynamic.tex, ///
 style(tex) booktabs keep($dependent_variable broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
+mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
@@ -94,7 +95,7 @@ est store entry_4
 esttab entry_1 entry_2 entry_3 entry_4 ///
  using result_tables/entry_effect.tex, ///
 style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
+mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
@@ -180,7 +181,7 @@ forvalues i = 1/2 {
 esttab did_1 did_2 did_3 did_4 ///
  using result_tables/difference_in_difference.tex, ///
 style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
-mtitle("log(income)" "log(lead times)" "log(negotiation period)" "price concession") ///
+mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
