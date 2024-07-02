@@ -1,4 +1,4 @@
-cd "C:\Users\zxuyuan\Downloads" // change to your working directory
+cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
 
 use "template.dta", clear
 
@@ -283,7 +283,7 @@ forvalues i = 1/2 {
     plotregion(color(white) lcolor(none))
 
     * Export each graph to a PDF file with DPI 300, naming the file based on the variable name
-    graph export "`name'.tif", as(tif) width(1500) height(900) replace
+    graph export "`name'.pdf", as(pdf) replace
 }
 
 /*** Heterogenous Check of The Mechanism ***/

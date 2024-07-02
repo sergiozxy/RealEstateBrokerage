@@ -25,6 +25,7 @@ set.seed(123)
 
 ```{r}
 # these are the packages that we need to import
+library(dplyr)
 library(haven)
 library(rdd)
 library(ggplot2)
@@ -70,10 +71,11 @@ testing_variables <- c("ln_negotiation_period", "ln_watch_time", "ln_nego_change
 ```
 
 ```{r}
+ci_level = 95
 h = 0.066
 cutoff = 0.41
 running_var = panel_data$nearest_store_distances
-
+running_var <- as.numeric(running_var)
 filtered_data <- panel_data[abs(running_var - cutoff) <= h, ]
 
 # Export the first RD plot to its own PDF file
@@ -83,7 +85,7 @@ rdplot(y = filtered_data$ln_income,
        c = cutoff, nbins = 40, p = 1,
        title = "RD-plot 1st order polynomial",
        x.label = "Nearest distance to Lianjia's stores",
-       y.label = "Log of income in the community")
+       y.label = "Log of income in the community", col.dots = "blue")
 dev.off() # Close the PDF device
 
 # Export the second RD plot to its own PDF file
@@ -91,9 +93,9 @@ pdf("RD_Plot_2nd_Order.pdf", width = 8, height = 4) # Adjust the width and heigh
 rdplot(y = filtered_data$ln_income, 
        x = filtered_data$nearest_store_distances, 
        c = cutoff, nbins = 40, p = 2,
-       title = "RD-plot 2nd order polynomial",
+       title = "RD-plot 1st order polynomial",
        x.label = "Nearest distance to Lianjia's stores",
-       y.label = "Log of income in the community")
+       y.label = "Log of income in the community", col.dots = "blue")
 dev.off() # Close the PDF device
 
 # Export the third RD plot to its own PDF file
@@ -103,7 +105,7 @@ rdplot(y = filtered_data$ln_income,
        c = cutoff, nbins = 40, p = 3,
        title = "RD-plot 3rd order polynomial",
        x.label = "Nearest distance to Lianjia's stores",
-       y.label = "Log of income in the community")
+       y.label = "Log of income in the community", col.dots = "blue")
 dev.off() # Close the PDF device
 ```
 

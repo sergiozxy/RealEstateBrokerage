@@ -367,7 +367,19 @@ Furthermore, in columns 5 and 6, the entry of Lianjia's offline stores significa
     \begin{scriptsize}
       \caption{Robustness Check of Entry Effect}
       \label{tab:entry_effect_robustness}
-      \input{../result_tables/entry_effect_hetero.tex}
+      \input{../result_tables/entry_effect_hetero_1.tex}
+    
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
+    \end{scriptsize}
+  \end{center}
+\end{table}
+
+\begin{table}
+  \begin{center}
+    \begin{scriptsize}
+      \caption{Robustness Check of Entry Effect (Continued)}
+      \label{tab:entry_effect_robustness}
+      \input{../result_tables/entry_effect_hetero_2.tex}
     
     Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
     \end{scriptsize}
@@ -393,7 +405,7 @@ By focusing on 2017 as the baseline, we can empirically estimate the outcomes wi
     \hfill % Adds horizontal space between figures
     \subfloat[Effect to transaction period]{\includegraphics[width=0.5\textwidth]{../figures/did_3.pdf}\label{fig:negotiation_period}}
     \subfloat[Effect to price concession]{\includegraphics[width=0.5\textwidth]{../figures/did_4.pdf}\label{fig:did_price_concession}}
-    \caption{Estimation of ACN Platformization Effect}
+    \caption{Estimation of Platform Consolidation Effect}
     \label{fig:dynamic_effect}
 \end{figure}
 
@@ -408,12 +420,25 @@ To further investigate the impact of market concentration on the effectiveness o
     \begin{scriptsize}
       \caption{Robustness Check of Online Consolidation Effect}
       \label{tab:heter_platform_did}
-      \input{../result_tables/heter_platform_did.tex}
+      \input{../result_tables/heter_platform_did_1.tex}
     
     Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
     \end{scriptsize}
   \end{center}
 \end{table}
+
+\begin{table}
+  \begin{center}
+    \begin{scriptsize}
+      \caption{Robustness Check of Online Consolidation Effect (Continued)}
+      \label{tab:heter_platform_did}
+      \input{../result_tables/heter_platform_did_2.tex}
+    
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
+    \end{scriptsize}
+  \end{center}
+\end{table}
+
 
 In the online Appendix \ref{tab:platform_consolidation_hetero_mature}, we present the heterogeneous effects of Lianjia's operations in both mature and immature markets. Figure \ref{fig:treatment_consolidation} illustrates the distribution of income across the treatment and control groups. Prior to the intervention, the two groups exhibit parallel trends, indicating no significant differences. The treatment effect becomes significant only after the first period, aligning with our empirical findings.
 
@@ -447,7 +472,9 @@ In this case, we need to empirically estimate the spillover effect, and if this 
 To set up, we first match the brokerages' with the 
 
 
-We decided to use the so called Change-in-Change (CIC) estimator proposed by \citep{https://doi.org/10.1111/j.1468-0262.2006.00668.x}. The CIC model does not assume that the 
+We decided to use the so called quantile estimator proposed by \citep{https://doi.org/10.1111/j.1468-0262.2006.00668.x}. The CIC model does not assume that the 
+
+
 
 
 
@@ -645,6 +672,9 @@ The study of Lianjia's strategic expansion into China's real estate brokerage in
   \bibitem[Athey and Imbens(2006)]{https://doi.org/10.1111/j.1468-0262.2006.00668.x}
   Athey, S., and G. W. Imbens. 2006. Identification and Inference in Nonlinear Difference-in-Differences Models. \textit{Econometrica}, 74(2), 431-497.% Available at \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2006.00668.x}.
 
+  \bibitem[Machado and Santos Silva(2019)]{machado_quantiles_2019}
+Machado, J. A. F., and J. M. C. Santos Silva. 2019. Quantiles via Moments. \textit{Journal of Econometrics}, 213(1), 145-173.
+
   \end{thebibliography}
 \end{singlespace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -697,16 +727,16 @@ The study of Lianjia's strategic expansion into China's real estate brokerage in
 
 \clearpage
 
-\begin{table}[H]
-  \begin{center}
-    \begin{scriptsize}
-    \caption{Robustness Check By Market Maturity Index}
-    \label{tab:platform_consolidation_hetero_mature}
-    \input{../result_tables/robust_mature.tex}  
+% \begin{table}[H]
+%   \begin{center}
+%     \begin{scriptsize}
+%     \caption{Robustness Check By Market Maturity Index}
+%     \label{tab:platform_consolidation_hetero_mature}
+%     \input{../result_tables/robust_mature.tex}  
   
-    \end{scriptsize}
-  \end{center}
-\end{table}
+%     \end{scriptsize}
+%   \end{center}
+% \end{table}
 
 \begin{figure}
     \centering

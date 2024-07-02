@@ -1,5 +1,6 @@
 {
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{l*{6}{c}}
 \toprule
             &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
@@ -20,22 +21,22 @@ post2\_treatment&       0.059\sym{***}&       0.080\sym{***}&       0.031       
 post3\_treatment&      -0.002         &       0.069\sym{***}&       0.046         &       0.027         &      -0.006         &       0.025         \\
             &     (0.026)         &     (0.025)         &     (0.070)         &     (0.023)         &     (0.019)         &     (0.028)         \\
 \addlinespace
-broker\_410  &      -0.001         &      -0.001         &       0.008\sym{*}  &      -0.001         &       0.002         &      -0.005         \\
+other brokerage num  &      -0.001         &      -0.001         &       0.008\sym{*}  &      -0.001         &       0.002         &      -0.005         \\
             &     (0.002)         &     (0.002)         &     (0.005)         &     (0.001)         &     (0.002)         &     (0.003)         \\
 \addlinespace
-ln\_end\_price&       0.895\sym{***}&       0.849\sym{***}&       1.019\sym{***}&       0.181\sym{***}&       0.204\sym{***}&      -0.311\sym{***}\\
+ln(Price)&       0.895\sym{***}&       0.849\sym{***}&       1.019\sym{***}&       0.181\sym{***}&       0.204\sym{***}&      -0.311\sym{***}\\
             &     (0.039)         &     (0.045)         &     (0.073)         &     (0.034)         &     (0.038)         &     (0.033)         \\
 \addlinespace
-ln\_watch\_people&       0.042\sym{***}&       0.046\sym{***}&       0.028\sym{***}&       0.340\sym{***}&       0.342\sym{***}&       0.366\sym{***}\\
+log(watch people)&       0.042\sym{***}&       0.046\sym{***}&       0.028\sym{***}&       0.340\sym{***}&       0.342\sym{***}&       0.366\sym{***}\\
             &     (0.006)         &     (0.006)         &     (0.009)         &     (0.008)         &     (0.007)         &     (0.004)         \\
 \addlinespace
-ln\_watch\_time&       0.019\sym{***}&       0.024\sym{***}&       0.034\sym{***}&       0.026\sym{***}&       0.028\sym{***}&       0.035\sym{***}\\
+log(watch time)&       0.019\sym{***}&       0.024\sym{***}&       0.034\sym{***}&       0.026\sym{***}&       0.028\sym{***}&       0.035\sym{***}\\
             &     (0.003)         &     (0.003)         &     (0.004)         &     (0.003)         &     (0.003)         &     (0.002)         \\
 \addlinespace
-ln\_nego\_changes&       0.023\sym{***}&       0.010         &       0.017         &       0.115\sym{***}&       0.128\sym{***}&       0.668\sym{***}\\
+log(nego changes)&       0.023\sym{***}&       0.010         &       0.017         &       0.115\sym{***}&       0.128\sym{***}&       0.668\sym{***}\\
             &     (0.009)         &     (0.010)         &     (0.016)         &     (0.012)         &     (0.010)         &     (0.009)         \\
 \addlinespace
-ln\_negotiation\_period&       0.064\sym{***}&       0.075\sym{***}&       0.089\sym{***}&       0.086\sym{***}&       0.123\sym{***}&                     \\
+log(negotiation period)&       0.064\sym{***}&       0.075\sym{***}&       0.089\sym{***}&       0.086\sym{***}&       0.123\sym{***}&                     \\
             &     (0.005)         &     (0.005)         &     (0.010)         &     (0.006)         &     (0.006)         &                     \\
 \midrule
 \(N\)       &       41849         &       53806         &       24273         &       41849         &       53806         &      468936         \\
@@ -44,4 +45,5 @@ R-squared   &       0.896         &       0.902         &       0.919         & 
 \multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
 \multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
 \end{tabular}
+\end{adjustbox}
 }
