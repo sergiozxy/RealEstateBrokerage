@@ -202,7 +202,7 @@ Finally, the concept of the platform as a "two-sided market" or kind of intermed
 
 This study focuses on the housing markets in ten major cities in China, namely Beijing, Shanghai, Chongqing, Tianjin, Shenzhen, Guangzhou, Chengdu, Hangzhou, Wuhan and Nanjing. These cities are not only central to China's economic development, but also reflect the broader trends and characteristics of the country's real estate dynamics. Spanning from 2016 to 2022, the research period encapsulates a pivotal era in China's real estate sector. During the first phase of the study, from 2016 to 2019, the housing markets in these cities experienced a remarkable boom. This period was characterized by significant growth in property prices, supported by robust economic expansion and increased demand in these urban centers. However, the final phase of our study, from 2020 to 2022, paints a contrasting picture. During this period, China's overall economic growth rate has been slower significantly, which has also reflected in a slowdown in the real estate markets of these major cities. In addition, the Chinese government has implemented strict rules in Covid-19 protection, so the real estate agents in these major cities are significantly affected.
 
-The second hand housing transaction data was collected form \href{https://www.ke.com/city/}{beke.com} for ten cities ranging from 2016 to 2022. Initially, we filtered out transaction records exhibiting unusually high prices, identifying them as outliers that could skew the analysis. We then removed records with missing values to maintain the integrity of our dataset. We also removed any records that were listed duplicated. We finally have a data with length 1,778,647 second-hand houses.\footnote{Due to government restrictions, four of these cities did not list the transaction price for each transaction during the study period.} After cleaning the data, we constructed two research samples: one at the individual transaction level and the other at the neighborhood level. The individual transaction sample contains detailed information on each transaction, including the transaction price, transaction date, price concessions, and the number of house tours. The neighborhood-level sample aggregates transaction data at the community level, encompassing variables such as the average transaction price and the average number of house tours. Additionally, we calculated the annual number of house transactions to capture Lianjia's transaction activity within each neighborhood. This data structure enables a comprehensive analysis of the impact of offline stores on housing transactions across both individual and neighborhood dimensions.
+The second hand housing transaction data was collected form \href{https://www.ke.com/city/}{beke.com} for ten cities ranging from 2016 to 2022.\footnote{Due to government policy, Lianjia was unable to disclose transaction prices in Beijing, Shenzhen, and Wuhan for the years 2021 and 2022, as well as in Chengdu for 2021. Consequently, we have excluded this period of data for these cities from our analysis.} Initially, we filtered out transaction records exhibiting unusually high prices, identifying them as outliers that could skew the analysis. We then removed records with missing values to maintain the integrity of our dataset. We also removed any records that were listed duplicated. We finally have a data with length 1,778,647 second-hand houses.\footnote{Due to government restrictions, four of these cities did not list the transaction price for each transaction during the study period.} After cleaning the data, we constructed two research samples: one at the individual transaction level and the other at the neighborhood level. The individual transaction sample contains detailed information on each transaction, including the transaction price, transaction date, price concessions, and the number of house tours. The neighborhood-level sample aggregates transaction data at the community level, encompassing variables such as the average transaction price and the average number of house tours. Additionally, we calculated the annual number of house transactions to capture Lianjia's transaction activity within each neighborhood. This data structure enables a comprehensive analysis of the impact of offline stores on housing transactions across both individual and neighborhood dimensions.
 
 To gather additional characteristic information, Point of Interest (POI) data was extracted from the AutoNavi map using a web-scraping Python program.\footnote{AutoNavi, a leading mapping application in China with a user base exceeding 700 million, is renowned for its detailed and accurate POI data as well as precise public transportation information. These features underscore AutoNavi's leadership in the digital mapping sector, highlighting its ability to provide unparalleled navigation accuracy and comprehensive urban mobility solutions. Our extracted AutoNavi dataset includes over one million POIs per city annually.} The extracted POIs were then classified into various categories, as detailed in Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual} and it primarily represents living facilities, entertainment venues, restaurants, hospitals, and other public amenities. This classification is crucial for understanding the urban infrastructure and amenities available in the vicinity of the analyzed properties.
 
@@ -335,7 +335,7 @@ In the preceding section, our research concentrated on evaluating the dynamic im
 To facilitate such an analysis, we have constructed a series of dummy variables associated with the presence of the Lianjia within the marketplace, delineated as $pre_2$, $pre_1$ (before entry), $entry$, $post_1$, $post_2$, and $post_3$ (successive post-entry intervals), which encapsulate the respective temporal epochs relative to the Lianjia's entry. To eliminate the effect of the well constructed effect, we drop all the variables that have Lianjia's offline stores before the year 2016 to better estimate the effect of Lianjia's entry on the market. These binary indicators serve as central regressors within a structured econometric model with $pre_1$ as the control group, described in Equation \eqref{eq:entry_effect}:
 
 \begin{equation}
-    Y_{it} = \beta_0 +  pre_2 + entry + \sum_{i=1}^3 post_i + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}.   \label{eq:entry_effect}
+    Y_{it} = \beta_0 +  pre_2 + entry + \sum_{i=1}^3 post_i + \bf{\alpha} \bf{X}_{it} + \tau_{t} + \mu_i + \epsilon_{it}.   \label{eq:entry_effect}
 \end{equation}
 
 $pre_2, entry, post_i$ are correspondingly periods dummy variables and other settings are the same with Equation \eqref{eq:dynamic}. The results are reported in Table \ref{tab:entry_effect}.
@@ -352,21 +352,23 @@ $pre_2, entry, post_i$ are correspondingly periods dummy variables and other set
   \end{center}
 \end{table}
 
-The results presented in the table \ref{tab:entry_effect} analyze the impact of Lianjia's offline stores entering segmented markets. Prior to Lianjia's entry ($pre_2$), there is no statistically significant effect on Lianjia's transaction properties, indicating that anticipation of Lianjia's entry does not influence these metrics. Post-entry ($entry$), there is a significant 9.1\% increase in revenue, suggesting a substantial boost in Lianjia's sales. However, this effect decreases to 4.7\% in the subsequent period ($post_1$) and continues to diminish in the following periods ($post_2$ and $post_3$), indicating a gradual decline in Lianjia's performance after the initial entry period. Similarly, the number of house tours exhibits a significant 2.3\% increase during the entry period, followed by a 3.\% increase in the first post-entry period. Nonetheless, this effect lessens in $post_2$, though it remains significant in $post_3$. This trend is attributed to the impact of the COVID-19 pandemic in 2020, which significantly affected the real estate market and brokerage's operation mode. 
+The results presented in the table \ref{tab:entry_effect} analyze the impact of Lianjia's offline stores entering segmented markets. Prior to Lianjia's entry ($pre_2$), there is no statistically significant effect on Lianjia's transaction properties, indicating that anticipation of Lianjia's entry does not influence these metrics. Post-entry ($entry$), there is a significant 9.1\% increase in revenue, suggesting a substantial boost in Lianjia's sales. However, this effect decreases to 4.7\% in the subsequent period ($post_1$) and continues to diminish in the following periods ($post_2$ and $post_3$), indicating a gradual decline in Lianjia's performance after the initial entry period. Similarly, the number of house tours exhibits a significant 2.3\% increase during the entry period, followed by a 3.1\% increase in the first post-entry period. Nonetheless, this effect lessens in $post_2$, though it remains significant in $post_3$. This trend is attributed to the impact of the COVID-19 pandemic in 2020, which significantly affected the real estate market and brokerage's operation mode.
 
 In terms of the transaction period, the offline store's influence is always not significant, which suggests that the offline store's entry does not help to match the buyers and sellers in searching the houses, which is in line with the intuition that when platform is more mature, people's searching behavior is more likely to be online. Lastly, regarding price concessions, the entry of Lianjia's offline stores exhibits a 4.5\% positive effect. This suggests that the presence of offline stores may facilitate an increase in price concessions. This effect can be attributed to the enhanced efficiency in matching buyers with suitable properties, thereby encouraging sellers to be more amenable to price negotiations. Additionally, offline stores possess better control over neighborhood information, which aids in effectively marketing properties to potential buyers, thereby capturing additional surplus.
 
 In summary, the entry of Lianjia into a segmented market initially results in a significant increase in revenue and facilitates a higher number of house tours, which, in turn, leads to greater price concessions. However, this positive impact is transient, diminishing over time due to increased market competition and external factors such as the COVID-19 pandemic. This suggests that while Lianjia's entry provides a short-term boost to its market performance, the sustainability of this effect is challenged by both competitive dynamics and unforeseen external shocks.
 
-To verify the robustness of the entry effect, we classified the sample into low and high Herfindahl-Hirschman Index (HHI) groups. The results, presented in Table \ref{tab:entry_effect_robustness}, indicate that the income effect for Lianjia remains consistent across both groups. Specifically, income increases by 9.2\% during the entry period, with the effect decreasing to 5.1\% in the subsequent period for the higher HHI group, and increasing by 9.6\% during the entry period and decreasing to 4.7\% for the lower HHI group. However, a significant difference emerges in the number of house tours. The entry of Lianjia increases the number of house tours by 2.9\% for the higher HHI group and by 4.4\% for the lower HHI group. In the subsequent period, the effect diminishes for the lower HHI group, indicating that the entry of new competitors mitigates Lianjia's entry effect. Conversely, the entry effect remains significant for the higher HHI group. This analysis underscores the varying impacts of market concentration on Lianjia's market performance post-entry.
+To verify the robustness of the entry effect, we classified the sample into low and high Herfindahl-Hirschman Index (HHI) groups. The results, presented in Table \ref{tab:entry_effect_robustness_1}, indicate that the income effect for Lianjia remains consistent across both groups. Specifically, income increases by 7.9\% during the entry period, with the effect decreasing to 5.0\% in the subsequent period for the lower HHI group, which demonstrates the entry can create a very large impact on the compettive market. Moreover, the income increases by 6.8\% and 7.8\% during the entry period and decreases to insignificant after the entry period in the moderate and high concentration market. This demonstrates that Lianjia's entry can only make companies profitable in less competitive markets, and it can enhance profitability in more competitive markets. However, a significant difference emerges in the number of house tours. The entry of Lianjia increases the number of house tours by 5.4\% in the second year and 5.9\% in the third year for the low competitive group. The entry's effect is also significant, with a 3.9\% increase in the number of house tours in the second year for the high concentration market. However, this effect diminishes for the moderately competitive group. The result indicates that the results indicate that when facing other competitors in the market, Lianjia is more likely to make greater efforts to attract more sellers. This analysis underscores the varying impacts of market concentration on Lianjia's market performance post-entry.
 
-Furthermore, in columns 5 and 6, the entry of Lianjia's offline stores significantly shortens the transaction period for the higher HHI group. This suggests that offline stores enhance market efficiency by better matching buyers and sellers. Conversely, this effect is not significant in the lower HHI group, indicating that the benefits of offline stores diminish in more competitive markets. Regarding price concessions, the entry of Lianjia's offline stores does not have a significant effect in the lower HHI group initially. However, by the $post_3$ period, the effect becomes significant and positive. This delayed impact may be attributed to the offline stores gradually improving market transparency and information dissemination, which eventually leads to better price concessions. For the higher HHI group, the entry of Lianjia's offline stores consistently has a significant effect on price concessions. This reinforces the notion that in less competitive markets, offline stores play a crucial role in facilitating better matches between buyers and sellers and improving overall market efficiency. In the Appendix we also conducted the robustness check by classifying the group by matured market and less matured market. [ THERE IS ALSO A GRAPH OF PARALLEL TREND NEED TO BE ADDED HERE. ]
+Furthermore, in Table \ref{tab:entry_effect_robustness_2}, The entry of Lianjia's offline stores significantly shortens the transaction period for the moderate HHI group by about 5\%. Conversely, this effect is not significant in the lower HHI group and higher concentration group. This pattern suggests that when the market is highly competitive, Lianjia is not able to shorten the transaction period and in highly concentrated markets, Lianjia is also unable to use its information advantage to shorten the transaction period. Regarding price concessions, the entry of Lianjia's offline stores does not have a significant effect in the moderate HHI group initially. However, the entry of offline stores have no influence on other groups. Overall, the results suggest that the entry of offline stores has a very limited influence on consumers' welfare but can help the brokerage earn more profit. Additionally, the entry of Lianjia's offline stores can help the brokerage attract more sellers and, consequently, find more buyers in the market, thereby increasing the brokerage's informational advantage. In the Appendix we also conducted the robustness check by classifying the group by matured market and less matured market.
+
+% This delayed impact may be attributed to the offline stores gradually improving market transparency and information dissemination, which eventually leads to better price concessions. For the higher HHI group, the entry of Lianjia's offline stores consistently has a significant effect on price concessions. This reinforces the notion that in less competitive markets, offline stores play a crucial role in facilitating better matches between buyers and sellers and improving overall market efficiency. In the Appendix we also conducted the robustness check by classifying the group by matured market and less matured market.
 
 \begin{table}
   \begin{center}
     \begin{scriptsize}
       \caption{Robustness Check of Entry Effect}
-      \label{tab:entry_effect_robustness}
+      \label{tab:entry_effect_robustness_1}
       \input{../result_tables/entry_effect_hetero_1.tex}
     
     Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
@@ -378,7 +380,7 @@ Furthermore, in columns 5 and 6, the entry of Lianjia's offline stores significa
   \begin{center}
     \begin{scriptsize}
       \caption{Robustness Check of Entry Effect (Continued)}
-      \label{tab:entry_effect_robustness}
+      \label{tab:entry_effect_robustness_2}
       \input{../result_tables/entry_effect_hetero_2.tex}
     
     Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
@@ -472,9 +474,16 @@ In this case, we need to empirically estimate the spillover effect, and if this 
 To set up, we first match the brokerages' with the 
 
 
-We decided to use the so called quantile estimator proposed by \citep{https://doi.org/10.1111/j.1468-0262.2006.00668.x}. The CIC model does not assume that the 
+We decided to use the so called quantile estimator described in model  proposed by \citep{machado_quantiles_2019}.
 
+\begin{equation}
+  \begin{aligned}
+    Q_y(\xi \mid X) & = \beta_0 + \beta_1(\xi) \text{pre\_treatment}_{it} + \beta_2(\xi) \text{treatment} + \sum_{i=3}^5 \beta_i(\xi) \text{post\_treatment}_{it} \\
+    & + \beta(\xi) \bf{X}_{it} + \mu_i + \tau_t + \varepsilon_{it}
+  \end{aligned}
+\end{equation}
 
+\ref{tab:quantile_estimate_network} shows the quantile estimation of the . We can see that the 
 
 
 
@@ -489,7 +498,37 @@ We decided to use the so called quantile estimator proposed by \citep{https://do
   Note: The red nodes represent the distribution of Lianjia's offline stores, while the blue nodes indicate the distribution of neighborhoods within the market. Dotted edges illustrate the connections between neighborhoods and stores, whereas solid lines depict the interactions between offline stores. The size of the red nodes corresponds to the local clustering effect, with larger nodes indicating a more significant local clustering phenomenon.
 \end{figure}
 
-The table shown in the Table \ref{tab:network_clustering_effect} shows the 
+\begin{table}
+  \begin{center}
+    \begin{scriptsize}
+      \caption{Estimated Network Spillover Effect}
+      \label{tab:estiamted_spillover_effect}
+      \input{../result_tables/clustering_indices.tex}
+
+      Note: The indices used are the Average and Global Clustering Coefficients. $*$ denotes a low network effect, which ranges from 0.3 to 0.5. $**$ indicates a moderate network effect, ranging from 0.5 to 0.75. $***$ signifies a large network effect, ranging from 0.75 to 1.
+    \end{scriptsize}
+  \end{center}
+\end{table}
+
+
+\begin{table}
+  \begin{center}
+    \begin{scriptsize}
+      \caption{Quantile Estimation of the Network Spillover Effect}
+      \label{tab:quantile_estimate_network}
+      \input{../result_tables/quantile_network_formation.tex}
+    
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
+    \end{scriptsize}
+  \end{center}
+\end{table}
+
+
+
+
+
+
+
 
 
 
