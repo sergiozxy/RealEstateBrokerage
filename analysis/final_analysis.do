@@ -1,8 +1,8 @@
-cd "E:\umich\RealEstateBrokerage-main" // change to your working directory
+cd "C:\Users\zxuyuan\Downloads" // change to your working directory
 
 use "template.dta", clear
 
-cd "E:\umich\RealEstateBrokerage"
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage"
 // ssc install reghdfe
 // ssc install ftools
 // ssc install estout
