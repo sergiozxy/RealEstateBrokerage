@@ -283,10 +283,10 @@ where $lianjia_{it}$ represents the number of Lianjia's stores within a 410-mete
 To capture the individual fixed effect and other time-invariant unobservable influential factors, a multi-way fixed effect model is proposed. The model is specified as follows: 
 
 \begin{equation}
-  Y_{it} = \beta_0 + \beta_1 density_{it} + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}, \label{eq:multi-way-fe}
+  Y_{it} = \beta_0 + \beta_1 density_{it} + \bf{\alpha} \bf{X}_{it} + \eta_{t} \times \text{bs\_code}_i + \mu_i + \epsilon_{it}, \label{eq:multi-way-fe}
 \end{equation}
 
-where $Y_{it}$ is the three main dependent variables, including $\log(\text{number})$, price concession, and $\log(\text{lead times})$, $density_{it}$ is the DBI, $\bf{X}_{it}$ is a set of control variables, including brokerage\_control Lag(hedonic\_control), transaction\_control and region\_control, while $\tau_{it}$ is the time dummy variable interacting with the fixed effect of the business area, $\mu_i$ is the neighborhood fixed effect and $\epsilon_{it}$ is the random error term. The standard errors are clustered at the each business area level.\footnote{The business area is defined as a combination of multiple neighborhoods, which Lianjia designates as the primary divisions of the entire region.} The results are shown in Table \ref{tab:stylized_fact}.
+where $Y_{it}$ is the three main dependent variables, including $\log(\text{number})$, price concession, and $\log(\text{lead times})$, $density_{it}$ is the DBI, $\bf{X}_{it}$ is a set of control variables, including brokerage\_control Lag(hedonic\_control), transaction\_control and region\_control, while $\eta_{t} \times \text{bs\_code}_i$ is the time dummy variable interacting with the fixed effect of the business area, $\mu_i$ is the neighborhood fixed effect and $\epsilon_{it}$ is the random error term. The standard errors are clustered at the each business area level.\footnote{The business area is defined as a combination of multiple neighborhoods, which Lianjia designates as the primary divisions of the entire region.} The results are shown in Table \ref{tab:stylized_fact}.
 
 \begin{table}[htb!]
     \centering
@@ -306,7 +306,7 @@ Within the temporal scope of our investigation, the dataset encapsulates two dis
 In the construction of our regression model, we deliberately omit the first period to avoid multicollinearity problem, treating it as a baseline for comparison. This strategic choice allows us to refine our proxy variable—the product of Lianjia's Dealership Balance Index (DBI) and annual dummies—as a better measure of Lianjia's local market power. Besides, to control for potential self correlation problem, we also included lagged one period dependent variables in the model. Other settings are the same with the previous model \eqref{eq:multi-way-fe} and the model is described as \eqref{eq:dynamic} and the results are reported in Table \ref{tab:Dynamic}: 
 
 \begin{equation}
-    Y_{it} = \beta_0 + \rho Y_{it-1} + \sum_{i=2}^7 density_{it} * year_{it} + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}. \label{eq:dynamic}
+  Y_{it} = \beta_0 + \rho Y_{it-1} + \sum_{i=2}^7 density_{it} * year_{it} + \bf{\alpha} \bf{X}_{it} + \eta_{t} \times \text{bs\_code}_i + \mu_i + \epsilon_{it}. \label{eq:dynamic}
 \end{equation}
 
 \begin{table}[H]
@@ -332,7 +332,7 @@ In the preceding section, our research concentrated on evaluating the dynamic im
 To facilitate such an analysis, we have constructed a series of dummy variables associated with the presence of the Lianjia within the marketplace, delineated as $pre_2$, $pre_1$ (before entry), $entry$, $post_1$, $post_2$, and $post_3$ (successive post-entry intervals), which encapsulate the respective temporal epochs relative to the Lianjia's entry. To eliminate the effect of the well constructed effect, we drop all the variables that have Lianjia's offline stores before the year 2016 to better estimate the effect of Lianjia's entry on the market. These dummy variables serve as key independent variables with $pre_1$ as the control group, described in Equation \eqref{eq:entry_effect}:
 
 \begin{equation}
-    Y_{it} = \beta_0 +  \beta_1 pre_2 + \beta_2 entry + \beta_3 post_1 + \beta_4 post_2 + \beta_5 post_3 + \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}.   \label{eq:entry_effect}
+  Y_{it} = \beta_0 +  \beta_1 pre_2 + \beta_2 entry + \beta_3 post_1 + \beta_4 post_2 + \beta_5 post_3 + \bf{\alpha} \bf{X}_{it} + \eta_{t} \times \text{bs\_code}_i + \mu_i + \epsilon_{it}.   \label{eq:entry_effect}
 \end{equation}
 
 $pre_2, entry, post_i$ are correspondingly periods dummy variables and other settings are the same with Equation \eqref{eq:dynamic}. To mitigate the risk of missing information, we exclude the lagged variable lag(hedonic\_control) from the model and instead use the contemporaneous variable hedonic\_control. All subsequent models will also use hedonic\_control instead of its lag term. The results are reported in Table \ref{tab:entry_effect}.
@@ -394,7 +394,7 @@ This strategy is a significant change in Lianjia's business model, and it is exp
 \begin{equation}
   \begin{aligned}
     Y_{it} & = \beta_0 + \beta_1 \text{prev\_treatment}_{it} + \beta_2 \text{treatment}_{it} + \sum_{j=3}^5 \beta_{i} \text{post\_j\_treatment}_{it} + \\
-           & \bf{\alpha} \bf{X}_{it} + \tau_{it} + \mu_i + \epsilon_{it}. \label{eq:acn_assessment}
+           & \bf{\alpha} \bf{X}_{it} + \eta_{t} \times \text{bs\_code}_i + \mu_i + \epsilon_{it}. \label{eq:acn_assessment}
   \end{aligned}
 \end{equation}
 
@@ -466,6 +466,8 @@ The result is consistent with the opinion that most platform like uber and lyft 
 
 \section{Extension: Network Clustering Effect} \label{sec:network_effect}
 
+\subsection{Measure of Network Effect} \label{subsec:measure_network_effect}
+
 Previous literature illustrates that the strength of network effects and network clustering can be crucial for the operation of platforms and long-run competitiveness \citep{WOS:000454186600016}. The real estate market is characterized as a thin market, where local clustering patterns are more important in transactions, and people tend to have preferences within a given region. Therefore, segmented markets are largely independent of one another. In this context, brokerages have been fragmented into local clusters within each segmented market, allowing competitors to enter other segmented markets with relatively low costs. However, the entry barriers within markets already dominated by Lianjia are largely dependent on the network effects within these clusters. Thus, it is necessary to consider the network structure of Lianjia's offline stores and evaluate the impact of this network structure on neighborhoods within the segmented market.
 
 We proposed a measure for the network clustering effect within the segmented market by treating offline stores and neighborhoods as nodes in a graph. Each offline store is connected to a neighborhood if the distance between them is within a five-minute walk, in line with the proposed five-minute walk strategy, and assigning a weight of $1$ if the store and neighborhood nodes are connected. To document the connections between offline stores, for each year, we calculated the shared neighborhood transaction numbers and divided this by the total transaction numbers for store $i$ and store $j$. Mathematically, this can be represented as:
@@ -480,7 +482,7 @@ This weight represents the strength of the connection between the stores, enabli
 
 From the figure, we can observe that most nodes are interconnected, but some nodes are not connected to others. This indicates that, in certain local markets, Lianjia's network effect is not very strong, demonstrating that Lianjia's network is more akin to localized clustering rather than being entirely interconnected. On the other hand, for the largest connected component, the distribution of nodes is also asymmetric. Some stores play a central role, possessing greater network accessibility, while other nodes, although connected to others, are more likely to form small local triangles or clusters, resulting in a smaller network effect. Finally, we can observe that the distribution of neighborhood nodes connected to store nodes is also asymmetrical. Stores with higher aggregation degrees have denser neighborhood nodes, partly due to their higher economic value, which enhances their status in the network and strengthens their network effect. Overall, these observations suggest that while Lianjia's network exhibits significant local clustering, its overall network connectivity varies, with certain stores and neighborhoods playing pivotal roles due to their higher economic significance. The stronger network effects observed in high-value areas emphasize the role of economic factors in shaping the structure and influence of the network.
 
-
+From Table \ref{tab:local_global_clustering_indices}, we observe a general increasing trend in the network effects during the study period, with some cities exhibiting more pronounced network effects than others. However, it is important to note that no city demonstrates a particularly strong network effect throughout the research period; the network effects remain moderate. This suggests that the observed network structure is characterized by local clustering rather than extensive global connectivity, consistent with our graphical observations. Moreover, Lianjia's network effects exhibit similar patterns in terms of local clustering indices across different cities. However, the overall connectivity, as indicated by the global clustering index, varies significantly among cities. For instance, Guangzhou has a global clustering index of 0.56, indicating a very high level of overall connectivity. This contrast highlights the heterogeneous nature of network structures across different urban markets. 
 
 \begin{figure}
   \centering
@@ -503,17 +505,7 @@ From the figure, we can observe that most nodes are interconnected, but some nod
   \end{center}
 \end{table}
 
-
-
-
-
-
-
-
-
-
-
-We then calculated the network clustering effect for each neighborhood using Breadth First Search Algorithm (BFS) described in the Algorithm \ref{alg:clustering_effect}:
+To calculate the network effect on the neighborhoods in the graph, we then calculated the network clustering effect for each neighborhood using Breadth First Search Algorithm (BFS) described in the Algorithm \ref{alg:clustering_effect}:
 
 \begin{algorithm}[H]
   \caption{Calculate Clustering Effect for Each Neighborhood}
@@ -545,35 +537,28 @@ We then calculated the network clustering effect for each neighborhood using Bre
 \end{algorithm}
 
 % need to refine
-This approach allows us to quantify the local clustering effect within the segmented market and assess its impact on neighborhoods. This connection is in line with the reality in that firstly, cooperation between stores to complete a transaction is very common, and more stores within the segmented market can contributed more to the transaction as more efforts can be jointly made between different agents. Secondly, the influence of the netowrk decays from subconnected nodes and this is due to the decreasing benefits by connecting other sub-connecting.
+This approach allows us to quantify the local clustering effect within the segmented market and assess its impact on neighborhoods. The average effect of the network is [] and the standard deviation is []. This connection is in line with the reality in several ways. Firstly, cooperation between stores to complete a transaction is very common, and having more stores within the segmented market can contribute significantly to the transaction process as more efforts can be jointly made by different agents. The collaboration between agents enhances the efficiency and effectiveness of the transaction process, leading to potentially quicker sales and better matching between buyers and properties. Secondly, the influence of the network decays with distance from subconnected nodes. This is due to the diminishing benefits of connecting with more distant nodes, as the value of information decreases with increasing distance. Information shared over longer distances may lose relevance or accuracy, thereby reducing its appeal and utility in facilitating transactions. Thirdly, we disregard each neighborhood's influence from other neighborhoods. This assumption is consistent with the observation that most houses within a neighborhood share similar characteristics, and the transaction effects within one neighborhood do not significantly impact other neighborhoods. Lastly, following Lianjia's platform consolidation strategy, the company decided to consolidate downstream brokerages to form larger clusters within the segmented market. This strategy primarily focuses on enhancing the connectivity and collaboration among stores within the network. To assess the impact of this strategy, we can examine the effects at the neighborhood level, as the increased cooperation among stores is expected to influence local market dynamics. By analyzing the neighborhood-level effects, we can better understand how the consolidation of brokerages translates into improved transaction efficiency and enhanced network effects, thereby reflecting the overall success of the platform consolidation strategy.
 
+\subsection{Estimation of Network Consolidation on Network Effect} \label{subsec:platform_network_effect}
 
+To empirically estimate the impact of network consolidation on the network effect, we also consider the influence of Lianjia's platform consolidation strategy on the local network clustering effect for each neighborhood. This strategy primarily targets Lianjia's offline stores, and its impact is likely to be heterogeneous across different neighborhoods. Specifically, neighborhoods that already had a diverse range of stores within the network before the strategy's implementation are expected to experience a more pronounced effect. Conversely, in neighborhoods where the local network effect was initially weak, the strategy's influence is expected to be relatively limited.
 
-
-Following the Lianjia's platform consolidation strategy, Lianjia decided to consolidate downstream brokerages to form a larger clustering within the segmented market and increase. By attracting other brokerage's into the network will initially make the brokreage's profit down because attracting other people in the platform meaning the market share would be decreased due to the intense competition. However, after the setup of the platform, the market will be more productive and more competitive to occupying a larger share of the whole network. This mechanism is more likely to get better control over the listing and people are more willing to list their house on this platform. Then according to the this would be resulted in a winners-take-all market.
-
-
-
-In this case, we need to empirically estimate the spillover effect, and if this spillover effect is significant in this setting then people's reaction 
-
-To set up, we first match the brokerages' with the 
-
-
-We decided to use the so called quantile estimator described in model  proposed by \citep{machado_quantiles_2019}.
-
+In this context, a DID estimator can be employed to evaluate the average treatment effect. However, given the dynamic nature of the strategy's implementation across different periods, the traditional DID approach may not fully capture the varying impacts. Therefore, we employ a quantile regression estimator, as described in the model proposed by \citep{machado_quantiles_2019}, to better understand the distributional effects of the strategy. The quantile regression approach allows us to analyze the impact of the platform consolidation strategy across different points in the distribution of the local network clustering effect. This method provides a more nuanced understanding of how the strategy affects neighborhoods differently, capturing both the average treatment effect and the variability in effects across the distribution. The model is described as the follows:
 
 \begin{equation}
   \begin{aligned}
-    Q_y(\xi \mid X) & = \beta_0 + \beta_1(\xi) \text{pre\_treatment}_{it} + \beta_2(\xi) \text{treatment}_{it} + \sum_{i=3}^5 \beta_i(\xi) \text{post\_treatment}_{it} \\
-    & + \beta(\xi) \bf{X}_{it} + \mu_i + \tau_t + \varepsilon_{it}
+    Q_y(\tau \mid X) & = \beta_0 + \beta_1(\tau) \text{Pre\_Treatment}_{it} + \beta_2(\tau) \text{Treatment}_{it} + \sum_{j=3}^5 \beta_j(\tau) \text{Post\_j\_Treatment}_{it} \\
+                     & + \alpha(\tau) \bf{X}_{it} + \mu_i + \eta_t + \epsilon{it}
   \end{aligned}
 \end{equation}
 
-\ref{tab:quantile_estimate_network} shows the quantile estimation of the . We can see that the 
+where $Q_y(\xi \mid X)$ represents the $\tau$-th quantile of the dependent variable $y$ given the predictors $X$, where $\tau \in \{5, 10, \ldots, 95\}$. $\beta_0$ is the intercept term, $\text{Pre\_Treatment}_{it}$ is a dummy variable indicating the pre-treatment period, $\text{Treatment}_{it}$ is a dummy variable indicating the treatment group in 2018 and $\text{Post\_j\_Treatment}$ is a set of dummy variables indicating the post treatment group interacting with that year. $\mu_i$ represents individual fixed effects and $\eta_t$ is the year fixed effect and $\epsilon_{it}$ is the error term. To eliminate potential biases arising from nodes that are perpetually isolated from the network, such as neighborhoods with very few listings, we have decided to exclude samples that do not have any connections with other nodes. The results are reported in Table \ref{tab:quantile_estimate_network}. 
 
+Table \ref{tab:quantile_estimate_network} presents the quantile estimation results of the network clustering effect following the platform consolidation strategy. Prior to the treatment, the coefficients are not significant at the 10\% level, indicating no observable effect on the network clustering effect and no observatory changes before the effect. In the first period after the platform consolidation strategy's implementation, the influence on the lowest 5\% quantile of the network is not significant at the 10\% level. However, there is a significant increase in network clustering, with a coefficient of 0.86, though the magnitude of this effect decreases as the quantile level increases. This suggests that the platform consolidation strategy has a more pronounced impact on neighborhoods with initially lower network clustering, facilitating the formation of larger and more connected networks.
 
+The effect of the strategy continues to grow in magnitude in the first period post treatment groups, with coefficients increasing from 1.1 to 1.4 across the quantiles. This trend intensifies in the second period, with even greater changes observed in network clustering, indicating an escalating impact over time. This pattern is consistent with the intuition that the platform consolidation strategy enhances network effects by forming larger clusters within the segmented market, thereby improving transaction efficiency and market competitiveness. In the final period of the study, the trend in magnitude begins to shift. The strategy's effect becomes significant for already well-connected groups rather than for those with initially low connectivity. This indicates that the consolidation strategy continues to strengthen existing networks, making well-connected neighborhoods even more integrated and efficient.
 
-
+Overall, the results suggest that the platform consolidation strategy has a significant and dynamic impact on the network clustering effect. Initially, it benefits neighborhoods with lower connectivity, helping them to form larger and more efficient clusters. Over time, the strategy's influence extends to enhance the clustering of already well-connected neighborhoods, thereby continuously improving the overall network structure and market performance. Moreover, from the long-term perspectives, the online consolidation effect is beneficial for Lianjia's competitiveness because the larger the local network effect, the better Lianjia can better can have better contorl in the information. Moreover, from a long-term perspective, the online consolidation effect enhances Lianjia's competitiveness, as a stronger local network effect enables Lianjia to exert greater control over information.
 
 \begin{table}
   \begin{center}
@@ -587,28 +572,11 @@ We decided to use the so called quantile estimator described in model  proposed 
   \end{center}
 \end{table}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Conclusion and Discussion} \label{sec:conclusion}
 
 In the China's real estate market the 
 
-The Chinese real estate market witnessed a significnat drop at 2022 and the labor market is fierece in recently and therefore, the people are pretty hard to get on jobs.
+The Chinese real estate market witnessed a significant drop at 2022 and the labor market is fierece in recently and therefore, the people are pretty hard to get on jobs.
 
 The study of Lianjia's strategic expansion into China's real estate brokerage industry, particularly through the implementation of the ACN and the proliferation of offline branches, underscores a transformative impact on market dynamics and transaction efficiency. Our empirical research shows that Lianjia's approach, which seamlessly integrates online platforms with an extensive offline presence, significantly enhances revenue generation and influences consumer behavior, particularly through improved price concessions and increased home viewing. The study highlights the critical role of offline store information and community proximity in increasing transaction revenue and achieving market dominance, even in the face of increasing monopolization trends. Despite the adverse effects of the COVID-19 pandemic, which temporarily diluted the benefits of both customer base expansion and information dissemination, the resilience of physical stores emerges prominently. This resilience, coupled with the strategic leverage of online platforms, underscores the importance of a synergistic online-offline model in overcoming market challenges and maintaining competitive advantage. The findings argue for a nuanced understanding of platform-based monopolization in real estate, suggesting that the successful integration of digital and physical domains can significantly enhance service delivery, market penetration, and overall system competitiveness, paving the way for a more adaptive and robust market system in the face of evolving challenges.
 
