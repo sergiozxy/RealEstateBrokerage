@@ -14,6 +14,8 @@
 \usepackage{booktabs}
 \usepackage{endnotes}
 \usepackage{pgfplots}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 \usepackage{subfig}
 \pgfplotsset{compat=1.14}
 \usepackage{longtable}
@@ -466,44 +468,16 @@ The result is consistent with the opinion that most platform like uber and lyft 
 
 Previous literature illustrates that the strength of network effects and network clustering can be crucial for the operation of platforms and long-run competitiveness \citep{WOS:000454186600016}. The real estate market is characterized as a thin market, where local clustering patterns are more important in transactions, and people tend to have preferences within a given region. Therefore, segmented markets are largely independent of one another. In this context, brokerages have been fragmented into local clusters within each segmented market, allowing competitors to enter other segmented markets with relatively low costs. However, the entry barriers within markets already dominated by Lianjia are largely dependent on the network effects within these clusters. Thus, it is necessary to consider the network structure of Lianjia's offline stores and evaluate the impact of this network structure on neighborhoods within the segmented market.
 
-The last section is to estimate the Lianjia's spillover network effect. Following the Lianjia's platform consolidation strategy, Lianjia decided to change from brokerage's direction operation to a combination of platform. By attracting other brokerage's into the network will initially make the brokreage's profit down because attracting other people in the platform meaning the market share would be decreased due to the intense competition. However, after the setup of the platform, the market will be more productive and more competitive to occupying a larger share of the whole network. This mechanism is more likely to get better control over the listing and people are more willing to list their house on this platform. Then accordin to the this would be resulted in a winners-take-all market.
-
-We proposed a measure for the network clustering effect within the segmented market by treating offline stores and neighborhoods as nodes in a graph. Each offline store is connected to a neighborhood if the distance between them is within a five-minute walk, in line with the proposed five-minute walk strategy, and assigning a weight of 1 if the store and neighborhood nodes are connected. To document the connections between offline stores, for each year, we calculated the shared neighborhood transaction numbers and divided this by the total transaction numbers for store $i$ and store $j$. Mathematically, this can be represented as:
+We proposed a measure for the network clustering effect within the segmented market by treating offline stores and neighborhoods as nodes in a graph. Each offline store is connected to a neighborhood if the distance between them is within a five-minute walk, in line with the proposed five-minute walk strategy, and assigning a weight of $1$ if the store and neighborhood nodes are connected. To document the connections between offline stores, for each year, we calculated the shared neighborhood transaction numbers and divided this by the total transaction numbers for store $i$ and store $j$. Mathematically, this can be represented as:
 
 \begin{equation}
   \text{weight}_{ij} = \frac{(\text{shared transactions between store $i$ and store $j$})^2}{\text{total transaction for store $i$} \times \text{total transaction in store $j$}} \label{eq:weight_between_stores}
 \end{equation}
 
-This weight represents the strength of the connection between the stores. We then calculated the network clustering effect for each neighborhood using the following formula:
-
-\begin{equation}
-  \text{Clustering Effect}_{\text{neighborhood}} =  \label{eq:clustering_effect_for_neighborhood}
-\end{equation}
-
-where $n$ represents the number of stores connected to the neighborhood directly and indirectly, and $m$ represents the number of shared transactions between connected stores. This approach allows us to quantify the local clustering effect within the segmented market and assess its impact on neighborhoods.
-
-This connection is in line with the reality in that firstly, cooperation between stores to complete a transaction is very common, and more stores within the segmented market can contributed more to the transaction as more efforts can be jointly made between different agents. Secondly, the influence of the netowrk decays from subconnected nodes and this is due to the decreasing benefits by connecting other sub-connecting.
+This weight represents the strength of the connection between the stores, enabling us to construct a network graph for our analysis. To visualize this network, we randomly selected 10 points and used a maximum search depth of 10 to plot the graph, as shown in Figure \ref{fig:network_formation_effect_graph}. WE constructed the measure indices as local clustering effect and global clustering effect. The local clustering effect refers to the degree to which nodes in a network tend to cluster together, forming tight-knit groups. In contrast, the global clustering effect shows the overall pattern of clustering across the entire network. Detailed indices for each city and each year is reported in Table \ref{tab:local_global_clustering_indices}. In this graph, the size of the nodes indicates the significance of the local clustering effect, with larger nodes representing stronger local clustering. 
 
 
-
-
-In this case, we need to empirically estimate the spillover effect, and if this spillover effect is significant in this setting then people's reaction 
-
-To set up, we first match the brokerages' with the 
-
-
-We decided to use the so called quantile estimator described in model  proposed by \citep{machado_quantiles_2019}.
-
-\begin{equation}
-  \begin{aligned}
-    Q_y(\xi \mid X) & = \beta_0 + \beta_1(\xi) \text{pre\_treatment}_{it} + \beta_2(\xi) \text{treatment} + \sum_{i=3}^5 \beta_i(\xi) \text{post\_treatment}_{it} \\
-    & + \beta(\xi) \bf{X}_{it} + \mu_i + \tau_t + \varepsilon_{it}
-  \end{aligned}
-\end{equation}
-
-\ref{tab:quantile_estimate_network} shows the quantile estimation of the . We can see that the 
-
-
+From the graph, we can see that the 
 
 
 
@@ -519,14 +493,85 @@ We decided to use the so called quantile estimator described in model  proposed 
 \begin{table}
   \begin{center}
     \begin{scriptsize}
-      \caption{Estimated Network Spillover Effect}
-      \label{tab:estiamted_spillover_effect}
+      \caption{Average Local Clustering Index and Global Clustering Index}
+      \label{tab:local_global_clustering_indices}
       \input{../result_tables/clustering_indices.tex}
 
       Note: The indices used are the Average and Global Clustering Coefficients. $*$ denotes a low network effect, which ranges from 0.3 to 0.5. $**$ indicates a moderate network effect, ranging from 0.5 to 0.75. $***$ signifies a large network effect, ranging from 0.75 to 1.
     \end{scriptsize}
   \end{center}
 \end{table}
+
+
+
+
+
+
+
+
+
+
+
+We then calculated the network clustering effect for each neighborhood using Breadth First Search Algorithm (BFS) described in the Algorithm \ref{alg:clustering_effect}:
+
+\begin{algorithm}[H]
+  \caption{Calculate Clustering Effect for Each Neighborhood}
+  \label{alg:clustering_effect}
+  \begin{algorithmic}[1]
+    \STATE \textbf{Input:} Graph $G = (N, E)$ with neighborhoods and stores, edge weights $w_{ij}$.
+    \STATE \textbf{Output:} Clustering effect for each neighborhood.
+
+    \FOR{each neighborhood $n \in N$}
+      \STATE Initialize the set of directly connected stores $S_n$.
+      \STATE Initialize queue $Q \leftarrow \{(s, w_{ns}) \mid s \in S_n\}$.
+      \STATE Initialize set of visited stores $V \leftarrow \{s \mid s \in S_n\}$.
+      \STATE Initialize $\text{Cluster Effect}_n \leftarrow 0$.
+
+      \WHILE{$Q$ is not empty}
+        \STATE Dequeue $(s, \text{effect}_s) \leftarrow Q.\text{pop}(0)$.
+        \FOR{each neighbor store $s^\prime \in G.\text{neighbors}(s)$}
+          \IF{$s^\prime \notin V$}
+          \STATE Calculate propagated effect $\text{effect}_{s^\prime} \leftarrow \text{effect}_s \times w_{ss^\prime}$.
+                \STATE Enqueue $(s^\prime, \text{effect}_{s^\prime})$ into $Q$.
+                \STATE Add $s^\prime$ to visited set $V$.
+            \ENDIF
+        \ENDFOR
+        \STATE Accumulate $\text{Cluster Effect}_n \leftarrow \text{Cluster Effect}_n + \text{effect}_s$.
+      \ENDWHILE
+    \ENDFOR
+    \STATE \textbf{return} Clustering effects for all neighborhoods.
+  \end{algorithmic}
+\end{algorithm}
+
+% need to refine
+This approach allows us to quantify the local clustering effect within the segmented market and assess its impact on neighborhoods. This connection is in line with the reality in that firstly, cooperation between stores to complete a transaction is very common, and more stores within the segmented market can contributed more to the transaction as more efforts can be jointly made between different agents. Secondly, the influence of the netowrk decays from subconnected nodes and this is due to the decreasing benefits by connecting other sub-connecting.
+
+
+
+
+Following the Lianjia's platform consolidation strategy, Lianjia decided to consolidate downstream brokerages to form a larger clustering within the segmented market and increase. By attracting other brokerage's into the network will initially make the brokreage's profit down because attracting other people in the platform meaning the market share would be decreased due to the intense competition. However, after the setup of the platform, the market will be more productive and more competitive to occupying a larger share of the whole network. This mechanism is more likely to get better control over the listing and people are more willing to list their house on this platform. Then according to the this would be resulted in a winners-take-all market.
+
+
+
+In this case, we need to empirically estimate the spillover effect, and if this spillover effect is significant in this setting then people's reaction 
+
+To set up, we first match the brokerages' with the 
+
+
+We decided to use the so called quantile estimator described in model  proposed by \citep{machado_quantiles_2019}.
+
+
+\begin{equation}
+  \begin{aligned}
+    Q_y(\xi \mid X) & = \beta_0 + \beta_1(\xi) \text{pre\_treatment}_{it} + \beta_2(\xi) \text{treatment}_{it} + \sum_{i=3}^5 \beta_i(\xi) \text{post\_treatment}_{it} \\
+    & + \beta(\xi) \bf{X}_{it} + \mu_i + \tau_t + \varepsilon_{it}
+  \end{aligned}
+\end{equation}
+
+\ref{tab:quantile_estimate_network} shows the quantile estimation of the . We can see that the 
+
+
+
 
 
 \begin{table}
@@ -818,6 +863,23 @@ Azmi, D. I., H. A. Karim, and M. Z. M. Amin. 2012. Comparing the Walking Behavio
 \end{table}
 
 
+Descriptions of the measures of the clustering coefficient effects:
+
+We also calcualted the the local clustering coefficient for a node $i$, which is a measure of the likelihood that the neighbors of $i$ are also neighbors of each other, and it is calcualted as:
+
+\begin{equation*}
+  C_i = \frac{2e_i}{k_i(k_i - 1)}  
+\end{equation*}
+
+where $e_i$ is the number of edges between the neighbors of node $i$ and $k_i$ is the degree of node $i$. The average clustering coefficient is the mean of the local clustering coefficients for all nodes in the network, defined as: $C = \frac{1}{n} \sum_{i=1}^n C_i$ where $n$ is the total number of nodes. This index indicates how close the neighbors of a node are to forming a complete graph (clique).
+
+The global clustering coefficient, also known as transitivity, is a measure of the overall tendency of the network to form triangles. It is defined as the ratio of the number of closed triplets (triangles) to the number of all triplets (both open and closed) in the network.
+
+\begin{equation*}
+  C_g = \frac{3 \times \text{number of closed triplets}}{\text{number of all triplets}}  
+\end{equation*}
+
+A triplet consists of three nodes connected by either two (open triplet) or three (closed triplet) edges. This index indicates the global interconnectedness and the presence of tightly knit groups within the entire network. For both indices, higher values indicate a denser network. Typically, values between 0.75 and 1 signify a dense network, values between 0.4 and 0.7 indicate a moderately dense network, and values between 0 and 0.3 represent a sparse network.
 
 
 

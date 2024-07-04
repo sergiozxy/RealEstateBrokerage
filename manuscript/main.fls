@@ -272,6 +272,12 @@ INPUT d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librar
 INPUT d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 INPUT d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 INPUT d:/latex/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/algorithms/algorithmic.sty
 INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 INPUT d:/latex/texlive/2020/texmf-dist/tex/latex/preprint/authblk.sty
