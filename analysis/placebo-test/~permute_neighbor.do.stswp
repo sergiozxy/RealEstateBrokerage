@@ -15,7 +15,7 @@ program define permute_neighbor
     
     matrix coefficients = J(200, 6, .)
     
-    forvalues i = 1/200 {
+    forvalues i = 1/20 {
         // 创建随机处理变量
         gen random_entry = runiform()
         sort id year

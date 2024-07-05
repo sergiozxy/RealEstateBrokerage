@@ -13,9 +13,9 @@ program define permute_indi
     local start_year 2016
     local end_year 2022
     
-    matrix coefficients = J(100, 6, .)
+    matrix coefficients = J(200, 6, .)
     
-    forvalues i = 1/100 {
+    forvalues i = 1/200 {
         // 创建随机处理变量
         gen random_entry = runiform()
         sort id year
