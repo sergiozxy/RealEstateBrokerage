@@ -58,6 +58,17 @@ set seed 130
 
 do "permute_neighbor.do"
 permute_neighbor ln_num using "num_platform.dta"
+
+***
+
+cd $base_path
+use "for-analysis-with-dummy(should drop).dta", clear
+cd $result_path
+
+drop if influence == 0
+set seed 130
+
+do "permute_neighbor.do"
 permute_neighbor ln_lead using "lead_platform.dta"
 
 cd $base_path
