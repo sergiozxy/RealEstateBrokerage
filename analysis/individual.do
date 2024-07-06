@@ -92,9 +92,11 @@ est store entry_3
 reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_4
 
+// broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes
+// can also be exported to a LaTeX table
 esttab entry_1 entry_2 entry_3 entry_4 ///
  using result_tables/entry_effect.tex, ///
-style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3) ///
 mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
@@ -120,9 +122,10 @@ est store hetero_entry_11
 reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_12
 
+// broker_410 ln_watch_people ln_watch_time ln_nego_changes
 esttab hetero_entry_7 hetero_entry_8 hetero_entry_9 hetero_entry_10 hetero_entry_11 hetero_entry_12 ///
  using result_tables/entry_effect_hetero_2.tex, ///
-style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3) ///
 mtitle("log(negotiation period)"  "log(negotiation period)" "log(negotiation period)" "price concession" "price concession" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
@@ -178,9 +181,10 @@ forvalues i = 1/2 {
     graph export "`name'.pdf", as(pdf) replace
 }
 
+// ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes
 esttab did_1 did_2 did_3 did_4 ///
  using result_tables/difference_in_difference.tex, ///
-style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment ) ///
 mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
@@ -207,9 +211,10 @@ est store hetero_did_11
 reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_12
 
+// ln_end_price broker_410 ln_watch_people ln_watch_time ln_nego_changes
 esttab hetero_did_7 hetero_did_8 hetero_did_9 hetero_did_10 hetero_did_11 hetero_did_12 ///
  using result_tables/heter_platform_did_2.tex, ///
-style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment ln_end_price broker_410 ln_watch_people ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment ) ///
 mtitle("log(negotiation period)"  "log(negotiation period)" "log(negotiation period)" "price concession"  "price concession" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///

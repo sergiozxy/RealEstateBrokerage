@@ -229,9 +229,11 @@ est store hetero_entry_5
 reghdfe ln_lead pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_6
 
+//  broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes
+// can also be exported to a table
 esttab hetero_entry_1 hetero_entry_2 hetero_entry_3 hetero_entry_4 hetero_entry_5 hetero_entry_6 ///
  using result_tables/entry_effect_hetero_1.tex, ///
-style(tex) booktabs keep(pre2 entry post1 post2 post3 broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3) ///
 mtitle("log(number)" "log(number)"  "log(number)" "log(lead times)" "log(lead times)" "log(lead times)") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
@@ -307,9 +309,11 @@ est store hetero_did_5
 reghdfe ln_lead pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_6
 
+// ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes
+
 esttab hetero_did_1 hetero_did_2 hetero_did_3 hetero_did_4 hetero_did_5 hetero_did_6 ///
  using result_tables/heter_platform_did_1.tex, ///
-style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment ln_end_price broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment) ///
 mtitle("log(number)" "log(number)" "log(number)" "log(lead times)" "log(lead times)" "log(lead times)") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///

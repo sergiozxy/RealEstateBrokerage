@@ -114,7 +114,7 @@ Through the success of the platform consolidation, Lianjia transforms internal c
 
 % https://36kr.com/p/2268329112035080
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{../figures/distribution_of_cities_share.pdf}
   \caption{Distribution of Lianjia's stores' percentage across China}
@@ -130,41 +130,11 @@ Given the dual nature of online promotion and offline transactions in the real e
 
 In this paper, we empirically estimate the effects of offline store clustering and online platform consolidation in China's second-hand real estate market. Utilizing micro-level transaction data, we construct our research sample by aggregating information at the neighborhood level. We employ a regression discontinuity design (RDD) to identify the optimal influential radius of offline stores on neighborhood transactions, finding that this radius corresponds to a brokerage's five-minute walk service distance, which is also documented in similar fields \citep{AZMI2012406}. Subsequently, we apply a difference-in-difference (DID) estimation method to evaluate the exogenous impact of Lianjia's market entry on local segments. This exogenous effect captures the clustering impact of offline real estate brokerage stores. Our results indicate that Lianjia's offline stores significantly enhance transaction revenues, although this effect diminishes during and after the COVID-19 period.
 
-To assess the consolidation effect of the online platform, we treat the year Lianjia implemented the platform based consolidation strategy as an exogenous shock to the market. The platform consolidation strategy is majorly based on the Agent Cooperation Network (ACN) framework of Lianjia and attracting various franchise stores to join the network. Our findings reveal that this strategy substantially boosts revenues and alters consumer behaviors, particularly in the number of house tours facilitated by the brokerage. The number of 
+To evaluate the effects of platform-mediated consolidation, we consider the year Lianjia implemented its platform-based consolidation strategy as an exogenous shock to the market. This strategy primarily revolves around the ACN framework of Lianjia and the incorporation of various franchise stores into the network. Our empirical analysis indicates that this strategy significantly increases revenues and enhances the attraction of buyers and sellers, particularly in the number of house tours facilitated by the brokerage. However, our findings suggest that the platform-based consolidation does not effectively reduce the transaction period nor does it promote price concessions. This contrasts with the offline expansion strategy, which demonstrates a positive impact on promoting price concessions. While the economic impact of the online-based consolidation strategy is not as pronounced as that of the offline expansion strategy, it remains economically significant.
 
+According to Lianjia's IPO prospectus, the company is projected to achieve approximately 76\% of cross-store transactions in 2021. This underscores the necessity of analyzing the network effects among Lianjia's offline stores and conducting a detailed examination of these effects. To assess Lianjia's network effect, we propose a measure of the local network effect by incorporating neighborhoods and offline stores, given that offline stores predominantly cluster around neighborhoods. We employ a Breadth-First Search (BFS) algorithm to construct the network formation and propose a gravity-based measure to evaluate the offline clustered network effect on neighborhoods. Additionally, we examine the impact of online-mediated consolidation on the offline stores' network effect on neighborhoods. Our findings reveal that Lianjia's offline stores exhibit a moderate network effect characterized by local clustering patterns.\footnote{\ref{fig:typical_sample_lianjia} shows a typical observation in Chengdu that two proximate Lianjia stores closely cooperate to manage property listings. In this arrangement, agents have the flexibility to bring customers for house tours.} Furthermore, the platform-mediated consolidation significantly enhances the network effect, indicating that this consolidation strategy effectively strengthens the network effect of Lianjia's offline stores.
 
-
-
-
-
-
-
-To conduct the 
-
-\footnote{According to the IPO prospectus, in year 2021, Lianjia is expected to achive approximately 76\% of cross stores transactions.}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% Accodring to 招股书，链家在2021的成交是cross store占比76\%
-
-
-
-The remainder of the paper proceeds as follows. Section \ref{sec:literature_review} reviews the literature that is related to our research. Section \ref{sec:data} describes the study background and statistical summary. Section \ref{sec:mechanism_design} presents the main result of our finding. Section \ref{sec:network_effect} presents our measure to the local network effect and analyzes the platform-mediated consolidation on the local network effect. Finally, Section \ref{sec:conclusion} contains the discussion and concludes.
+The structure of the paper is organized as follows. Section \ref{sec:literature_review} provides a comprehensive review of the relevant literature. Section \ref{sec:data} outlines the study's background, including a statistical summary and stylized facts. Section \ref{sec:mechanism_design} examines the impact of Lianjia's offline store expansion and platform-mediated consolidation on transaction properties.. Section \ref{sec:network_effect} details the measurement of local network effects and analyzes the influence of platform-mediated consolidation on these effects. Finally, Section \ref{sec:conclusion} discusses the findings and offers concluding remarks.
 
 \section{Literature Review} \label{sec:literature_review}
 
@@ -379,7 +349,7 @@ We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_entry}. F
 
 \subsection{Estimate Lianjia's platform consolidation effect} \label{subsec:acn_strategy}
 
-To empirically estimate the effect of Lianjia's platform strategy, we consider an exogenous shock that occurred during our study period: Lianjia's implementation of a downstream consolidation strategy. This strategy involves the integration of offline stores with online platforms, leveraging the advantages of Lianjia's Agent Cooperation Network (ACN) strategy. The ACN strategy subdivides the entire process of buying and selling a house into distinct parts, with each part managed by a specific agent or store. By sharing transaction dividends among multiple stores, Lianjia fosters cooperation with other market competitors and integrates their resources to enhance service quality for customers. This approach is designed to improve efficiency and customer satisfaction by combining online and offline resources, thus providing a comprehensive and streamlined service experience. 
+To empirically estimate the effect of Lianjia's platform strategy, we consider an exogenous shock that occurred during our study period: Lianjia's implementation of a downstream consolidation strategy. This strategy involves the integration of offline stores with online platforms, leveraging the advantages of Lianjia's ACN strategy. The ACN strategy subdivides the entire process of buying and selling a house into distinct parts, with each part managed by a specific agent or store. By sharing transaction dividends among multiple stores, Lianjia fosters cooperation with other market competitors and integrates their resources to enhance service quality for customers. This approach is designed to improve efficiency and customer satisfaction by combining online and offline resources, thus providing a comprehensive and streamlined service experience. 
 
 This strategy is a significant change in Lianjia's business model, and it is expected to have a significant impact on the market. In addition to this, Lianjia also opened up the form of franchises and gradually started platform integration. To empirically measure the effect of platform consolidation on offline store operations, we first counted the number of all non-Lianjia stores on Lianjia's Beke platform within a radius of 410 meters. This allowed us to generate a dummy variable, $\text{Treatment}_{it}$, which equals one if the ratio $\frac{\text{Lianjia}}{\text{Beke}} < 0.8$ in this area and the year is 2018 or later. This ratio is selected because if Lianjia accounts for more than 80\% of the Beke's offline stores, the strategy's effect is negligible in this segmented market. To dynamically capture the varying effects, we generate a set of dummy variable $\text{post\_j\_treatment}_{it}$, where $j \in \{1, 2, 3\}$ and $\text{pre\_treatment}_{it}$ and include them in our regression model. We then consider the following regression model:
 
