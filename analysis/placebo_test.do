@@ -1,5 +1,5 @@
-global base_path "E:\umich\RealEstateBrokerage-main"
-global result_path "E:\umich\RealEstateBrokerage\analysis\placebo-test"
+global base_path "C:\Users\zxuyuan\Downloads"
+global result_path "C:\Users\zxuyuan\Downloads\RealEstateBrokerage\analysis\placebo-test"
 
 **** NOW WE CONSIDER THE PLACEBO FOR ENTRY EFFECT
 

@@ -411,7 +411,7 @@ Appendix Figure \ref{fig:treatment_consolidation} illustrates the distribution o
 
 \subsection{Measure of Network Effect} \label{subsec:measure_network_effect}
 
-Previous literature illustrates that the strength of network effects and network clustering can be crucial for the operation of platforms and long-run competitiveness \citep{WOS:000454186600016}. The real estate market is characterized as a thin market, where local clustering patterns are more important in transactions, and people tend to have preferences within a given region. Therefore, segmented markets are largely independent of one another. In this context, brokerages have been fragmented into local clusters within each segmented market, allowing competitors to enter other segmented markets with relatively low costs. However, the entry barriers within markets already dominated by Lianjia are largely dependent on the network effects within these clusters. Thus, it is necessary to consider the network structure of Lianjia's offline stores and evaluate the impact of this network structure on neighborhoods within the segmented market.
+However, how do we measure the network effect and understand its formation? What constitutes the formation of the network effect? Previous literature illustrates that the strength of network effects and network clustering can be crucial for the operation of platforms and long-run competitiveness \citep{WOS:000454186600016}. The real estate market is characterized as a thin market, where local clustering patterns are more important in transactions, and people tend to have preferences within a given region. Therefore, segmented markets are largely independent of one another. In this context, brokerages have been fragmented into local clusters within each segmented market, allowing competitors to enter other segmented markets with relatively low costs. However, the entry barriers within markets already dominated by Lianjia are largely dependent on the network effects within these clusters. Thus, it is necessary to consider the network structure of Lianjia's offline stores and evaluate the impact of this network structure on neighborhoods within the segmented market.
 
 We proposed a measure for the network clustering effect within the segmented market by treating offline stores and neighborhoods as nodes in a graph. Each offline store is connected to a neighborhood if the distance between them is within a five-minute walk, in line with the proposed five-minute walk strategy, and assigning a weight of $1$ if the store and neighborhood nodes are connected. To document the connections between offline stores, for each year, we calculated the shared neighborhood transaction numbers and divided this by the total transaction numbers for store $i$ and store $j$. Mathematically, this can be represented as:
 
@@ -480,18 +480,18 @@ To calculate the network effect on the neighborhoods in the graph, we then calcu
 \end{algorithm}
 
 % need to refine
-This approach allows us to quantify the local clustering effect within the segmented market and assess its impact on neighborhoods. The average effect of the network is 2.18 and the standard deviation is 2.55. This connection is in line with the reality in several ways. Firstly, cooperation between stores to complete a transaction is very common, and having more stores within the segmented market can contribute significantly to the transaction process as more efforts can be jointly made by different agents. The collaboration between agents enhances the efficiency and effectiveness of the transaction process, leading to potentially quicker sales and better matching between buyers and properties. Secondly, the influence of the network decays with distance from subconnected nodes. This is due to the diminishing benefits of connecting with more distant nodes, as the value of information decreases with increasing distance. Information shared over longer distances may lose relevance or accuracy, thereby reducing its appeal and utility in facilitating transactions. Thirdly, we disregard each neighborhood's influence from other neighborhoods. This assumption is consistent with the observation that most houses within a neighborhood share similar characteristics, and the transaction effects within one neighborhood do not significantly impact other neighborhoods. Lastly, following Lianjia's platform consolidation strategy, the company decided to consolidate downstream brokerages to form larger clusters within the segmented market. This strategy primarily focuses on enhancing the connectivity and collaboration among stores within the network. To assess the impact of this strategy, we can examine the effects at the neighborhood level, as the increased cooperation among stores is expected to influence local market dynamics. By analyzing the neighborhood-level effects, we can better understand how the consolidation of brokerages translates into improved transaction efficiency and enhanced network effects, thereby reflecting the overall success of the platform consolidation strategy.
+This approach allows us to quantify the local clustering effect within the segmented market and assess its impact on neighborhoods. The average effect of the network is 2.18 and the standard deviation is 2.55. We detailed describes these indices in Appendix Section \ref{subsec:descriptions_clustering_indices}.\footnote{We also Describes other measures of network indices in Appendix Section \ref{subsec:other_indices_measures}.} This connection is in line with the reality in several ways. Firstly, cooperation between stores to complete a transaction is very common, and having more stores within the segmented market can contribute significantly to the transaction process as more efforts can be jointly made by different agents. The collaboration between agents enhances the efficiency and effectiveness of the transaction process, leading to potentially quicker sales and better matching between buyers and properties. Secondly, the influence of the network decays with distance from subconnected nodes. This is due to the diminishing benefits of connecting with more distant nodes, as the value of information decreases with increasing distance. Information shared over longer distances may lose relevance or accuracy, thereby reducing its appeal and utility in facilitating transactions. Thirdly, we disregard each neighborhood's influence from other neighborhoods. This assumption is consistent with the observation that most houses within a neighborhood share similar characteristics, and the transaction effects within one neighborhood do not significantly impact other neighborhoods. Lastly, following Lianjia's platform consolidation strategy, the company decided to consolidate downstream brokerages to form larger clusters within the segmented market. This strategy primarily focuses on enhancing the connectivity and collaboration among stores within the network. To assess the impact of this strategy, we can examine the effects at the neighborhood level, as the increased cooperation among stores is expected to influence local market dynamics. By analyzing the neighborhood-level effects, we can better understand how the consolidation of brokerages translates into improved transaction efficiency and enhanced network effects, thereby reflecting the overall success of the platform consolidation strategy.
 
 \subsection{Estimation of Network Consolidation on Network Effect} \label{subsec:platform_network_effect}
 
-To empirically estimate the impact of network consolidation on the network effect, we also consider the influence of Lianjia's platform consolidation strategy on the local network clustering effect for each neighborhood. This strategy primarily targets Lianjia's offline stores, and its impact is likely to be heterogeneous across different neighborhoods. Specifically, neighborhoods that already had a diverse range of stores within the network before the strategy's implementation are expected to experience a more pronounced effect. Conversely, in neighborhoods where the local network effect was initially weak, the strategy's influence is expected to be relatively limited.
+To empirically estimate the impact of network consolidation on the network effect, we also consider the influence of Lianjia's platform consolidation strategy on the local network clustering effect for each neighborhood. This strategy primarily targets Lianjia's offline stores, and its impact is likely to be heterogeneous across different neighborhoods. Specifically, neighborhoods that already had a diverse range of stores within the network before the strategy's implementation are expected to experience a more pronounced effect. Conversely, in neighborhoods where the local network effect was initially weak, the strategy's influence is expected to be relatively limited. 
 
 In this context, a DID estimator can be employed to evaluate the average treatment effect. However, given the dynamic nature of the strategy's implementation across different periods, the traditional DID approach may not fully capture the varying impacts. Therefore, we employ a quantile regression estimator, as described in the model proposed by \citep{machado_quantiles_2019}, to better understand the distributional effects of the strategy. The quantile regression approach allows us to analyze the impact of the platform consolidation strategy across different points in the distribution of the local network clustering effect. This method provides a more nuanced understanding of how the strategy affects neighborhoods differently, capturing both the average treatment effect and the variability in effects across the distribution. The model is described as the follows:
 
 \begin{equation}
   \begin{aligned}
     Q_y(\tau \mid X) & = \beta_0 + \beta_1(\tau) \text{Pre\_Treatment}_{it} + \beta_2(\tau) \text{Treatment}_{it} + \sum_{j=3}^5 \beta_j(\tau) \text{Post\_j\_Treatment}_{it} \\
-                     & + \alpha(\tau) \bf{X}_{it} + \mu_i + \eta_t + \epsilon{it}
+                     & + \alpha(\tau) \bf{X}_{it} + \mu_i + \eta_t + \epsilon_{it}
   \end{aligned}
 \end{equation}
 
@@ -730,14 +730,17 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
   This photo was taken in Chengdu, where Lianjia operates over 1,500 offline stores. It is common to see two stores located within a short distance of each other. The green store in the photo is one of Lianjia's offline stores. As you can see, across the street, there are two Lianjia stores, each managed by different store managers. 
 \end{figure}
 
+\newpage
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\textwidth]{../figures/distribution_of_ten_cities.pdf}
+  \includegraphics[width=0.9\textwidth]{../figures/distribution_of_ten_cities.pdf}
   \caption{Distribution of Ten Cities's Brokerages Store Shares}
   \label{fig:distribution_store_shares}
   Note: the x-axis is city's name and the y-axis is the offline brokerage's stores share in the city. The data source is from AutoNavi Map.
 \end{figure}
+
+\newpage
 
 % \input{tab_tex/other-regressions.tex}
 
@@ -794,8 +797,13 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
   \end{center}
 \end{table}
 
+\newpage
 
-Descriptions of the measures of the clustering coefficient effects:
+\section{Description of the network effect indices} \label{sec:network_effect_indices}
+
+\subsection{Descriptions of the clustering indices} \label{subsec:descriptions_clustering_indices}
+
+We also provide a descriptions of the measures of the clustering coefficient effects:
 
 We also calcualted the the local clustering coefficient for a node $i$, which is a measure of the likelihood that the neighbors of $i$ are also neighbors of each other, and it is calcualted as:
 
@@ -813,6 +821,41 @@ The global clustering coefficient, also known as transitivity, is a measure of t
 
 A triplet consists of three nodes connected by either two (open triplet) or three (closed triplet) edges. This index indicates the global interconnectedness and the presence of tightly knit groups within the entire network. For both indices, higher values indicate a denser network. Typically, values between 0.75 and 1 signify a dense network, values between 0.4 and 0.7 indicate a moderately dense network, and values between 0 and 0.3 represent a sparse network.
 
+\subsection{Other Indices Measures} \label{subsec:other_indices_measures}
 
+We also consider other indices that describes the network formation using degree centrality, betweenness centrality, closeness centrality and page rank:
 
+Degree centrality measures the number of direct connections a node has to other nodes in the network. It is defined as:
+
+\begin{equation*}
+  C_D(v) = \frac{d(v)}{n - 1}
+\end{equation*}
+
+where $d(v)$ is the degree of node $v$, and $n$ is the total number of nodes in the network. A higher degree centrality indicates that a node has more direct connections and may be considered more influential or important within the network.
+
+Closeness centrality measures how close a node is to all other nodes in the network, based on the shortest paths. It is given by:
+
+\begin{equation*}
+  C_C(v) = \frac{n - 1}{\sum_{u \neq v} d(u, v)}
+\end{equation*}
+
+where $d(u, v)$ is the shortest path distance between nodes $u$ and $v$. A higher closeness centrality indicates that a node can reach other nodes more quickly, signifying a more central position within the network.
+
+PageRank is a measure of the importance of nodes in a network, originally developed for ranking web pages. It is calculated using the following iterative formula:
+
+\begin{equation*}
+  PR(v) = \frac{1 - d}{n} + d\sum_{u \in M(v)} \frac{PR(u)}{L(u)}
+\end{equation*}
+
+where $d$ is a damping factor (typically set to $0.85$), $M(v)$ is the set of nodes that link to $v$, $L(u)$ is the number of outbound links from node $u$. Nodes with high PageRank scores are considered to have high influence and are often central to the network's structure.
+
+\begin{table}[H]
+  \caption{Other Meausre Indices of the Network Effect}
+  \label{other:measures}
+  \input{../result_tables/other_indices_appendix.tex}
+\end{table}
 \end{document}
+
+% Freeman, L. C. (1977). A set of measures of centrality based on betweenness. Sociometry, 40(1), 35-41.
+% Newman, M. E. J. (2010). Networks: An Introduction. Oxford University Press.
+% Page, L., Brin, S., Motwani, R., & Winograd, T. (1999). The PageRank citation ranking: Bringing order to the web. Stanford InfoLab.
