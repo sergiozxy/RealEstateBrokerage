@@ -1,0 +1,38 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{l*{8}{c}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+            &\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{log(negotiation period)}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{price concession}&\multicolumn{1}{c}{price concession}\\
+\midrule
+pre2        &      -0.018         &      -0.016         &      -0.016         &      -0.014         &      -0.027         &      -0.027         &      -0.033         &      -0.033         \\
+            &     (0.013)         &     (0.014)         &     (0.014)         &     (0.014)         &     (0.028)         &     (0.026)         &     (0.026)         &     (0.026)         \\
+\addlinespace
+entry       &      -0.018\sym{*}  &      -0.009         &      -0.009         &      -0.007         &       0.054\sym{***}&       0.051\sym{**} &       0.048\sym{**} &       0.044\sym{**} \\
+            &     (0.010)         &     (0.010)         &     (0.010)         &     (0.010)         &     (0.019)         &     (0.020)         &     (0.020)         &     (0.020)         \\
+\addlinespace
+post1       &      -0.016         &      -0.012         &      -0.012         &      -0.012         &       0.053\sym{**} &       0.048\sym{**} &       0.046\sym{**} &       0.045\sym{*}  \\
+            &     (0.012)         &     (0.010)         &     (0.010)         &     (0.010)         &     (0.023)         &     (0.023)         &     (0.024)         &     (0.023)         \\
+\addlinespace
+post2       &       0.002         &       0.006         &       0.005         &       0.007         &       0.020         &       0.013         &       0.010         &       0.006         \\
+            &     (0.012)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.024)         &     (0.024)         &     (0.025)         &     (0.024)         \\
+\addlinespace
+post3       &      -0.021         &      -0.008         &      -0.008         &      -0.007         &       0.018         &       0.008         &       0.005         &       0.002         \\
+            &     (0.016)         &     (0.015)         &     (0.015)         &     (0.015)         &     (0.027)         &     (0.027)         &     (0.027)         &     (0.027)         \\
+\addlinespace
+Brokerage Control &                     &  \checkmark         &  \checkmark         &  \checkmark         &                     &  \checkmark         &  \checkmark         &  \checkmark         \\
+\addlinespace
+Hedonic Control &                     &                     &  \checkmark         &  \checkmark         &                     &                     &  \checkmark         &  \checkmark         \\
+\addlinespace
+Transaction Control &                     &                     &                     &  \checkmark         &                     &                     &                     &  \checkmark         \\
+Regional Control & & & & & & & & \\
+\midrule
+\(N\)       &      867874         &      867874         &      867874         &      867874         &      845953         &      845953         &      845953         &      845953         \\
+R-squared   &       0.227         &       0.499         &       0.499         &       0.504         &       0.213         &       0.223         &       0.223         &       0.227         \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{adjustbox}
+}
