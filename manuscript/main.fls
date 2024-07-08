@@ -478,8 +478,6 @@ INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex
-INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_hhi.tex
-INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/robust_hhi.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf
@@ -532,6 +530,7 @@ INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb

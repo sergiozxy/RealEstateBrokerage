@@ -34,7 +34,7 @@ global transaction_control area bedroom toilet house_age floor_level green_ratio
 
 global region_control pm25 pop light
 
-global brokerage_control non_online_effect ln_nego_changes
+global brokerage_control broker_410 ln_watch_people ln_end_price ln_watch_time  non_online_effect ln_nego_changes
 
 global dependent_variable yearx2_density yearx3_density yearx4_density yearx5_density yearx6_density yearx7_density
 
@@ -43,38 +43,49 @@ replace price_concession = 100 * price_concession
 
 /* Stylized Fact */
 
-reghdfe ln_negotiation_period density broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period density $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store stylized_fact_3
 
-reghdfe price_concession density broker_410 ln_watch_people ln_end_price ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession density $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store stylized_fact_4
 
+// broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes
 esttab stylized_fact_1 stylized_fact_2 stylized_fact_3 stylized_fact_4 ///
  using result_tables/stylized_fact.tex, ///
-style(tex) booktabs keep(density broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep(density) ///
 mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
 b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Lag(Hedonic Control) = $Lag_hedonic_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
  replace
 
 /* Dynamic Effect and Estimtion */
 
-reghdfe ln_negotiation_period $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period $dependent_variable $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store dynamic_3
 
-reghdfe price_concession $dependent_variable broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession $dependent_variable $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store dynamic_4
 
 esttab dynamic_1 dynamic_2 dynamic_3 dynamic_4 ///
  using result_tables/dynamic.tex, ///
-style(tex) booktabs keep($dependent_variable broker_410 ln_end_price ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes) ///
+style(tex) booktabs keep($dependent_variable) ///
 mtitle("log(number)" "log(lead times)" "log(negotiation period)" "price concession") ///
 star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
 b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Lag(Hedonic Control) = $Lag_hedonic_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
  replace
 
 /* Exogenous Shock with lianjia's entry */
@@ -86,10 +97,10 @@ drop if to_keep == 0
 gen effect = 0
 replace effect = 1 if (entry == 1 | post1 == 1 | post2 == 1 | post3 == 1)
 
-reghdfe ln_negotiation_period pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_3
 
-reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store entry_4
 
 // broker_410 ln_watch_people ln_negotiation_period ln_watch_time ln_nego_changes
@@ -102,24 +113,28 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
 b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
  replace
 
-reghdfe ln_negotiation_period pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_7
 
-reghdfe ln_negotiation_period pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_8
 
-reghdfe ln_negotiation_period pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_9
 
-reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_10
 
-reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_11
 
-reghdfe price_concession pre2 entry post1 post2 post3 broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_entry_12
 
 // broker_410 ln_watch_people ln_watch_time ln_nego_changes
@@ -131,6 +146,10 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
 b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
  replace
 
 // note that we need to add the results:
@@ -141,10 +160,10 @@ restore
 drop if influence == 0
 // now replace the result with the outcome.
 
-reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_3
 
-reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control, absorb(year#bs_code id) vce(cluster bs_code)
 est store did_4
 
 * Define the names and titles using global macros
@@ -190,25 +209,29 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
 b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
  replace
 
 /*** Heterogenous Check of The Mechanism ***/
-reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_7
 
-reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_8
 
-reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_9
 
-reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if low_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_10
 
-reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if mode_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_11
 
-reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment broker_410 ln_end_price ln_watch_people ln_watch_time $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
+reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if high_hhi == 1, absorb(year#bs_code id) vce(cluster bs_code)
 est store hetero_did_12
 
 // ln_end_price broker_410 ln_watch_people ln_watch_time ln_nego_changes
@@ -220,6 +243,10 @@ star(* 0.1 ** 0.05 *** 0.01) ///
 se ///
 scalars("r2 R-squared") ///
 b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
  replace
 
  
