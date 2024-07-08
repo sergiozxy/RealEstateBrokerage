@@ -18,7 +18,7 @@
 \usepackage{algorithmic}
 \usepackage{subfig}
 \pgfplotsset{compat=1.14}
-\usepackage{longtable}
+\usepackage{subcaption}
 \pgfplotsset{every axis label/.append style={font=\tiny}}
 \usepackage[labelsep=period]{caption} %% This switches "Table 1: Title" to "Table 1. Title"
 \usepackage{authblk}
@@ -320,7 +320,7 @@ To verify the robustness of our results, we calculated the Herfindahl-Hirschman 
 
 Furthermore, in Table \ref{tab:entry_effect_robustness_2}, The entry of Lianjia's offline stores significantly shortens the transaction period for the moderate HHI group by about 5\%. Conversely, this effect is not significant in the lower HHI group and higher concentration group. This pattern suggests that when the market is highly competitive, Lianjia is not able to shorten the transaction period and in highly concentrated markets, Lianjia is also unable to use its information advantage to shorten the transaction period. Regarding price concessions, the entry of Lianjia's offline stores does not have a significant effect in the moderate HHI group initially. However, the entry of offline stores have no influence on other groups. Overall, the results suggest that the entry of offline stores has a very limited influence on consumers' welfare but can help the brokerage earn more profit. Additionally, the entry of Lianjia's offline stores can help the brokerage attract more sellers and, consequently, find more buyers in the market, thereby increasing the brokerage's informational advantage. In the Appendix we also conducted the robustness check by classifying the group by matured market and less matured market.
 
-We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_entry}. For this test, we employed a neighborhood sample with randomly generated treatment effects. Additionally, to assess the impact of heteorogeniety across years, we generated interactions between year and the dummy random treatment effect to determine the significance of these effects. The results indicate that none of the treatment effects are statistically significant, suggesting that our estimates are not influenced by other confounding factors.
+We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_concession_entry}. For this test, we employed a neighborhood sample with randomly generated treatment effects. Additionally, to assess the impact of heteorogeniety across years, we generated interactions between year and the dummy random treatment effect to determine the significance of these effects. The results indicate that none of the treatment effects are statistically significant, suggesting that our estimates are not influenced by other confounding factors.
 % This delayed impact may be attributed to the offline stores gradually improving market transparency and information dissemination, which eventually leads to better price concessions. For the higher HHI group, the entry of Lianjia's offline stores consistently has a significant effect on price concessions. This reinforces the notion that in less competitive markets, offline stores play a crucial role in facilitating better matches between buyers and sellers and improving overall market efficiency. In the Appendix we also conducted the robustness check by classifying the group by matured market and less matured market.
 
 \begin{table}
@@ -385,7 +385,7 @@ To further investigate the impact of market concentration on the effectiveness o
   \begin{center}
     \begin{scriptsize}
       \caption{Robustness Check of Online Consolidation Effect}
-      \label{tab:heter_platform_did}
+      \label{tab:heter_platform_did_1}
       \input{../result_tables/heter_platform_did_1.tex}
     
     Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
@@ -397,7 +397,7 @@ To further investigate the impact of market concentration on the effectiveness o
   \begin{center}
     \begin{scriptsize}
       \caption{Robustness Check of Online Consolidation Effect (Continued)}
-      \label{tab:heter_platform_did}
+      \label{tab:heter_platform_did_2}
       \input{../result_tables/heter_platform_did_2.tex}
     
     Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
@@ -405,7 +405,7 @@ To further investigate the impact of market concentration on the effectiveness o
   \end{center}
 \end{table}
 
-Appendix Figure \ref{fig:treatment_consolidation} illustrates the distribution of income across the treatment and control groups. Prior to the intervention, the two groups exhibit parallel trends, indicating no significant differences. The treatment effect becomes significant only after the first period, aligning with our empirical findings. We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_platform} like our previous estimation of the offline store expansion. The test result also shows that there is no other confounding factors affecting our analysis.
+Appendix Figure \ref{fig:treatment_consolidation} illustrates the distribution of income across the treatment and control groups. Prior to the intervention, the two groups exhibit parallel trends, indicating no significant differences. The treatment effect becomes significant only after the first period, aligning with our empirical findings. We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_concession_plat} like our previous estimation of the offline store expansion. The test result also shows that there is no other confounding factors affecting our analysis.
 
 \section{Extension: Network Clustering Effect} \label{sec:network_effect}
 
@@ -799,6 +799,31 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
 
 \newpage
 
+\section{Placebo Test}
+
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Placebo Test to transaction number]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_num.pdf}\label{fig:placebo_num_entry}}
+  \subfloat[Placebo Test to number of house tours]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_lead.pdf}\label{fig:placebo_lead_entry}}
+  \hfill % Adds horizontal space between figures
+  \subfloat[Placebo Test to transaction period]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_period.pdf}\label{fig:placebo_period_entry}}
+  \subfloat[Placebo Test to price concession]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_concession.pdf}\label{fig:placebo_concession_entry}}
+  \caption{Placebo Test to Entry Effect}
+  \label{fig:placebo_test_entry}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Placebo Test to transaction number]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_num.pdf}\label{fig:placebo_num_plat}}
+  \subfloat[Placebo Test to number of house tours]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_lead.pdf}\label{fig:placebo_lead_plat}}
+  \hfill % Adds horizontal space between figures
+  \subfloat[Placebo Test to transaction period]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_period.pdf}\label{fig:placebo_period_plat}}
+  \subfloat[Placebo Test to price concession]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_concession.pdf}\label{fig:placebo_concession_plat}}
+  \caption{Placebo Test to Platform-Mediated Consolidation Effect}
+  \label{fig:placebo_test_plat}
+\end{figure}
+
 \section{Description of the network effect indices} \label{sec:network_effect_indices}
 
 \subsection{Descriptions of the clustering indices} \label{subsec:descriptions_clustering_indices}
@@ -849,12 +874,16 @@ PageRank is a measure of the importance of nodes in a network, originally develo
 
 where $d$ is a damping factor (typically set to $0.85$), $M(v)$ is the set of nodes that link to $v$, $L(u)$ is the number of outbound links from node $u$. Nodes with high PageRank scores are considered to have high influence and are often central to the network's structure.
 
+The results also indicate that the local network effect of Lianjia tends to be sparse and the network is not well-connected. The network effect is primarily characterized by local clustering, with moderate network strength.
+
+
+\end{document}
+
 \begin{table}[H]
   \caption{Other Meausre Indices of the Network Effect}
   \label{other:measures}
   \input{../result_tables/other_indices_appendix.tex}
 \end{table}
-\end{document}
 
 % Freeman, L. C. (1977). A set of measures of centrality based on betweenness. Sociometry, 40(1), 35-41.
 % Newman, M. E. J. (2010). Networks: An Introduction. Oxford University Press.
