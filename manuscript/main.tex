@@ -18,7 +18,6 @@
 \usepackage{algorithmic}
 \usepackage{subfig}
 \pgfplotsset{compat=1.14}
-\usepackage{subcaption}
 \pgfplotsset{every axis label/.append style={font=\tiny}}
 \usepackage[labelsep=period]{caption} %% This switches "Table 1: Title" to "Table 1. Title"
 \usepackage{authblk}
@@ -707,6 +706,58 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% APPENDIX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% These commands start the appendix and change the Table & Figure numbering
 \newpage
@@ -719,7 +770,7 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
 \renewcommand{\thefigure}{A\arabic{figure}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Appendix Tables and Figures}
+\section{Additional Descriptions of Data} \label{sec:appendix_data}
 
 \begin{figure}[H]
   \centering
@@ -727,25 +778,40 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
   \caption{Sample of Lianjia's Offline Store with High Clustering}
   \label{fig:typical_sample_lianjia}
   
-  This photo was taken in Chengdu, where Lianjia operates over 1,500 offline stores. It is common to see two stores located within a short distance of each other. The green store in the photo is one of Lianjia's offline stores. As you can see, across the street, there are two Lianjia stores, each managed by different store managers. 
+  This photo was taken in Chengdu, where Lianjia operates over 1,500 offline stores. It is common to see two stores located within a short distance of each other. The green store in the photo is one of Lianjia's offline stores. As you can see, across the street, there are two Lianjia stores, each managed by different store managers. This phenomenon is very common in large Chinese cities and can be found in many markets, see for example Figure \ref{fig:typical_layout_Beijing}.
 \end{figure}
 
 \newpage
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{../figures/distribution_of_ten_cities.pdf}
-  \caption{Distribution of Ten Cities's Brokerages Store Shares}
-  \label{fig:distribution_store_shares}
-  Note: the x-axis is city's name and the y-axis is the offline brokerage's stores share in the city. The data source is from AutoNavi Map.
+  \includegraphics[width=0.9\textwidth]{../figures/typical_layout_beijing.pdf}
+  \caption{Sample of Lianjia's Offline Stores in Beijing}
+  \label{fig:typical_layout_Beijing}
+  
+This figure illustrates the spatial distribution of Lianjia's offline stores in Beijing for the year 2021. The data reveals a significant clustering of stores around major residential buildings, demonstrating a high degree of localization within the real estate brokerage market. This pattern is indicative of the competitive dynamics and agglomeration economies prevalent in the Chinese real estate sector, where proximity to key infrastructure. The data source is from AutoNavi Map.
 \end{figure}
 
-\newpage
-
-% \input{tab_tex/other-regressions.tex}
 
 \input{../figures/distribution_of_hp_and_broker.tex}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../figures/distribution_of_ten_cities.pdf}
+  \caption{Distribution of Ten Cities's Brokerages Store Shares}
+  \label{fig:distribution_store_shares}
+
+  Note: the x-axis is city's name and the y-axis is the offline brokerage's stores share in the city. The data source is from AutoNavi Map.
+\end{figure}
+
+
+
+\clearpage
+
+\section{Additional RDD Robustness Tests} \label{sec:additional_rdd}
+% \input{tab_tex/other-regressions.tex}
+
+Table \ref{}
 \input{../result_tables/donut_robust.tex}
 
 \input{../result_tables/rdd_placebo_test.tex}
@@ -802,27 +868,38 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
 \section{Placebo Test}
 
 
-\begin{figure}[ht]
+\begin{figure}[H]
   \centering
-  \subfloat[Placebo Test to transaction number]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_num.pdf}\label{fig:placebo_num_entry}}
-  \subfloat[Placebo Test to number of house tours]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_lead.pdf}\label{fig:placebo_lead_entry}}
+  \subfloat[Placebo Test to transaction number]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_entry_num.pdf}\label{fig:placebo_num_entry}}
+  \subfloat[Placebo Test to number of house tours]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_entry_lead.pdf}\label{fig:placebo_lead_entry}}
   \hfill % Adds horizontal space between figures
-  \subfloat[Placebo Test to transaction period]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_period.pdf}\label{fig:placebo_period_entry}}
-  \subfloat[Placebo Test to price concession]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_entry_concession.pdf}\label{fig:placebo_concession_entry}}
+  \subfloat[Placebo Test to transaction period]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_entry_period.pdf}\label{fig:placebo_period_entry}}
+  \subfloat[Placebo Test to price concession]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_entry_concession.pdf}\label{fig:placebo_concession_entry}}
   \caption{Placebo Test to Entry Effect}
   \label{fig:placebo_test_entry}
-\end{figure}
 
-\begin{figure}[ht]
+  Note: The x-axis is the coefficient of the 
+
+  the model is described in Equation \eqref{eq:entry_effect}
+  \end{figure}
+
+\begin{figure}[H]
   \centering
-  \subfloat[Placebo Test to transaction number]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_num.pdf}\label{fig:placebo_num_plat}}
-  \subfloat[Placebo Test to number of house tours]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_lead.pdf}\label{fig:placebo_lead_plat}}
+  \subfloat[Placebo Test to transaction number]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_plat_num.pdf}\label{fig:placebo_num_plat}}
+  \subfloat[Placebo Test to number of house tours]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_plat_lead.pdf}\label{fig:placebo_lead_plat}}
   \hfill % Adds horizontal space between figures
-  \subfloat[Placebo Test to transaction period]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_period.pdf}\label{fig:placebo_period_plat}}
-  \subfloat[Placebo Test to price concession]{\includegraphics[width=0.5\textwidth]{../figures/placebo_results/placebo_plat_concession.pdf}\label{fig:placebo_concession_plat}}
+  \subfloat[Placebo Test to transaction period]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_plat_period.pdf}\label{fig:placebo_period_plat}}
+  \subfloat[Placebo Test to price concession]{\includegraphics[width=0.45\textwidth]{../figures/placebo_results/placebo_plat_concession.pdf}\label{fig:placebo_concession_plat}}
   \caption{Placebo Test to Platform-Mediated Consolidation Effect}
   \label{fig:placebo_test_plat}
+
+  Note: The x-axis is the coefficient of the 
+
+  the model is described in Equation \eqref{eq:acn_assessment}
+
 \end{figure}
+
+\newpage
 
 \section{Description of the network effect indices} \label{sec:network_effect_indices}
 
