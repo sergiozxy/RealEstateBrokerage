@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1720451155 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1720451158
+["pdflatex"] 1720453365 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1720453368
   "../figures/RD_Plot_1st_Order.pdf" 1720316357 15385 331205e752d0bedf02560567b0a6913e ""
   "../figures/RD_Plot_2nd_Order.pdf" 1720316357 15326 d1715476964736622f2821a93988fbe4 ""
   "../figures/RD_Plot_3rd_Order.pdf" 1720316357 15312 fc62274379b1a024894a07221909e1d8 ""
@@ -301,15 +301,15 @@
   "d:/latex/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1615477809 4851265 939dcb770da954054d38c25e9268a491 ""
   "d:/latex/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1615477916 2432499 72bea4866472cf94a0856e40df3228f8 ""
   "d:/latex/texlive/2020/texmf.cnf" 1615477778 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1720451158 23412 8d5a305b4a3411da187af8c3c8c932cb ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1720451149 119739 1b2eb954e2e35e0029146a0583e5412b ""
-  "main.aux" 1720451158 23412 8d5a305b4a3411da187af8c3c8c932cb "pdflatex"
-  "main.out" 1720451158 1427 2b8eeae964fe933b83dcbb79839a2b59 "pdflatex"
-  "main.tex" 1720451149 119739 1b2eb954e2e35e0029146a0583e5412b ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1720453368 23894 1b79eaaa5ad967d1ca9e72acf701dd5e ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1720453358 120584 916d8d8cb445c91fd9391edf91254b19 ""
+  "main.aux" 1720453368 23894 1b79eaaa5ad967d1ca9e72acf701dd5e "pdflatex"
+  "main.out" 1720453368 1486 f793acbd2d4d01f512c1b75b95f16d8c "pdflatex"
+  "main.tex" 1720453358 120584 916d8d8cb445c91fd9391edf91254b19 ""
   (generated)
-  "main.log"
-  "e:/umich/RealEstateBrokerage/manuscript/main.log"
+  "main.pdf"
+  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
   "main.out"
   "main.aux"
-  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
-  "main.pdf"
+  "main.log"
+  "e:/umich/RealEstateBrokerage/manuscript/main.log"

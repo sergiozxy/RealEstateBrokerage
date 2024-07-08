@@ -12,9 +12,10 @@
 \BOOKMARK [2][-]{subsection.5.1}{Measure of Network Effect}{section.5}% 12
 \BOOKMARK [2][-]{subsection.5.2}{Estimation of Network Consolidation on Network Effect}{section.5}% 13
 \BOOKMARK [1][-]{section.6}{Discussion and Conclusion}{}% 14
-\BOOKMARK [1][-]{appendix.A}{Additional Descriptions of Data}{}% 15
-\BOOKMARK [1][-]{appendix.B}{Additional RDD Robustness Tests}{}% 16
-\BOOKMARK [1][-]{appendix.C}{Placebo Test}{}% 17
-\BOOKMARK [1][-]{appendix.D}{Description of the network effect indices}{}% 18
-\BOOKMARK [2][-]{subsection.D.1}{Descriptions of the clustering indices}{appendix.D}% 19
-\BOOKMARK [2][-]{subsection.D.2}{Other Indices Measures}{appendix.D}% 20
+\BOOKMARK [1][-]{appendix.A}{Codebook}{}% 15
+\BOOKMARK [1][-]{appendix.B}{Additional Descriptions of Data}{}% 16
+\BOOKMARK [1][-]{appendix.C}{Additional RDD Robustness Tests}{}% 17
+\BOOKMARK [2][-]{subsection.C.1}{Placebo Test}{appendix.C}% 18
+\BOOKMARK [1][-]{appendix.D}{Description of the network effect indices}{}% 19
+\BOOKMARK [2][-]{subsection.D.1}{Descriptions of the clustering indices}{appendix.D}% 20
+\BOOKMARK [2][-]{subsection.D.2}{Other Indices Measures}{appendix.D}% 21

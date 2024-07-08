@@ -141,7 +141,7 @@ The literature on the real estate market, particularly the role of real estate b
 
 Subsequent studies have expanded on these foundational theories, exploring dynamics specific to real estate pricing and strategic behavior. \citet{550a6ccf-cde2-3dd1-979f-1a8db2b8ceb9} documents that apart from price competition in the market, there is a lot of market inefficiency that stems from non-price competition, which suggests that as the degree of competition in the market increases, the market becomes progressively less efficient, indicating that the entry dividend begins to fall and aggregate social welfare begins to decline. Moreover, \citet{hendel_relative_2009} analyzes two types of listings in the second-hand housing market and finds that For-Sale-By-Owner type of platforms are less effective in terms of time and probability of sale while operating better compared to listing homes for sale as a broker. In addition, \citet{bailey_economic_2018} uses data from the social media site Facebook to show that social interactions can influence people's economic decisions. Their results show that people who have friends who are geographically distant in real life and who have a hunch that house prices are about to rise are more likely to buy a house than rent one. Other relevant areas of research include \citep{SIRMANS1991207, NIEUWERBURGH_information, salz_intermediation_2022}.
 
-The strategic behavior of real estate brokerages has been documented to leverage informational advantages. \citet{AGARWAL2019715} confirms that brokerages, as market intermediaries, possess nuanced knowledge of market conditions, enabling them to negotiate discounts effectively. Furthermore, \citet{HAN2015813} discusses the varying bargaining power of brokerages across unidirectional and bidirectional markets, influencing their operational strategies. This is corroborated by evidence suggesting that properties listed with lower commission rates not only sell less frequently but also take longer to sell \citep{10.1257/app.20160214}. The advent of online platforms has significantly altered the landscape of real estate transactions. \citet{ZUMPANO2003134} notes that while the duration of property searches has not changed markedly, the scope of searches has broadened to encompass more online listings. Moreover, \citet{ZHANG2021101104} associates the rise of online platforms with a reduction in existing home prices and an increase in sales volumes, a dynamic influenced by factors such as new home prices and household demographics. However, a detailed analysis of the impact of the presence of these platforms on market performance of offline stores remains scant.
+The strategic behavior of real estate brokerages has been documented to leverage informational advantages. \citet{AGARWAL2019715} confirms that brokerages, as market intermediaries, possess nuanced knowledge of market conditions, enabling them to negotiate discounts effectively. Furthermore, \citet{HAN2015813} discusses the varying bargaining power of brokerages across unidirectional and bidirectional markets, influencing their operational strategies. This is corroborated by evidence suggesting that properties listed with lower commission rates not only sell less frequently but also take longer to sell \citep{10.1257/app.20160214}. Additionally, studies have documented that brokerages may adopt discriminatory strategies, steering minorities into neighborhoods with lower economic opportunities and higher exposures to crime and pollution, thereby contributing to persistent social and economic inequalities in the United States \citep{RePEc:ucp:jpolec:doi:10.1086/720140}. The advent of online platforms has significantly altered the landscape of real estate transactions. \citet{ZUMPANO2003134} notes that while the duration of property searches has not changed markedly, the scope of searches has broadened to encompass more online listings. Moreover, \citet{ZHANG2021101104} associates the rise of online platforms with a reduction in existing home prices and an increase in sales volumes, a dynamic influenced by factors such as new home prices and household demographics. However, a detailed analysis of the impact of the presence of these platforms on market performance of offline stores remains scant.
 
 Moreover, the overall market influence of real estate intermediaries is multifaceted. Utilizing a model predicated on perfect competition, \citet{williams_agency_1998} illustrates that excessive entry of brokers into the market can surpass the optimal allocation, thereby reducing social welfare. This is corroborated by studies indicating that an increase in the number of brokers can depress house prices and shorten transaction cycles \citep{https://doi.org/10.1002/jae.2891}. Additionally, \citet{qu_identifying_2021} highlights the moderating role of broker commissions in disseminating information during transactions, facilitating more efficient home sales. Lastly, \citet{AGARWAL2024103668} utilized second-hand real estate transaction data from Beijing to demonstrate that real estate agents may significantly contribute to the formation of Yin-Yang contracts. They quantified the magnitude of the resulting tax evasion, attributing it to the learning-by-doing effect and peer influence among agents. However, their study lacked a spatial analysis component that would consider the local network effects. Other related literature includes \citep{doi:10.1080/10527001.2021.2016340, d082a2db-5cce-33f2-87c4-9cb020cc6666, doi:10.1080/10835547.1996.12090852}.
 
@@ -704,6 +704,9 @@ Azmi, D. I., H. A. Karim, and M. Z. M. Amin. 2012. Comparing the Walking Behavio
 
 \bibitem[Peng(2023)]{peng_mortgage_2023}
 Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Journal}, Working Paper. Available at \url{https://ssrn.com/abstract=4537500} or \url{http://dx.doi.org/10.2139/ssrn.4537500}.
+
+\bibitem[Christensen and Timmins(2022)]{RePEc:ucp:jpolec:doi:10.1086/720140}
+Christensen, P., and C. Timmins. 2022. Sorting or Steering: The Effects of Housing Discrimination on Neighborhood Choice. \textit{Journal of Political Economy}, 130(8), 2110-2163.
   \end{thebibliography}
 \end{singlespace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -773,6 +776,20 @@ Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Jour
 \renewcommand{\thefigure}{A\arabic{figure}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Codebook} \label{sec:codebook}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{scriptsize}
+    \caption{Codebook}
+    \label{tab:codebook}
+    \input{../result_tables/code_book_table.tex}  
+  
+    \end{scriptsize}
+  \end{center}
+\end{table}
+
+
 \section{Additional Descriptions of Data} \label{sec:appendix_data}
 
 \begin{figure}[H]
@@ -823,6 +840,10 @@ Table \ref{}
 
 \clearpage
 
+Section{Additional Robustness Check of Main Results} \label{sec:additional_robustness}
+
+
+
 \clearpage
 
 % \begin{table}[H]
@@ -844,21 +865,10 @@ Table \ref{}
     Note: the x-axis is year and the y-axis is the average income of Lianjia in each year. The graph uses the neighborhood-level data.
 \end{figure}
 
-\begin{table}[H]
-  \begin{center}
-    \begin{scriptsize}
-    \caption{Codebook}
-    \label{tab:codebook}
-    \input{../result_tables/code_book_table.tex}  
-  
-    \end{scriptsize}
-  \end{center}
-\end{table}
 
 \newpage
 
-\section{Placebo Test}
-
+\subsection{Placebo Test} \label{subsec:placebo_test}
 
 \begin{figure}[H]
   \centering
@@ -953,6 +963,8 @@ The results also indicate that the local network effect of Lianjia tends to be s
   \label{other:measures}
   \input{../result_tables/other_indices_appendix.tex}
 \end{table}
+
+\subsection{Alternative Methods} \label{subsec:alternative_methods}
 
 % Freeman, L. C. (1977). A set of measures of centrality based on betweenness. Sociometry, 40(1), 35-41.
 % Newman, M. E. J. (2010). Networks: An Introduction. Oxford University Press.

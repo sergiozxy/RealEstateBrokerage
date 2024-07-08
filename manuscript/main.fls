@@ -431,6 +431,8 @@ INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/clustering_indice
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation.tex
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/typical_sample_lianjia.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/typical_sample_lianjia.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/typical_sample_lianjia.pdf
@@ -481,8 +483,6 @@ INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.t
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf
-INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex
-INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_num.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_num.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_num.pdf
