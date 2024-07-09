@@ -103,7 +103,7 @@ China's real estate listings market possesses distinct features characterized by
 
 Even though the Chinese real estate brokerage market has traditionally been characterized by intense competition among offline stores, the advent of online platforms has dramatically reshaped the dynamics of real estate transactions. Brokerage consolidation, a process where larger firms absorb smaller ones into a unified platform, is emerging as a transformative trend, redefining how properties are bought and sold across China. Lianjia, the largest real estate brokerage in China, has revolutionized real estate transactions through the establishment of the Beke platform. This platform enables rapid expansion by integrating offline stores on a large scale while leveraging the advantages of resource sharing. However, prior to 2018, the platform Beke primarily focused on facilitating listings from Lianjia's offline stores and aimed to attract buyers from the market. However, in 2014, Beke established a new strategy named Agent Cooperate Network (ACN), which integrates and shares the content across its multiple subsidiaries to realize multiple revenue models simultaneously.\footnote{The ACN model disaggregates the transaction process into specialized tasks handled by individual agents or stores. These tasks include seller-side activities such as sourcing sellers, maintaining property listings, commission negotiations, and buyer-side activities like client acquisition, property-client matching, transaction facilitation, and financial services assistance.} Moreover, in 2018, Lianjia decided to enhance its Agent Cooperation Network (ACN) strategy by incorporating smaller brokerages into its network and launching franchise stores under the brand name Deyou, along with other smaller formats. This strategic move aimed to increase network effects and further consolidate the platform, thereby enhancing market power and operational efficiency.
 
-Through the success of the platform consolidation, Lianjia transforms internal competition within the system into overall system competitiveness, thereby enhancing the brand's reputation and market influence. More importantly, this strategic allows Lianjia to cooperate with other previously competitors by consolidating resources. According to Beke's IPO prospectus, Lianjia held approximately a 20.8\% market share in China's second-hand housing market in 2020. However, data from AutoNavi Map indicates that Lianjia's share of stores nationwide was less than 5\%. Notably, in major cities such as Beijing and Shanghai, Lianjia's market share exceeded 45\% and 30\%, respectively, based on data from the local Housing and Urban-Rural Development Committees. Despite this, Lianjia's offline store share in these cities was less than 25\% in Beijing and 10\% in Shanghai, highlighting a significant discrepancy between market presence and physical store distribution. This remarkable market penetration underscores the efficacy of Beke's integrated platform and ACN model in dominating the real estate brokerage landscape. The Figure \ref{fig:precise_proportion_contraction} illustrates the distribution of Lianjia's offline stores across China. The data reveals a significant concentration of these stores in first-tier cities, indicating a pronounced regional disparity. Lianjia's offline store presence is notably uneven, with a high density in major urban centers and sparse distribution in other regions, reflecting strategic market positioning and possibly underlying economic and demographic factors influencing store locations.  % \citep{peng_mortgage_2023}
+Through the success of the platform consolidation, Lianjia transforms internal competition within the system into overall system competitiveness, thereby enhancing the brand's reputation and market influence. More importantly, this strategic allows Lianjia to cooperate with other previously competitors by consolidating resources. According to Beke's IPO prospectus, Lianjia held approximately a 20.8\% market share in China's second-hand housing market in 2020. However, data from AutoNavi Map indicates that Lianjia's share of stores nationwide was less than 5\%. Notably, in major cities such as Beijing and Shanghai, Lianjia's market share exceeded 45\% and 30\%, respectively, based on data from the local Housing and Urban-Rural Development Committees. Despite this, Lianjia's offline store share in these cities was less than 25\% in Beijing and 10\% in Shanghai, highlighting a significant discrepancy between market presence and physical store distribution. This remarkable market penetration underscores the efficacy of Beke's integrated platform and ACN model in dominating the real estate brokerage landscape. The Figure \ref{fig:precise_proportion_contraction} illustrates the distribution of Lianjia's offline stores across China. The data reveals a significant concentration of these stores in first-tier cities, indicating a pronounced regional disparity.\footnote{In the Appendix Figure \ref{fig:precise_proportion_contraction}, we also plotted the geospatial distribution of Lianjia's offline stores and the corresponding relationship between the housing price.} Lianjia's offline store presence is notably uneven, with a high density in major urban centers and sparse distribution in other regions, reflecting strategic market positioning and possibly underlying economic and demographic factors influencing store locations.  % \citep{peng_mortgage_2023}
 
 
 % \subsection{Why Offline Operation is Critical In Real Estate Transaction} \label{subsec:why_offline_is_critical}
@@ -172,17 +172,11 @@ Each type of POI was matched to our data within a 500-meter radius, a distance t
 
 \subsection{Influential Radius} \label{subsec:Influential_Radius}
 
-% THIS SHOULD BE REVISED!!!
-
 The effectiveness of an offline intermediary's influence on its immediate communities is inherently constrained by geographic limitations, with its influence decreasing in proportion to the increase in spatial distance. Moreover, since the offline stores of Lianjia are directly operated by the company, strategic considerations regarding the optimal distance between stores are an integral part of their location planning to mitigate the risks associated with over-concentration of stores that could lead to competitive overlap and service homogenization. Consequently, it is imperative to determine an optimal radius threshold and subsequently assess the diversity of agencies operating within this demarcated zone.
 
-To determine the optimal radius of influence, this research employs a RDD on the neighborhood level transaction data to examine the influential radius of offline real estate brokerages. The dependent variable in this analysis is the transaction revenue generated by Lianjia within a given community, while the independent variable is the community's proximity to the nearest Lianjia store. Given that stores are predominantly located within commercial districts, which typically encompass several streets no more than two kilometers in diameter, it is assumed that a requisite number of stores within each district is essential to sustain revenue generation in that community. In addition, Lianjia adopts a pedestrian shed strategy, also known as a 5-minute walking distance (approximately 400 meters) strategy, which means that customers should be accessible within a 5-minute walk to the nearest Lianjia store to reduce the visiting cost. Moreover, this is consistent with the govvernment's proposal policy that most of the living facilities should be within five-minute pedestrian scale distance \citep{GB50180-2018}. Besides, some other paper also demonstrated that in other fields, the distance above 5-minute walk distance can create significant drop in most of hte properties \citep{liu2023chrono-urbanism}.
+To determine the optimal radius of influence, this research employs a RDD on the neighborhood level transaction data to examine the influential radius of offline real estate brokerages. The dependent variable in this analysis is the transaction revenue generated by Lianjia within a given community, while the independent variable is the community's proximity to the nearest Lianjia store. Given that stores are predominantly located within commercial districts, which typically encompass several streets no more than two kilometers in diameter, it is assumed that a requisite number of stores within each district is essential to sustain revenue generation in that community. In addition, Lianjia adopts a pedestrian shed strategy, also known as a 5-minute walking distance (approximately 400 meters) strategy, which means that customers should be accessible within a 5-minute walk to the nearest Lianjia store to reduce the visiting cost. Moreover, this is consistent with the govvernment's proposal policy that most of the living facilities should be within five-minute pedestrian scale distance \citep{GB50180-2018}. Besides, some other paper also demonstrated that in other fields, the distance above 5-minute walk distance can create significant drop in most of the properties \citep{liu2023chrono-urbanism}.
 
-
-
-Building on this premise, the study further investigates the existence of an optimal influence radius within shopping districts, defined as the distance radius within which the presence of a Lianjia optimally increases transaction revenues. At the same time, the study also examines the hypothesis that beyond this optimal radius, the impact on transaction revenues diminishes as a result of the strategic store layout decisions implemented by Lianjia.
-
-
+Building on this premise, the study further investigates the existence of an optimal influence radius within shopping districts, defined as the distance radius within which the presence of a Lianjia optimally increases transaction revenues. At the same time, the study also examines the hypothesis that beyond this optimal radius, the impact on transaction revenues diminishes as a result of the strategic store layout decisions implemented by Lianjia. 
 
 \begin{figure}[ht]
     \centering
@@ -197,34 +191,19 @@ Building on this premise, the study further investigates the existence of an opt
 
 \input{../result_tables/rdd_result_summary.tex}
 
+From Figure \ref{fig:RD_design} we can see that there is indeed discontinuity in 410 meters of communities to the nearest Lianjia's store, which is pretty close to the lianjia's 5-minute walk distance policy (approximately 410 meters). The observed decline in the Lianjia's influence is marked and suggests a pronounced reduction in its impact on the system overall within our study sample. This phenomenon can be attributed to the implementation of the Lianjia's proximity to customers policy, which is evidenced at the data level. Table \ref{tab:rd_bandwidth_kernel_results} considers different kernel and bandwidth choices, and the results are consistent with the 410 meters radius. The results are robust to different bandwidth and kernel choices, which suggests that the 410 meters is the optimal radius for Lianjia's offline stores.\footnote{It is important to note that we should avoid using bandwidths that correspond to distances too small relative to the proximity between Lianjia stores and neighborhoods. This is because our evaluation of neighborhood proximity is based on the centroid of each neighborhood. The distance from a store to the centroid does not necessarily imply that the store is not close to the neighborhood itself. Therefore, when distances are very close to the neighborhood centroid, it is reasonable to consider the store as approximately close to the neighborhood as well.} To check the robustness of the results, we conducted a series of robustness checks. The results are shown in Appendix \ref{sec:additional_rdd}.
 
+To check the robustness of our results, we first consider transforming the dependent variable by taking its natural logarithm. This transformation is intended to account for the possibility that the functional form of the dependent variable may affect the estimation of the treatment effect. By using the natural logarithm, we aim to normalize the distribution and potentially stabilize the variance, which could lead to more reliable estimates. We repeat the procedures described in the main analysis using this transformed dependent variable. The corresponding results are presented in Appendix Figure \ref{fig:RD_design_Robust} and Table \ref{tab:rd_bandwidth_kernel_results_robust}. Our findings indicate that the results remain consistent with those obtained using the original dependent variable. This consistency suggests that the treatment effect is robust to changes in the functional form of the dependent variable. Furthermore, the analysis reaffirms that a 410-meter radius remains the optimal bandwidth for assessing the impact of Lianjia's offline stores. This robustness check enhances the credibility of our main findings and supports the validity of the 410-meter radius as a critical threshold for evaluating proximity effects.
 
+One another common concern in RDD is the potential for manipulation around the cutoff, which could invalidate the results. To address this, a "Donut Hole" robustness check can be implemented, where observations close to the cutoff are excluded to ensure that the results are not driven by manipulation or other local irregularities. In this study, we apply a Donut Hole robustness check to an RDD with a cutoff of 410 meters. Specifically, we sequentially exclude observations within certain distances from the cutoff and re-estimate the treatment effect. The distances considered for exclusion are 5, 7.5, 10, 12.5, 15, 17.5, 20 meters, and they are correspondingly dropping 7.85\%, 11.73\%, 15.59\%, 19.48\%, 23.66\%, 27.88\% and 31.71\% of our effective estimation data, respectively. Appendix Table \ref{tab:rd_robust_results} indicate that up to the exclusion of 20\% of the estimated data, the treatment effect estimates remain consistent and robust, thereby demonstrating the robustness of the estimated treatment effects to the exclusion of data points near the cutoff. Moreover, we find that adding control variables may help us to better estimate the treatment effect and make our model more robust.
 
+Furthermore, we carry out the density test by \citep{MCCRARY2008698}. The McCrary test checks whether there is a discontinuity in the density of the running variable at the cutoff point. A significant discontinuity would suggest that individuals or entities have manipulated the running variable to either side of the cutoff, thereby violating the assumption of no manipulation. The results are shown in Appendix Table \ref{tab:mccrary_results} shows that the p-value is greater than 0.1, which suggests the result is not due to manipulation of polygons.
 
-%% Need to revise
+To ensure that the observed treatment effect at the true cutoff is not a result of underlying trends or other spurious factors. We first check to identify any potential confounding variables that might be driving the results instead of the treatment effect. To achieve this, we conducted a placebo test by substituting the dependent variable with other control variables and the results are shown in Table \ref{tab:placebo_test_results}. The results suggest that the discontinuity does not exist in the placebo test, which substantiates that the observed discontinuity is not due to any general discontinuity in the data at the cutoff but is specifically attributable to the treatment effect.
 
+We also conducted a series of placebo tests by systematically adjusting the cutoff points to 325 meters, 350 meters, 400 meters, 420 meters, 450 meters, 500 meters, 650 meters, and 700 meters, in addition to the original cutoff at 410 meters. These adjustments aimed to assess the robustness and specificity of the intervention's impact. The results, presented in Appendix Table \ref{tab:movement_cutoff}, reveal that the estimated effects are statistically significant at the 400-meter, 420-meter, and 450-meter cutoffs, with the estimated coefficients demonstrating consistency across these points. In contrast, when the cutoff is set at shorter distances (325 meters and 350 meters) or longer distances (500 meters, 650 meters, and 700 meters), the effects diminish and lose statistical significance. This pattern suggests that the impact of the policy or intervention is localized and concentrated around the 410-meter threshold, providing strong evidence for the validity of this specific cutoff point.
 
-From Figure \ref{fig:RD_design} we can see that there is indeed discontinuity in 410 meters of communities to the nearest Lianjia's store, which is pretty close to the lianjia's 5-minute walk distance policy (approximately 410 meters). The observed decline in the Lianjia's influence is marked and suggests a pronounced reduction in its impact on the system overall within our study sample. This phenomenon can be attributed to the implementation of the Lianjia's proximity to customers policy, which is evidenced at the data level. Table \ref{tab:rd_bandwidth_kernel_results} considers different kernel and bandwidth choices, and the results are consistent with the 410 meters radius. The only non-significance is the CER-optimal bandwidth selector with triangular kernel, which is because the selected bandwidth is too small to capture the discontinuity. The results are robust to different bandwidth and kernel choices, which suggests that the 410 meters is the optimal radius for Lianjia's offline stores.
-
-\footnote{Note that we should not use bandswidths that within too small of the distances above the Lianjia to the neighborhoods, and this is because our evaluation of the neighborhood is based on the centroid point of the neighborhood, and the store's distance to the centroid point is not necessarily means that it is not close to the neighborhood. Therefore, with distance very close to the neighborhood, we can also think they are approximately close.}
-
-To make the robust check we conducted Donut Hole test by excluding observations close to the cutoff and estimating the effect with the remaining data. The results are shown in Appendix and the result shows that the discontinuity still exists and this provides evidence against a model misspecification. Furthermore, we carry out the density test by \citep{MCCRARY2008698}. The result shows that the p-value is greater than 0.1, which suggests the result is not due to manipulation of polygons. Finally, we carry out placebo tests which are reported in Appendix, which shows that our result is robust. Specifically, Table \ref{tab:placebo_test_results} shows that the discontinuity does not exist in the placebo test, which suggests that our result is not due to the manipulation of the data. Table \ref{tab:movement_cutoff} shows that other cutoffs do not have the same effect as the 410 meters cutoff, which suggests that the 410 meters is the optimal radius for Lianjia's offline stores.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Furthermore, the consistency of significant results at cutoffs close to 410 meters (specifically at 400 meters and 420 meters) reinforces the robustness of our findings. It suggests that small variations around the original cutoff do not substantially alter the observed effects, underscoring the reliability of the 410 meter cutoff as a meaningful cutoff. The lack of significant effects at more distant cutoffs suggests that the influence of the intervention does not extend beyond a certain distance, highlighting its localized nature.
 
 \subsection{Statistical Summary} \label{subsec:Statistical_Summary}
 
@@ -810,9 +789,9 @@ Christensen, P., and C. Timmins. 2022. Sorting or Steering: The Effects of Housi
 \setcounter{table}{0}
 \renewcommand{\tablename}{Appendix Table}
 \renewcommand{\figurename}{Appendix Figure}
-\renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\thetable}{\thesection. \arabic{table}}
 \setcounter{figure}{0}
-\renewcommand{\thefigure}{A\arabic{figure}}
+\renewcommand{\thefigure}{\thesection. \arabic{figure}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Codebook} \label{sec:codebook}
@@ -830,6 +809,8 @@ Christensen, P., and C. Timmins. 2022. Sorting or Steering: The Effects of Housi
 
 
 \section{Additional Descriptions of Data} \label{sec:appendix_data}
+
+This Section Describes the presents visual representations and a description of the spatial distribution and clustering patterns of Lianjia's offline real estate brokerage stores in typical cities. Figure \ref{fig:typical_sample_lianjia} showcases a typical example of Lianjia's high clustering of stores in Chengdu, where stores are often located within close proximity to each other. Figure \ref{fig:typical_layout_Beijing} illustrates the spatial distribution of Lianjia's offline stores in Beijing, highlighting the clustering of stores around major residential buildings. Figure \ref{fig:distribution_of_housing_price_brokers_in_different_cities} shows the correlation between housing price and the distribution of stores in different cities, and the geospatial distribution of the Lianjia's offline stores. Figure \ref{fig:distribution_store_shares} presents the distribution of offline brokerage store shares in ten major Chinese cities, showing the varying market shares of Lianjia's offline stores across different cities.
 
 \begin{figure}[H]
   \centering
@@ -866,18 +847,12 @@ This figure illustrates the spatial distribution of Lianjia's offline stores in 
   Note: the x-axis is city's name and the y-axis is the offline brokerage's stores share in the city. The data source is from AutoNavi Map.
 \end{figure}
 
-
-
 \clearpage
 
 \section{Additional RDD Robustness Tests} \label{sec:additional_rdd}
 % \input{tab_tex/other-regressions.tex}
 
-One common concern in RDD is the potential for manipulation around the cutoff, which could invalidate the results. To address this, a "donut hole" robustness check can be implemented, where observations close to the cutoff are excluded to ensure that the results are not driven by manipulation or other local irregularities. In this study, we apply a donut hole robustness check to an RDD with a cutoff of 410 meters. Specifically, we sequentially exclude observations within certain distances from the cutoff and re-estimate the treatment effect. The distances considered for exclusion are 100, 125, 150, 175, 200, 225, and 250 meters. This method helps to verify the robustness of the estimated treatment effects to the exclusion of data points near the cutoff.
-
-Table \ref{tab:rd_robust_results} shows the donut hole effect, we exclude the samples within
-
-
+Figure \ref{fig:RD_design_Robust} presents the results of the regression discontinuity design (RDD) using the natural logarithm of the dependent variable. The transformation aims to normalize the distribution and stabilize the variance. The findings remain consistent with those obtained using the original dependent variable, indicating the robustness of the treatment effect to changes in the functional form of the dependent variable.
 
 \begin{figure}[ht]
   \centering
@@ -890,18 +865,40 @@ Table \ref{tab:rd_robust_results} shows the donut hole effect, we exclude the sa
   \label{fig:RD_design_Robust}
 \end{figure}
 
+Table \ref{tab:rd_bandwidth_kernel_results_robust} summarizes the RDD estimates using different bandwidths and kernel functions with the transformed dependent variable. The consistency of the results reaffirms the robustness of the treatment effect and supports the use of a 410-meter radius as the optimal bandwidth for assessing the impact of Lianjia's offline stores.
+
 \input{../result_tables/rdd_result_summary_robust.tex}
 
+Table \ref{tab:rd_robust_results} presents the results of the Donut Hole robustness check, where observations within varying distances (5, 7.5, 10, 12.5, 15, 17.5, 20 meters) from the 410-meter cutoff are sequentially excluded. The treatment effect estimates remain robust up to the exclusion of 20\% of the estimated data, demonstrating the stability of the results despite the exclusion of data points near the cutoff.
 
-% Imbens, G. W., & Lemieux, T. (2008). Regression Discontinuity Designs: A Guide to Practice. Journal of Econometrics, 142(2), 615-635.
-% Lee, D. S., & Lemieux, T. (2010). Regression Discontinuity Designs in Economics. Journal of Economic Literature, 48(2), 281-355.
 \input{../result_tables/donut_robust.tex}
+
+Table \ref{tab:mccrary_results} shows the results of the McCrary density test for manipulation around the cutoff. The p-value is greater than 0.1, indicating no significant discontinuity in the density of the running variable at the cutoff, which supports the assumption of no manipulation.
+
+\input{../result_tables/mccrary_results.tex}
+
+
+Table \ref{tab:placebo_test_results} presents the results of the placebo tests, where the dependent variable is substituted with other control variables. The absence of significant discontinuity in the placebo tests supports the validity of the observed treatment effect being specifically attributable to the intervention.
 
 \input{../result_tables/rdd_placebo_test.tex}
 
+Table \ref{tab:movement_cutoff} shows the results of placebo tests conducted with various cutoff points (325 meters, 350 meters, 400 meters, 420 meters, 450 meters, 500 meters, 650 meters, 700 meters). The findings indicate that the treatment effects are statistically significant and consistent around the 410-meter cutoff, while effects at more distant cutoffs diminish and lose significance. This pattern confirms the localized nature of the intervention's impact.
+
+
 \input{../result_tables/movement_cutoff.tex}
 
+% Imbens, G. W., & Lemieux, T. (2008). Regression Discontinuity Designs: A Guide to Practice. Journal of Econometrics, 142(2), 615-635.
+% Lee, D. S., & Lemieux, T. (2010). Regression Discontinuity Designs in Economics. Journal of Economic Literature, 48(2), 281-355.
+
+
 \clearpage
+
+
+
+
+
+
+
 
 Section{Additional Robustness Check of Main Results} \label{sec:additional_robustness}
 
@@ -1071,14 +1068,33 @@ where $d$ is a damping factor (typically set to $0.85$), $M(v)$ is the set of no
 
 The results also indicate that the local network effect of Lianjia tends to be sparse and the network is not well-connected. The network effect is primarily characterized by local clustering, with moderate network strength.
 
+\begin{table}[H]
+  \begin{center}
+  \caption{Closeness Centrality}
+  \label{other:closeness_centrality}
+  \input{../result_tables/group_1.tex}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+  \begin{center}
+  \caption{Degree Centrality}
+  \label{other:degree_centrality}
+  \input{../result_tables/group_2.tex}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+  \begin{center}
+  \caption{Page Rank}
+  \label{other:page_rank}
+  \input{../result_tables/group_3.tex}
+\end{center}
+\end{table}
 
 \end{document}
 
-\begin{table}[H]
-  \caption{Other Meausre Indices of the Network Effect}
-  \label{other:measures}
-  \input{../result_tables/other_indices_appendix.tex}
-\end{table}
+
 
 \subsection{Alternative Methods} \label{subsec:alternative_methods}
 

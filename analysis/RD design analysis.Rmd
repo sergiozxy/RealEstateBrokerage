@@ -14,7 +14,6 @@ knitr::opts_chunk$set(fig.height=4)
 knitr::opts_chunk$set(fig.width=7)
 knitr::opts_chunk$set(warning=FALSE)
 options(encoding = "UTF-8")
-set.seed(123)
 ```
 
 ## structure
@@ -433,7 +432,7 @@ combined_results <- rbind(
 )
 
 latex_table <- xtable(combined_results, caption = "McCrary Test Results", label = "tab:mccrary_results")
-write(latex_code, file = paste(working_directory , "result_tables/mccrary_results.tex", sep='/'))
+write(latex_table, file = paste(working_directory , "result_tables/mccrary_results.tex", sep='/'))
 ```
 
 ```{r}
