@@ -15,7 +15,8 @@
 \BOOKMARK [1][-]{appendix.A}{Codebook}{}% 15
 \BOOKMARK [1][-]{appendix.B}{Additional Descriptions of Data}{}% 16
 \BOOKMARK [1][-]{appendix.C}{Additional RDD Robustness Tests}{}% 17
-\BOOKMARK [2][-]{subsection.C.1}{Placebo Test}{appendix.C}% 18
-\BOOKMARK [1][-]{appendix.D}{Description of the network effect indices}{}% 19
-\BOOKMARK [2][-]{subsection.D.1}{Descriptions of the clustering indices}{appendix.D}% 20
-\BOOKMARK [2][-]{subsection.D.2}{Other Indices Measures}{appendix.D}% 21
+\BOOKMARK [2][-]{subsection.C.1}{Additional Robustness Check for the Offline Expansion Effect}{appendix.C}% 18
+\BOOKMARK [2][-]{subsection.C.2}{Placebo Test}{appendix.C}% 19
+\BOOKMARK [1][-]{appendix.D}{Description of the network effect indices}{}% 20
+\BOOKMARK [2][-]{subsection.D.1}{Descriptions of the clustering indices}{appendix.D}% 21
+\BOOKMARK [2][-]{subsection.D.2}{Other Indices Measures}{appendix.D}% 22

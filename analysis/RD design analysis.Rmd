@@ -38,6 +38,7 @@ setwd("E:/umich/RealEstateBrokerage-main")
 # need to place data on the base directory
 data <- read_dta("template.dta")
 working_directory <-"E:/umich/RealEstateBrokerage"
+set.seed(130)
 ```
 
 ```{r}
@@ -71,7 +72,7 @@ testing_variables <- c("ln_negotiation_period", "ln_watch_time", "ln_nego_change
 
 ```{r}
 ci_level = 95
-h = 0.066
+h = 0.063
 cutoff = 0.41
 running_var = panel_data$nearest_store_distances
 running_var <- as.numeric(running_var)
@@ -79,32 +80,71 @@ filtered_data <- panel_data[abs(running_var - cutoff) <= h, ]
 
 # Export the first RD plot to its own PDF file
 pdf("RD_Plot_1st_Order.pdf", width = 8, height = 4) # Adjust the width and height as needed
+rdplot(y = filtered_data$income, 
+       x = filtered_data$nearest_store_distances, 
+       c = cutoff, nbins = 40, p = 1,
+       title = "RD-plot 1st order polynomial",
+       x.label = "Nearest distance to Lianjia's stores",
+       y.label = "Log of income in the community", col.dots = "blue", kernel = "triangular")
+dev.off() # Close the PDF device
+
+# Export the second RD plot to its own PDF file
+pdf("RD_Plot_2nd_Order.pdf", width = 8, height = 4) # Adjust the width and height as needed
+rdplot(y = filtered_data$income, 
+       x = filtered_data$nearest_store_distances, 
+       c = cutoff, nbins = 40, p = 2,
+       title = "RD-plot 1st order polynomial",
+       x.label = "Nearest distance to Lianjia's stores",
+       y.label = "Log of income in the community", col.dots = "blue", kernel = "triangular")
+dev.off() # Close the PDF device
+
+# Export the third RD plot to its own PDF file
+pdf("RD_Plot_3rd_Order.pdf", width = 8, height = 4) # Adjust the width and height as needed
+rdplot(y = filtered_data$income, 
+       x = filtered_data$nearest_store_distances, 
+       c = cutoff, nbins = 40, p = 3,
+       title = "RD-plot 3rd order polynomial",
+       x.label = "Nearest distance to Lianjia's stores",
+       y.label = "Log of income in the community", col.dots = "blue", kernel = "triangular")
+dev.off() # Close the PDF device
+```
+
+```{r}
+ci_level = 95
+h = 0.063
+cutoff = 0.41
+running_var = panel_data$nearest_store_distances
+running_var <- as.numeric(running_var)
+filtered_data <- panel_data[abs(running_var - cutoff) <= h, ]
+
+# Export the first RD plot to its own PDF file
+pdf("RD_Plot_1st_Order_robust.pdf", width = 8, height = 4) # Adjust the width and height as needed
 rdplot(y = filtered_data$ln_income, 
        x = filtered_data$nearest_store_distances, 
        c = cutoff, nbins = 40, p = 1,
        title = "RD-plot 1st order polynomial",
        x.label = "Nearest distance to Lianjia's stores",
-       y.label = "Log of income in the community", col.dots = "blue")
+       y.label = "Log of income in the community", col.dots = "blue", kernel = "triangular")
 dev.off() # Close the PDF device
 
 # Export the second RD plot to its own PDF file
-pdf("RD_Plot_2nd_Order.pdf", width = 8, height = 4) # Adjust the width and height as needed
+pdf("RD_Plot_2nd_Order_robust.pdf", width = 8, height = 4) # Adjust the width and height as needed
 rdplot(y = filtered_data$ln_income, 
        x = filtered_data$nearest_store_distances, 
        c = cutoff, nbins = 40, p = 2,
        title = "RD-plot 1st order polynomial",
        x.label = "Nearest distance to Lianjia's stores",
-       y.label = "Log of income in the community", col.dots = "blue")
+       y.label = "Log of income in the community", col.dots = "blue", kernel = "triangular")
 dev.off() # Close the PDF device
 
 # Export the third RD plot to its own PDF file
-pdf("RD_Plot_3rd_Order.pdf", width = 8, height = 4) # Adjust the width and height as needed
+pdf("RD_Plot_3rd_Order_robust.pdf", width = 8, height = 4) # Adjust the width and height as needed
 rdplot(y = filtered_data$ln_income, 
        x = filtered_data$nearest_store_distances, 
        c = cutoff, nbins = 40, p = 3,
        title = "RD-plot 3rd order polynomial",
        x.label = "Nearest distance to Lianjia's stores",
-       y.label = "Log of income in the community", col.dots = "blue")
+       y.label = "Log of income in the community", col.dots = "blue", kernel = "triangular")
 dev.off() # Close the PDF device
 ```
 
@@ -115,7 +155,7 @@ results_list <- list()
 counter <- 1
 for (bw_method in bw_methods) {
     for (kernel_in in kernel_list){
-        result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances, 
+        result <- rdrobust(y = panel_data$income, x = panel_data$nearest_store_distances, 
                      c = 0.41,
                      p = 1, 
                      bwselect = bw_method, kernel = kernel_in)
@@ -147,94 +187,155 @@ print(results)
 ```
 
 
+
+```{r}
+result <- rdrobust(y = panel_data$income, x = panel_data$nearest_store_distances, 
+                     c = 0.41,
+                     p = 1, 
+                     bwselect = "mserd", kernel = "triangular")
+```
+
+```{r}
+print(result)
+```
+
+```{r}
+bw_methods <- c("mserd", "cerrd")
+kernel_list <- c("uniform", "triangular")
+results_list <- list()
+counter <- 1
+for (bw_method in bw_methods) {
+    for (kernel_in in kernel_list){
+        result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances, 
+                     c = 0.41,
+                     p = 1, 
+                     bwselect = bw_method, kernel = kernel_in)
+        
+        effective_obs <- sum(result$N_h)
+
+        results_list[[counter]] <- data.frame(
+        Method = bw_method,
+        Kernel = kernel_in,
+        Estimate = format(result$coef[1], digits = 3, scientific = FALSE),
+        SE = format(result$se[1], digits = 3, scientific = FALSE),
+        Z = format(result$z[1], digits = 3, scientific = FALSE),
+        PValue = format(result$pv[1], digits = 3, scientific = FALSE),
+        Bandwidth = format(result$bws[1], digits = 3, scientific = FALSE),
+        EffectiveObs = effective_obs
+    )
+        counter <- counter + 1
+    }
+}
+results <- do.call(rbind, results_list)
+latex_code <- print(xtable(results, 
+                           caption = "RD Estimates with Different Bandwidth Selection Methods and Kernels (robust method with log(income))", 
+                           label = "tab:rd_bandwidth_kernel_results_robust"), 
+                    include.rownames = FALSE, 
+                    type = "latex",
+                    print.results = FALSE)
+write(latex_code, file = paste(working_directory , "result_tables/rdd_result_summary_robust.tex", sep='/'))
+print(results)
+```
+
 # checkings:
 
 1. Donut Hole: Exclude observations close to the cutoff and estimate the effect with the remaining data. If the discontinuity persists despite the absence of data around the cutoff, this provides evidence against a model misspecification.
 2. Mccrary (2008) test: Conduct a McCrary density test to check if there is a discontinuity in the density of the running variable at the cutoff. A significant discontinuity may suggest manipulation or sorting around the cutoff.
 3. Placebo test: If you have pre-treatment covariates, you can test whether these covariates also jump at the cutoff. If they do, this might suggest manipulation or a violation of the RD design assumptions. If they don’t, it strengthens the case for a true treatment effect.
+4. The result should robust to little changes across the bandwidth.
 
 ## Donut Hole Test
 
 ```{r}
-cutoff
-donut_width <- 0.011
-panel_data_donut <- panel_data[!(panel_data$nearest_store_distances >= (cutoff - donut_width) & 
-                                 panel_data$nearest_store_distances <= (cutoff + donut_width)),]
-result_donut <- rdrobust(y = panel_data_donut$ln_income, 
-                         x = panel_data_donut$nearest_store_distances, 
-                         c = cutoff,
-                        p = 1, h = 0.066, b = 0.135)
-pander(cbind(result_donut$coef, result_donut$pv))
-print(result_donut)
+panel_data <- as.data.frame(panel_data)
+panel_data$nearest_store_distances <- as.numeric(panel_data$nearest_store_distances)
 ```
 
+
 ```{r}
+original_model_num <- 30532
+
 perform_rd_analysis <- function(cutoff, donut_width, h, b) {
   # select the data that we need
   panel_data_donut <- panel_data[!(panel_data$nearest_store_distances >= (cutoff - donut_width) & 
                                    panel_data$nearest_store_distances <= (cutoff + donut_width)),]
   # run the rdrobust result
-  result_donut <- rdrobust(y = panel_data_donut$ln_income, 
+  result_donut <- rdrobust(y = panel_data_donut$income, 
                            x = panel_data_donut$nearest_store_distances, 
                            c = cutoff,
-                           p = 1, h = h, b = b)
+                           p = 1, h = h, b = b, kernel = "triangular")
+  effective_obs <- sum(result_donut$N_h)
+  drop_ratio <- (original_model_num - effective_obs) / original_model_num 
+  drop_ratio_percentage <- round(drop_ratio * 100, 2)
   # return the coefficient and the p value
-  conventional <- c("Conventional", result_donut$coef[1, 1], result_donut$se[1, 1], result_donut$pv[1, 1])
-  bias_corrected <- c("Bias-Corrected", result_donut$coef[2, 1], result_donut$se[2, 1], result_donut$pv[2, 1])
+  conventional <- c("Conventional", result_donut$coef[1, 1], result_donut$se[1, 1], result_donut$pv[1, 1], drop_ratio_percentage)
+  bias_corrected <- c("Bias-Corrected", result_donut$coef[2, 1], result_donut$se[2, 1], result_donut$pv[2, 1], drop_ratio_percentage)
   robust <- c("Robust", 
               format(result_donut$coef[3, 1], digits = 3, scientific = FALSE), 
               format(result_donut$se[3, 1], digits = 3, scientific = FALSE), 
-              format(result_donut$pv[3, 1], digits = 3, scientific = FALSE))
-  
+              format(result_donut$pv[3, 1], digits = 3, scientific = FALSE), drop_ratio_percentage)
   # combine the results
   result_table <- rbind(conventional, bias_corrected, robust)
-  colnames(result_table) <- c("Method", "Coef", "SE", "p-value")
+  colnames(result_table) <- c("Method", "Coef", "SE", "p-value", "Drop Ratio (%)")
   return(result_table)
 }
 
 cutoff = 0.41
-donut_widths <- c(0.01, 0.0125, 0.015, 0.0175, 0.02, 0.0225, 0.025)
+donut_widths <- c(0.005, 0.0075, 0.01, 0.0125, 0.015, 0.0175, 0.02)
 results <- list()
 
 for (donut in donut_widths) {
-  result <- perform_rd_analysis(cutoff, donut, 0.066, 0.135)
+  result <- perform_rd_analysis(cutoff, donut, 0.063, 0.125)
   results[[paste0("donut_", donut)]] <- result
 }
 
 ```
 
 ```{r}
+results
+```
+
+
+```{r}
+original_model_num <- 30532
 perform_rd_analysis <- function(cutoff, donut_width, h, b) {
   # select the data that we need
   panel_data_donut <- panel_data[!(panel_data$nearest_store_distances >= (cutoff - donut_width) & 
                                    panel_data$nearest_store_distances <= (cutoff + donut_width)),]
   # run the rdrobust result
-  result_donut <- rdrobust(y = panel_data_donut$ln_income, 
+  result_donut <- rdrobust(y = panel_data_donut$income, 
                            x = panel_data_donut$nearest_store_distances, 
                            c = cutoff, covs = panel_data_donut[, control_variables],
-                           p = 1, h = h, b = b)
+                           p = 1, h = h, b = b, kernel = "triangular")
+  effective_obs <- sum(result_donut$N_h)
+  drop_ratio <- (original_model_num - effective_obs) / original_model_num 
+  drop_ratio_percentage <- round(drop_ratio * 100, 2)
   # return the coefficient and the p value
-  conventional <- c("Conventional", result_donut$coef[1, 1], result_donut$se[1, 1], result_donut$pv[1, 1])
-  bias_corrected <- c("Bias-Corrected", result_donut$coef[2, 1], result_donut$se[2, 1], result_donut$pv[2, 1])
+  conventional <- c("Conventional", result_donut$coef[1, 1], result_donut$se[1, 1], result_donut$pv[1, 1], drop_ratio_percentage)
+  bias_corrected <- c("Bias-Corrected", result_donut$coef[2, 1], result_donut$se[2, 1], result_donut$pv[2, 1], drop_ratio_percentage)
   robust <- c("Robust", 
               format(result_donut$coef[3, 1], digits = 3, scientific = FALSE), 
               format(result_donut$se[3, 1], digits = 3, scientific = FALSE), 
-              format(result_donut$pv[3, 1], digits = 3, scientific = FALSE))
+              format(result_donut$pv[3, 1], digits = 3, scientific = FALSE), drop_ratio_percentage)
   
   # combine the results
   result_table <- rbind(conventional, bias_corrected, robust)
-  colnames(result_table) <- c("Method", "Coef", "SE", "p-value")
+  colnames(result_table) <- c("Method", "Coef", "SE", "p-value", "Drop Ratio (%)")
   return(result_table)
 }
 
 cutoff = 0.41
-donut_widths <- c(0.01, 0.0125, 0.015, 0.0175, 0.02, 0.0225, 0.025)
+donut_widths <- c(0.005, 0.0075, 0.01, 0.0125, 0.015, 0.0175, 0.02)
 results_with_control <- list()
 
 for (donut in donut_widths) {
-  result <- perform_rd_analysis(cutoff, donut, 0.066, 0.135)
+  result <- perform_rd_analysis(cutoff, donut, 0.063, 0.125)
   results_with_control[[paste0("donut_", donut)]] <- result
 }
+```
+
+```{r}
+results_with_control
 ```
 
 ```{r}
@@ -242,22 +343,23 @@ for (donut in donut_widths) {
 combined_results_with_control <- do.call(rbind, lapply(names(results_with_control), function(donut) {
   result <- results_with_control[[donut]]
   robust_result <- result[result[, "Method"] == "Robust", ]
-  data.frame(Donut_Width = donut, Method = robust_result[1], Coef = robust_result[2], SE = robust_result[3], p_value = robust_result[4])
+  data.frame(Donut_Width = donut, Method = robust_result[1], Coef = robust_result[2], SE = robust_result[3], p_value = robust_result[4], drop_ratio = robust_result[5])
 }))
-colnames(combined_results_with_control) <- c("Donut Width", "Method", "Coef", "SE", "p-value")
+colnames(combined_results_with_control) <- c("Donut Width", "Method", "Coef", "SE", "p-value", "Drop Ratio(%)")
 
 # without controls
 combined_results <- do.call(rbind, lapply(names(results), function(donut) {
   result <- results[[donut]]
   robust_result <- result[result[, "Method"] == "Robust", ]
-  data.frame(Donut_Width = donut, Method = robust_result[1], Coef = robust_result[2], SE = robust_result[3], p_value = robust_result[4])
+  data.frame(Donut_Width = donut, Method = robust_result[1], Coef = robust_result[2], SE = robust_result[3], p_value = robust_result[4], drop_ratio = robust_result[5])
 }))
-colnames(combined_results) <- c("Donut Width", "Method", "Coef", "SE", "p-value")
+colnames(combined_results) <- c("Donut Width", "Method", "Coef", "SE", "p-value", "Drop Ratio(%)")
 
 merged_results <- merge(combined_results_with_control, combined_results, by = c("Donut Width", "Method"))
 merged_results_df <- as.data.frame(merged_results)
-
-colnames(merged_results_df) <- c("Donut Width", "Method", "Coef", "SE", "p-value", "Coef", "SE", "p-value")
+merged_results_df <- merged_results_df %>%
+  select(-`Drop Ratio(%).x`)
+colnames(merged_results_df) <- c("Donut Width", "Method", "Coef", "SE", "p-value", "Coef", "SE", "p-value", "Drop Ratio(%)")
 
 # print as a latex table
 latex_code <- print(xtable(merged_results_df, 
@@ -267,8 +369,8 @@ latex_code <- print(xtable(merged_results_df,
                     type = "latex",
                     print.results = FALSE)
 
-latex_code <- gsub("\\\\begin\\{tabular\\}\\{llllllll\\}\n  \\\\hline\n", 
-                   "\\\\begin{tabular}{llllllll}\n  \\\\hline\n &  & \\\\multicolumn{3}{c}{Without Control} & \\\\multicolumn{3}{c}{With Control} \\\\\\\\\n", 
+latex_code <- gsub("\\\\begin\\{tabular\\}\\{lllllllll\\}\n  \\\\hline\n", 
+                   "\\\\begin{tabular}{lllllllll}\n  \\\\hline\n &  & \\\\multicolumn{3}{c}{Without Control} & \\\\multicolumn{3}{c}{With Control} & \\\\\\\\\n", 
                    latex_code)
 
 latex_code <- gsub("\\\\end\\{tabular\\}", "\\\\end{tabular}\nNote that the cutoff is 0.41, the main bandwidth is 0.066 and the bias bandwidth is 0.135.", latex_code)
@@ -276,23 +378,75 @@ latex_code <- gsub("\\\\end\\{tabular\\}", "\\\\end{tabular}\nNote that the cuto
 write(latex_code, file = paste(working_directory , "result_tables/donut_robust.tex", sep='/'))
 ```
 
-
 ## McCrary Sorting Test
 
 ```{r}
 # Give it the running variable and the cutpoint
 # it will automatically produce a plot and select the number of bins and the bandwidth
 # The output will be the p-value for the presence of a discontinuity
-DCdensity(filtered_data$nearest_store_distances, cutpoint = 0.41, bw = 0.066, verbose = TRUE, plot = FALSE)
-DCdensity(panel_data$nearest_store_distances, cutpoint = 0.41, bw = 0.066, verbose = TRUE, plot = FALSE)
+
+robust_bandwidths <- c(0.0773, 0.066, 0.0418, 0.0357)
+bandwidths <- c(0.0504, 0.063, 0.0273, 0.0341)
+cutoff <- 0.41
+
+perform_mccrary_test <- function(data, cutoff, bandwidths) {
+  results <- data.frame(
+    Bandwidth = numeric(0),
+    Log_Diff = numeric(0),
+    SE = numeric(0),
+    Z_Stat = numeric(0),
+    P_Value = numeric(0)
+  )
+  
+  for (h in bandwidths) {
+    filtered_data <- data[abs(data$nearest_store_distances - cutoff) <= h, ]
+    output <- capture.output(test_result <- DCdensity(filtered_data$nearest_store_distances, cutpoint = cutoff, bw = h, verbose = TRUE, plot = FALSE))
+    
+    # Extract the required values from the printed output
+    log_diff <- as.numeric(sub(".*Log difference in heights is\\s+([-0-9.]+).*", "\\1", output[2]))
+    se <- as.numeric(sub(".*with SE\\s+([-0-9.]+).*", "\\1", output[grep("with SE", output)]))
+    z_stat <- as.numeric(sub(".*gives a z-stat of\\s+([-0-9.]+).*", "\\1", output[grep("gives a z-stat of", output)]))
+    p_value <- as.numeric(sub(".*and a p value of\\s+([-0-9.]+).*", "\\1", output[grep("and a p value of", output)]))
+    
+    results <- rbind(results, data.frame(
+      Bandwidth = h,
+      Log_Diff = log_diff,
+      SE = se,
+      Z_Stat = z_stat,
+      P_Value = p_value
+    ))
+  }
+  
+  return(results)
+}
+
+results_bandwidths <- perform_mccrary_test(panel_data, cutoff, bandwidths)
+results_robust_bandwidths <- perform_mccrary_test(panel_data, cutoff, robust_bandwidths)
+
+combined_results <- rbind(
+  data.frame(
+    results_bandwidths
+  ),
+  data.frame(
+    results_robust_bandwidths
+  )
+)
+
+latex_table <- xtable(combined_results, caption = "McCrary Test Results", label = "tab:mccrary_results")
+write(latex_code, file = paste(working_directory , "result_tables/mccrary_results.tex", sep='/'))
 ```
+
+```{r}
+pander(combined_results)
+```
+
 
 ## PlaceBo Test
 
 Conducting placebo test. We shall using the same validation bandwidth and bias correction bandwidth. The results are good overall
 
 ```{r}
-testing_variables <- c("pop", "light", "price_concession", "ln_end_price", "ln_nego_changes", "ln_watch_time", "green_ratio", "bedroom", "ln_watch_people", "living_room", "ln_negotiation_period", "museum", "kind", "mid", "sub", "house_age", "total_building")
+testing_variables <- c("pop", "light", "price_concession", "ln_end_price", "ln_nego_changes", "ln_watch_time", "green_ratio", "bedroom", "ln_watch_people", "living_room", "ln_negotiation_period", "museum", "kind", "mid", "total_building", "total_resident", "green_ratio", "old", "house_age", "total_building")
 
 results_list <- list()
 
@@ -300,8 +454,8 @@ counter <- 1
 
 for (validation in testing_variables) {
   rd_result <- rdrobust(y = panel_data[[validation]], x = panel_data$nearest_store_distances,
-                        c = 0.41, h = 0.066, b = 0.135,
-                        bwselect = "mserd", kernel = "triangular")
+                        c = 0.41, h = 0.063, b = 0.125,
+                        kernel = "triangular")
   
   # 提取有效观测值数量并相加
   effective_obs <- sum(rd_result$N_h)
@@ -337,14 +491,14 @@ print(results)
 The movement of the cutoff point should make the estimation non-significant
 
 ```{r}
-cutoffs_width <- c(0.15, 0.2, 0.25, 0.30, 0.35, 0.50, 0.65, 0.7)
+cutoffs_width <- c(0.325, 0.35, 0.40, 0.42, 0.45, 0.50, 0.65, 0.7)
 
 results_list <- list()
 counter <- 1
 for (cutoff in cutoffs_width) {
   # rd_result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances, c = cutoff, h = 0.066, b = 0.135, bwselect = "mserd", kernel = "triangular")
-  rd_result <- rdrobust(y = panel_data$ln_income, x = panel_data$nearest_store_distances,
-                        c = cutoff)
+  rd_result <- rdrobust(y = panel_data$income, x = panel_data$nearest_store_distances,
+                        c = cutoff, bwselect = "mserd", kernel = "triangular")
   
   # 提取有效观测值数量并相加
   effective_obs <- sum(rd_result$N_h)
