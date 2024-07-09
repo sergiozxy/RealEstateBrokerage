@@ -1,0 +1,173 @@
+\bibitem[Bailey et al.(2018)]{bailey_economic_2018}
+Bailey, M., R. Cao, T. Kuchler, and J. Stroebel. 2018. The Economic Effects of Social Networks: Evidence from the Housing Market. \textit{Journal of Political Economy}, 126(6), 2224-2276.
+
+\bibitem[Rosen(1974)]{Rosen_hedonic}
+Rosen, S. 1974. Hedonic Prices and Implicit Markets: Product Differentiation in Pure Competition. \textit{Journal of Political Economy}, 82(1), 34-55.% Available at \url{http://www.jstor.org/stable/1830899}.
+
+\bibitem[Chen and Wen(2017)]{chen_great_2017}
+Chen, K., and Y. Wen. 2017. The Great Housing Boom of China. \textit{American Economic Journal: Macroeconomics}, 9(2), 73-114.
+
+\bibitem[Farrell and Shapiro(1990)]{farrell_horizontal_1990}
+Farrell, J., and C. Shapiro. 1990. Horizontal Mergers: An Equilibrium Analysis. \textit{American Economic Review}, 80(1), 107-126.
+
+\bibitem[Athey and Imbens(2016)]{athey_recursive_2016}
+Athey, S., and G. Imbens. 2016. Recursive Partitioning for Heterogeneous Causal Effects. \textit{Proceedings of the National Academy of Sciences of the United States of America}, 113(27), 7353-7360.
+
+\bibitem[d'Aspremont et al.(1979)]{daspremont_hotellings_1979}
+d'Aspremont, C., J. J. Gabszewicz, and J.-F. Thisse. 1979. On Hotelling’s "Stability in Competition". \textit{Econometrica}, 47(5), 1145-1150.
+
+\bibitem[Glaeser et al.(2017)]{glaeser_real_2017}
+Glaeser, E., W. Huang, Y. Ma, and A. Shleifer. 2017. A Real Estate Boom with Chinese Characteristics. \textit{Journal of Economic Perspectives}, 31(1), 93-116.
+
+\bibitem[Grossman and Stiglitz(1980)]{grossman_impossibility_1980}
+Grossman, S. J., and J. E. Stiglitz. 1980. On the Impossibility of Informationally Efficient Markets. \textit{American Economic Review}, 70(3), 393-408.
+
+\bibitem[Handbury(2021)]{handbury_are_2021}
+Handbury, J. 2021. Are Poor Cities Cheap for Everyone? Non-Homotheticity and the Cost of Living Across U.S. Cities. \textit{Econometrica}, 89(6), 2679-2715.
+
+\bibitem[Hendel et al.(2009)]{hendel_relative_2009}
+Hendel, I., A. Nevo, and F. Ortalo-Magné. 2009. The Relative Performance of Real Estate Marketing Platforms: MLS versus FSBOMadison.com. \textit{American Economic Review}, 99(5), 1878-1898.
+
+\bibitem[Hotelling(1929)]{hotelling_stability_1929}
+Hotelling, H. 1929. The Stability in Competition. \textit{Economic Journal}, 39, 41-57.
+
+\bibitem[Hsieh and Moretti(2003)]{hsieh_can_2003}
+Hsieh, C.-T., and E. Moretti. 2003. Can Free Entry Be Inefficient? Fixed Commissions and Social Waste in the Real Estate Industry. \textit{Journal of Political Economy}, 111(5), 1076-1122.
+
+\bibitem[Hui and Chan(2014)]{hui_foreign_2014}
+Hui, E. C. M., and K. K. K. Chan. 2014. Foreign Direct Investment in China's Real Estate Market. \textit{Habitat International}, 43, 231-239.
+
+\bibitem[Piazzesi et al.(2020)]{piazzesi_segmented_2020}
+Piazzesi, M., M. Schneider, and J. Stroebel. 2020. Segmented Housing Search. \textit{American Economic Review}, 110(3), 720-759.
+
+\bibitem[Qu et al.(2021)]{qu_identifying_2021}
+Qu, W., Y. Huang, and G. Deng. 2021. Identifying the Critical Factors Behind the Second-Hand Housing Price Concession: Empirical Evidence from China. \textit{Habitat International}, 117, 102442.
+
+\bibitem[Salz(2022)]{salz_intermediation_2022}
+Salz, T. 2022. Intermediation and Competition in Search Markets: An Empirical Case Study. \textit{Journal of Political Economy}, 130(2), 310-345.
+
+\bibitem[Williams(1998)]{williams_agency_1998}
+Williams, J. T. 1998. Agency and Brokerage of Real Assets in Competitive Equilibrium. \textit{Review of Financial Studies}, 11(2), 239-280.
+
+\bibitem[Wong et al.(2012)]{wong_liquidity_2012}
+Wong, S. K., C. Y. Yiu, and K. W. Chau. 2012. Liquidity and Information Asymmetry in the Real Estate Market. \textit{The Journal of Real Estate Finance and Economics}, 45(1), 49-62.
+
+\bibitem[Zhao(2015)]{zhao_rational_2015}
+Zhao, B. 2015. Rational Housing Bubble. \textit{Economic Theory}, 60(1), 141-201.
+
+\bibitem[Elvidge et al.(2021)]{elvidge_annual_2021}
+Elvidge, C. D., M. Zhizhin, T. Ghosh, F.-C. Hsu, and J. Taneja. 2021. Annual Time Series of Global VIIRS Nighttime Lights Derived from Monthly Averages: 2012 to 2019. \textit{Remote Sensing}, 13(5), 922.
+
+\bibitem[Zhang et al.(2021)]{zhang_online_2021}
+Zhang, X., Z. Lin, Y. Zhang, Y. Zheng, and J. Zhang. 2021. Online Property Brokerage Platform and Prices of Second-Hand Houses: Evidence from Lianjia's Entry. \textit{Electronic Commerce Research and Applications}, 50, 101104.
+
+\bibitem[Wei and Zhang(2011)]{wei_competitive_2011}
+Wei, S.-J., and X. Zhang. 2011. The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China. \textit{Journal of Political Economy}, 119(3), 511-564.
+
+\bibitem[Zhao et al.(2017)]{zhao_forecasting_2017}
+Zhao, N., Y. Liu, G. Cao, E. L. Samson, and J. Zhang. 2017. Forecasting China's GDP at the Pixel Level Using Nighttime Lights Time Series and Population Images. \textit{GIScience \& Remote Sensing}, 54(3), 407-425.
+
+\bibitem[Akerlof(1970)]{Akerlof_1970}
+Akerlof, G. A. 1970. The Market for "Lemons": Quality Uncertainty and the Market Mechanism. \textit{The Quarterly Journal of Economics}, 84(3), 488-500.
+
+\bibitem[Yang et al.(2021)]{YANG2021102359}
+Yang, L., K. W. Chau, and Y. Chen. 2021. Impacts of Information Asymmetry and Policy Shock on Rental and Vacancy Dynamics in Retail Property Markets. \textit{Habitat International}, 111, 102359.
+
+\bibitem[Barwick and Pathak(2015)]{https://doi.org/10.1111/1756-2171.12082}
+Barwick, P. J., and P. A. Pathak. 2015. The Costs of Free Entry: An Empirical Study of Real Estate Agents in Greater Boston. \textit{The RAND Journal of Economics}, 46(1), 103-145.
+
+\bibitem[Barwick et al.(2017)]{10.1257/app.20160214}
+Barwick, P. J., P. A. Pathak, and M. Wong. 2017. Conflicts of Interest and Steering in Residential Brokerage. \textit{American Economic Journal: Applied Economics}, 9(3), 191-222.
+
+\bibitem[Levitt and Syverson(2008)]{d082a2db-5cce-33f2-87c4-9cb020cc6666}
+Levitt, S. D., and C. Syverson. 2008. Market Distortions When Agents Are Better Informed: The Value of Information in Real Estate Transactions. \textit{The Review of Economics and Statistics}, 90(4), 599-611.
+
+\bibitem[Pope et al.(2015)]{POPE201589}
+Pope, D. G., J. C. Pope, and J. R. Sydnor. 2015. Focal Points and Bargaining in Housing Markets. \textit{Games and Economic Behavior}, 93, 89-107.
+
+\bibitem[Han and Strange(2015)]{HAN2015813}
+Han, L., and W. C. Strange. 2015. The Microstructure of Housing Markets: Search, Bargaining, and Brokerage. In \textit{Handbook of Regional and Urban Economics}, Vol. 5, pp. 813-886.
+
+\bibitem[Genesove and Han(2012)]{GENESOVE201231}
+Genesove, D., and L. Han. 2012. Search and Matching in the Housing Market. \textit{Journal of Urban Economics}, 72(1), 31-45.
+
+\bibitem[Han and Hong(2011)]{550a6ccf-cde2-3dd1-979f-1a8db2b8ceb9}
+Han, L., and S.-H. Hong. 2011. Testing Cost Inefficiency Under Free Entry in the Real Estate Brokerage Industry. \textit{Journal of Business \& Economic Statistics}, 29(4), 564-578.
+
+\bibitem[Van Nieuwerburgh and Veldkamp(2010)]{NIEUWERBURGH_information}
+Van Nieuwerburgh, S., and L. Veldkamp. 2010. Information Acquisition and Under-Diversification. \textit{The Review of Economic Studies}, 77(2), 779-805.
+
+\bibitem[Zhang et al.(2021)]{ZHANG2021101104}
+Zhang, X., Z. Lin, Y. Zhang, Y. Zheng, and J. Zhang. 2021. Online Property Brokerage Platform and Prices of Second-Hand Houses: Evidence from Lianjia's Entry. \textit{Electronic Commerce Research and Applications}, 50, 101104.
+
+\bibitem[Agarwal et al.(2019)]{AGARWAL2019715}
+Agarwal, S., J. He, T. F. Sing, and C. Song. 2019. Do Real Estate Agents Have Information Advantages in Housing Markets? \textit{Journal of Financial Economics}, 134(3), 715-735.
+
+\bibitem[Piazzesi et al.(2020)]{10.1257/aer.20141772}
+Piazzesi, M., M. Schneider, and J. Stroebel. 2020. Segmented Housing Search. \textit{American Economic Review}, 110(3), 720-759.
+
+\bibitem[Hong(2022)]{https://doi.org/10.1002/jae.2891}
+Hong, S.-H. 2022. Real Estate Agents' Influence on Housing Search. \textit{Journal of Applied Econometrics}, 37(3), 563-582.
+
+\bibitem[Van Donkelaar et al.(2021)]{doi:10.1021/acs.est.1c05309}
+Van Donkelaar, A., M. S. Hammer, L. Bindle, M. Brauer, J. R. Brook, M. J. Garay, N. C. Hsu, O. V. Kalashnikova, R. A. Kahn, C. Lee, R. C. Levy, A. Lyapustin, A. M. Sayer, and R. V. Martin. 2021. Monthly Global Estimates of Fine Particulate Matter and Their Uncertainty. \textit{Environmental Science \& Technology}, 55(22), 15287-15300.
+
+\bibitem[Zumpano et al.(2003)]{ZUMPANO2003134}
+Zumpano, L. V., K. H. Johnson, and R. I. Anderson. 2003. Internet Use and Real Estate Brokerage Market Intermediation. \textit{Journal of Housing Economics}, 12(2), 134-150.
+
+\bibitem[McCrary(2008)]{MCCRARY2008698}
+McCrary, J. 2008. Manipulation of the Running Variable in the Regression Discontinuity Design: A Density Test. \textit{Journal of Econometrics}, 142(2), 698-714.
+
+\bibitem[Sirmans et al.(1991)]{SIRMANS1991207}
+Sirmans, C. F., G. K. Turnbull, and J. D. Benjamin. 1991. The Markets for Housing and Real Estate Broker Services. \textit{Journal of Housing Economics}, 1(3), 207-217.
+
+\bibitem[Agarwal et al.(2024)]{AGARWAL2024103668}
+Agarwal, S., Kuang, W., Wang, L., and Yang, Y. 2024. The role of agents in fraudulent activities: Evidence from the housing market in Beijing. \textit{Journal of Urban Economics}, 142, 103668.
+
+\bibitem[Armstrong(2006)]{Armstrong2006}
+Armstrong, M. 2006. Competition in Two-Sided Markets. \textit{The RAND Journal of Economics}, 37(3), 668-691.
+
+\bibitem[Beck et al.(2022)]{doi:10.1080/10527001.2021.2016340}
+Beck, J., F. Scott, and A. Yelowitz. 2022. The Impact of Real Estate Agent Specialization and Activity Level on Market Outcomes. \textit{Journal of Housing Research}, 31(2), 163-180.
+
+\bibitem[Jud et al.(1996)]{doi:10.1080/10835547.1996.12090852}
+Jud, D., T. Seaks, and D. Winkler. 1996. Time on the Market: The Impact of Residential Brokerage. \textit{Journal of Real Estate Research}, 12(2), 447-458.
+
+\bibitem[Rochet and Tirole(2003)]{10.1162/154247603322493212}
+Rochet, J.-C., and J. Tirole. 2003. Platform Competition in Two-Sided Markets. \textit{Journal of the European Economic Association}, 1(4), 990-1029.
+
+\bibitem[Li and Qi(2022)]{10.1093/cje/beac054}
+Li, Z., and H. Qi. 2022. Platform Power: Monopolisation and Financialisation in the Era of Big Tech. \textit{Cambridge Journal of Economics}, 46(6), 1289-1314.
+
+\bibitem[Langley and Leyshon(2017)]{Langley_Leyshon_2017}
+Langley, P., and A. Leyshon. 2017. Platform Capitalism: The Intermediation and Capitalisation of Digital Economic Circulation. \textit{Finance and Society}, 3(1), 11-31.
+
+\bibitem[Allen et al.(2023)]{RePEc:kap:jrefec:v:67:y:2023:i:3:d:10.1007_s11146-021-09858-w}
+Allen, M. T., J. D. Benefield, and R. C. Rutherford. 2023. Co-Listing Strategies: Better Transaction Outcomes? \textit{The Journal of Real Estate Finance and Economics}, 67(3), 517-544.
+
+\bibitem[Varian(2014)]{10.1257/jep.28.2.3}
+Varian, H. R. 2014. Big Data: New Tricks for Econometrics. \textit{Journal of Economic Perspectives}, 28(2), 3-28.
+
+\bibitem[Zhu and Iansiti(2019)]{WOS:000454186600016}
+Zhu, F., and M. Iansiti. 2019. Why Some Platforms Thrive and Others Don't. \textit{Harvard Business Review}, 97(1), 118-125.
+
+\bibitem[Athey and Imbens(2006)]{https://doi.org/10.1111/j.1468-0262.2006.00668.x}
+Athey, S., and G. W. Imbens. 2006. Identification and Inference in Nonlinear Difference-in-Differences Models. \textit{Econometrica}, 74(2), 431-497.% Available at \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2006.00668.x}.
+
+\bibitem[Machado and Santos Silva(2019)]{machado_quantiles_2019}
+Machado, J. A. F., and J. M. C. Santos Silva. 2019. Quantiles via Moments. \textit{Journal of Econometrics}, 213(1), 145-173.
+
+\bibitem[Azmi et al.(2012)]{AZMI2012406}
+Azmi, D. I., H. A. Karim, and M. Z. M. Amin. 2012. Comparing the Walking Behaviour between Urban and Rural Residents. \textit{Procedia - Social and Behavioral Sciences}, 68(7), 406-416. % Available at \url{https://www.sciencedirect.com/science/article/pii/S1877042812057205}.
+
+\bibitem[Peng(2023)]{peng_mortgage_2023}
+Peng, Y. 2023. Mortgage Credit and Housing Markets. \textit{SSRN Electronic Journal}, Working Paper. Available at \url{https://ssrn.com/abstract=4537500} or \url{http://dx.doi.org/10.2139/ssrn.4537500}.
+
+\bibitem[Christensen and Timmins(2022)]{RePEc:ucp:jpolec:doi:10.1086/720140}
+Christensen, P., and C. Timmins. 2022. Sorting or Steering: The Effects of Housing Discrimination on Neighborhood Choice. \textit{Journal of Political Economy}, 130(8), 2110-2163.
+
+\bibitem[MOHURD(2018)]{GB50180-2018}
+Ministry of Housing and Urban-Rural Development of China. 2018. \textit{Urban Residential Area Planning and Design Standard (GB50180-2018)}. Available from \url{http://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jyzt_2019n/2019_zt13/zcwj/201906/t20190606_384732.html}. (in Chinese).
+
+\bibitem[Liu et al.(2023)]{liu2023chrono-urbanism}
+Liu, D., M.-P. Kwan, L. Wang, Z. Kan, J. Wang, and J. Huang. 2023. Development of a Chrono-Urbanism Status Composite Index under the 5/10/15-Minute City Concept Using Social Media Big Data. \textit{Tijdschrift voor Economische en Sociale Geografie}, Early View. doi:10.1111/tesg.12613.

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1720539295 "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" "main.pdf" "main" 1720539296
+["pdflatex"] 1720540296 "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" "main.pdf" "main" 1720540298
   "../figures/RD_Plot_1st_Order.pdf" 1720527607 15310 e2a065bb9ea7d2757e53678f2281da6b ""
   "../figures/RD_Plot_1st_Order_robust.pdf" 1720527607 15289 98ef0100e0c4c74523e8ebec4b3bcf69 ""
   "../figures/RD_Plot_2nd_Order.pdf" 1720527607 15448 36eb1246046277de1f9112dc63cf431e ""
@@ -62,7 +62,7 @@
   "../result_tables/summary_statistics_district.tex" 1720303176 3135 38de003fdf7f3bf8ee3a8ee9d630dba7 ""
   "../result_tables/summary_statistics_indi.tex" 1720303176 3138 a8551fdc8eb148ada4e5334f9781b34d ""
   "/etc/texmf/web2c/texmf.cnf" 1709863417 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" 1720539293 132595 ca766fff68c7c7e631a90a08a9b5e6a0 ""
+  "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" 1720540296 132295 78c233b2d4fe3799d40a3c8bd960898e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1136768653 1536 05df9db6aeccc4eea94fec15c9024f79 ""
@@ -320,9 +320,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1709863684 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1711562297 2799763 669912f8fca1df62fe1f3b65d7f17269 ""
-  "main.aux" 1720539296 30231 7b6f57fb714fa038f56e375c11420357 "pdflatex"
-  "main.out" 1720539296 4511 9d02b31b9dd23cc0e9dff2583991c770 "pdflatex"
-  "main.tex" 1720539293 132595 ca766fff68c7c7e631a90a08a9b5e6a0 ""
+  "main.aux" 1720540298 30231 7b6f57fb714fa038f56e375c11420357 "pdflatex"
+  "main.out" 1720540298 4511 9d02b31b9dd23cc0e9dff2583991c770 "pdflatex"
+  "main.tex" 1720540296 132295 78c233b2d4fe3799d40a3c8bd960898e ""
   (generated)
   "main.aux"
   "main.log"
