@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1720620828 "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" "main.pdf" "main" 1720620829
+["pdflatex"] 1720628772 "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" "main.pdf" "main" 1720628773
   "../figures/RD_Plot_1st_Order.pdf" 1720527607 15310 e2a065bb9ea7d2757e53678f2281da6b ""
   "../figures/RD_Plot_1st_Order_robust.pdf" 1720527607 15289 98ef0100e0c4c74523e8ebec4b3bcf69 ""
   "../figures/RD_Plot_2nd_Order.pdf" 1720527607 15448 36eb1246046277de1f9112dc63cf431e ""
@@ -43,6 +43,7 @@
   "../result_tables/entry_effect.tex" 1720527607 2348 b15a2ac478e749d3c7ad361f2462b11d ""
   "../result_tables/entry_effect_hetero_1.tex" 1720527607 3270 a1df386b15fc8856ee81dddc74c33e3e ""
   "../result_tables/entry_effect_hetero_2.tex" 1720527607 3309 bdcbaf942c7fa077ea63620779c6e32f ""
+  "../result_tables/entry_light_robustness.tex" 1720626690 4128 69ecd7d9abfd15c761a7959a7c9af7ea ""
   "../result_tables/entry_robust_adding_variables_1.tex" 1720527607 3857 dfe20d5787eae45ef3aab72247ae0ae2 ""
   "../result_tables/entry_robust_adding_variables_2.tex" 1720527607 3909 d43b50b7327693529e37cf0eeda3dbef ""
   "../result_tables/group_1.tex" 1720539187 2864 5de47900079b9fb9b496cc83271de3fe ""
@@ -52,6 +53,7 @@
   "../result_tables/heter_platform_did_2.tex" 1720527607 3324 6953e33f3a1107a2ddf13014e43419f1 ""
   "../result_tables/mccrary_results.tex" 1720530671 698 f3e720df8c152777893ed55602855d2c ""
   "../result_tables/movement_cutoff.tex" 1720533824 826 e82e6a50426861a003933d0f0e4e20cb ""
+  "../result_tables/plat_light_robustness.tex" 1720626690 4143 3800d966336e94a743c733aed9c9131a ""
   "../result_tables/plat_robust_adding_variables_1.tex" 1720527607 3872 a28bbcf2f670589f6d123a7883b012b9 ""
   "../result_tables/plat_robust_adding_variables_2.tex" 1720527607 3924 d7453cb29b0e1687c6d7b7848cbc7e73 ""
   "../result_tables/quantile_network_formation_1.tex" 1720616567 4495 41431dac25a502e30afc4bff689dfd04 ""
@@ -63,7 +65,7 @@
   "../result_tables/summary_statistics_district.tex" 1720303176 3135 38de003fdf7f3bf8ee3a8ee9d630dba7 ""
   "../result_tables/summary_statistics_indi.tex" 1720303176 3138 a8551fdc8eb148ada4e5334f9781b34d ""
   "/etc/texmf/web2c/texmf.cnf" 1709863417 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" 1720620828 131152 6d87dd4c52cb3e27d73baac90bf74ef7 ""
+  "/home/xuyuan/Desktop/2024 summer/real estate paper/writing/RealEstateBrokerage/manuscript/main.tex" 1720628771 134469 ba563cc0243176857ff0a3502bd832d9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1136768653 1536 05df9db6aeccc4eea94fec15c9024f79 ""
@@ -321,9 +323,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1709863684 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1711562297 2799763 669912f8fca1df62fe1f3b65d7f17269 ""
-  "main.aux" 1720620829 30899 1c1a9db6f58312417537861b0eb7d7f5 "pdflatex"
-  "main.out" 1720620829 4511 9d02b31b9dd23cc0e9dff2583991c770 "pdflatex"
-  "main.tex" 1720620828 131152 6d87dd4c52cb3e27d73baac90bf74ef7 ""
+  "main.aux" 1720628773 32239 fc029040c47f05e11e2527537c909cc1 "pdflatex"
+  "main.out" 1720628773 5579 8093b551d53bb0852863dcf2cd609681 "pdflatex"
+  "main.tex" 1720628771 134469 ba563cc0243176857ff0a3502bd832d9 ""
   (generated)
   "main.aux"
   "main.log"

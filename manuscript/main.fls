@@ -1437,6 +1437,14 @@ INPUT ../figures/average_income_by_treatment_platform.pdf
 INPUT ../figures/average_income_by_treatment_platform.pdf
 INPUT ../figures/average_income_by_treatment_platform.pdf
 INPUT ../figures/average_income_by_treatment_platform.pdf
+INPUT ../result_tables/entry_light_robustness.tex
+INPUT ../result_tables/entry_light_robustness.tex
+INPUT ../result_tables/entry_light_robustness.tex
+INPUT ../result_tables/entry_light_robustness.tex
+INPUT ../result_tables/plat_light_robustness.tex
+INPUT ../result_tables/plat_light_robustness.tex
+INPUT ../result_tables/plat_light_robustness.tex
+INPUT ../result_tables/plat_light_robustness.tex
 INPUT ../figures/placebo_results/placebo_entry_num.pdf
 INPUT ../figures/placebo_results/placebo_entry_num.pdf
 INPUT ../figures/placebo_results/placebo_entry_num.pdf
