@@ -428,8 +428,10 @@ INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/network_formation_effec
 INPUT e:/umich/RealEstateBrokerage/manuscript/../figures/network_formation_effect.pdf
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/clustering_indices.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/clustering_indices.tex
-INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation.tex
-INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation_1.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation_1.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation_2.tex
+INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/quantile_network_formation_2.tex
 INPUT d:/latex/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex
 INPUT e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex

@@ -1,0 +1,36 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{10}{c}}
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}&\multicolumn{1}{c}{(10)}\\
+            &\multicolumn{1}{c}{FE}&\multicolumn{1}{c}{Q(5)}&\multicolumn{1}{c}{Q(10)}&\multicolumn{1}{c}{Q(15)}&\multicolumn{1}{c}{Q(20)}&\multicolumn{1}{c}{Q(25)}&\multicolumn{1}{c}{Q(30)}&\multicolumn{1}{c}{Q(35)}&\multicolumn{1}{c}{Q(40)}&\multicolumn{1}{c}{Q(45)}\\
+\midrule
+pre1\_treatment&      -0.063\sym{*}  &       0.034         &       0.017         &       0.005         &      -0.003         &      -0.009         &      -0.017         &      -0.026         &      -0.037         &      -0.049         \\
+            &     (0.033)         &     (0.584)         &     (0.518)         &     (0.473)         &     (0.441)         &     (0.416)         &     (0.388)         &     (0.352)         &     (0.312)         &     (0.267)         \\
+\addlinespace
+treatment   &       0.777\sym{***}&       0.878         &       0.860\sym{*}  &       0.848\sym{*}  &       0.840\sym{**} &       0.833\sym{**} &       0.826\sym{**} &       0.816\sym{**} &       0.805\sym{***}&       0.793\sym{***}\\
+            &     (0.049)         &     (0.553)         &     (0.491)         &     (0.448)         &     (0.417)         &     (0.394)         &     (0.368)         &     (0.333)         &     (0.295)         &     (0.252)         \\
+\addlinespace
+post1\_treatment&       1.230\sym{***}&       1.433\sym{**} &       1.398\sym{**} &       1.373\sym{***}&       1.356\sym{***}&       1.343\sym{***}&       1.328\sym{***}&       1.308\sym{***}&       1.286\sym{***}&       1.261\sym{***}\\
+            &     (0.068)         &     (0.650)         &     (0.577)         &     (0.527)         &     (0.491)         &     (0.463)         &     (0.432)         &     (0.392)         &     (0.347)         &     (0.297)         \\
+\addlinespace
+post2\_treatment&       1.618\sym{***}&       1.626\sym{**} &       1.625\sym{**} &       1.624\sym{**} &       1.623\sym{***}&       1.622\sym{***}&       1.622\sym{***}&       1.621\sym{***}&       1.620\sym{***}&       1.619\sym{***}\\
+            &     (0.088)         &     (0.802)         &     (0.712)         &     (0.650)         &     (0.605)         &     (0.572)         &     (0.533)         &     (0.483)         &     (0.428)         &     (0.366)         \\
+\addlinespace
+post3\_treatment&       1.731\sym{***}&       1.689         &       1.697         &       1.702         &       1.705\sym{*}  &       1.708\sym{*}  &       1.711\sym{**} &       1.715\sym{**} &       1.720\sym{**} &       1.725\sym{***}\\
+            &     (0.123)         &     (1.281)         &     (1.137)         &     (1.039)         &     (0.967)         &     (0.913)         &     (0.852)         &     (0.772)         &     (0.684)         &     (0.585)         \\
+\addlinespace
+Brokerage Control &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         \\
+\addlinespace
+Hedonic Control &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         \\
+\addlinespace
+Transaction Control &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         \\
+\addlinespace
+Regional Control &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         &  \checkmark         \\
+\midrule
+\(N\)       &      133818         &      142734         &      142734         &      142734         &      142734         &      142734         &      142734         &      142734         &      142734         &      142734         \\
+\bottomrule
+\multicolumn{11}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{11}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+}
