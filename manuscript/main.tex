@@ -322,7 +322,7 @@ In summary, the entry of Lianjia into a segmented market initially results in a 
 
 To verify the robustness of our results, we calculated the Herfindahl-Hirschman Index (HHI) for each segmented market, defined as $HHI = \sum_{i=1}^N (s_i)^2$ where $s_i$ is the market share of firm $i$ expressed as a percentage. Higher HHI values indicate greater market concentration. To further validate the entry effect, we classified the sample into three groups based on HHI values: low HHI ($0 \leq HHI \leq 1,000$), moderate HHI ($1,000 \leq HHI \leq 2,500$) and high HHI ($2,500 \leq HHI \leq 10,000$). This classification allows us to assess the impact of Lianjia's entry across markets with varying levels of competition and concentration, ensuring that our findings are not driven by specific market conditions. The results, presented in Table \ref{tab:entry_effect_robustness_1}, indicate that the income effect for Lianjia remains consistent across both groups. Specifically, income increases by 7.9\% during the entry period, with the effect decreasing to 5.0\% in the subsequent period for the lower HHI group, which demonstrates the entry can create a very large impact on the compettive market. Moreover, the income increases by 6.8\% and 7.8\% during the entry period and decreases to insignificant after the entry period in the moderate and high concentration market. This demonstrates that Lianjia's entry can only make companies profitable in less competitive markets, and it can enhance profitability in more competitive markets. However, a significant difference emerges in the number of house tours. The entry of Lianjia increases the number of house tours by 5.4\% in the second year and 5.9\% in the third year for the low competitive group. The entry's effect is also significant, with a 3.9\% increase in the number of house tours in the second year for the high concentration market. However, this effect diminishes for the moderately competitive group. The result indicates that the results indicate that when facing other competitors in the market, Lianjia is more likely to make greater efforts to attract more sellers. This analysis underscores the varying impacts of market concentration on Lianjia's market performance post-entry.
 
-Furthermore, in Table \ref{tab:entry_effect_robustness_2}, The entry of Lianjia's offline stores significantly shortens the transaction period for the moderate HHI group by about 5\%. Conversely, this effect is not significant in the lower HHI group and higher concentration group. This pattern suggests that when the market is highly competitive, Lianjia is not able to shorten the transaction period and in highly concentrated markets, Lianjia is also unable to use its information advantage to shorten the transaction period. Regarding price concessions, the entry of Lianjia's offline stores does not have a significant effect in the moderate HHI group initially. However, the entry of offline stores have no influence on other groups. Overall, the results suggest that the entry of offline stores has a very limited influence on consumers' welfare but can help the brokerage earn more profit. Additionally, the entry of Lianjia's offline stores can help the brokerage attract more sellers and, consequently, find more buyers in the market, thereby increasing the brokerage's informational advantage. In the Appendix we also conducted the robustness check by classifying the group by matured market and less matured market.
+Furthermore, in Table \ref{tab:entry_effect_robustness_2}, The entry of Lianjia's offline stores significantly shortens the transaction period for the moderate HHI group by about 5\%. Conversely, this effect is not significant in the lower HHI group and higher concentration group. This pattern suggests that when the market is highly competitive, Lianjia is not able to shorten the transaction period and in highly concentrated markets, Lianjia is also unable to use its information advantage to shorten the transaction period. Regarding price concessions, the entry of Lianjia's offline stores does not have a significant effect in the moderate HHI group initially. However, the entry of offline stores have no influence on other groups. Overall, the results suggest that the entry of offline stores has a very limited influence on consumers' welfare but can help the brokerage earn more profit. Additionally, the entry of Lianjia's offline stores can help the brokerage attract more sellers and, consequently, find more buyers in the market, thereby increasing the brokerage's informational advantage. In the Appendix we also conducted the robustness check by classifying the market with low and high nighttime light areas and the results are reported in Appendix Table \ref{tab:robustness_nighttime_light_entry}.
 
 We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_concession_entry}. For this test, we employed a neighborhood sample with randomly generated treatment effects. Additionally, to assess the impact of heteorogeniety across years, we generated interactions between year and the dummy random treatment effect to determine the significance of these effects. The results indicate that none of the treatment effects are statistically significant, suggesting that our estimates are not influenced by other confounding factors.
 % This delayed impact may be attributed to the offline stores gradually improving market transparency and information dissemination, which eventually leads to better price concessions. For the higher HHI group, the entry of Lianjia's offline stores consistently has a significant effect on price concessions. This reinforces the notion that in less competitive markets, offline stores play a crucial role in facilitating better matches between buyers and sellers and improving overall market efficiency. In the Appendix we also conducted the robustness check by classifying the group by matured market and less matured market.
@@ -409,7 +409,7 @@ To further investigate the impact of market concentration on the effectiveness o
   \end{center}
 \end{table}
 
-Appendix Figure \ref{fig:treatment_consolidation} illustrates the distribution of income across the treatment and control groups. Prior to the intervention, the two groups exhibit parallel trends, indicating no significant differences. The treatment effect becomes significant only after the first period, aligning with our empirical findings. We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_concession_plat} like our previous estimation of the offline store expansion. The test result also shows that there is no other confounding factors affecting our analysis.
+Appendix Figure \ref{fig:treatment_consolidation} illustrates the distribution of income across the treatment and control groups. Prior to the intervention, the two groups exhibit parallel trends, indicating no significant differences. The treatment effect becomes significant only after the first period, aligning with our empirical findings. We conducted a placebo test, as illustrated in Figure \ref{fig:placebo_concession_plat} like our previous estimation of the offline store expansion. The test result also shows that there is no other confounding factors affecting our analysis. In the Appendix Table \ref{tab:robustness_nighttime_light_consolidation}, we also classified the samples to low and high nighttime light areas, and the results show that our results are robust.
 
 \section{Extension: Network Clustering Effect} \label{sec:network_effect}
 
@@ -859,13 +859,6 @@ Table \ref{tab:movement_cutoff} shows the results of placebo tests conducted wit
 
 \clearpage
 
-
-
-
-
-
-
-
 Section{Additional Robustness Check of Main Results} \label{sec:additional_robustness}
 
 \subsection{Additional Robustness Check for the Offline Expansion Effect} \label{subsec:expansion_effect}
@@ -894,10 +887,6 @@ Section{Additional Robustness Check of Main Results} \label{sec:additional_robus
     \end{scriptsize}
   \end{center}
 \end{table}
-
-
-
-
 
 \begin{table}
   \begin{center}
@@ -935,6 +924,32 @@ Section{Additional Robustness Check of Main Results} \label{sec:additional_robus
 
 
 \newpage
+
+\begin{table}
+  \begin{center}
+    \begin{scriptsize}
+      \caption{Robustness Check for Offline Expansion Effect Using Nighttime Lights}
+      \label{tab:robustness_nighttime_light_entry}
+      \input{../result_tables/entry_light_robustness.tex}
+    
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
+    \end{scriptsize}
+  \end{center}
+\end{table}
+
+\subsection{Robustness Check by Dividing the Samples to Low and High Nighttime Lights} \label{subsec:nighttime_light_robustness_check}
+
+\begin{table}
+  \begin{center}
+    \begin{scriptsize}
+      \caption{Robustness Check for Platform Consolidation Effect Using Nighttime Lights}
+      \label{tab:robustness_nighttime_light_consolidation}
+      \input{../result_tables/plat_light_robustness.tex}
+    
+    Note: we omit all the control variables in the regression model, and detailed descriptions can be seen from Table \ref{tab:statistical_district} and Table \ref{tab:statistical_individual}.
+    \end{scriptsize}
+  \end{center}
+\end{table}
 
 \subsection{Placebo Test} \label{subsec:placebo_test}
 

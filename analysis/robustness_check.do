@@ -58,6 +58,8 @@ indicate("Brokerage Control = $brokerage_control" ///
 		 , labels("\checkmark")) ///
  replace
 
+******************************************************************************************************
+ 
 cd "C:\Users\zxuyuan\Downloads" // change to your working directory
 
 use "individual.dta", clear
@@ -241,9 +243,7 @@ indicate("Brokerage Control = $brokerage_control" ///
 ********************************************************************************
 
 cd "C:\Users\zxuyuan\Downloads" // change to your working directory
-
 use "for-analysis-with-dummy(should drop).dta", clear
-
 cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage"
 
 global hedonic_control jiadian kind hotel shop_mall museum old ktv mid prim west_food super sub park
@@ -258,6 +258,132 @@ global Lag_hedonic_control *_hedonic_lag
 
 drop if influence  == 0
 
+// sum(light)
 
+reghdfe ln_num pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if light < 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_1
+
+reghdfe ln_num pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if light >= 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_2
+
+reghdfe ln_lead pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if light < 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_3
+
+reghdfe ln_lead pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control if light >= 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_4
+
+cd "C:\Users\zxuyuan\Downloads" // change to your working directory
+use "individual.dta", clear
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage"
+
+global hedonic_control jiadian kind hotel shop_mall museum old ktv mid prim west_food super sub park
+
+global transaction_control area bedroom toilet house_age floor_level green_ratio total_building total_floor_number living_room elevator_ratio kitchen floor_ratio total_resident
+
+global region_control pm25 pop light
+
+global brokerage_control broker_410 ln_watch_people ln_end_price ln_watch_time  non_online_effect ln_nego_changes
+
+replace price_concession = 100 * price_concession
+
+drop if influence == 0
+
+reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control  if light < 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_5
+
+reghdfe ln_negotiation_period pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control  if light >= 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_6
+
+reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control  if light < 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_7
+
+reghdfe price_concession pre1_treatment treatment post1_treatment post2_treatment post3_treatment $brokerage_control $hedonic_control $transaction_control $region_control  if light >= 37.98893, absorb(year#bs_code id) vce(cluster bs_code)
+est store plat_light_8
+
+esttab plat_light_1 plat_light_2 plat_light_3 plat_light_4 plat_light_5 plat_light_6 plat_light_7 plat_light_8 ///
+ using result_tables/plat_light_robustness.tex, ///
+style(tex) booktabs keep(pre1_treatment treatment post1_treatment post2_treatment post3_treatment) ///
+mtitle("log(number)" "log(number)" "log(lead times)" "log(lead times)" "log(negotiation period)" "log(negotiation period)" "price concession" "price concession") ///
+star(* 0.1 ** 0.05 *** 0.01) ///
+se ///
+scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
+replace
  
- 
+******************************************************************************************************
+
+cd "C:\Users\zxuyuan\Downloads" // change to your working directory
+use "for-analysis-with-dummy(should drop).dta", clear
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage"
+
+global hedonic_control jiadian kind hotel shop_mall museum old ktv mid prim west_food super sub park
+
+global transaction_control area bedroom toilet house_age floor_level green_ratio total_building total_floor_number living_room elevator_ratio kitchen floor_ratio total_resident
+
+global region_control pm25 pop light
+
+global brokerage_control broker_410 ln_watch_people ln_end_price ln_watch_time  non_online_effect ln_nego_changes ln_negotiation_period
+
+global Lag_hedonic_control *_hedonic_lag
+
+drop if to_keep == 0
+
+// sum(light)
+
+reghdfe ln_num pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light < 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_1
+
+reghdfe ln_num pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light >= 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_2
+
+reghdfe ln_lead pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light < 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_3
+
+reghdfe ln_lead pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light >= 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_4
+
+cd "C:\Users\zxuyuan\Downloads" // change to your working directory
+use "individual.dta", clear
+cd "C:\Users\zxuyuan\Downloads\RealEstateBrokerage"
+
+global hedonic_control jiadian kind hotel shop_mall museum old ktv mid prim west_food super sub park
+
+global transaction_control area bedroom toilet house_age floor_level green_ratio total_building total_floor_number living_room elevator_ratio kitchen floor_ratio total_resident
+
+global region_control pm25 pop light
+
+global brokerage_control broker_410 ln_watch_people ln_end_price ln_watch_time  non_online_effect ln_nego_changes
+
+replace price_concession = 100 * price_concession
+
+drop if to_keep == 0
+
+reghdfe ln_negotiation_period pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light < 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_5
+
+reghdfe ln_negotiation_period pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light >= 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_6
+
+reghdfe price_concession pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light < 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_7
+
+reghdfe price_concession pre2 entry post1 post2 post3 $brokerage_control $hedonic_control $transaction_control $region_control if light >= 33, absorb(year#bs_code id) vce(cluster bs_code)
+est store entry_light_8
+
+esttab entry_light_1 entry_light_2 entry_light_3 entry_light_4 entry_light_5 entry_light_6 entry_light_7 entry_light_8 ///
+ using result_tables/entry_light_robustness.tex, ///
+style(tex) booktabs keep(pre2 entry post1 post2 post3) ///
+mtitle("log(number)" "log(number)" "log(lead times)" "log(lead times)" "log(negotiation period)" "log(negotiation period)" "price concession" "price concession") ///
+star(* 0.1 ** 0.05 *** 0.01) ///
+se ///
+scalars("r2 R-squared") ///
+b(%9.3f) se(%9.3f) ///
+indicate("Brokerage Control = $brokerage_control" ///
+		 "Hedonic Control = $hedonic_control" ///
+		 "Transaction Control = $transaction_control" ///
+		 "Regional Control = $region_control", labels("\checkmark")) ///
+ replace
