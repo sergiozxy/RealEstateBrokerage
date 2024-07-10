@@ -76,9 +76,9 @@ The preliminary version was entitled "Property brokerage, Partial monopoly and H
     \noindent This study examines the impact of offline store expansion by Lianjia, China's leading real estate brokerage, within the framework of platform-mediated consolidation. By analyzing micro-level transactions of second-hand houses from Lianjia in ten major Chinese cities from 2016 to 2022, this research investigates how the transaction patterns of traditional brokerages, characterized by the strategic clustering of offline stores, transition towards platform-mediated consolidation, thereby facilitating the development of an extensive franchise network. Utilizing a regression discontinuity design (RDD), the study quantifies the optimal influence radius of offline stores (410 meters) on housing transactions. Incorporating this optimal influence radius, the study further empirically estimates the effects of real estate brokerage's offline store expansion and platform-mediated consolidation on transaction properties. The results indicate that this strategy significantly boosts revenues and attracts more people to housing tours. The results also suggest that neither the platform-mediated strategy nor offline expansion affects the transaction period, but offline store expansion can indeed reduce the price gap between sellers and buyers. Additionally, we proposed a measure of the network effect and found that Lianjia's offline stores show a local clustering pattern with moderate network strength. We then analyzed the effect of platform-mediated consolidation on network strength and concluded that the effect is significantly positive. This study provides valuable insights into the synergy between offline store expansion and online platform development, elucidating future trajectories in the evolving real estate brokerage market and analogous sectors.
   \end{abstract}
   
-  \textbf{Keyword}: Marketing Strategy, Platforms, Platform-Mediated Consolidation, Real Estate Brokerage
+  \textbf{Keyword}: Real estate brokerage, Platform-mediated consolidation, Offline store operation, Franchise network
   
-  \textbf{JEL} Classification Codes: D4, L1, L8, R3
+  \textbf{JEL} Classification Codes: R30, R31, L85, L86
 \end{singlespace}
 \thispagestyle{empty}
 
@@ -178,8 +178,10 @@ Building on this premise, the study further investigates the existence of an opt
     \subfloat[RDD plot with second order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_2nd_Order.pdf}\label{fig:RD_Plot_2nd_Order}}
     \hfill % Adds horizontal space between figures
     \subfloat[RDD plot with third order polynomial]{\includegraphics[width=0.5\textwidth]{../figures/RD_Plot_3rd_Order.pdf}\label{fig:RD_Plot_3rd_Order}}
-    \caption{RDD design}
+    \caption{RDD with Different Polynomial Orders}
     \label{fig:RD_design}
+
+    Note that the running variable is divided into 40 bins, considering only the samples within the specified bandwidth. The polynomial order for the RDD analysis ranges from 1 to 3. Each plot illustrates the relationship between the community transaction revenue and the nearest distance to Lianjia's stores, with the discontinuity point at the cutoff.
 \end{figure}
 
 \input{../result_tables/rdd_result_summary.tex}
@@ -211,7 +213,7 @@ From Table \ref{tab:statistical_district} we can see that the in our metro areas
     \input{../result_tables/summary_statistics_district.tex}
     \label{tab:statistical_district}
 
-    Note that the code book of the variables can be seen in the Appendix \ref{tab:codebook}
+    Note that the code book of the variables can be seen in the Appendix \ref{tab:codebook} and with or without lianjia represent whether there are Lianjia's offline stores within the influential radius.
     \end{tiny}
 \end{table}
 
@@ -222,7 +224,7 @@ From Table \ref{tab:statistical_district} we can see that the in our metro areas
   \input{../result_tables/summary_statistics_indi.tex}
   \label{tab:statistical_individual}
 
-  Note that the code book of the variables can be seen in the Appendix \ref{tab:codebook}
+  Note that the code book of the variables can be seen in the Appendix \ref{tab:codebook} and with or without lianjia represent whether there are Lianjia's offline stores within the influential radius.
   \end{tiny}  
 \end{table}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.27)  10 JUL 2024 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.27)  10 JUL 2024 12:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -789,10 +789,10 @@ File: ../figures/RD_Plot_3rd_Order.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../figures/RD_Plot_3rd_Order.pdf  used on input line 180.
 (pdftex.def)             Requested size: 234.8775pt x 117.43845pt.
  (../result_tables/rdd_result_summary.tex) [11] [12 <../figures/RD_Plot_1st_Order.pdf> <../figures/RD_Plot_2nd_Order.pdf> <../figures/RD_Plot_3rd_Order.pdf>] [13] [14] (../result_tables/summary_statistics_district.tex) (../result_tables/summary_statistics_indi.tex)
-<../figures/scatter_plot_with_two_brokerages.pdf, id=374, 722.7pt x 433.62pt>
+<../figures/scatter_plot_with_two_brokerages.pdf, id=373, 722.7pt x 433.62pt>
 File: ../figures/scatter_plot_with_two_brokerages.pdf Graphic file (type pdf)
 <use ../figures/scatter_plot_with_two_brokerages.pdf>
-Package pdftex.def Info: ../figures/scatter_plot_with_two_brokerages.pdf  used on input line 231.
+Package pdftex.def Info: ../figures/scatter_plot_with_two_brokerages.pdf  used on input line 233.
 (pdftex.def)             Requested size: 328.82707pt x 197.29741pt.
  [15] [16] [17 <../figures/scatter_plot_with_two_brokerages.pdf>] (../result_tables/stylized_fact.tex) [18] (../result_tables/dynamic.tex) [19] [20] [21] (../result_tables/entry_effect.tex) [22] [23] (../result_tables/entry_effect_hetero_1.tex) [24] (../result_tables/entry_effect_hetero_2.tex) [25]
 
@@ -800,7 +800,7 @@ pdfTeX warning: pdflatex (file ../figures/did_1.pdf): PDF inclusion: found PDF v
 <../figures/did_1.pdf, id=510, 397.485pt x 289.08pt>
 File: ../figures/did_1.pdf Graphic file (type pdf)
 <use ../figures/did_1.pdf>
-Package pdftex.def Info: ../figures/did_1.pdf  used on input line 371.
+Package pdftex.def Info: ../figures/did_1.pdf  used on input line 373.
 (pdftex.def)             Requested size: 234.8775pt x 170.82478pt.
 
 
@@ -808,7 +808,7 @@ pdfTeX warning: pdflatex (file ../figures/did_2.pdf): PDF inclusion: found PDF v
 <../figures/did_2.pdf, id=511, 397.485pt x 289.08pt>
 File: ../figures/did_2.pdf Graphic file (type pdf)
 <use ../figures/did_2.pdf>
-Package pdftex.def Info: ../figures/did_2.pdf  used on input line 372.
+Package pdftex.def Info: ../figures/did_2.pdf  used on input line 374.
 (pdftex.def)             Requested size: 234.8775pt x 170.82478pt.
 
 
@@ -816,7 +816,7 @@ pdfTeX warning: pdflatex (file ../figures/did_3.pdf): PDF inclusion: found PDF v
 <../figures/did_3.pdf, id=512, 397.485pt x 289.08pt>
 File: ../figures/did_3.pdf Graphic file (type pdf)
 <use ../figures/did_3.pdf>
-Package pdftex.def Info: ../figures/did_3.pdf  used on input line 374.
+Package pdftex.def Info: ../figures/did_3.pdf  used on input line 376.
 (pdftex.def)             Requested size: 234.8775pt x 170.82478pt.
 
 
@@ -824,23 +824,23 @@ pdfTeX warning: pdflatex (file ../figures/did_4.pdf): PDF inclusion: found PDF v
 <../figures/did_4.pdf, id=513, 397.485pt x 289.08pt>
 File: ../figures/did_4.pdf Graphic file (type pdf)
 <use ../figures/did_4.pdf>
-Package pdftex.def Info: ../figures/did_4.pdf  used on input line 375.
+Package pdftex.def Info: ../figures/did_4.pdf  used on input line 377.
 (pdftex.def)             Requested size: 234.8775pt x 170.82478pt.
 [26] [27 <../figures/did_1.pdf> <../figures/did_2.pdf> <../figures/did_3.pdf> <../figures/did_4.pdf>] (../result_tables/heter_platform_did_1.tex) [28] (../result_tables/heter_platform_did_2.tex) [29] [30] [31]
 <../figures/network_formation_effect.pdf, id=611, 798.58348pt x 570.93298pt>
 File: ../figures/network_formation_effect.pdf Graphic file (type pdf)
 <use ../figures/network_formation_effect.pdf>
-Package pdftex.def Info: ../figures/network_formation_effect.pdf  used on input line 440.
+Package pdftex.def Info: ../figures/network_formation_effect.pdf  used on input line 442.
 (pdftex.def)             Requested size: 328.82707pt x 235.09459pt.
  (../result_tables/clustering_indices.tex)
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 462.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 464.
  [32 <../figures/network_formation_effect.pdf>] [33] [34] [35] (../result_tables/quantile_network_formation_1.tex)
-Overfull \hbox (42.8651pt too wide) in paragraph at lines 3--520
+Overfull \hbox (42.8651pt too wide) in paragraph at lines 3--522
  [] 
  []
 
 (../result_tables/quantile_network_formation_2.tex)
-Overfull \hbox (50.53172pt too wide) in paragraph at lines 3--532
+Overfull \hbox (50.53172pt too wide) in paragraph at lines 3--534
  [] 
  []
 
@@ -852,7 +852,7 @@ pdfTeX warning: pdflatex (file ../figures/typical_sample_lianjia.pdf): PDF inclu
 <../figures/typical_sample_lianjia.pdf, id=745, 1282.2187pt x 959.96992pt>
 File: ../figures/typical_sample_lianjia.pdf Graphic file (type pdf)
 <use ../figures/typical_sample_lianjia.pdf>
-Package pdftex.def Info: ../figures/typical_sample_lianjia.pdf  used on input line 787.
+Package pdftex.def Info: ../figures/typical_sample_lianjia.pdf  used on input line 789.
 (pdftex.def)             Requested size: 422.77664pt x 316.52739pt.
 [45 <../figures/typical_sample_lianjia.pdf>]
 
@@ -860,7 +860,7 @@ pdfTeX warning: pdflatex (file ../figures/typical_layout_beijing.pdf): PDF inclu
 <../figures/typical_layout_beijing.pdf, id=753, 845.0471pt x 597.50829pt>
 File: ../figures/typical_layout_beijing.pdf Graphic file (type pdf)
 <use ../figures/typical_layout_beijing.pdf>
-Package pdftex.def Info: ../figures/typical_layout_beijing.pdf  used on input line 798.
+Package pdftex.def Info: ../figures/typical_layout_beijing.pdf  used on input line 800.
 (pdftex.def)             Requested size: 422.77664pt x 298.93575pt.
 [46 <../figures/typical_layout_beijing.pdf>] (../figures/distribution_of_hp_and_broker.tex
 <../figures/distribution_of_hp_and_broker/Beijing.pdf, id=786, 505.89pt x 361.35pt>
@@ -919,7 +919,7 @@ Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Wuhan.pdf  use
 <../figures/distribution_of_ten_cities.pdf, id=901, 472.76625pt x 334.24875pt>
 File: ../figures/distribution_of_ten_cities.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_ten_cities.pdf>
-Package pdftex.def Info: ../figures/distribution_of_ten_cities.pdf  used on input line 813.
+Package pdftex.def Info: ../figures/distribution_of_ten_cities.pdf  used on input line 815.
 (pdftex.def)             Requested size: 422.77664pt x 298.9136pt.
  [48
 
@@ -927,17 +927,17 @@ Package pdftex.def Info: ../figures/distribution_of_ten_cities.pdf  used on inpu
 <../figures/RD_Plot_1st_Order_robust.pdf, id=916, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_1st_Order_robust.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_1st_Order_robust.pdf>
-Package pdftex.def Info: ../figures/RD_Plot_1st_Order_robust.pdf  used on input line 829.
+Package pdftex.def Info: ../figures/RD_Plot_1st_Order_robust.pdf  used on input line 831.
 (pdftex.def)             Requested size: 234.8775pt x 117.43845pt.
 <../figures/RD_Plot_2nd_Order_robust.pdf, id=917, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_2nd_Order_robust.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_2nd_Order_robust.pdf>
-Package pdftex.def Info: ../figures/RD_Plot_2nd_Order_robust.pdf  used on input line 831.
+Package pdftex.def Info: ../figures/RD_Plot_2nd_Order_robust.pdf  used on input line 833.
 (pdftex.def)             Requested size: 234.8775pt x 117.43845pt.
 <../figures/RD_Plot_3rd_Order_robust.pdf, id=918, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_3rd_Order_robust.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_3rd_Order_robust.pdf>
-Package pdftex.def Info: ../figures/RD_Plot_3rd_Order_robust.pdf  used on input line 833.
+Package pdftex.def Info: ../figures/RD_Plot_3rd_Order_robust.pdf  used on input line 835.
 (pdftex.def)             Requested size: 234.8775pt x 117.43845pt.
  (../result_tables/rdd_result_summary_robust.tex) (../result_tables/donut_robust.tex) [49
 
@@ -945,7 +945,7 @@ Package pdftex.def Info: ../figures/RD_Plot_3rd_Order_robust.pdf  used on input 
 <../figures/average_income_by_treatment_platform.pdf, id=978, 722.7pt x 433.62pt>
 File: ../figures/average_income_by_treatment_platform.pdf Graphic file (type pdf)
 <use ../figures/average_income_by_treatment_platform.pdf>
-Package pdftex.def Info: ../figures/average_income_by_treatment_platform.pdf  used on input line 927.
+Package pdftex.def Info: ../figures/average_income_by_treatment_platform.pdf  used on input line 929.
 (pdftex.def)             Requested size: 328.82707pt x 197.29741pt.
  [54
 
@@ -953,42 +953,42 @@ Package pdftex.def Info: ../figures/average_income_by_treatment_platform.pdf  us
 <../figures/placebo_results/placebo_entry_num.pdf, id=1033, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_num.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_num.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_entry_num.pdf  used on input line 971.
+Package pdftex.def Info: ../figures/placebo_results/placebo_entry_num.pdf  used on input line 973.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
 <../figures/placebo_results/placebo_entry_lead.pdf, id=1034, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_lead.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_lead.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_entry_lead.pdf  used on input line 972.
+Package pdftex.def Info: ../figures/placebo_results/placebo_entry_lead.pdf  used on input line 974.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
 <../figures/placebo_results/placebo_entry_period.pdf, id=1035, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_period.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_period.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_entry_period.pdf  used on input line 974.
+Package pdftex.def Info: ../figures/placebo_results/placebo_entry_period.pdf  used on input line 976.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
 <../figures/placebo_results/placebo_entry_concession.pdf, id=1036, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_concession.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_concession.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_entry_concession.pdf  used on input line 975.
+Package pdftex.def Info: ../figures/placebo_results/placebo_entry_concession.pdf  used on input line 977.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
 <../figures/placebo_results/placebo_plat_num.pdf, id=1038, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_num.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_num.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_plat_num.pdf  used on input line 986.
+Package pdftex.def Info: ../figures/placebo_results/placebo_plat_num.pdf  used on input line 988.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
 <../figures/placebo_results/placebo_plat_lead.pdf, id=1039, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_lead.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_lead.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_plat_lead.pdf  used on input line 987.
+Package pdftex.def Info: ../figures/placebo_results/placebo_plat_lead.pdf  used on input line 989.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
 <../figures/placebo_results/placebo_plat_period.pdf, id=1040, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_period.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_period.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_plat_period.pdf  used on input line 989.
+Package pdftex.def Info: ../figures/placebo_results/placebo_plat_period.pdf  used on input line 991.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
 <../figures/placebo_results/placebo_plat_concession.pdf, id=1041, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_concession.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_concession.pdf>
-Package pdftex.def Info: ../figures/placebo_results/placebo_plat_concession.pdf  used on input line 990.
+Package pdftex.def Info: ../figures/placebo_results/placebo_plat_concession.pdf  used on input line 992.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
  [56 <../figures/placebo_results/placebo_entry_num.pdf> <../figures/placebo_results/placebo_entry_lead.pdf> <../figures/placebo_results/placebo_entry_period.pdf> <../figures/placebo_results/placebo_entry_concession.pdf>] [57 <../figures/placebo_results/placebo_plat_num.pdf> <../figures/placebo_results/placebo_plat_lead.pdf> <../figures/placebo_results/placebo_plat_period.pdf> <../figures/placebo_results/placebo_plat_concession.pdf>] [58] (../result_tables/group_1.tex) [59] (../result_tables/group_2.tex) [60] (../result_tables/group_3.tex) [61] [62] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1021,7 +1021,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (63 pages, 28457378 bytes).
+Output written on main.pdf (63 pages, 28458419 bytes).
 PDF statistics:
  1264 PDF objects out of 1440 (max. 8388607)
  971 compressed objects within 10 object streams

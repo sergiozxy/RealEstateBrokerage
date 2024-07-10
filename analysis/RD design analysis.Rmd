@@ -109,7 +109,7 @@ dev.off() # Close the PDF device
 ```
 
 ```{r}
-ci_level = 95
+# ci_level = 95
 h = 0.063
 cutoff = 0.41
 running_var = panel_data$nearest_store_distances
