@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1721997277 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1721997307
+["pdflatex"] 1722103329 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1722103332
   "../figures/RD_Plot_1st_Order.pdf" 1720487526 15310 e2a065bb9ea7d2757e53678f2281da6b ""
   "../figures/RD_Plot_1st_Order_robust.pdf" 1720487530 15289 98ef0100e0c4c74523e8ebec4b3bcf69 ""
   "../figures/RD_Plot_2nd_Order.pdf" 1720487526 15448 36eb1246046277de1f9112dc63cf431e ""
@@ -316,15 +316,15 @@
   "d:/latex/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1615477809 4851265 939dcb770da954054d38c25e9268a491 ""
   "d:/latex/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1615477916 2432499 72bea4866472cf94a0856e40df3228f8 ""
   "d:/latex/texlive/2020/texmf.cnf" 1615477778 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1721997280 32472 a8232722d0ed70e1bdeb25cd029e6fe1 ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1721997272 138197 53837d85877181ad1ab3f44e01ca4285 ""
-  "main.aux" 1721997280 32472 a8232722d0ed70e1bdeb25cd029e6fe1 "pdflatex"
-  "main.out" 1721997280 1864 c7102468d7df628a32ea9f685d139c45 "pdflatex"
-  "main.tex" 1721997272 138197 53837d85877181ad1ab3f44e01ca4285 ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1722103332 32472 0885b822c575e3292d1038560ccea20e ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1722103289 138654 0824dc06d31f14932cc4b1c0326af079 ""
+  "main.aux" 1722103332 32472 0885b822c575e3292d1038560ccea20e "pdflatex"
+  "main.out" 1722103332 1864 c7102468d7df628a32ea9f685d139c45 "pdflatex"
+  "main.tex" 1722103289 138654 0824dc06d31f14932cc4b1c0326af079 ""
   (generated)
-  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
-  "main.pdf"
   "main.out"
-  "main.aux"
+  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
   "e:/umich/RealEstateBrokerage/manuscript/main.log"
+  "main.aux"
   "main.log"
+  "main.pdf"
