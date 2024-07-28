@@ -11,14 +11,15 @@
 \BOOKMARK [1][-]{section.5}{Extension: Network Clustering Effect}{}% 11
 \BOOKMARK [2][-]{subsection.5.1}{Measure of Network Effect}{section.5}% 12
 \BOOKMARK [2][-]{subsection.5.2}{Estimation of Network Consolidation on Network Effect}{section.5}% 13
-\BOOKMARK [1][-]{section.6}{Discussion and Conclusion}{}% 14
-\BOOKMARK [1][-]{appendix.A}{Codebook}{}% 15
-\BOOKMARK [1][-]{appendix.B}{Additional Descriptions of Data}{}% 16
-\BOOKMARK [1][-]{appendix.C}{Additional RDD Robustness Tests}{}% 17
-\BOOKMARK [1][-]{appendix.D}{Additional Robustness Check of Main Results}{}% 18
-\BOOKMARK [2][-]{subsection.D.1}{Additional Robustness Check for the Offline Expansion Effect}{appendix.D}% 19
-\BOOKMARK [2][-]{subsection.D.2}{Robustness Check by Dividing the Samples to Low and High Nighttime Lights}{appendix.D}% 20
-\BOOKMARK [2][-]{subsection.D.3}{Placebo Test}{appendix.D}% 21
-\BOOKMARK [1][-]{appendix.E}{Description of the network effect indices}{}% 22
-\BOOKMARK [2][-]{subsection.E.1}{Descriptions of the clustering indices}{appendix.E}% 23
-\BOOKMARK [2][-]{subsection.E.2}{Other Indices Measures}{appendix.E}% 24
+\BOOKMARK [2][-]{subsection.5.3}{Mechanism Design}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Discussion and Conclusion}{}% 15
+\BOOKMARK [1][-]{appendix.A}{Codebook}{}% 16
+\BOOKMARK [1][-]{appendix.B}{Additional Descriptions of Data}{}% 17
+\BOOKMARK [1][-]{appendix.C}{Additional RDD Robustness Tests}{}% 18
+\BOOKMARK [1][-]{appendix.D}{Additional Robustness Check of Main Results}{}% 19
+\BOOKMARK [2][-]{subsection.D.1}{Additional Robustness Check for the Offline Expansion Effect}{appendix.D}% 20
+\BOOKMARK [2][-]{subsection.D.2}{Robustness Check by Dividing the Samples to Low and High Nighttime Lights}{appendix.D}% 21
+\BOOKMARK [2][-]{subsection.D.3}{Placebo Test}{appendix.D}% 22
+\BOOKMARK [1][-]{appendix.E}{Description of the network effect indices}{}% 23
+\BOOKMARK [2][-]{subsection.E.1}{Descriptions of the clustering indices}{appendix.E}% 24
+\BOOKMARK [2][-]{subsection.E.2}{Other Indices Measures}{appendix.E}% 25
