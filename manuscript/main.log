@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.11)  29 JUL 2024 08:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.11)  29 JUL 2024 09:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -833,153 +833,153 @@ Overfull \hbox (50.53172pt too wide) in paragraph at lines 3--536
  [] 
  []
 
-[37] [38] [39] [40] [41] [42] [43
+[37] [38] [39] [40] [41] [42] [43] [44
 
-] [44] [45] [46] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex) [47]
+] [45] [46] [47] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/code_book_table.tex) [48]
 
 pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../figures/typical_sample_lianjia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<../figures/typical_sample_lianjia.pdf, id=777, 1282.2187pt x 959.96992pt>
+<../figures/typical_sample_lianjia.pdf, id=782, 1282.2187pt x 959.96992pt>
 File: ../figures/typical_sample_lianjia.pdf Graphic file (type pdf)
 <use ../figures/typical_sample_lianjia.pdf>
 Package pdftex.def Info: ../figures/typical_sample_lianjia.pdf  used on input line 808.
 (pdftex.def)             Requested size: 422.77664pt x 316.52739pt.
-[48 <e:/umich/RealEstateBrokerage/manuscript/../figures/typical_sample_lianjia.pdf>]
+[49 <e:/umich/RealEstateBrokerage/manuscript/../figures/typical_sample_lianjia.pdf>]
 
 pdfTeX warning: pdflatex.exe (file e:/umich/RealEstateBrokerage/manuscript/../figures/typical_layout_beijing.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<../figures/typical_layout_beijing.pdf, id=786, 845.0471pt x 597.50829pt>
+<../figures/typical_layout_beijing.pdf, id=790, 845.0471pt x 597.50829pt>
 File: ../figures/typical_layout_beijing.pdf Graphic file (type pdf)
 <use ../figures/typical_layout_beijing.pdf>
 Package pdftex.def Info: ../figures/typical_layout_beijing.pdf  used on input line 819.
 (pdftex.def)             Requested size: 422.77664pt x 298.93575pt.
-[49 <e:/umich/RealEstateBrokerage/manuscript/../figures/typical_layout_beijing.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker.tex
-<../figures/distribution_of_hp_and_broker/Beijing.pdf, id=819, 505.89pt x 361.35pt>
+[50 <e:/umich/RealEstateBrokerage/manuscript/../figures/typical_layout_beijing.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker.tex
+<../figures/distribution_of_hp_and_broker/Beijing.pdf, id=823, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Beijing.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Beijing.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Beijing.pdf  used on input line 4.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Chengdu.pdf, id=820, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Chengdu.pdf, id=824, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Chengdu.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Chengdu.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Chengdu.pdf  used on input line 8.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Chongqing.pdf, id=821, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Chongqing.pdf, id=825, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Chongqing.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Chongqing.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Chongqing.pdf  used on input line 11.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Guangzhou.pdf, id=822, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Guangzhou.pdf, id=826, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Guangzhou.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Guangzhou.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Guangzhou.pdf  used on input line 15.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Hangzhou.pdf, id=823, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Hangzhou.pdf, id=827, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Hangzhou.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Hangzhou.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Hangzhou.pdf  used on input line 19.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Nanjing.pdf, id=824, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Nanjing.pdf, id=828, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Nanjing.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Nanjing.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Nanjing.pdf  used on input line 22.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Shanghai.pdf, id=825, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Shanghai.pdf, id=829, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Shanghai.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Shanghai.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Shanghai.pdf  used on input line 26.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Shenzhen.pdf, id=826, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Shenzhen.pdf, id=830, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Shenzhen.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Shenzhen.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Shenzhen.pdf  used on input line 30.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Tianjin.pdf, id=827, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Tianjin.pdf, id=831, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Tianjin.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Tianjin.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Tianjin.pdf  used on input line 33.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-<../figures/distribution_of_hp_and_broker/Wuhan.pdf, id=828, 505.89pt x 361.35pt>
+<../figures/distribution_of_hp_and_broker/Wuhan.pdf, id=832, 505.89pt x 361.35pt>
 File: ../figures/distribution_of_hp_and_broker/Wuhan.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_hp_and_broker/Wuhan.pdf>
 Package pdftex.def Info: ../figures/distribution_of_hp_and_broker/Wuhan.pdf  used on input line 37.
 (pdftex.def)             Requested size: 154.08101pt x 110.05995pt.
-) [50
+) [51
 
  <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Beijing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chengdu.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Chongqing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Guangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Hangzhou.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Nanjing.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shanghai.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Shenzhen.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Tianjin.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_hp_and_broker/Wuhan.pdf>]
-<../figures/distribution_of_ten_cities.pdf, id=934, 472.76625pt x 334.24875pt>
+<../figures/distribution_of_ten_cities.pdf, id=938, 472.76625pt x 334.24875pt>
 File: ../figures/distribution_of_ten_cities.pdf Graphic file (type pdf)
 <use ../figures/distribution_of_ten_cities.pdf>
 Package pdftex.def Info: ../figures/distribution_of_ten_cities.pdf  used on input line 834.
 (pdftex.def)             Requested size: 422.77664pt x 298.9136pt.
- [51
+ [52
 
  <e:/umich/RealEstateBrokerage/manuscript/../figures/distribution_of_ten_cities.pdf>]
-<../figures/RD_Plot_1st_Order_robust.pdf, id=948, 578.16pt x 289.08pt>
+<../figures/RD_Plot_1st_Order_robust.pdf, id=952, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_1st_Order_robust.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_1st_Order_robust.pdf>
 Package pdftex.def Info: ../figures/RD_Plot_1st_Order_robust.pdf  used on input line 850.
 (pdftex.def)             Requested size: 234.8775pt x 117.43845pt.
-<../figures/RD_Plot_2nd_Order_robust.pdf, id=949, 578.16pt x 289.08pt>
+<../figures/RD_Plot_2nd_Order_robust.pdf, id=953, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_2nd_Order_robust.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_2nd_Order_robust.pdf>
 Package pdftex.def Info: ../figures/RD_Plot_2nd_Order_robust.pdf  used on input line 852.
 (pdftex.def)             Requested size: 234.8775pt x 117.43845pt.
-<../figures/RD_Plot_3rd_Order_robust.pdf, id=950, 578.16pt x 289.08pt>
+<../figures/RD_Plot_3rd_Order_robust.pdf, id=954, 578.16pt x 289.08pt>
 File: ../figures/RD_Plot_3rd_Order_robust.pdf Graphic file (type pdf)
 <use ../figures/RD_Plot_3rd_Order_robust.pdf>
 Package pdftex.def Info: ../figures/RD_Plot_3rd_Order_robust.pdf  used on input line 854.
 (pdftex.def)             Requested size: 234.8775pt x 117.43845pt.
- (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_result_summary_robust.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/donut_robust.tex) [52
+ (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_result_summary_robust.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/donut_robust.tex) [53
 
- <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_1st_Order_robust.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_2nd_Order_robust.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order_robust.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/mccrary_results.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.tex) [53] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex) [54] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_robust_adding_variables_1.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_robust_adding_variables_2.tex) [55] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/plat_robust_adding_variables_1.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/plat_robust_adding_variables_2.tex) [56]
-<../figures/average_income_by_treatment_platform.pdf, id=1011, 722.7pt x 433.62pt>
+ <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_1st_Order_robust.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_2nd_Order_robust.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/RD_Plot_3rd_Order_robust.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/mccrary_results.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/rdd_placebo_test.tex) [54] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/movement_cutoff.tex) [55] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_robust_adding_variables_1.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_robust_adding_variables_2.tex) [56] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/plat_robust_adding_variables_1.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/plat_robust_adding_variables_2.tex) [57]
+<../figures/average_income_by_treatment_platform.pdf, id=1015, 722.7pt x 433.62pt>
 File: ../figures/average_income_by_treatment_platform.pdf Graphic file (type pdf)
 <use ../figures/average_income_by_treatment_platform.pdf>
 Package pdftex.def Info: ../figures/average_income_by_treatment_platform.pdf  used on input line 948.
 (pdftex.def)             Requested size: 328.82707pt x 197.29741pt.
- [57
+ [58
 
- <e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_light_robustness.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/plat_light_robustness.tex) [58]
-<../figures/placebo_results/placebo_entry_num.pdf, id=1065, 505.89pt x 505.89pt>
+ <e:/umich/RealEstateBrokerage/manuscript/../figures/average_income_by_treatment_platform.pdf>] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/entry_light_robustness.tex) (e:/umich/RealEstateBrokerage/manuscript/../result_tables/plat_light_robustness.tex) [59]
+<../figures/placebo_results/placebo_entry_num.pdf, id=1069, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_num.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_num.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_entry_num.pdf  used on input line 992.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
-<../figures/placebo_results/placebo_entry_lead.pdf, id=1066, 505.89pt x 505.89pt>
+<../figures/placebo_results/placebo_entry_lead.pdf, id=1070, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_lead.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_lead.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_entry_lead.pdf  used on input line 993.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
-<../figures/placebo_results/placebo_entry_period.pdf, id=1067, 505.89pt x 505.89pt>
+<../figures/placebo_results/placebo_entry_period.pdf, id=1071, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_period.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_period.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_entry_period.pdf  used on input line 995.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
-<../figures/placebo_results/placebo_entry_concession.pdf, id=1068, 505.89pt x 505.89pt>
+<../figures/placebo_results/placebo_entry_concession.pdf, id=1072, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_entry_concession.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_entry_concession.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_entry_concession.pdf  used on input line 996.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
-<../figures/placebo_results/placebo_plat_num.pdf, id=1070, 505.89pt x 505.89pt>
+<../figures/placebo_results/placebo_plat_num.pdf, id=1074, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_num.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_num.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_plat_num.pdf  used on input line 1007.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
-<../figures/placebo_results/placebo_plat_lead.pdf, id=1071, 505.89pt x 505.89pt>
+<../figures/placebo_results/placebo_plat_lead.pdf, id=1075, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_lead.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_lead.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_plat_lead.pdf  used on input line 1008.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
-<../figures/placebo_results/placebo_plat_period.pdf, id=1072, 505.89pt x 505.89pt>
+<../figures/placebo_results/placebo_plat_period.pdf, id=1076, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_period.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_period.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_plat_period.pdf  used on input line 1010.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
-<../figures/placebo_results/placebo_plat_concession.pdf, id=1073, 505.89pt x 505.89pt>
+<../figures/placebo_results/placebo_plat_concession.pdf, id=1077, 505.89pt x 505.89pt>
 File: ../figures/placebo_results/placebo_plat_concession.pdf Graphic file (type pdf)
 <use ../figures/placebo_results/placebo_plat_concession.pdf>
 Package pdftex.def Info: ../figures/placebo_results/placebo_plat_concession.pdf  used on input line 1011.
 (pdftex.def)             Requested size: 211.38832pt x 211.39165pt.
- [59 <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_num.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_lead.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_period.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_concession.pdf>] [60 <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_num.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_lead.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_period.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_concession.pdf>] [61] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/group_1.tex) [62] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/group_2.tex) [63] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/group_3.tex) [64] [65]
+ [60 <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_num.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_lead.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_period.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_entry_concession.pdf>] [61 <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_num.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_lead.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_period.pdf> <e:/umich/RealEstateBrokerage/manuscript/../figures/placebo_results/placebo_plat_concession.pdf>] [62] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/group_1.tex) [63] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/group_2.tex) [64] (e:/umich/RealEstateBrokerage/manuscript/../result_tables/group_3.tex) [65] [66]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1099.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1099.
  (e:/umich/RealEstateBrokerage/manuscript/main.aux)
@@ -990,9 +990,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1099.
  ) 
 Here is how much of TeX's memory you used:
- 31152 strings out of 480608
- 736390 string characters out of 5904590
- 1148185 words of memory out of 5000000
+ 31153 strings out of 480608
+ 736397 string characters out of 5904590
+ 1148186 words of memory out of 5000000
  46083 multiletter control sequences out of 15000+600000
  547310 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1022,10 +1022,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {d:/latex/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><d:/latex/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on e:/umich/RealEstateBrokerage/manuscript/main.pdf (66 pages, 28450839 bytes).
+Output written on e:/umich/RealEstateBrokerage/manuscript/main.pdf (67 pages, 28451468 bytes).
 PDF statistics:
- 1274 PDF objects out of 1440 (max. 8388607)
- 1001 compressed objects within 11 object streams
- 252 named destinations out of 1000 (max. 500000)
+ 1281 PDF objects out of 1440 (max. 8388607)
+ 1007 compressed objects within 11 object streams
+ 253 named destinations out of 1000 (max. 500000)
  388 words of extra memory for PDF output out of 10000 (max. 10000000)
 
