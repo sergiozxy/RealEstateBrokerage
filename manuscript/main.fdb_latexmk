@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1722553636 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1722553639
+["pdflatex"] 1723033174 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1723033191
   "../figures/RD_Plot_1st_Order.pdf" 1720487526 15310 e2a065bb9ea7d2757e53678f2281da6b ""
   "../figures/RD_Plot_1st_Order_robust.pdf" 1720487530 15289 98ef0100e0c4c74523e8ebec4b3bcf69 ""
   "../figures/RD_Plot_2nd_Order.pdf" 1720487526 15448 36eb1246046277de1f9112dc63cf431e ""
@@ -316,15 +316,15 @@
   "d:/latex/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1615477809 4851265 939dcb770da954054d38c25e9268a491 ""
   "d:/latex/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1615477916 2432499 72bea4866472cf94a0856e40df3228f8 ""
   "d:/latex/texlive/2020/texmf.cnf" 1615477778 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1722553638 32707 70a6c4de7a3bac7083006f33366d09ac ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1722553631 146278 8ec6bb8406dd8bd3e78ac89965f9046c ""
-  "main.aux" 1722553638 32707 70a6c4de7a3bac7083006f33366d09ac "pdflatex"
-  "main.out" 1722553638 1930 9fdd765fa4b87b0cf31fc09d25864df7 "pdflatex"
-  "main.tex" 1722553631 146278 8ec6bb8406dd8bd3e78ac89965f9046c ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1723033177 32707 70a6c4de7a3bac7083006f33366d09ac ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1723033189 146328 58a5dec4e3478f741f198b6699e3c34a ""
+  "main.aux" 1723033177 32707 70a6c4de7a3bac7083006f33366d09ac "pdflatex"
+  "main.out" 1723033177 1930 9fdd765fa4b87b0cf31fc09d25864df7 "pdflatex"
+  "main.tex" 1723033189 146328 58a5dec4e3478f741f198b6699e3c34a ""
   (generated)
-  "main.log"
   "main.pdf"
   "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
+  "main.log"
   "main.out"
   "main.aux"
   "e:/umich/RealEstateBrokerage/manuscript/main.log"
