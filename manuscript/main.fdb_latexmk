@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1723067692 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1723067751
+["pdflatex"] 1723084727 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1723084731
   "../figures/RD_Plot_1st_Order.pdf" 1720487526 15310 e2a065bb9ea7d2757e53678f2281da6b ""
   "../figures/RD_Plot_1st_Order_robust.pdf" 1720487530 15289 98ef0100e0c4c74523e8ebec4b3bcf69 ""
   "../figures/RD_Plot_2nd_Order.pdf" 1720487526 15448 36eb1246046277de1f9112dc63cf431e ""
@@ -316,15 +316,15 @@
   "d:/latex/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1615477809 4851265 939dcb770da954054d38c25e9268a491 ""
   "d:/latex/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1615477916 2432499 72bea4866472cf94a0856e40df3228f8 ""
   "d:/latex/texlive/2020/texmf.cnf" 1615477778 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1723067695 32707 70a6c4de7a3bac7083006f33366d09ac ""
-  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1723067683 146325 23c5c439b87ed806a575d91e2f97f58e ""
-  "main.aux" 1723067695 32707 70a6c4de7a3bac7083006f33366d09ac "pdflatex"
-  "main.out" 1723067695 1930 9fdd765fa4b87b0cf31fc09d25864df7 "pdflatex"
-  "main.tex" 1723067683 146325 23c5c439b87ed806a575d91e2f97f58e ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.aux" 1723084730 32707 1b42542ff1479149f21c3d91a264a8ae ""
+  "e:/umich/RealEstateBrokerage/manuscript/main.tex" 1723084726 145084 7284f7bdac800301f149ed58c1a982c9 ""
+  "main.aux" 1723084730 32707 1b42542ff1479149f21c3d91a264a8ae "pdflatex"
+  "main.out" 1723084730 1930 9fdd765fa4b87b0cf31fc09d25864df7 "pdflatex"
+  "main.tex" 1723084726 145084 7284f7bdac800301f149ed58c1a982c9 ""
   (generated)
-  "e:/umich/RealEstateBrokerage/manuscript/main.log"
   "main.pdf"
   "main.log"
   "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
   "main.out"
   "main.aux"
+  "e:/umich/RealEstateBrokerage/manuscript/main.log"
