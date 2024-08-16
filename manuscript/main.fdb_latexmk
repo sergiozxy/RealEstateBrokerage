@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1723771522 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1723771995
+["pdflatex"] 1723771522 "e:/umich/RealEstateBrokerage/manuscript/main.tex" "e:/umich/RealEstateBrokerage/manuscript/main.pdf" "main" 1723772020
   "../figures/RD_Plot_1st_Order.pdf" 1720487526 15310 e2a065bb9ea7d2757e53678f2281da6b ""
   "../figures/RD_Plot_1st_Order_robust.pdf" 1720487530 15289 98ef0100e0c4c74523e8ebec4b3bcf69 ""
   "../figures/RD_Plot_2nd_Order.pdf" 1720487526 15448 36eb1246046277de1f9112dc63cf431e ""
@@ -322,9 +322,9 @@
   "main.out" 1723771525 1930 9fdd765fa4b87b0cf31fc09d25864df7 "pdflatex"
   "main.tex" 1723771521 148243 6993799bcf17fa39056acfac1a626bff ""
   (generated)
-  "main.out"
-  "e:/umich/RealEstateBrokerage/manuscript/main.log"
-  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
-  "main.log"
   "main.aux"
   "main.pdf"
+  "e:/umich/RealEstateBrokerage/manuscript/main.log"
+  "main.out"
+  "main.log"
+  "e:/umich/RealEstateBrokerage/manuscript/main.pdf"
